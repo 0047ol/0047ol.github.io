@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+	<meta charset="UTF-8">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, initial-scale=1.0, user-scalable=no">
+	<title>0047ol</title>
+	<link rel="stylesheet" href="https://i.gtimg.cn/vipstyle/frozenui/2.0.0/css/frozen.css"/>
+  </head>
+  <body ontouchstart>
+    <section class="ui-container">
+	  <section id="notice">
+		<div class="demo-block">
+		  <div class="ui-actionsheet" id="actionsheet">
+			<div class="ui-actionsheet-cnt am-actionsheet-down">
+			  <h4>选择下载源</h4>
+			  <button id="dialog1">下载源</button>
+			  <button id="dialog2">下载源</button>
+		<button id="btn3">demo</button>
+			  <div class="ui-actionsheet-split-line"></div>
+			  <button id="actionsheet-cancel">关闭</button>
+			</div>
+		  </div>
+		  <div class="ui-dialog" id="dialog">
+			<div class="ui-dialog-cnt">
+			  <div class="ui-dialog-bd">
+				<h3>免责声明</h3>
+				<p>根据《计算机软件保护条例》第十七条规定：“为了学习和研究软件内含的设计思想和原理，通过安装、显示、传输或者存储软件等方式使用软件的，可以不经软件著作权人许可，不向其支付报酬。”<br>本站所有内容均来源于网络，仅限交流学习与研究使用，版权归属原版权方所有，版权争议与本站无关，下载使用者不得用于商业或非法用途，否则后果由下载使用者自负。<br>如有侵犯到您的权利，请联系邮箱：2088343717@qq.com删除，谢谢。​</p>
+			  </div>
+			  <div class="ui-dialog-ft">
+				<button id="dialog_ok" type="button" data-role="button">同意并继续</button>
+				<button id="dialog_no" type="button" data-role="button">取消</button>
+			  </div>
+			</div>
+		  </div>
+		  <div id="ui-loading" class="ui-loading-block show">
+			<div class="ui-loading-cnt">
+			  <i class="ui-loading-bright"></i>
+			  <p>Loading...</p>
+			</div>
+		  </div>
+		  <section class="ui-notice ui-panel ui-panel-center ">
+			<div class="ui-notice-btn" >
+			<button id="btn_1" class=" ui-btn-lg">软件一</button>
+			<button id="btn_2" class=" ui-btn-lg">软件二</button>
+			<button id="btn_3" class=" ui-btn-lg">软件三</button>
+			<button id="btn_4" class=" ui-btn-lg">软件四</button>
+			<button id="btn_5" class=" ui-btn-lg">软件五</button>
+			<button id="btn_6" class=" ui-btn-lg">软件六</button>
+			<button id="btn_7" class=" ui-btn-lg">软件七</button>
+			<button id="btn_8" class=" ui-btn-lg">软件八</button>
+			<button id="btn_9" class=" ui-btn-lg">软件九</button>
+			<button id="btn_10" class=" ui-btn-lg">软件十</button>
+			</div>
+		  </section>
+		</div>
+	  </section>
+    </section>
+	<script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+$("#ui-loading").removeClass("show");
+$("#btn_1").click(function() {
+					$("#ui-loading").addClass("show");
+					setTimeout("$('#ui-loading').removeClass('show');$('#dialog').addClass('show');", 300);
+				});
+$("#dialog_no").click(function() {
+							  $("#dialog").removeClass("show");
+						  });
+$("#dialog_ok").click(function() {
+						  $("#dialog").removeClass("show");
+						  $("#ui-loading").addClass("show");
+						  setTimeout("$('#ui-loading').removeClass('show'); $('#actionsheet').addClass('show');", 1000);
+					  });
+$("#actionsheet-cancel").click(function() {
+								   $("#actionsheet").removeClass("show");
+							   });
+$("#dialog1").click(function() {
+					 $("#actionsheet").removeClass("show");
+					 $('#ui-loading').addClass('show');
+					 setTimeout("$('#ui-loading').removeClass('show');window.location.href ='https://raw.githubusercontent.com/DreamFlyingStudio/DreamFlyingStudio.github.io/master/com.tencent.qq.widget.jar';", 1000);
+				 });
+$("#dialog2").click(function() {
+					 $("#actionsheet").removeClass("show");
+					 $('#ui-loading').addClass('show');
+					 setTimeout("$('#ui-loading').removeClass('show');window.location.href ='https://pan.baidu.com/s/1JbQ6Oa6Wz-4MW9x7a8SH4g';", 1000);
+				 });
+	   $("#btn3").click(function() {
+					 $("#actionsheet").removeClass("show");
+					 $('#ui-loading').addClass('show');
+					 setTimeout("$('#ui-loading').removeClass('show');window.location.href ='https://raw.githubusercontent.com/DreamFlyingStudio/DreamFlyingStudio.github.io/master/%E5%BC%80%E5%8F%91%E7%A4%BA%E4%BE%8B.zip';", 1000);
+				 });
+</script>
+  </body>
+</html>

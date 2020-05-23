@@ -18,23 +18,10 @@
    <ul class="ui-border-t"> 
     <div class="ui-label-list"> 
      <h4 class="ui-txt-info">友情链接</h4> 
-     <h5>
-      <a href="https://houqi.xyz"><label class="ui-label ui-txt-info">绘影梦后期论坛</label></a>
-     <a href="http://www.dvedit.cn/"><label class="ui-label ui-txt-info">DVEdit论坛</label></a>
-     <a href="http://www.lookae.com/"><label class="ui-label ui-txt-info">大众脸</label></a>
-     <a href="https://www.fxxkmakeding.xyz"><label class="ui-label ui-txt-info">fxxkmakeding</label></a>
-     <a href="https://www.carrotchou.com"><label class="ui-label ui-txt-info">胡萝卜周</label></a>
-     <a href="https://www.zdfans.com"><label class="ui-label ui-txt-info">ZD423</label></a>
-     <a href="https://music.liuzhijin.cn"><label class="ui-label ui-txt-info">音乐直链搜索</label></a>
-     <a href="http://zhimo.yuanzhumuban.cc/music"> <label class="ui-label ui-txt-info">全网音乐解析下载</label></a>
-     <a href="https://youtube.iiilab.com"> <label class="ui-label ui-txt-info">视频解析下载</label></a>
-     <a href="http://haiya360.com"> <label class="ui-label ui-txt-info">斗音解析下载</label></a>
-     <a href="https://oyqy.info"> <label class="ui-label ui-txt-info">音乐解锁</label></a>
-     <a href="http://www.baidu.com"> <label class="ui-label ui-txt-info">网站链接</label></a>
-      </h5>
+     <h5> <a href="https://houqi.xyz"><label class="ui-label ui-txt-info">绘影梦后期论坛</label></a> <a href="http://www.dvedit.cn/"><label class="ui-label ui-txt-info">DVEdit论坛</label></a> <a href="http://www.lookae.com/"><label class="ui-label ui-txt-info">大众脸</label></a> <a href="https://www.fxxkmakeding.xyz"><label class="ui-label ui-txt-info">fxxkmakeding</label></a> <a href="https://www.carrotchou.com"><label class="ui-label ui-txt-info">胡萝卜周</label></a> <a href="https://www.zdfans.com"><label class="ui-label ui-txt-info">ZD423</label></a> <a href="https://music.liuzhijin.cn"><label class="ui-label ui-txt-info">音乐直链搜索</label></a> <a href="http://zhimo.yuanzhumuban.cc/music"> <label class="ui-label ui-txt-info">全网音乐解析下载</label></a> <a href="https://youtube.iiilab.com"> <label class="ui-label ui-txt-info">视频解析下载</label></a> <a href="http://haiya360.com"> <label class="ui-label ui-txt-info">斗音解析下载</label></a> <a href="https://oyqy.info"> <label class="ui-label ui-txt-info">音乐解锁</label></a> <a href="http://www.baidu.com"> <label class="ui-label ui-txt-info">网站链接</label></a> </h5> 
     </div> 
    </ul> 
-    <h6 class="ui-txt-info">Copyright ©2020 <a href="https://0047ol.github.io" class="ui-txt-info">0047ol</a> All Rights Reserved | 联系邮箱 : 2088343717@qq.com | Design By <a href="https://frozenui.github.io" class="ui-txt-info">FrozenUI</a></h6>
+   <h6 class="ui-txt-info">Copyright &copy;2020 <a href="https://0047ol.github.io" class="ui-txt-info">0047ol</a> All Rights Reserved | 联系邮箱 : 2088343717@qq.com | Design By <a href="https://frozenui.github.io" class="ui-txt-info">FrozenUI</a></h6> 
   </footer> 
   <section class="ui-container"> 
    <section id="notice"> 
@@ -69,7 +56,7 @@
      <div class="ui-tooltips ui-tooltips-warn"> 
       <div class="ui-tooltips-cnt ui-border-b"> 
        <marquee>
-         温馨提示：本站所有内容均来源于网络，仅限交流学习与研究使用，版权归属原版权方所有，版权争议与本站无关，下载使用者不得用于商业或非法用途，否则后果由下载使用者自负。如有侵犯到你的权利请联系删除，谢谢 。
+         温馨提示：本站所有内容均来源于网络，仅限交流学习与研究使用，版权归属原版权方所有，版权争议与本站无关，下载使用者不得用于商业或非法用途，否则后果由下载使用者自负。如有侵犯到你的权利请联系删除，谢谢 。 
        </marquee> 
        <a class="ui-icon-close" id="tooltips_close"></a> 
       </div> 
@@ -285,42 +272,50 @@
   <script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script> 
   <script type="text/javascript">
 $("#ui-loading").removeClass("show");
+goPAGE();
+function goPAGE() {
+    if ((navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i))) {
+        alert("请使用电脑端浏览器打开");
+    } else {
+        
+    }
+}
 $("#ps2020").click(function() {
-					$("#ui-loading").addClass("show");
-					setTimeout("$('#ui-loading').removeClass('show');$('#dialog').addClass('show');", 300);
-				});
+    $("#ui-loading").addClass("show");
+    setTimeout("$('#ui-loading').removeClass('show');$('#dialog').addClass('show');", 300);
+});
 $("#dialog_btn_no").click(function() {
-							  $("#dialog").removeClass("show");
-						  });
+    $("#dialog").removeClass("show");
+});
 $("#dialog_btn_ok").click(function() {
-						  $("#dialog").removeClass("show");
-						  $("#ui-loading").addClass("show");
-						  setTimeout("$('#ui-loading').removeClass('show'); $('#actionsheet').addClass('show');", 1000);
-					  });
+    $("#dialog").removeClass("show");
+    $("#ui-loading").addClass("show");
+    setTimeout("$('#ui-loading').removeClass('show'); $('#actionsheet').addClass('show');", 1000);
+});
 $("#actionsheet-cancel").click(function() {
-								   $("#actionsheet").removeClass("show");
-							   });
-  $("#tooltips_close").click(function() {
-								   $("#ui-tooltips").removeClass("show");
-							   });
+    $("#actionsheet").removeClass("show");
+});
+$("#tooltips_close").click(function() {
+    $("#ui-tooltips").removeClass("show");
+});
 $("#actionsheet_btn_1").click(function() {
-					 $("#actionsheet").removeClass("show");
-					 $('#ui-loading').addClass('show');
-					 setTimeout("$('#ui-loading').removeClass('show');window.location.href ='https://www.baidu.com';", 1000);
-				 });
+    $("#actionsheet").removeClass("show");
+    $('#ui-loading').addClass('show');
+    setTimeout("$('#ui-loading').removeClass('show');window.location.href ='https://www.baidu.com';", 1000);
+});
 $("#actionsheet_btn_2").click(function() {
-					 $("#actionsheet").removeClass("show");
-					 $('#ui-loading').addClass('show');
-					 setTimeout("$('#ui-loading').removeClass('show');window.location.href ='https://www.baidu.com';", 1000);
-				 });
+    $("#actionsheet").removeClass("show");
+    $('#ui-loading').addClass('show');
+    setTimeout("$('#ui-loading').removeClass('show');window.location.href ='https://www.baidu.com';", 1000);
+});
 
-    $('.ui-searchbar').tap(function(){
-        $('.ui-searchbar-wrap').addClass('focus');
-        $('.ui-searchbar-input input').focus();
-    });
-    $('.ui-searchbar-cancel').tap(function(){
-        $('.ui-searchbar-wrap').removeClass('focus');
-    });
+$('.ui-searchbar').tap(function() {
+    $('.ui-searchbar-wrap').addClass('focus');
+    $('.ui-searchbar-input input').focus();
+});
+$('.ui-searchbar-cancel').tap(function() {
+    $('.ui-searchbar-wrap').removeClass('focus');
+});
 </script>  
  </body>
 </html>

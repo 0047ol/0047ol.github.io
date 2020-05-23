@@ -20,8 +20,15 @@
    <a href="#tab-content-bmd" class="mdui-ripple mdui-ripple-white"> <img id="mdui-tab-content-bmd" src="http://www.blackmagicdesign.com/images/common/logos/sn-logo.svg?_v=1529531626" height="30" /> <label>Blackmagicdesign</label> </a> 
    <a href="#tab-content-magix" class="mdui-ripple mdui-ripple-white"> <img id="mdui-tab-content-magix" src="https://www.magix.com/fileadmin/fe/images/logos/magix_black.svg" height="30" /> <label>Magix</label> </a> 
    <a href="#tab-content-grass" class="mdui-ripple mdui-ripple-white"> <img id="mdui-tab-content-grass" src="https://www.grassvalley.com/img/2019/tmpltab/gv_logo_v1.png" height="30" /> <label>Grass Valley</label> </a> 
-  </div>
-<!--Adobe--> 
+  </div> 
+  <ul class="mdui-menu" id="menu"> 
+   <li class="mdui-menu-item"> <a href="javascript:;" class="mdui-ripple">Refresh</a> </li> 
+   <li class="mdui-menu-item"> <a href="javascript:;" class="mdui-ripple">Settings</a> </li> 
+   <li class="mdui-menu-item"> <a href="javascript:;" class="mdui-ripple">Send feedback</a> </li> 
+   <li class="mdui-menu-item"> <a href="javascript:;" class="mdui-ripple">Help</a> </li> 
+   <li class="mdui-menu-item"> <a href="javascript:;" class="mdui-ripple">Signout</a> </li> 
+  </ul> 
+  <!--Adobe--> 
   <div id="tab-content-adobe" class="mdui-p-a-2"> 
    <div class="mdui-container"> 
     <div class="mdui-panel mdui-panel-popout" mdui-panel=""> 
@@ -29,49 +36,69 @@
       <div class="mdui-panel-item-header"> 
        <img src="https://www.adobe.com/content/dam/cc/cn/ccpp-related/Adobe_Photoshop_logo_RGB.svg" width="25" height="30" />&nbsp; 
        <div id="mdui-panel-item-title-text-ps" class="mdui-panel-item-title">
-        Adobe Photoshop
+         Adobe Photoshop 
        </div> 
        <div id="mdui-panel-item-title-tooltip-ps"> 
-        <div class="mdui-chip">
-         <a mdui-tooltip="{content: '支持Win与Mac双平台。'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">computer</i>Win/Mac</span></a>
+        <div class="mdui-chip"> 
+         <a mdui-tooltip="{content: '支持Win与Mac双平台。'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">computer</i>Win/Mac</span></a> 
         </div>&nbsp; 
-        <div class="mdui-chip">
-         <a mdui-tooltip="{content: '已支持简体中文。'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">language</i>简体中文</span></a>
+        <div class="mdui-chip"> 
+         <a mdui-tooltip="{content: '已支持简体中文。'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">language</i>简体中文</span></a> 
         </div>&nbsp; 
-        <div class="mdui-chip">
-         <a mdui-tooltip="{content: '最新版本号：v21.1.2.136'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">update</i>21.1.2.136</span></a>
+        <div class="mdui-chip"> 
+         <a mdui-tooltip="{content: '最新版本号：v21.1.2.136'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">update</i>21.1.2.136</span></a> 
         </div>&nbsp; 
-        <div class="mdui-chip">
-         <a mdui-tooltip="{content: '已集成破解，一键安装即可。'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">check_circle</i>集成破解</span></a>
+        <div class="mdui-chip"> 
+         <a mdui-tooltip="{content: '已集成破解，一键安装即可。'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">check_circle</i>集成破解</span></a> 
         </div>&nbsp; 
-        <div class="mdui-chip">
-         <a mdui-tooltip="{content: '最近更新时间：2020-04-15'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">access_time</i>2020-04-15</span></a>
+        <div class="mdui-chip"> 
+         <a mdui-tooltip="{content: '最近更新时间：2020-04-15'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">access_time</i>2020-04-15</span></a> 
         </div>&nbsp; 
-       </div>
+       </div> 
        <i class="mdui-panel-item-arrow mdui-icon material-icons">keyboard_arrow_down</i> 
       </div> 
       <div class="mdui-panel-item-body"> 
        <ul class="mdui-list"> 
-        <li class="mdui-list-item mdui-ripple"> 
+        <li class="mdui-list-item"> 
          <div class="mdui-list-item-content">
-          Adobe Photoshop CC2020 v21.1.2.136
-         </div> <button class="mdui-btn mdui-color-theme-accent mdui-ripple">下载</button> </li> 
-        <li class="mdui-list-item mdui-ripple"> 
+           Adobe Photoshop CC2020 v21.1.2.136 
+         </div> <button class="mdui-btn mdui-color-theme-accent mdui-ripple" mdui-menu="{target: '#ps20'}">下载</button> 
+         <ul class="mdui-menu" id="ps20"> 
+          <li class="mdui-menu-item"> <a href="javascript:;" onclick="showWarnDialog('https://www.baidu.com','123456');" class="mdui-ripple"> <i class="mdui-menu-item-icon mdui-icon material-icons">file_download</i>Win版本下载</a> </li> 
+          <li class="mdui-menu-item"> <a href="javascript:;" onclick="showWarnDialog('https://www.baidu.com','123456');" class="mdui-ripple"> <i class="mdui-menu-item-icon mdui-icon material-icons">file_download</i>Mac版本下载</a> </li> 
+         </ul> </li> 
+        <li class="mdui-list-item"> 
          <div class="mdui-list-item-content">
-          Adobe Photoshop CC2019
-         </div> <button class="mdui-btn mdui-color-theme-accent mdui-ripple">下载</button> </li> 
-        <li class="mdui-list-item mdui-ripple"> 
+           Adobe Photoshop CC2019 
+         </div> <button class="mdui-btn mdui-color-theme-accent mdui-ripple" mdui-menu="{target: '#ps19'}">下载</button> 
+         <ul class="mdui-menu" id="ps19"> 
+          <li class="mdui-menu-item"> <a href="javascript:;" onclick="showWarnDialog('https://www.baidu.com','123456');" class="mdui-ripple"> <i class="mdui-menu-item-icon mdui-icon material-icons">file_download</i>Win版本下载</a> </li> 
+          <li class="mdui-menu-item"> <a href="javascript:;" onclick="showWarnDialog('https://www.baidu.com','123456');" class="mdui-ripple"> <i class="mdui-menu-item-icon mdui-icon material-icons">file_download</i>Mac版本下载</a> </li> 
+         </ul> </li> 
+        <li class="mdui-list-item"> 
          <div class="mdui-list-item-content">
-          Adobe Photoshop CC2018
-         </div> <button class="mdui-btn mdui-color-theme-accent mdui-ripple">下载</button> </li> 
-        <li class="mdui-list-item mdui-ripple"> 
+           Adobe Photoshop CC2018 
+         </div> <button class="mdui-btn mdui-color-theme-accent mdui-ripple" mdui-menu="{target: '#ps18'}">下载</button> 
+         <ul class="mdui-menu" id="ps18"> 
+          <li class="mdui-menu-item"> <a href="javascript:;" onclick="showWarnDialog('https://www.baidu.com','123456');" class="mdui-ripple"> <i class="mdui-menu-item-icon mdui-icon material-icons">file_download</i>Win版本下载</a> </li> 
+          <li class="mdui-menu-item"> <a href="javascript:;" onclick="showWarnDialog('https://www.baidu.com','123456');" class="mdui-ripple"> <i class="mdui-menu-item-icon mdui-icon material-icons">file_download</i>Mac版本下载</a> </li> 
+         </ul> </li> 
+        <li class="mdui-list-item"> 
          <div class="mdui-list-item-content">
-          Adobe Photoshop CC2017
-         </div> <button class="mdui-btn mdui-color-theme-accent mdui-ripple">下载</button> </li> 
-        <li class="mdui-list-item mdui-ripple"> 
+           Adobe Photoshop CC2017 
+         </div> <button class="mdui-btn mdui-color-theme-accent mdui-ripple" mdui-menu="{target: '#ps17'}">下载</button> 
+         <ul class="mdui-menu" id="ps17"> 
+          <li class="mdui-menu-item"> <a href="javascript:;" onclick="showWarnDialog('https://www.baidu.com','123456');" class="mdui-ripple"> <i class="mdui-menu-item-icon mdui-icon material-icons">file_download</i>Win版本下载</a> </li> 
+          <li class="mdui-menu-item"> <a href="javascript:;" onclick="showWarnDialog('https://www.baidu.com','123456');" class="mdui-ripple"> <i class="mdui-menu-item-icon mdui-icon material-icons">file_download</i>Mac版本下载</a> </li> 
+         </ul> </li> 
+        <li class="mdui-list-item"> 
          <div class="mdui-list-item-content">
-          Adobe Photoshop CS6
-         </div> <button class="mdui-btn mdui-color-theme-accent mdui-ripple">下载</button> </li> 
+           Adobe Photoshop CS6 
+         </div> <button class="mdui-btn mdui-color-theme-accent mdui-ripple" mdui-menu="{target: '#ps6'}">下载</button> 
+         <ul class="mdui-menu" id="ps6"> 
+          <li class="mdui-menu-item"> <a href="javascript:;" onclick="showWarnDialog('https://www.baidu.com','123456');" class="mdui-ripple"> <i class="mdui-menu-item-icon mdui-icon material-icons">file_download</i>Win版本下载</a> </li> 
+          <li class="mdui-menu-item"> <a href="javascript:;" onclick="showWarnDialog('https://www.baidu.com','123456');" class="mdui-ripple"> <i class="mdui-menu-item-icon mdui-icon material-icons">file_download</i>Mac版本下载</a> </li> 
+         </ul> </li> 
        </ul> 
        <div class="mdui-panel-item-actions"> 
         <button class="mdui-btn mdui-ripple" mdui-panel-item-close="">收起</button> 
@@ -86,49 +113,69 @@
       <div class="mdui-panel-item-header"> 
        <img src="https://www.adobe.com/content/dam/cc/icons/illustrator.svg" width="25" height="30" />&nbsp; 
        <div id="mdui-panel-item-title-text-ai" class="mdui-panel-item-title">
-        Adobe Illustrator
+         Adobe Illustrator 
        </div> 
        <div id="mdui-panel-item-title-tooltip-ai"> 
-        <div class="mdui-chip">
-         <a mdui-tooltip="{content: '支持Win与Mac双平台。'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">computer</i>Win/Mac</span></a>
+        <div class="mdui-chip"> 
+         <a mdui-tooltip="{content: '支持Win与Mac双平台。'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">computer</i>Win/Mac</span></a> 
         </div>&nbsp; 
-        <div class="mdui-chip">
-         <a mdui-tooltip="{content: '已支持简体中文。'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">language</i>简体中文</span></a>
+        <div class="mdui-chip"> 
+         <a mdui-tooltip="{content: '已支持简体中文。'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">language</i>简体中文</span></a> 
         </div>&nbsp; 
-        <div class="mdui-chip">
-         <a mdui-tooltip="{content: '最新版本号：v24.1.2.408'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">update</i>24.1.2.408</span></a>
+        <div class="mdui-chip"> 
+         <a mdui-tooltip="{content: '最新版本号：v24.1.2.408'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">update</i>24.1.2.408</span></a> 
         </div>&nbsp; 
-        <div class="mdui-chip">
-         <a mdui-tooltip="{content: '已集成破解，一键安装即可。'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">check_circle</i>集成破解</span></a>
+        <div class="mdui-chip"> 
+         <a mdui-tooltip="{content: '已集成破解，一键安装即可。'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">check_circle</i>集成破解</span></a> 
         </div>&nbsp; 
-        <div class="mdui-chip">
-         <a mdui-tooltip="{content: '最近更新时间：2020-04-16'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">access_time</i>2020-04-16</span></a>
+        <div class="mdui-chip"> 
+         <a mdui-tooltip="{content: '最近更新时间：2020-04-16'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">access_time</i>2020-04-16</span></a> 
         </div>&nbsp; 
-       </div>
+       </div> 
        <i class="mdui-panel-item-arrow mdui-icon material-icons">keyboard_arrow_down</i> 
       </div> 
       <div class="mdui-panel-item-body"> 
        <ul class="mdui-list"> 
-        <li class="mdui-list-item mdui-ripple"> 
+        <li class="mdui-list-item"> 
          <div class="mdui-list-item-content">
-          Adobe Illustrator CC2020 v24.1.2.408
-         </div> <button class="mdui-btn mdui-color-theme-accent mdui-ripple">下载</button> </li> 
-        <li class="mdui-list-item mdui-ripple"> 
+           Adobe Illustrator CC2020 v24.1.2.408 
+         </div><button class="mdui-btn mdui-color-theme-accent mdui-ripple" mdui-menu="{target: '#ai20'}">下载</button> 
+         <ul class="mdui-menu" id="ai20"> 
+          <li class="mdui-menu-item"> <a href="javascript:;" onclick="showWarnDialog('https://www.baidu.com','123456');" class="mdui-ripple"> <i class="mdui-menu-item-icon mdui-icon material-icons">file_download</i>Win版本下载</a> </li> 
+          <li class="mdui-menu-item"> <a href="javascript:;" onclick="showWarnDialog('https://www.baidu.com','123456');" class="mdui-ripple"> <i class="mdui-menu-item-icon mdui-icon material-icons">file_download</i>Mac版本下载</a> </li> 
+         </ul> </li> 
+        <li class="mdui-list-item"> 
          <div class="mdui-list-item-content">
-          Adobe Illustrator CC2019
-         </div> <button class="mdui-btn mdui-color-theme-accent mdui-ripple">下载</button> </li> 
-        <li class="mdui-list-item mdui-ripple"> 
+           Adobe Illustrator CC2019 
+         </div> <button class="mdui-btn mdui-color-theme-accent mdui-ripple" mdui-menu="{target: '#ai19'}">下载</button> 
+         <ul class="mdui-menu" id="ai19"> 
+          <li class="mdui-menu-item"> <a href="javascript:;" onclick="showWarnDialog('https://www.baidu.com','123456');" class="mdui-ripple"> <i class="mdui-menu-item-icon mdui-icon material-icons">file_download</i>Win版本下载</a> </li> 
+          <li class="mdui-menu-item"> <a href="javascript:;" onclick="showWarnDialog('https://www.baidu.com','123456');" class="mdui-ripple"> <i class="mdui-menu-item-icon mdui-icon material-icons">file_download</i>Mac版本下载</a> </li> 
+         </ul> </li> 
+        <li class="mdui-list-item"> 
          <div class="mdui-list-item-content">
-          Adobe Illustrator CC2018
-         </div> <button class="mdui-btn mdui-color-theme-accent mdui-ripple">下载</button> </li> 
-        <li class="mdui-list-item mdui-ripple"> 
+           Adobe Illustrator CC2018 
+         </div> <button class="mdui-btn mdui-color-theme-accent mdui-ripple" mdui-menu="{target: '#ai18'}">下载</button> 
+         <ul class="mdui-menu" id="ai18"> 
+          <li class="mdui-menu-item"> <a href="javascript:;" onclick="showWarnDialog('https://www.baidu.com','123456');" class="mdui-ripple"> <i class="mdui-menu-item-icon mdui-icon material-icons">file_download</i>Win版本下载</a> </li> 
+          <li class="mdui-menu-item"> <a href="javascript:;" onclick="showWarnDialog('https://www.baidu.com','123456');" class="mdui-ripple"> <i class="mdui-menu-item-icon mdui-icon material-icons">file_download</i>Mac版本下载</a> </li> 
+         </ul> </li> 
+        <li class="mdui-list-item"> 
          <div class="mdui-list-item-content">
-          Adobe Illustrator CC2017
-         </div> <button class="mdui-btn mdui-color-theme-accent mdui-ripple">下载</button> </li> 
-        <li class="mdui-list-item mdui-ripple"> 
+           Adobe Illustrator CC2017 
+         </div> <button class="mdui-btn mdui-color-theme-accent mdui-ripple" mdui-menu="{target: '#ai17'}">下载</button> 
+         <ul class="mdui-menu" id="ai17"> 
+          <li class="mdui-menu-item"> <a href="javascript:;" onclick="showWarnDialog('https://www.baidu.com','123456');" class="mdui-ripple"> <i class="mdui-menu-item-icon mdui-icon material-icons">file_download</i>Win版本下载</a> </li> 
+          <li class="mdui-menu-item"> <a href="javascript:;" onclick="showWarnDialog('https://www.baidu.com','123456');" class="mdui-ripple"> <i class="mdui-menu-item-icon mdui-icon material-icons">file_download</i>Mac版本下载</a> </li> 
+         </ul> </li> 
+        <li class="mdui-list-item"> 
          <div class="mdui-list-item-content">
-          Adobe Illustrator CS6
-         </div> <button class="mdui-btn mdui-color-theme-accent mdui-ripple">下载</button> </li> 
+           Adobe Illustrator CS6 
+         </div> <button class="mdui-btn mdui-color-theme-accent mdui-ripple" mdui-menu="{target: '#ai6'}">下载</button> 
+         <ul class="mdui-menu" id="ai6"> 
+          <li class="mdui-menu-item"> <a href="javascript:;" onclick="showWarnDialog('https://www.baidu.com','123456');" class="mdui-ripple"> <i class="mdui-menu-item-icon mdui-icon material-icons">file_download</i>Win版本下载</a> </li> 
+          <li class="mdui-menu-item"> <a href="javascript:;" onclick="showWarnDialog('https://www.baidu.com','123456');" class="mdui-ripple"> <i class="mdui-menu-item-icon mdui-icon material-icons">file_download</i>Mac版本下载</a> </li> 
+         </ul> </li> 
        </ul> 
        <div class="mdui-panel-item-actions"> 
         <button class="mdui-btn mdui-ripple" mdui-panel-item-close="">收起</button> 
@@ -143,49 +190,69 @@
       <div class="mdui-panel-item-header"> 
        <img src="https://www.adobe.com/content/dam/cc/icons/aftereffects.svg" width="25" height="30" />&nbsp; 
        <div id="mdui-panel-item-title-text-ae" class="mdui-panel-item-title">
-        Adobe After Effects
+         Adobe After Effects 
        </div> 
        <div id="mdui-panel-item-title-tooltip-ae"> 
-        <div class="mdui-chip">
-         <a mdui-tooltip="{content: '支持Win与Mac双平台。'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">computer</i>Win/Mac</span></a>
+        <div class="mdui-chip"> 
+         <a mdui-tooltip="{content: '支持Win与Mac双平台。'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">computer</i>Win/Mac</span></a> 
         </div>&nbsp; 
-        <div class="mdui-chip">
-         <a mdui-tooltip="{content: '已支持简体中文。'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">language</i>简体中文</span></a>
+        <div class="mdui-chip"> 
+         <a mdui-tooltip="{content: '已支持简体中文。'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">language</i>简体中文</span></a> 
         </div>&nbsp; 
-        <div class="mdui-chip">
-         <a mdui-tooltip="{content: '最新版本号：v17.0.6.3'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">update</i>17.0.6.3</span></a>
+        <div class="mdui-chip"> 
+         <a mdui-tooltip="{content: '最新版本号：v17.0.6.3'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">update</i>17.0.6.3</span></a> 
         </div>&nbsp; 
-        <div class="mdui-chip">
-         <a mdui-tooltip="{content: '已集成破解，一键安装即可。'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">check_circle</i>集成破解</span></a>
+        <div class="mdui-chip"> 
+         <a mdui-tooltip="{content: '已集成破解，一键安装即可。'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">check_circle</i>集成破解</span></a> 
         </div>&nbsp; 
-        <div class="mdui-chip">
-         <a mdui-tooltip="{content: '最近更新时间：2020-04-14'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">access_time</i>2020-04-14</span></a>
+        <div class="mdui-chip"> 
+         <a mdui-tooltip="{content: '最近更新时间：2020-04-14'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">access_time</i>2020-04-14</span></a> 
         </div>&nbsp; 
-       </div>
+       </div> 
        <i class="mdui-panel-item-arrow mdui-icon material-icons">keyboard_arrow_down</i> 
       </div> 
       <div class="mdui-panel-item-body"> 
        <ul class="mdui-list"> 
-        <li class="mdui-list-item mdui-ripple"> 
+        <li class="mdui-list-item"> 
          <div class="mdui-list-item-content">
-          After Effects CC2020 v17.0.6.3
-         </div> <button class="mdui-btn mdui-color-theme-accent mdui-ripple">下载</button> </li> 
-        <li class="mdui-list-item mdui-ripple"> 
+           After Effects CC2020 v17.0.6.3 
+         </div> <button class="mdui-btn mdui-color-theme-accent mdui-ripple" mdui-menu="{target: '#ps18'}">下载</button> 
+         <ul class="mdui-menu" id="ps6"> 
+          <li class="mdui-menu-item"> <a href="javascript:;" onclick="showWarnDialog('https://www.baidu.com','123456');" class="mdui-ripple"> <i class="mdui-menu-item-icon mdui-icon material-icons">file_download</i>Win版本下载</a> </li> 
+          <li class="mdui-menu-item"> <a href="javascript:;" onclick="showWarnDialog('https://www.baidu.com','123456');" class="mdui-ripple"> <i class="mdui-menu-item-icon mdui-icon material-icons">file_download</i>Mac版本下载</a> </li> 
+         </ul> </li> 
+        <li class="mdui-list-item"> 
          <div class="mdui-list-item-content">
-          After Effects CC2019
-         </div> <button class="mdui-btn mdui-color-theme-accent mdui-ripple">下载</button> </li> 
-        <li class="mdui-list-item mdui-ripple"> 
+           After Effects CC2019 
+         </div> <button class="mdui-btn mdui-color-theme-accent mdui-ripple" mdui-menu="{target: '#ps18'}">下载</button> 
+         <ul class="mdui-menu" id="ps6"> 
+          <li class="mdui-menu-item"> <a href="javascript:;" onclick="showWarnDialog('https://www.baidu.com','123456');" class="mdui-ripple"> <i class="mdui-menu-item-icon mdui-icon material-icons">file_download</i>Win版本下载</a> </li> 
+          <li class="mdui-menu-item"> <a href="javascript:;" onclick="showWarnDialog('https://www.baidu.com','123456');" class="mdui-ripple"> <i class="mdui-menu-item-icon mdui-icon material-icons">file_download</i>Mac版本下载</a> </li> 
+         </ul> </li> 
+        <li class="mdui-list-item"> 
          <div class="mdui-list-item-content">
-          After Effects CC2018
-         </div> <button class="mdui-btn mdui-color-theme-accent mdui-ripple">下载</button> </li> 
-        <li class="mdui-list-item mdui-ripple"> 
+           After Effects CC2018 
+         </div> <button class="mdui-btn mdui-color-theme-accent mdui-ripple" mdui-menu="{target: '#ps18'}">下载</button> 
+         <ul class="mdui-menu" id="ps6"> 
+          <li class="mdui-menu-item"> <a href="javascript:;" onclick="showWarnDialog('https://www.baidu.com','123456');" class="mdui-ripple"> <i class="mdui-menu-item-icon mdui-icon material-icons">file_download</i>Win版本下载</a> </li> 
+          <li class="mdui-menu-item"> <a href="javascript:;" onclick="showWarnDialog('https://www.baidu.com','123456');" class="mdui-ripple"> <i class="mdui-menu-item-icon mdui-icon material-icons">file_download</i>Mac版本下载</a> </li> 
+         </ul> </li> 
+        <li class="mdui-list-item"> 
          <div class="mdui-list-item-content">
-          After Effects CC2017
-         </div> <button class="mdui-btn mdui-color-theme-accent mdui-ripple">下载</button> </li> 
-        <li class="mdui-list-item mdui-ripple"> 
+           After Effects CC2017 
+         </div> <button class="mdui-btn mdui-color-theme-accent mdui-ripple" mdui-menu="{target: '#ps18'}">下载</button> 
+         <ul class="mdui-menu" id="ps6"> 
+          <li class="mdui-menu-item"> <a href="javascript:;" onclick="showWarnDialog('https://www.baidu.com','123456');" class="mdui-ripple"> <i class="mdui-menu-item-icon mdui-icon material-icons">file_download</i>Win版本下载</a> </li> 
+          <li class="mdui-menu-item"> <a href="javascript:;" onclick="showWarnDialog('https://www.baidu.com','123456');" class="mdui-ripple"> <i class="mdui-menu-item-icon mdui-icon material-icons">file_download</i>Mac版本下载</a> </li> 
+         </ul> </li> 
+        <li class="mdui-list-item"> 
          <div class="mdui-list-item-content">
-          After Effects CS6
-         </div> <button class="mdui-btn mdui-color-theme-accent mdui-ripple">下载</button> </li> 
+           After Effects CS6 
+         </div><button class="mdui-btn mdui-color-theme-accent mdui-ripple" mdui-menu="{target: '#ps18'}">下载</button> 
+         <ul class="mdui-menu" id="ps6"> 
+          <li class="mdui-menu-item"> <a href="javascript:;" onclick="showWarnDialog('https://www.baidu.com','123456');" class="mdui-ripple"> <i class="mdui-menu-item-icon mdui-icon material-icons">file_download</i>Win版本下载</a> </li> 
+          <li class="mdui-menu-item"> <a href="javascript:;" onclick="showWarnDialog('https://www.baidu.com','123456');" class="mdui-ripple"> <i class="mdui-menu-item-icon mdui-icon material-icons">file_download</i>Mac版本下载</a> </li> 
+         </ul> </li> 
        </ul> 
        <div class="mdui-panel-item-actions"> 
         <button class="mdui-btn mdui-ripple" mdui-panel-item-close="">收起</button> 
@@ -200,49 +267,69 @@
       <div class="mdui-panel-item-header"> 
        <img src="https://www.adobe.com/content/dam/cc/icons/pr_cc_app_RGB.svg" width="25" height="30" />&nbsp; 
        <div id="mdui-panel-item-title-text-pr" class="mdui-panel-item-title">
-        Adobe Premiere Pro
+         Adobe Premiere Pro 
        </div> 
        <div id="mdui-panel-item-title-tooltip-pr"> 
-        <div class="mdui-chip">
-         <a mdui-tooltip="{content: '支持Win与Mac双平台。'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">computer</i>Win/Mac</span></a>
+        <div class="mdui-chip"> 
+         <a mdui-tooltip="{content: '支持Win与Mac双平台。'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">computer</i>Win/Mac</span></a> 
         </div>&nbsp; 
-        <div class="mdui-chip">
-         <a mdui-tooltip="{content: '已支持简体中文。'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">language</i>简体中文</span></a>
+        <div class="mdui-chip"> 
+         <a mdui-tooltip="{content: '已支持简体中文。'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">language</i>简体中文</span></a> 
         </div>&nbsp; 
-        <div class="mdui-chip">
-         <a mdui-tooltip="{content: '最新版本号：v14.1.0.116'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">update</i>14.1.0.116</span></a>
+        <div class="mdui-chip"> 
+         <a mdui-tooltip="{content: '最新版本号：v14.1.0.116'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">update</i>14.1.0.116</span></a> 
         </div>&nbsp; 
-        <div class="mdui-chip">
-         <a mdui-tooltip="{content: '已集成破解，一键安装即可。'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">check_circle</i>集成破解</span></a>
+        <div class="mdui-chip"> 
+         <a mdui-tooltip="{content: '已集成破解，一键安装即可。'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">check_circle</i>集成破解</span></a> 
         </div>&nbsp; 
-        <div class="mdui-chip">
-         <a mdui-tooltip="{content: '最近更新时间：2020-04-15'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">access_time</i>2020-04-15</span></a>
+        <div class="mdui-chip"> 
+         <a mdui-tooltip="{content: '最近更新时间：2020-04-15'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">access_time</i>2020-04-15</span></a> 
         </div>&nbsp; 
-       </div>
+       </div> 
        <i class="mdui-panel-item-arrow mdui-icon material-icons">keyboard_arrow_down</i> 
       </div> 
       <div class="mdui-panel-item-body"> 
        <ul class="mdui-list"> 
-        <li class="mdui-list-item mdui-ripple"> 
+        <li class="mdui-list-item"> 
          <div class="mdui-list-item-content">
-          Premiere Pro CC2020 v14.1.0.116
-         </div> <button class="mdui-btn mdui-color-theme-accent mdui-ripple">下载</button> </li> 
-        <li class="mdui-list-item mdui-ripple"> 
+           Premiere Pro CC2020 v14.1.0.116 
+         </div> <button class="mdui-btn mdui-color-theme-accent mdui-ripple" mdui-menu="{target: '#ps18'}">下载</button> 
+         <ul class="mdui-menu" id="ps6"> 
+          <li class="mdui-menu-item"> <a href="javascript:;" onclick="showWarnDialog('https://www.baidu.com','123456');" class="mdui-ripple"> <i class="mdui-menu-item-icon mdui-icon material-icons">file_download</i>Win版本下载</a> </li> 
+          <li class="mdui-menu-item"> <a href="javascript:;" onclick="showWarnDialog('https://www.baidu.com','123456');" class="mdui-ripple"> <i class="mdui-menu-item-icon mdui-icon material-icons">file_download</i>Mac版本下载</a> </li> 
+         </ul> </li> 
+        <li class="mdui-list-item"> 
          <div class="mdui-list-item-content">
-          Premiere Pro CC2019
-         </div> <button class="mdui-btn mdui-color-theme-accent mdui-ripple">下载</button> </li> 
-        <li class="mdui-list-item mdui-ripple"> 
+           Premiere Pro CC2019 
+         </div> <button class="mdui-btn mdui-color-theme-accent mdui-ripple" mdui-menu="{target: '#ps18'}">下载</button> 
+         <ul class="mdui-menu" id="ps6"> 
+          <li class="mdui-menu-item"> <a href="javascript:;" onclick="showWarnDialog('https://www.baidu.com','123456');" class="mdui-ripple"> <i class="mdui-menu-item-icon mdui-icon material-icons">file_download</i>Win版本下载</a> </li> 
+          <li class="mdui-menu-item"> <a href="javascript:;" onclick="showWarnDialog('https://www.baidu.com','123456');" class="mdui-ripple"> <i class="mdui-menu-item-icon mdui-icon material-icons">file_download</i>Mac版本下载</a> </li> 
+         </ul> </li> 
+        <li class="mdui-list-item"> 
          <div class="mdui-list-item-content">
-          Premiere Pro CC2018
-         </div> <button class="mdui-btn mdui-color-theme-accent mdui-ripple">下载</button> </li> 
-        <li class="mdui-list-item mdui-ripple"> 
+           Premiere Pro CC2018 
+         </div> <button class="mdui-btn mdui-color-theme-accent mdui-ripple" mdui-menu="{target: '#ps18'}">下载</button> 
+         <ul class="mdui-menu" id="ps6"> 
+          <li class="mdui-menu-item"> <a href="javascript:;" onclick="showWarnDialog('https://www.baidu.com','123456');" class="mdui-ripple"> <i class="mdui-menu-item-icon mdui-icon material-icons">file_download</i>Win版本下载</a> </li> 
+          <li class="mdui-menu-item"> <a href="javascript:;" onclick="showWarnDialog('https://www.baidu.com','123456');" class="mdui-ripple"> <i class="mdui-menu-item-icon mdui-icon material-icons">file_download</i>Mac版本下载</a> </li> 
+         </ul> </li> 
+        <li class="mdui-list-item"> 
          <div class="mdui-list-item-content">
-          Premiere Pro CC2017
-         </div> <button class="mdui-btn mdui-color-theme-accent mdui-ripple">下载</button> </li> 
-        <li class="mdui-list-item mdui-ripple"> 
+           Premiere Pro CC2017 
+         </div> <button class="mdui-btn mdui-color-theme-accent mdui-ripple" mdui-menu="{target: '#ps18'}">下载</button> 
+         <ul class="mdui-menu" id="ps6"> 
+          <li class="mdui-menu-item"> <a href="javascript:;" onclick="showWarnDialog('https://www.baidu.com','123456');" class="mdui-ripple"> <i class="mdui-menu-item-icon mdui-icon material-icons">file_download</i>Win版本下载</a> </li> 
+          <li class="mdui-menu-item"> <a href="javascript:;" onclick="showWarnDialog('https://www.baidu.com','123456');" class="mdui-ripple"> <i class="mdui-menu-item-icon mdui-icon material-icons">file_download</i>Mac版本下载</a> </li> 
+         </ul> </li> 
+        <li class="mdui-list-item"> 
          <div class="mdui-list-item-content">
-          Premiere Pro CS6
-         </div> <button class="mdui-btn mdui-color-theme-accent mdui-ripple">下载</button> </li> 
+           Premiere Pro CS6 
+         </div><button class="mdui-btn mdui-color-theme-accent mdui-ripple" mdui-menu="{target: '#ps18'}">下载</button> 
+         <ul class="mdui-menu" id="ps6"> 
+          <li class="mdui-menu-item"> <a href="javascript:;" onclick="showWarnDialog('https://www.baidu.com','123456');" class="mdui-ripple"> <i class="mdui-menu-item-icon mdui-icon material-icons">file_download</i>Win版本下载</a> </li> 
+          <li class="mdui-menu-item"> <a href="javascript:;" onclick="showWarnDialog('https://www.baidu.com','123456');" class="mdui-ripple"> <i class="mdui-menu-item-icon mdui-icon material-icons">file_download</i>Mac版本下载</a> </li> 
+         </ul> </li> 
        </ul> 
        <div class="mdui-panel-item-actions"> 
         <button class="mdui-btn mdui-ripple" mdui-panel-item-close="">收起</button> 
@@ -257,49 +344,69 @@
       <div class="mdui-panel-item-header"> 
        <img src="https://www.adobe.com/content/dam/cc/icons/dw_cc_app_RGB.svg" width="25" height="30" />&nbsp; 
        <div id="mdui-panel-item-title-text-dw" class="mdui-panel-item-title">
-        Adobe Dreamweaver
+         Adobe Dreamweaver 
        </div> 
        <div id="mdui-panel-item-title-tooltip-dw"> 
-        <div class="mdui-chip">
-         <a mdui-tooltip="{content: '支持Win与Mac双平台。'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">computer</i>Win/Mac</span></a>
+        <div class="mdui-chip"> 
+         <a mdui-tooltip="{content: '支持Win与Mac双平台。'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">computer</i>Win/Mac</span></a> 
         </div>&nbsp; 
-        <div class="mdui-chip">
-         <a mdui-tooltip="{content: '已支持简体中文。'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">language</i>简体中文</span></a>
+        <div class="mdui-chip"> 
+         <a mdui-tooltip="{content: '已支持简体中文。'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">language</i>简体中文</span></a> 
         </div>&nbsp; 
-        <div class="mdui-chip">
-         <a mdui-tooltip="{content: '最新版本号：v20.1.0.15211'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">update</i>20.1.0.15211</span></a>
+        <div class="mdui-chip"> 
+         <a mdui-tooltip="{content: '最新版本号：v20.1.0.15211'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">update</i>20.1.0.15211</span></a> 
         </div>&nbsp; 
-        <div class="mdui-chip">
-         <a mdui-tooltip="{content: '已集成破解，一键安装即可。'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">check_circle</i>集成破解</span></a>
+        <div class="mdui-chip"> 
+         <a mdui-tooltip="{content: '已集成破解，一键安装即可。'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">check_circle</i>集成破解</span></a> 
         </div>&nbsp; 
-        <div class="mdui-chip">
-         <a mdui-tooltip="{content: '最近更新时间：2020-02-12'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">access_time</i>2020-02-12</span></a>
+        <div class="mdui-chip"> 
+         <a mdui-tooltip="{content: '最近更新时间：2020-02-12'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">access_time</i>2020-02-12</span></a> 
         </div>&nbsp; 
-       </div>
+       </div> 
        <i class="mdui-panel-item-arrow mdui-icon material-icons">keyboard_arrow_down</i> 
       </div> 
       <div class="mdui-panel-item-body"> 
        <ul class="mdui-list"> 
-        <li class="mdui-list-item mdui-ripple"> 
+        <li class="mdui-list-item"> 
          <div class="mdui-list-item-content">
-          Adobe Dreamweaver CC2020 v20.1.0.15211
-         </div> <button class="mdui-btn mdui-color-theme-accent mdui-ripple">下载</button> </li> 
-        <li class="mdui-list-item mdui-ripple"> 
+           Adobe Dreamweaver CC2020 v20.1.0.15211 
+         </div> <button class="mdui-btn mdui-color-theme-accent mdui-ripple" mdui-menu="{target: '#ps18'}">下载</button> 
+         <ul class="mdui-menu" id="ps6"> 
+          <li class="mdui-menu-item"> <a href="javascript:;" onclick="showWarnDialog('https://www.baidu.com','123456');" class="mdui-ripple"> <i class="mdui-menu-item-icon mdui-icon material-icons">file_download</i>Win版本下载</a> </li> 
+          <li class="mdui-menu-item"> <a href="javascript:;" onclick="showWarnDialog('https://www.baidu.com','123456');" class="mdui-ripple"> <i class="mdui-menu-item-icon mdui-icon material-icons">file_download</i>Mac版本下载</a> </li> 
+         </ul> </li> 
+        <li class="mdui-list-item"> 
          <div class="mdui-list-item-content">
-          Adobe Dreamweaver CC2019
-         </div> <button class="mdui-btn mdui-color-theme-accent mdui-ripple">下载</button> </li> 
-        <li class="mdui-list-item mdui-ripple"> 
+           Adobe Dreamweaver CC2019 
+         </div> <button class="mdui-btn mdui-color-theme-accent mdui-ripple" mdui-menu="{target: '#ps18'}">下载</button> 
+         <ul class="mdui-menu" id="ps6"> 
+          <li class="mdui-menu-item"> <a href="javascript:;" onclick="showWarnDialog('https://www.baidu.com','123456');" class="mdui-ripple"> <i class="mdui-menu-item-icon mdui-icon material-icons">file_download</i>Win版本下载</a> </li> 
+          <li class="mdui-menu-item"> <a href="javascript:;" onclick="showWarnDialog('https://www.baidu.com','123456');" class="mdui-ripple"> <i class="mdui-menu-item-icon mdui-icon material-icons">file_download</i>Mac版本下载</a> </li> 
+         </ul> </li> 
+        <li class="mdui-list-item"> 
          <div class="mdui-list-item-content">
-          Adobe Dreamweaver CC2018
-         </div> <button class="mdui-btn mdui-color-theme-accent mdui-ripple">下载</button> </li> 
-        <li class="mdui-list-item mdui-ripple"> 
+           Adobe Dreamweaver CC2018 
+         </div> <button class="mdui-btn mdui-color-theme-accent mdui-ripple" mdui-menu="{target: '#ps18'}">下载</button> 
+         <ul class="mdui-menu" id="ps6"> 
+          <li class="mdui-menu-item"> <a href="javascript:;" onclick="showWarnDialog('https://www.baidu.com','123456');" class="mdui-ripple"> <i class="mdui-menu-item-icon mdui-icon material-icons">file_download</i>Win版本下载</a> </li> 
+          <li class="mdui-menu-item"> <a href="javascript:;" onclick="showWarnDialog('https://www.baidu.com','123456');" class="mdui-ripple"> <i class="mdui-menu-item-icon mdui-icon material-icons">file_download</i>Mac版本下载</a> </li> 
+         </ul> </li> 
+        <li class="mdui-list-item"> 
          <div class="mdui-list-item-content">
-          Adobe Dreamweaver CC2017
-         </div> <button class="mdui-btn mdui-color-theme-accent mdui-ripple">下载</button> </li> 
-        <li class="mdui-list-item mdui-ripple"> 
+           Adobe Dreamweaver CC2017 
+         </div> <button class="mdui-btn mdui-color-theme-accent mdui-ripple" mdui-menu="{target: '#ps18'}">下载</button> 
+         <ul class="mdui-menu" id="ps6"> 
+          <li class="mdui-menu-item"> <a href="javascript:;" onclick="showWarnDialog('https://www.baidu.com','123456');" class="mdui-ripple"> <i class="mdui-menu-item-icon mdui-icon material-icons">file_download</i>Win版本下载</a> </li> 
+          <li class="mdui-menu-item"> <a href="javascript:;" onclick="showWarnDialog('https://www.baidu.com','123456');" class="mdui-ripple"> <i class="mdui-menu-item-icon mdui-icon material-icons">file_download</i>Mac版本下载</a> </li> 
+         </ul> </li> 
+        <li class="mdui-list-item"> 
          <div class="mdui-list-item-content">
-          Adobe Dreamweaver CS6
-         </div> <button class="mdui-btn mdui-color-theme-accent mdui-ripple">下载</button> </li> 
+           Adobe Dreamweaver CS6 
+         </div><button class="mdui-btn mdui-color-theme-accent mdui-ripple" mdui-menu="{target: '#ps18'}">下载</button> 
+         <ul class="mdui-menu" id="ps6"> 
+          <li class="mdui-menu-item"> <a href="javascript:;" onclick="showWarnDialog('https://www.baidu.com','123456');" class="mdui-ripple"> <i class="mdui-menu-item-icon mdui-icon material-icons">file_download</i>Win版本下载</a> </li> 
+          <li class="mdui-menu-item"> <a href="javascript:;" onclick="showWarnDialog('https://www.baidu.com','123456');" class="mdui-ripple"> <i class="mdui-menu-item-icon mdui-icon material-icons">file_download</i>Mac版本下载</a> </li> 
+         </ul> </li> 
        </ul> 
        <div class="mdui-panel-item-actions"> 
         <button class="mdui-btn mdui-ripple" mdui-panel-item-close="">收起</button> 
@@ -314,49 +421,69 @@
       <div class="mdui-panel-item-header"> 
        <img src="https://www.adobe.com/content/dam/cc/icons/audition.svg" width="25" height="30" />&nbsp; 
        <div id="mdui-panel-item-title-text-au" class="mdui-panel-item-title">
-        Adobe Audition
+         Adobe Audition 
        </div> 
        <div id="mdui-panel-item-title-tooltip-au"> 
-        <div class="mdui-chip">
-         <a mdui-tooltip="{content: '支持Win与Mac双平台。'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">computer</i>Win/Mac</span></a>
+        <div class="mdui-chip"> 
+         <a mdui-tooltip="{content: '支持Win与Mac双平台。'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">computer</i>Win/Mac</span></a> 
         </div>&nbsp; 
-        <div class="mdui-chip">
-         <a mdui-tooltip="{content: '已支持简体中文。'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">language</i>简体中文</span></a>
+        <div class="mdui-chip"> 
+         <a mdui-tooltip="{content: '已支持简体中文。'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">language</i>简体中文</span></a> 
         </div>&nbsp; 
-        <div class="mdui-chip">
-         <a mdui-tooltip="{content: '最新版本号：v13.0.5.36'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">update</i>13.0.5.36</span></a>
+        <div class="mdui-chip"> 
+         <a mdui-tooltip="{content: '最新版本号：v13.0.5.36'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">update</i>13.0.5.36</span></a> 
         </div>&nbsp; 
-        <div class="mdui-chip">
-         <a mdui-tooltip="{content: '已集成破解，一键安装即可。'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">check_circle</i>集成破解</span></a>
+        <div class="mdui-chip"> 
+         <a mdui-tooltip="{content: '已集成破解，一键安装即可。'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">check_circle</i>集成破解</span></a> 
         </div>&nbsp; 
-        <div class="mdui-chip">
-         <a mdui-tooltip="{content: '最近更新时间：2020-04-14'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">access_time</i>2020-04-14</span></a>
+        <div class="mdui-chip"> 
+         <a mdui-tooltip="{content: '最近更新时间：2020-04-14'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">access_time</i>2020-04-14</span></a> 
         </div>&nbsp; 
-       </div>
+       </div> 
        <i class="mdui-panel-item-arrow mdui-icon material-icons">keyboard_arrow_down</i> 
       </div> 
       <div class="mdui-panel-item-body"> 
        <ul class="mdui-list"> 
-        <li class="mdui-list-item mdui-ripple"> 
+        <li class="mdui-list-item"> 
          <div class="mdui-list-item-content">
-          Adobe Audition CC2020 v13.0.5.36
-         </div> <button class="mdui-btn mdui-color-theme-accent mdui-ripple">下载</button> </li> 
-        <li class="mdui-list-item mdui-ripple"> 
+           Adobe Audition CC2020 v13.0.5.36 
+         </div> <button class="mdui-btn mdui-color-theme-accent mdui-ripple" mdui-menu="{target: '#ps18'}">下载</button> 
+         <ul class="mdui-menu" id="ps6"> 
+          <li class="mdui-menu-item"> <a href="javascript:;" onclick="showWarnDialog('https://www.baidu.com','123456');" class="mdui-ripple"> <i class="mdui-menu-item-icon mdui-icon material-icons">file_download</i>Win版本下载</a> </li> 
+          <li class="mdui-menu-item"> <a href="javascript:;" onclick="showWarnDialog('https://www.baidu.com','123456');" class="mdui-ripple"> <i class="mdui-menu-item-icon mdui-icon material-icons">file_download</i>Mac版本下载</a> </li> 
+         </ul> </li> 
+        <li class="mdui-list-item"> 
          <div class="mdui-list-item-content">
-          Adobe Audition CC2019
-         </div> <button class="mdui-btn mdui-color-theme-accent mdui-ripple">下载</button> </li> 
-        <li class="mdui-list-item mdui-ripple"> 
+           Adobe Audition CC2019 
+         </div> <button class="mdui-btn mdui-color-theme-accent mdui-ripple" mdui-menu="{target: '#ps18'}">下载</button> 
+         <ul class="mdui-menu" id="ps6"> 
+          <li class="mdui-menu-item"> <a href="javascript:;" onclick="showWarnDialog('https://www.baidu.com','123456');" class="mdui-ripple"> <i class="mdui-menu-item-icon mdui-icon material-icons">file_download</i>Win版本下载</a> </li> 
+          <li class="mdui-menu-item"> <a href="javascript:;" onclick="showWarnDialog('https://www.baidu.com','123456');" class="mdui-ripple"> <i class="mdui-menu-item-icon mdui-icon material-icons">file_download</i>Mac版本下载</a> </li> 
+         </ul> </li> 
+        <li class="mdui-list-item"> 
          <div class="mdui-list-item-content">
-          Adobe Audition CC2018
-         </div> <button class="mdui-btn mdui-color-theme-accent mdui-ripple">下载</button> </li> 
-        <li class="mdui-list-item mdui-ripple"> 
+           Adobe Audition CC2018 
+         </div> <button class="mdui-btn mdui-color-theme-accent mdui-ripple" mdui-menu="{target: '#ps18'}">下载</button> 
+         <ul class="mdui-menu" id="ps6"> 
+          <li class="mdui-menu-item"> <a href="javascript:;" onclick="showWarnDialog('https://www.baidu.com','123456');" class="mdui-ripple"> <i class="mdui-menu-item-icon mdui-icon material-icons">file_download</i>Win版本下载</a> </li> 
+          <li class="mdui-menu-item"> <a href="javascript:;" onclick="showWarnDialog('https://www.baidu.com','123456');" class="mdui-ripple"> <i class="mdui-menu-item-icon mdui-icon material-icons">file_download</i>Mac版本下载</a> </li> 
+         </ul> </li> 
+        <li class="mdui-list-item"> 
          <div class="mdui-list-item-content">
-          Adobe Audition CC2017
-         </div> <button class="mdui-btn mdui-color-theme-accent mdui-ripple">下载</button> </li> 
-        <li class="mdui-list-item mdui-ripple"> 
+           Adobe Audition CC2017 
+         </div> <button class="mdui-btn mdui-color-theme-accent mdui-ripple" mdui-menu="{target: '#ps18'}">下载</button> 
+         <ul class="mdui-menu" id="ps6"> 
+          <li class="mdui-menu-item"> <a href="javascript:;" onclick="showWarnDialog('https://www.baidu.com','123456');" class="mdui-ripple"> <i class="mdui-menu-item-icon mdui-icon material-icons">file_download</i>Win版本下载</a> </li> 
+          <li class="mdui-menu-item"> <a href="javascript:;" onclick="showWarnDialog('https://www.baidu.com','123456');" class="mdui-ripple"> <i class="mdui-menu-item-icon mdui-icon material-icons">file_download</i>Mac版本下载</a> </li> 
+         </ul> </li> 
+        <li class="mdui-list-item"> 
          <div class="mdui-list-item-content">
-          Adobe Audition CS6
-         </div> <button class="mdui-btn mdui-color-theme-accent mdui-ripple">下载</button> </li> 
+           Adobe Audition CS6 
+         </div> <button class="mdui-btn mdui-color-theme-accent mdui-ripple" mdui-menu="{target: '#ps18'}">下载</button> 
+         <ul class="mdui-menu" id="ps6"> 
+          <li class="mdui-menu-item"> <a href="javascript:;" onclick="showWarnDialog('https://www.baidu.com','123456');" class="mdui-ripple"> <i class="mdui-menu-item-icon mdui-icon material-icons">file_download</i>Win版本下载</a> </li> 
+          <li class="mdui-menu-item"> <a href="javascript:;" onclick="showWarnDialog('https://www.baidu.com','123456');" class="mdui-ripple"> <i class="mdui-menu-item-icon mdui-icon material-icons">file_download</i>Mac版本下载</a> </li> 
+         </ul> </li> 
        </ul> 
        <div class="mdui-panel-item-actions"> 
         <button class="mdui-btn mdui-ripple" mdui-panel-item-close="">收起</button> 
@@ -371,41 +498,53 @@
       <div class="mdui-panel-item-header"> 
        <img src="https://www.adobe.com/content/dam/cc/icons/lightroom-classic.svg" width="25" height="30" />&nbsp; 
        <div id="mdui-panel-item-title-text-lr" class="mdui-panel-item-title">
-        Adobe Lightroom Classic
+         Adobe Lightroom Classic 
        </div> 
        <div id="mdui-panel-item-title-tooltip-lr"> 
-        <div class="mdui-chip">
-         <a mdui-tooltip="{content: '支持Win与Mac双平台。'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">computer</i>Win/Mac</span></a>
+        <div class="mdui-chip"> 
+         <a mdui-tooltip="{content: '支持Win与Mac双平台。'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">computer</i>Win/Mac</span></a> 
         </div>&nbsp; 
-        <div class="mdui-chip">
-         <a mdui-tooltip="{content: '已支持简体中文。'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">language</i>简体中文</span></a>
+        <div class="mdui-chip"> 
+         <a mdui-tooltip="{content: '已支持简体中文。'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">language</i>简体中文</span></a> 
         </div>&nbsp; 
-        <div class="mdui-chip">
-         <a mdui-tooltip="{content: '最新版本号：v9.2.1.202004070813'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">update</i>9.2.1.202004070813</span></a>
+        <div class="mdui-chip"> 
+         <a mdui-tooltip="{content: '最新版本号：v9.2.1.202004070813'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">update</i>9.2.1.202004070813</span></a> 
         </div>&nbsp; 
-        <div class="mdui-chip">
-         <a mdui-tooltip="{content: '已集成破解，一键安装即可。'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">check_circle</i>集成破解</span></a>
+        <div class="mdui-chip"> 
+         <a mdui-tooltip="{content: '已集成破解，一键安装即可。'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">check_circle</i>集成破解</span></a> 
         </div>&nbsp; 
-        <div class="mdui-chip">
-         <a mdui-tooltip="{content: '最近更新时间：2020-04-14'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">access_time</i>2020-04-14</span></a>
+        <div class="mdui-chip"> 
+         <a mdui-tooltip="{content: '最近更新时间：2020-04-14'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">access_time</i>2020-04-14</span></a> 
         </div>&nbsp; 
-       </div>
+       </div> 
        <i class="mdui-panel-item-arrow mdui-icon material-icons">keyboard_arrow_down</i> 
       </div> 
       <div class="mdui-panel-item-body"> 
        <ul class="mdui-list"> 
-        <li class="mdui-list-item mdui-ripple"> 
+        <li class="mdui-list-item"> 
          <div class="mdui-list-item-content">
-          Lightroom Classic CC2020 v9.2.1.202004070813
-         </div> <button class="mdui-btn mdui-color-theme-accent mdui-ripple">下载</button> </li> 
-        <li class="mdui-list-item mdui-ripple"> 
+           Lightroom Classic CC2020 v9.2.1.202004070813 
+         </div> <button class="mdui-btn mdui-color-theme-accent mdui-ripple" mdui-menu="{target: '#ps18'}">下载</button> 
+         <ul class="mdui-menu" id="ps6"> 
+          <li class="mdui-menu-item"> <a href="javascript:;" onclick="showWarnDialog('https://www.baidu.com','123456');" class="mdui-ripple"> <i class="mdui-menu-item-icon mdui-icon material-icons">file_download</i>Win版本下载</a> </li> 
+          <li class="mdui-menu-item"> <a href="javascript:;" onclick="showWarnDialog('https://www.baidu.com','123456');" class="mdui-ripple"> <i class="mdui-menu-item-icon mdui-icon material-icons">file_download</i>Mac版本下载</a> </li> 
+         </ul> </li> 
+        <li class="mdui-list-item"> 
          <div class="mdui-list-item-content">
-          Lightroom Classic CC2019
-         </div> <button class="mdui-btn mdui-color-theme-accent mdui-ripple">下载</button> </li> 
-        <li class="mdui-list-item mdui-ripple"> 
+           Lightroom Classic CC2019 
+         </div> <button class="mdui-btn mdui-color-theme-accent mdui-ripple" mdui-menu="{target: '#ps18'}">下载</button> 
+         <ul class="mdui-menu" id="ps6"> 
+          <li class="mdui-menu-item"> <a href="javascript:;" onclick="showWarnDialog('https://www.baidu.com','123456');" class="mdui-ripple"> <i class="mdui-menu-item-icon mdui-icon material-icons">file_download</i>Win版本下载</a> </li> 
+          <li class="mdui-menu-item"> <a href="javascript:;" onclick="showWarnDialog('https://www.baidu.com','123456');" class="mdui-ripple"> <i class="mdui-menu-item-icon mdui-icon material-icons">file_download</i>Mac版本下载</a> </li> 
+         </ul> </li> 
+        <li class="mdui-list-item"> 
          <div class="mdui-list-item-content">
-          Lightroom Classic CC2018
-         </div> <button class="mdui-btn mdui-color-theme-accent mdui-ripple">下载</button> </li> 
+           Lightroom Classic CC2018 
+         </div> <button class="mdui-btn mdui-color-theme-accent mdui-ripple" mdui-menu="{target: '#ps18'}">下载</button> 
+         <ul class="mdui-menu" id="ps6"> 
+          <li class="mdui-menu-item"> <a href="javascript:;" onclick="showWarnDialog('https://www.baidu.com','123456');" class="mdui-ripple"> <i class="mdui-menu-item-icon mdui-icon material-icons">file_download</i>Win版本下载</a> </li> 
+          <li class="mdui-menu-item"> <a href="javascript:;" onclick="showWarnDialog('https://www.baidu.com','123456');" class="mdui-ripple"> <i class="mdui-menu-item-icon mdui-icon material-icons">file_download</i>Mac版本下载</a> </li> 
+         </ul> </li> 
        </ul> 
        <div class="mdui-panel-item-actions"> 
         <button class="mdui-btn mdui-ripple" mdui-panel-item-close="">收起</button> 
@@ -420,49 +559,69 @@
       <div class="mdui-panel-item-header"> 
        <img src="https://www.adobe.com/content/dam/cc/us/en/products/media-encoder/media-encoder.svg" width="25" height="30" />&nbsp; 
        <div id="mdui-panel-item-title-text-me" class="mdui-panel-item-title">
-        Adobe Media Encoder
+         Adobe Media Encoder 
        </div> 
        <div id="mdui-panel-item-title-tooltip-me"> 
-        <div class="mdui-chip">
-         <a mdui-tooltip="{content: '支持Win与Mac双平台。'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">computer</i>Win/Mac</span></a>
+        <div class="mdui-chip"> 
+         <a mdui-tooltip="{content: '支持Win与Mac双平台。'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">computer</i>Win/Mac</span></a> 
         </div>&nbsp; 
-        <div class="mdui-chip">
-         <a mdui-tooltip="{content: '已支持简体中文。'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">language</i>简体中文</span></a>
+        <div class="mdui-chip"> 
+         <a mdui-tooltip="{content: '已支持简体中文。'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">language</i>简体中文</span></a> 
         </div>&nbsp; 
-        <div class="mdui-chip">
-         <a mdui-tooltip="{content: '最新版本号：v14.1.0.155'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">update</i>14.1.0.155</span></a>
+        <div class="mdui-chip"> 
+         <a mdui-tooltip="{content: '最新版本号：v14.1.0.155'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">update</i>14.1.0.155</span></a> 
         </div>&nbsp; 
-        <div class="mdui-chip">
-         <a mdui-tooltip="{content: '已集成破解，一键安装即可。'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">check_circle</i>集成破解</span></a>
+        <div class="mdui-chip"> 
+         <a mdui-tooltip="{content: '已集成破解，一键安装即可。'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">check_circle</i>集成破解</span></a> 
         </div>&nbsp; 
-        <div class="mdui-chip">
-         <a mdui-tooltip="{content: '最近更新时间：2020-04-14'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">access_time</i>2020-04-14</span></a>
+        <div class="mdui-chip"> 
+         <a mdui-tooltip="{content: '最近更新时间：2020-04-14'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">access_time</i>2020-04-14</span></a> 
         </div>&nbsp; 
-       </div>
+       </div> 
        <i class="mdui-panel-item-arrow mdui-icon material-icons">keyboard_arrow_down</i> 
       </div> 
       <div class="mdui-panel-item-body"> 
        <ul class="mdui-list"> 
-        <li class="mdui-list-item mdui-ripple"> 
+        <li class="mdui-list-item"> 
          <div class="mdui-list-item-content">
-          Media Encoder CC2020 v14.1.0.155
-         </div> <button class="mdui-btn mdui-color-theme-accent mdui-ripple">下载</button> </li> 
-        <li class="mdui-list-item mdui-ripple"> 
+           Media Encoder CC2020 v14.1.0.155 
+         </div> <button class="mdui-btn mdui-color-theme-accent mdui-ripple" mdui-menu="{target: '#me20'}">下载</button> 
+         <ul class="mdui-menu" id="me20"> 
+          <li class="mdui-menu-item"> <a href="javascript:;" onclick="showWarnDialog('https://www.baidu.com','123456');" class="mdui-ripple"> <i class="mdui-menu-item-icon mdui-icon material-icons">file_download</i>Win版本下载</a> </li> 
+          <li class="mdui-menu-item"> <a href="javascript:;" onclick="showWarnDialog('https://www.baidu.com','123456');" class="mdui-ripple"> <i class="mdui-menu-item-icon mdui-icon material-icons">file_download</i>Mac版本下载</a> </li> 
+         </ul> </li> 
+        <li class="mdui-list-item"> 
          <div class="mdui-list-item-content">
-          Media Encoder CC2019
-         </div> <button class="mdui-btn mdui-color-theme-accent mdui-ripple">下载</button> </li> 
-        <li class="mdui-list-item mdui-ripple"> 
+           Media Encoder CC2019 
+         </div> <button class="mdui-btn mdui-color-theme-accent mdui-ripple" mdui-menu="{target: '#me19'}">下载</button> 
+         <ul class="mdui-menu" id="me19"> 
+          <li class="mdui-menu-item"> <a href="javascript:;" onclick="showWarnDialog('https://www.baidu.com','123456');" class="mdui-ripple"> <i class="mdui-menu-item-icon mdui-icon material-icons">file_download</i>Win版本下载</a> </li> 
+          <li class="mdui-menu-item"> <a href="javascript:;" onclick="showWarnDialog('https://www.baidu.com','123456');" class="mdui-ripple"> <i class="mdui-menu-item-icon mdui-icon material-icons">file_download</i>Mac版本下载</a> </li> 
+         </ul> </li> 
+        <li class="mdui-list-item"> 
          <div class="mdui-list-item-content">
-          Media Encoder CC2018
-         </div> <button class="mdui-btn mdui-color-theme-accent mdui-ripple">下载</button> </li> 
-        <li class="mdui-list-item mdui-ripple"> 
+           Media Encoder CC2018 
+         </div> <button class="mdui-btn mdui-color-theme-accent mdui-ripple" mdui-menu="{target: '#me18'}">下载</button> 
+         <ul class="mdui-menu" id="me18"> 
+          <li class="mdui-menu-item"> <a href="javascript:;" onclick="showWarnDialog('https://www.baidu.com','123456');" class="mdui-ripple"> <i class="mdui-menu-item-icon mdui-icon material-icons">file_download</i>Win版本下载</a> </li> 
+          <li class="mdui-menu-item"> <a href="javascript:;" onclick="showWarnDialog('https://www.baidu.com','123456');" class="mdui-ripple"> <i class="mdui-menu-item-icon mdui-icon material-icons">file_download</i>Mac版本下载</a> </li> 
+         </ul> </li> 
+        <li class="mdui-list-item"> 
          <div class="mdui-list-item-content">
-          Media Encoder CC2017
-         </div> <button class="mdui-btn mdui-color-theme-accent mdui-ripple">下载</button> </li> 
-        <li class="mdui-list-item mdui-ripple"> 
+           Media Encoder CC2017 
+         </div> <button class="mdui-btn mdui-color-theme-accent mdui-ripple" mdui-menu="{target: '#me17'}">下载</button> 
+         <ul class="mdui-menu" id="me17"> 
+          <li class="mdui-menu-item"> <a href="javascript:;" onclick="showWarnDialog('https://www.baidu.com','123456');" class="mdui-ripple"> <i class="mdui-menu-item-icon mdui-icon material-icons">file_download</i>Win版本下载</a> </li> 
+          <li class="mdui-menu-item"> <a href="javascript:;" onclick="showWarnDialog('https://www.baidu.com','123456');" class="mdui-ripple"> <i class="mdui-menu-item-icon mdui-icon material-icons">file_download</i>Mac版本下载</a> </li> 
+         </ul> </li> 
+        <li class="mdui-list-item"> 
          <div class="mdui-list-item-content">
-          Media Encoder CS6
-         </div> <button class="mdui-btn mdui-color-theme-accent mdui-ripple">下载</button> </li> 
+           Media Encoder CS6 
+         </div> <button class="mdui-btn mdui-color-theme-accent mdui-ripple" mdui-menu="{target: '#me6'}">下载</button> 
+         <ul class="mdui-menu" id="me6"> 
+          <li class="mdui-menu-item"> <a href="javascript:;" onclick="showWarnDialog('https://www.baidu.com','123456');" class="mdui-ripple"> <i class="mdui-menu-item-icon mdui-icon material-icons">file_download</i>Win版本下载</a> </li> 
+          <li class="mdui-menu-item"> <a href="javascript:;" onclick="showWarnDialog('https://www.baidu.com','123456');" class="mdui-ripple"> <i class="mdui-menu-item-icon mdui-icon material-icons">file_download</i>Mac版本下载</a> </li> 
+         </ul> </li> 
        </ul> 
        <div class="mdui-panel-item-actions"> 
         <button class="mdui-btn mdui-ripple" mdui-panel-item-close="">收起</button> 
@@ -471,8 +630,8 @@
      </div> 
     </div> 
    </div> 
-  </div>
-<!--CorelVideoStudio Pro-->  
+  </div> 
+  <!--CorelVideoStudio Pro--> 
   <div id="tab-content-corel" class="mdui-p-a-2"> 
    <div class="mdui-container"> 
     <div class="mdui-panel mdui-panel-popout" mdui-panel=""> 
@@ -480,53 +639,71 @@
       <div class="mdui-panel-item-header"> 
        <img src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=70304127,2974181107&amp;fm=11&amp;gp=0.jpg" width="24" height="24" />&nbsp; 
        <div id="mdui-panel-item-title-text-hshy" class="mdui-panel-item-title">
-        Corel VideoStudio Pro会声会影
+         Corel VideoStudio Pro会声会影 
        </div> 
        <div id="mdui-panel-item-title-tooltip-hshy"> 
-        <div class="mdui-chip">
-         <a mdui-tooltip="{content: '仅支持Windows平台。'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">computer</i>Windows</span></a>
+        <div class="mdui-chip"> 
+         <a mdui-tooltip="{content: '仅支持Windows平台。'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">computer</i>Windows</span></a> 
         </div>&nbsp; 
-        <div class="mdui-chip">
-         <a mdui-tooltip="{content: '已支持简体中文。'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">language</i>简体中文</span></a>
+        <div class="mdui-chip"> 
+         <a mdui-tooltip="{content: '已支持简体中文。'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">language</i>简体中文</span></a> 
         </div>&nbsp; 
-        <div class="mdui-chip">
-         <a mdui-tooltip="{content: '最新版本号：v23.1.0.482'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">update</i>23.1.0.482</span></a>
+        <div class="mdui-chip"> 
+         <a mdui-tooltip="{content: '最新版本号：v23.1.0.482'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">update</i>23.1.0.482</span></a> 
         </div>&nbsp; 
-        <div class="mdui-chip">
-         <a mdui-tooltip="{content: '需按照说明进行手动破解。'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">info</i>手动破解</span></a>
+        <div class="mdui-chip"> 
+         <a mdui-tooltip="{content: '需按照说明进行手动破解。'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">info</i>手动破解</span></a> 
         </div>&nbsp; 
-        <div class="mdui-chip">
-         <a mdui-tooltip="{content: '最近更新时间：2020-03-31'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">access_time</i>2020-03-31</span></a>
+        <div class="mdui-chip"> 
+         <a mdui-tooltip="{content: '最近更新时间：2020-03-31'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">access_time</i>2020-03-31</span></a> 
         </div>&nbsp; 
-       </div>
+       </div> 
        <i class="mdui-panel-item-arrow mdui-icon material-icons">keyboard_arrow_down</i> 
       </div> 
       <div class="mdui-panel-item-body"> 
        <ul class="mdui-list"> 
-        <li class="mdui-list-item mdui-ripple"> 
+        <li class="mdui-list-item"> 
          <div class="mdui-list-item-content">
-          Corel VideoStudio Pro 2020 v23.1.0.482
-         </div> <button class="mdui-btn mdui-color-theme-accent mdui-ripple">下载</button> </li> 
-        <li class="mdui-list-item mdui-ripple"> 
+           Corel VideoStudio Pro 2020 v23.1.0.482 
+         </div> <button class="mdui-btn mdui-color-theme-accent mdui-ripple" mdui-menu="{target: '#hshy20'}">下载</button> 
+         <ul class="mdui-menu" id="hshy20"> 
+          <li class="mdui-menu-item"> <a href="javascript:;" onclick="showWarnDialog('https://www.baidu.com','123456');" class="mdui-ripple"> <i class="mdui-menu-item-icon mdui-icon material-icons">file_download</i>Win版本下载</a> </li> 
+         </ul> </li> 
+        <li class="mdui-list-item"> 
          <div class="mdui-list-item-content">
-          Corel VideoStudio Pro 2019
-         </div> <button class="mdui-btn mdui-color-theme-accent mdui-ripple">下载</button> </li> 
-        <li class="mdui-list-item mdui-ripple"> 
+           Corel VideoStudio Pro 2019 
+         </div> <button class="mdui-btn mdui-color-theme-accent mdui-ripple" mdui-menu="{target: '#hshy19'}">下载</button> 
+         <ul class="mdui-menu" id="hshy19"> 
+          <li class="mdui-menu-item"> <a href="javascript:;" onclick="showWarnDialog('https://www.baidu.com','123456');" class="mdui-ripple"> <i class="mdui-menu-item-icon mdui-icon material-icons">file_download</i>Win版本下载</a> </li> 
+         </ul> </li> 
+        <li class="mdui-list-item"> 
          <div class="mdui-list-item-content">
-          Corel VideoStudio Pro 2018
-         </div> <button class="mdui-btn mdui-color-theme-accent mdui-ripple">下载</button> </li> 
-        <li class="mdui-list-item mdui-ripple"> 
+           Corel VideoStudio Pro 2018 
+         </div> <button class="mdui-btn mdui-color-theme-accent mdui-ripple" mdui-menu="{target: '#hshy18'}">下载</button> 
+         <ul class="mdui-menu" id="hshy18"> 
+          <li class="mdui-menu-item"> <a href="javascript:;" onclick="showWarnDialog('https://www.baidu.com','123456');" class="mdui-ripple"> <i class="mdui-menu-item-icon mdui-icon material-icons">file_download</i>Win版本下载</a> </li> 
+         </ul> </li> 
+        <li class="mdui-list-item"> 
          <div class="mdui-list-item-content">
-          Corel VideoStudio Pro X10
-         </div> <button class="mdui-btn mdui-color-theme-accent mdui-ripple">下载</button> </li> 
-        <li class="mdui-list-item mdui-ripple"> 
+           Corel VideoStudio Pro X10 
+         </div> <button class="mdui-btn mdui-color-theme-accent mdui-ripple" mdui-menu="{target: '#hshy10'}">下载</button> 
+         <ul class="mdui-menu" id="hshy10"> 
+          <li class="mdui-menu-item"> <a href="javascript:;" onclick="showWarnDialog('https://www.baidu.com','123456');" class="mdui-ripple"> <i class="mdui-menu-item-icon mdui-icon material-icons">file_download</i>Win版本下载</a> </li> 
+         </ul> </li> 
+        <li class="mdui-list-item"> 
          <div class="mdui-list-item-content">
-          Corel VideoStudio Pro X9
-         </div> <button class="mdui-btn mdui-color-theme-accent mdui-ripple">下载</button> </li> 
-        <li class="mdui-list-item mdui-ripple"> 
+           Corel VideoStudio Pro X9 
+         </div> <button class="mdui-btn mdui-color-theme-accent mdui-ripple" mdui-menu="{target: '#hshy9'}">下载</button> 
+         <ul class="mdui-menu" id="hshy9"> 
+          <li class="mdui-menu-item"> <a href="javascript:;" onclick="showWarnDialog('https://www.baidu.com','123456');" class="mdui-ripple"> <i class="mdui-menu-item-icon mdui-icon material-icons">file_download</i>Win版本下载</a> </li> 
+         </ul> </li> 
+        <li class="mdui-list-item"> 
          <div class="mdui-list-item-content">
-          Corel VideoStudio Pro X8
-         </div> <button class="mdui-btn mdui-color-theme-accent mdui-ripple">下载</button> </li> 
+           Corel VideoStudio Pro X8 
+         </div><button class="mdui-btn mdui-color-theme-accent mdui-ripple" mdui-menu="{target: '#hshy8'}">下载</button> 
+         <ul class="mdui-menu" id="hshy8"> 
+          <li class="mdui-menu-item"> <a href="javascript:;" onclick="showWarnDialog('https://www.baidu.com','123456');" class="mdui-ripple"> <i class="mdui-menu-item-icon mdui-icon material-icons">file_download</i>Win版本下载</a> </li> 
+         </ul> </li> 
        </ul> 
        <div class="mdui-panel-item-actions"> 
         <button class="mdui-btn mdui-ripple" mdui-panel-item-close="">收起</button> 
@@ -535,8 +712,8 @@
      </div> 
     </div> 
    </div> 
-  </div>
-<!--DaVinci Resolve Studio--> 
+  </div> 
+  <!--DaVinci Resolve Studio--> 
   <div id="tab-content-bmd" class="mdui-p-a-2"> 
    <div class="mdui-container"> 
     <div class="mdui-panel mdui-panel-popout" mdui-panel=""> 
@@ -544,57 +721,85 @@
       <div class="mdui-panel-item-header"> 
        <img src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=942019405,3671026692&amp;fm=26&amp;gp=0.jpg" width="30" height="30" />&nbsp; 
        <div id="mdui-panel-item-title-text-dfq" class="mdui-panel-item-title">
-        DaVinci Resolve Studio达芬奇
+         DaVinci Resolve Studio 
        </div> 
        <div id="mdui-panel-item-title-tooltip-dfq"> 
-        <div class="mdui-chip">
-         <a mdui-tooltip="{content: '支持Win与Mac双平台。'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">computer</i>Win/Mac</span></a>
+        <div class="mdui-chip"> 
+         <a mdui-tooltip="{content: '支持Win与Mac双平台。'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">computer</i>Win/Mac</span></a> 
         </div>&nbsp; 
-        <div class="mdui-chip">
-         <a mdui-tooltip="{content: '已支持简体中文。'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">language</i>简体中文</span></a>
+        <div class="mdui-chip"> 
+         <a mdui-tooltip="{content: '已支持简体中文。'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">language</i>简体中文</span></a> 
         </div>&nbsp; 
-        <div class="mdui-chip">
-         <a mdui-tooltip="{content: '最新版本号：v16.2.2.11'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">update</i>16.2.2.11</span></a>
+        <div class="mdui-chip"> 
+         <a mdui-tooltip="{content: '最新版本号：v16.2.2.11'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">update</i>16.2.2.11</span></a> 
         </div>&nbsp; 
-        <div class="mdui-chip">
-         <a mdui-tooltip="{content: '需按照说明进行手动破解。'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">info</i>手动破解</span></a>
+        <div class="mdui-chip"> 
+         <a mdui-tooltip="{content: '需按照说明进行手动破解。'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">info</i>手动破解</span></a> 
         </div>&nbsp; 
-        <div class="mdui-chip">
-         <a mdui-tooltip="{content: '最近更新时间：2020-05-20'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">access_time</i>2020-05-20</span></a>
+        <div class="mdui-chip"> 
+         <a mdui-tooltip="{content: '最近更新时间：2020-05-20'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">access_time</i>2020-05-20</span></a> 
         </div>&nbsp; 
-       </div>
+       </div> 
        <i class="mdui-panel-item-arrow mdui-icon material-icons">keyboard_arrow_down</i> 
       </div> 
       <div class="mdui-panel-item-body"> 
        <ul class="mdui-list"> 
-        <li class="mdui-list-item mdui-ripple"> 
+        <li class="mdui-list-item"> 
          <div class="mdui-list-item-content">
-          DaVinci Resolve Studio v16.2.2.11
-         </div> <button class="mdui-btn mdui-color-theme-accent mdui-ripple">下载</button> </li> 
-        <li class="mdui-list-item mdui-ripple"> 
+           DaVinci Resolve Studio v16.2.2.11 
+         </div> <button class="mdui-btn mdui-color-theme-accent mdui-ripple" mdui-menu="{target: '#dvr16'}">下载</button> 
+         <ul class="mdui-menu" id="dvr16"> 
+          <li class="mdui-menu-item"> <a href="javascript:;" onclick="showWarnDialog('https://www.baidu.com','123456');" class="mdui-ripple"> <i class="mdui-menu-item-icon mdui-icon material-icons">file_download</i>Win版本下载</a> </li> 
+          <li class="mdui-menu-item"> <a href="javascript:;" onclick="showWarnDialog('https://www.baidu.com','123456');" class="mdui-ripple"> <i class="mdui-menu-item-icon mdui-icon material-icons">file_download</i>Mac版本下载</a> </li> 
+         </ul> </li> 
+        <li class="mdui-list-item"> 
          <div class="mdui-list-item-content">
-          DaVinci Resolve Studio v15
-         </div> <button class="mdui-btn mdui-color-theme-accent mdui-ripple">下载</button> </li> 
-        <li class="mdui-list-item mdui-ripple"> 
+           DaVinci Resolve Studio v15 
+         </div> <button class="mdui-btn mdui-color-theme-accent mdui-ripple" mdui-menu="{target: '#dvr15'}">下载</button> 
+         <ul class="mdui-menu" id="dvr15"> 
+          <li class="mdui-menu-item"> <a href="javascript:;" onclick="showWarnDialog('https://www.baidu.com','123456');" class="mdui-ripple"> <i class="mdui-menu-item-icon mdui-icon material-icons">file_download</i>Win版本下载</a> </li> 
+          <li class="mdui-menu-item"> <a href="javascript:;" onclick="showWarnDialog('https://www.baidu.com','123456');" class="mdui-ripple"> <i class="mdui-menu-item-icon mdui-icon material-icons">file_download</i>Mac版本下载</a> </li> 
+         </ul> </li> 
+        <li class="mdui-list-item"> 
          <div class="mdui-list-item-content">
-          DaVinci Resolve Studio v14
-         </div> <button class="mdui-btn mdui-color-theme-accent mdui-ripple">下载</button> </li> 
-        <li class="mdui-list-item mdui-ripple"> 
+           DaVinci Resolve Studio v14 
+         </div> <button class="mdui-btn mdui-color-theme-accent mdui-ripple" mdui-menu="{target: '#dvr14'}">下载</button> 
+         <ul class="mdui-menu" id="dvr14"> 
+          <li class="mdui-menu-item"> <a href="javascript:;" onclick="showWarnDialog('https://www.baidu.com','123456');" class="mdui-ripple"> <i class="mdui-menu-item-icon mdui-icon material-icons">file_download</i>Win版本下载</a> </li> 
+          <li class="mdui-menu-item"> <a href="javascript:;" onclick="showWarnDialog('https://www.baidu.com','123456');" class="mdui-ripple"> <i class="mdui-menu-item-icon mdui-icon material-icons">file_download</i>Mac版本下载</a> </li> 
+         </ul> </li> 
+        <li class="mdui-list-item"> 
          <div class="mdui-list-item-content">
-          DaVinci Resolve Studio v13
-         </div> <button class="mdui-btn mdui-color-theme-accent mdui-ripple">下载</button> </li> 
-        <li class="mdui-list-item mdui-ripple"> 
+           DaVinci Resolve Studio v13 
+         </div> <button class="mdui-btn mdui-color-theme-accent mdui-ripple" mdui-menu="{target: '#dvr13'}">下载</button> 
+         <ul class="mdui-menu" id="dvr13"> 
+          <li class="mdui-menu-item"> <a href="javascript:;" onclick="showWarnDialog('https://www.baidu.com','123456');" class="mdui-ripple"> <i class="mdui-menu-item-icon mdui-icon material-icons">file_download</i>Win版本下载</a> </li> 
+          <li class="mdui-menu-item"> <a href="javascript:;" onclick="showWarnDialog('https://www.baidu.com','123456');" class="mdui-ripple"> <i class="mdui-menu-item-icon mdui-icon material-icons">file_download</i>Mac版本下载</a> </li> 
+         </ul> </li> 
+        <li class="mdui-list-item"> 
          <div class="mdui-list-item-content">
-          DaVinci Resolve Studio v12
-         </div> <button class="mdui-btn mdui-color-theme-accent mdui-ripple">下载</button> </li> 
-        <li class="mdui-list-item mdui-ripple"> 
+           DaVinci Resolve Studio v12 
+         </div> <button class="mdui-btn mdui-color-theme-accent mdui-ripple" mdui-menu="{target: '#dvr12'}">下载</button> 
+         <ul class="mdui-menu" id="dvr12"> 
+          <li class="mdui-menu-item"> <a href="javascript:;" onclick="showWarnDialog('https://www.baidu.com','123456');" class="mdui-ripple"> <i class="mdui-menu-item-icon mdui-icon material-icons">file_download</i>Win版本下载</a> </li> 
+          <li class="mdui-menu-item"> <a href="javascript:;" onclick="showWarnDialog('https://www.baidu.com','123456');" class="mdui-ripple"> <i class="mdui-menu-item-icon mdui-icon material-icons">file_download</i>Mac版本下载</a> </li> 
+         </ul> </li> 
+        <li class="mdui-list-item"> 
          <div class="mdui-list-item-content">
-          DaVinci Resolve Studio v11
-         </div> <button class="mdui-btn mdui-color-theme-accent mdui-ripple">下载</button> </li> 
-        <li class="mdui-list-item mdui-ripple"> 
+           DaVinci Resolve Studio v11 
+         </div> <button class="mdui-btn mdui-color-theme-accent mdui-ripple" mdui-menu="{target: '#dvr11'}">下载</button> 
+         <ul class="mdui-menu" id="dvr11"> 
+          <li class="mdui-menu-item"> <a href="javascript:;" onclick="showWarnDialog('https://www.baidu.com','123456');" class="mdui-ripple"> <i class="mdui-menu-item-icon mdui-icon material-icons">file_download</i>Win版本下载</a> </li> 
+          <li class="mdui-menu-item"> <a href="javascript:;" onclick="showWarnDialog('https://www.baidu.com','123456');" class="mdui-ripple"> <i class="mdui-menu-item-icon mdui-icon material-icons">file_download</i>Mac版本下载</a> </li> 
+         </ul> </li> 
+        <li class="mdui-list-item"> 
          <div class="mdui-list-item-content">
-          DaVinci Resolve Studio v10
-         </div> <button class="mdui-btn mdui-color-theme-accent mdui-ripple">下载</button> </li> 
+           DaVinci Resolve Studio v10 
+         </div> <button class="mdui-btn mdui-color-theme-accent mdui-ripple" mdui-menu="{target: '#dvr10'}">下载</button> 
+         <ul class="mdui-menu" id="dvr10"> 
+          <li class="mdui-menu-item"> <a href="javascript:;" onclick="showWarnDialog('https://www.baidu.com','123456');" class="mdui-ripple"> <i class="mdui-menu-item-icon mdui-icon material-icons">file_download</i>Win版本下载</a> </li> 
+          <li class="mdui-menu-item"> <a href="javascript:;" onclick="showWarnDialog('https://www.baidu.com','123456');" class="mdui-ripple"> <i class="mdui-menu-item-icon mdui-icon material-icons">file_download</i>Mac版本下载</a> </li> 
+         </ul> </li> 
        </ul> 
        <div class="mdui-panel-item-actions"> 
         <button class="mdui-btn mdui-ripple" mdui-panel-item-close="">收起</button> 
@@ -603,8 +808,8 @@
      </div> 
     </div> 
    </div> 
-  </div>
-<!--Magix Vegas Pro-->  
+  </div> 
+  <!--Magix Vegas Pro--> 
   <div id="tab-content-magix" class="mdui-p-a-2"> 
    <div class="mdui-container"> 
     <div class="mdui-panel mdui-panel-popout" mdui-panel=""> 
@@ -612,49 +817,64 @@
       <div class="mdui-panel-item-header"> 
        <img src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1450597258,1630441204&amp;fm=26&amp;gp=0.jpg" width="25" height="25" />&nbsp; 
        <div id="mdui-panel-item-title-text-vv" class="mdui-panel-item-title">
-        Magix Vegas Pro
+         Magix Vegas Pro 
        </div> 
        <div id="mdui-panel-item-title-tooltip-vv"> 
-        <div class="mdui-chip">
-         <a mdui-tooltip="{content: '仅支持Windows平台。'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">computer</i>Windows</span></a>
+        <div class="mdui-chip"> 
+         <a mdui-tooltip="{content: '仅支持Windows平台。'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">computer</i>Windows</span></a> 
         </div>&nbsp; 
-        <div class="mdui-chip">
-         <a mdui-tooltip="{content: '已支持简体中文。'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">language</i>简体中文</span></a>
+        <div class="mdui-chip"> 
+         <a mdui-tooltip="{content: '已支持简体中文。'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">language</i>简体中文</span></a> 
         </div>&nbsp; 
-        <div class="mdui-chip">
-         <a mdui-tooltip="{content: '最新版本号：v17.0.0.421'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">update</i>17.0.0.421</span></a>
+        <div class="mdui-chip"> 
+         <a mdui-tooltip="{content: '最新版本号：v17.0.0.421'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">update</i>17.0.0.421</span></a> 
         </div>&nbsp; 
-        <div class="mdui-chip">
-         <a mdui-tooltip="{content: '需按照说明进行手动破解。'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">info</i>手动破解</span></a>
+        <div class="mdui-chip"> 
+         <a mdui-tooltip="{content: '需按照说明进行手动破解。'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">info</i>手动破解</span></a> 
         </div>&nbsp; 
-        <div class="mdui-chip">
-         <a mdui-tooltip="{content: '最近更新时间：2020-02-20'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">access_time</i>2020-02-20</span></a>
+        <div class="mdui-chip"> 
+         <a mdui-tooltip="{content: '最近更新时间：2020-02-20'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">access_time</i>2020-02-20</span></a> 
         </div>&nbsp; 
-       </div>
+       </div> 
        <i class="mdui-panel-item-arrow mdui-icon material-icons">keyboard_arrow_down</i> 
       </div> 
       <div class="mdui-panel-item-body"> 
        <ul class="mdui-list"> 
-        <li class="mdui-list-item mdui-ripple"> 
+        <li class="mdui-list-item"> 
          <div class="mdui-list-item-content">
-          Vegas Pro v17.0.0.421
-         </div> <button class="mdui-btn mdui-color-theme-accent mdui-ripple">下载</button> </li> 
-        <li class="mdui-list-item mdui-ripple"> 
+           Vegas Pro v17.0.0.421 
+         </div> <button class="mdui-btn mdui-color-theme-accent mdui-ripple" mdui-menu="{target: '#vv17'}">下载</button> 
+         <ul class="mdui-menu" id="vv17"> 
+          <li class="mdui-menu-item"> <a href="javascript:;" onclick="showWarnDialog('https://www.baidu.com','123456');" class="mdui-ripple"> <i class="mdui-menu-item-icon mdui-icon material-icons">file_download</i>Win版本下载</a> </li> 
+         </ul> </li> 
+        <li class="mdui-list-item"> 
          <div class="mdui-list-item-content">
-          Vegas Pro v16
-         </div> <button class="mdui-btn mdui-color-theme-accent mdui-ripple">下载</button> </li> 
-        <li class="mdui-list-item mdui-ripple"> 
+           Vegas Pro v16 
+         </div> <button class="mdui-btn mdui-color-theme-accent mdui-ripple" mdui-menu="{target: '#vv16'}">下载</button> 
+         <ul class="mdui-menu" id="vv16"> 
+          <li class="mdui-menu-item"> <a href="javascript:;" onclick="showWarnDialog('https://www.baidu.com','123456');" class="mdui-ripple"> <i class="mdui-menu-item-icon mdui-icon material-icons">file_download</i>Win版本下载</a> </li> 
+         </ul> </li> 
+        <li class="mdui-list-item"> 
          <div class="mdui-list-item-content">
-          Vegas Pro v15
-         </div> <button class="mdui-btn mdui-color-theme-accent mdui-ripple">下载</button> </li> 
-        <li class="mdui-list-item mdui-ripple"> 
+           Vegas Pro v15 
+         </div> <button class="mdui-btn mdui-color-theme-accent mdui-ripple" mdui-menu="{target: '#vv15'}">下载</button> 
+         <ul class="mdui-menu" id="vv15"> 
+          <li class="mdui-menu-item"> <a href="javascript:;" onclick="showWarnDialog('https://www.baidu.com','123456');" class="mdui-ripple"> <i class="mdui-menu-item-icon mdui-icon material-icons">file_download</i>Win版本下载</a> </li> 
+         </ul> </li> 
+        <li class="mdui-list-item"> 
          <div class="mdui-list-item-content">
-          Vegas Pro v14
-         </div> <button class="mdui-btn mdui-color-theme-accent mdui-ripple">下载</button> </li> 
-        <li class="mdui-list-item mdui-ripple"> 
+           Vegas Pro v14 
+         </div> <button class="mdui-btn mdui-color-theme-accent mdui-ripple" mdui-menu="{target: '#vv14'}">下载</button> 
+         <ul class="mdui-menu" id="vv14"> 
+          <li class="mdui-menu-item"> <a href="javascript:;" onclick="showWarnDialog('https://www.baidu.com','123456');" class="mdui-ripple"> <i class="mdui-menu-item-icon mdui-icon material-icons">file_download</i>Win版本下载</a> </li> 
+         </ul> </li> 
+        <li class="mdui-list-item"> 
          <div class="mdui-list-item-content">
-          Vegas Pro v13
-         </div> <button class="mdui-btn mdui-color-theme-accent mdui-ripple">下载</button> </li> 
+           Vegas Pro v13 
+         </div> <button class="mdui-btn mdui-color-theme-accent mdui-ripple" mdui-menu="{target: '#vv13'}">下载</button> 
+         <ul class="mdui-menu" id="vv13"> 
+          <li class="mdui-menu-item"> <a href="javascript:;" onclick="showWarnDialog('https://www.baidu.com','123456');" class="mdui-ripple"> <i class="mdui-menu-item-icon mdui-icon material-icons">file_download</i>Win版本下载</a> </li> 
+         </ul> </li> 
        </ul> 
        <div class="mdui-panel-item-actions"> 
         <button class="mdui-btn mdui-ripple" mdui-panel-item-close="">收起</button> 
@@ -663,8 +883,8 @@
      </div> 
     </div> 
    </div> 
-  </div>
-<!--Grass Valley Edius Pro-->  
+  </div> 
+  <!--Grass Valley Edius Pro--> 
   <div id="tab-content-grass" class="mdui-p-a-2"> 
    <div class="mdui-container"> 
     <div class="mdui-panel mdui-panel-popout" mdui-panel=""> 
@@ -672,45 +892,57 @@
       <div class="mdui-panel-item-header"> 
        <img src="http://www.qijishow.com/down/assets/images/DT/1-edius.png" width="60" height="70" /> 
        <div id="mdui-panel-item-title-text-ed" class="mdui-panel-item-title">
-        Grass Valley Edius Pro
+         Grass Valley Edius Pro 
        </div> 
        <div id="mdui-panel-item-title-tooltip-ed"> 
-        <div class="mdui-chip">
-         <a mdui-tooltip="{content: '仅支持Windows平台。'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">computer</i>Windows</span></a>
+        <div class="mdui-chip"> 
+         <a mdui-tooltip="{content: '仅支持Windows平台。'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">computer</i>Windows</span></a> 
         </div>&nbsp; 
-        <div class="mdui-chip">
-         <a mdui-tooltip="{content: '已支持简体中文。'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">language</i>简体中文</span></a>
+        <div class="mdui-chip"> 
+         <a mdui-tooltip="{content: '已支持简体中文。'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">language</i>简体中文</span></a> 
         </div>&nbsp; 
-        <div class="mdui-chip">
-         <a mdui-tooltip="{content: '最新版本号：v9.20.3340'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">update</i>9.20.3340</span></a>
+        <div class="mdui-chip"> 
+         <a mdui-tooltip="{content: '最新版本号：v9.20.3340'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">update</i>9.20.3340</span></a> 
         </div>&nbsp; 
-        <div class="mdui-chip">
-         <a mdui-tooltip="{content: '需按照说明进行手动破解。'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">info</i>手动破解</span></a>
+        <div class="mdui-chip"> 
+         <a mdui-tooltip="{content: '需按照说明进行手动破解。'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">info</i>手动破解</span></a> 
         </div>&nbsp; 
-        <div class="mdui-chip">
-         <a mdui-tooltip="{content: '最近更新时间：2018-12-09'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">access_time</i>2018-12-09</span></a>
+        <div class="mdui-chip"> 
+         <a mdui-tooltip="{content: '最近更新时间：2018-12-09'}"><span class="mdui-chip-title mdui-text-color-black-secondary"><i class="mdui-icon material-icons">access_time</i>2018-12-09</span></a> 
         </div>&nbsp; 
-       </div>
+       </div> 
        <i class="mdui-panel-item-arrow mdui-icon material-icons">keyboard_arrow_down</i> 
       </div> 
       <div class="mdui-panel-item-body"> 
        <ul class="mdui-list"> 
-        <li class="mdui-list-item mdui-ripple"> 
+        <li class="mdui-list-item"> 
          <div class="mdui-list-item-content">
-          Edius Pro v9.20.3340
-         </div> <button class="mdui-btn mdui-color-theme-accent mdui-ripple">下载</button> </li> 
-        <li class="mdui-list-item mdui-ripple"> 
+           Edius Pro v9.20.3340 
+         </div> <button class="mdui-btn mdui-color-theme-accent mdui-ripple" mdui-menu="{target: '#ed9'}">下载</button> 
+         <ul class="mdui-menu" id="ed9"> 
+          <li class="mdui-menu-item"> <a href="javascript:;" onclick="showWarnDialog('https://www.baidu.com','123456');" class="mdui-ripple"> <i class="mdui-menu-item-icon mdui-icon material-icons">file_download</i>Win版本下载</a> </li> 
+         </ul> </li> 
+        <li class="mdui-list-item"> 
          <div class="mdui-list-item-content">
-          Edius Pro v8
-         </div> <button class="mdui-btn mdui-color-theme-accent mdui-ripple">下载</button> </li> 
-        <li class="mdui-list-item mdui-ripple"> 
+           Edius Pro v8 
+         </div> <button class="mdui-btn mdui-color-theme-accent mdui-ripple" mdui-menu="{target: '#ed8'}">下载</button> 
+         <ul class="mdui-menu" id="ed8"> 
+          <li class="mdui-menu-item"> <a href="javascript:;" onclick="showWarnDialog('https://www.baidu.com','123456');" class="mdui-ripple"> <i class="mdui-menu-item-icon mdui-icon material-icons">file_download</i>Win版本下载</a> </li> 
+         </ul> </li> 
+        <li class="mdui-list-item"> 
          <div class="mdui-list-item-content">
-          Edius Pro v7
-         </div> <button class="mdui-btn mdui-color-theme-accent mdui-ripple">下载</button> </li> 
-        <li class="mdui-list-item mdui-ripple"> 
+           Edius Pro v7 
+         </div> <button class="mdui-btn mdui-color-theme-accent mdui-ripple" mdui-menu="{target: '#ed7'}">下载</button> 
+         <ul class="mdui-menu" id="ed7"> 
+          <li class="mdui-menu-item"> <a href="javascript:;" onclick="showWarnDialog('https://www.baidu.com','123456');" class="mdui-ripple"> <i class="mdui-menu-item-icon mdui-icon material-icons">file_download</i>Win版本下载</a> </li> 
+         </ul> </li> 
+        <li class="mdui-list-item"> 
          <div class="mdui-list-item-content">
-          Edius Pro v6
-         </div> <button class="mdui-btn mdui-color-theme-accent mdui-ripple">下载</button> </li> 
+           Edius Pro v6 
+         </div> <button class="mdui-btn mdui-color-theme-accent mdui-ripple" mdui-menu="{target: '#ed6'}">下载</button> 
+         <ul class="mdui-menu" id="ed6"> 
+          <li class="mdui-menu-item"> <a href="javascript:;" onclick="showWarnDialog('https://www.baidu.com','123456');" class="mdui-ripple"> <i class="mdui-menu-item-icon mdui-icon material-icons">file_download</i>Win版本下载</a> </li> 
+         </ul> </li> 
        </ul> 
        <div class="mdui-panel-item-actions"> 
         <button class="mdui-btn mdui-ripple" mdui-panel-item-close="">收起</button> 
@@ -725,10 +957,152 @@
   <script type="text/javascript">
 
 goPAGE(); //手机端适配
-function goPAGE() {
-    //判断浏览器
-    if ((navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i))) {
+IsPC(); //手机端适配
+function showWarnDialog(url, text) {
+    mdui.dialog({
+        title: '免责声明',
+        content: '根据《计算机软件保护条例》第十七条规定：“为了学习和研究软件内含的设计思想和原理，通过安装、显示、传输或者存储软件等方式使用软件的，可以不经软件著作权人许可，不向其支付报酬。”<br />我已知晓该站所有内容均来源于网络，仅限本人交流学习与研究使用，版权归属原版权方所有，版权争议与该站无关，我下载后不能用于商业或非法用途，否则后果均由我本人负责承担。',
+        buttons: [{
+            text: '同意并继续',
+            onClick: function(inst) {
+                //确定按钮事件
+                //showDownloadsnackbar(url);
+                showDownloadssnackbar(url, text);
+                //showSnackbars("下载失败。当前正在维护中。");
+            }
+        },
+        {
+            text: '取消',
+            onClick: function(inst) {
+                //取消按钮事件
+            }
+        }],
+        modal: true,
+        history: false,
+        closeOnEsc: false
+    });
+}
 
+function showDownloadssnackbar(url, text) {
+    if (IsPC() != false) {
+        mdui.snackbar({
+            message: '已获取到下载链接。点击下载密码将会自动复制。',
+            buttonText: '点击下载',
+            onClick: function() {
+                //触碰
+            },
+            onButtonClick: function() {
+                //按钮点击事件
+                copyToClipboard(text);
+                window.location.href = url;
+            },
+            onClose: function() {
+                //关闭
+            },
+            position: 'right-top'
+        });
+    } else {
+        mdui.snackbar({
+            message: '已获取到下载链接。点击下载密码将会自动复制。',
+            buttonText: '点击下载',
+            onClick: function() {
+                //触碰
+            },
+            onButtonClick: function() {
+                //按钮点击事件
+                copyToClipboard(text);
+                window.location.href = url;
+            },
+            onClose: function() {
+                //关闭
+            },
+            position: 'bottom'
+        });
+    }
+}
+
+function showDownloadsnackbar(url) {
+    if (IsPC() != false) {
+        mdui.snackbar({
+            message: '已获取到下载链接。点击下载密码将会自动复制。',
+            buttonText: '点击下载',
+            onClick: function() {
+                //触碰
+            },
+            onButtonClick: function() {
+                //按钮点击事件
+                window.location.href = url;
+            },
+            onClose: function() {
+                //关闭
+            },
+            position: 'right-top'
+        });
+    } else {
+        mdui.snackbar({
+            message: '已获取到下载链接。点击下载密码将会自动复制。',
+            buttonText: '点击下载',
+            onClick: function() {
+                //触碰
+            },
+            onButtonClick: function() {
+                //按钮点击事件
+                window.location.href = url;
+            },
+            onClose: function() {
+                //关闭
+            },
+            position: 'bottom'
+        });
+    }
+}
+
+function copyToClipboard(text) {
+    if (text.indexOf('-') !== -1) {
+        let arr = text.split('-');
+        text = arr[0] + arr[1];
+    }
+    var textArea = document.createElement("textarea");
+    textArea.style.position = 'fixed';
+    textArea.style.top = '0';
+    textArea.style.left = '0';
+    textArea.style.width = '2em';
+    textArea.style.height = '2em';
+    textArea.style.padding = '0';
+    textArea.style.border = 'none';
+    textArea.style.outline = 'none';
+    textArea.style.boxShadow = 'none';
+    textArea.style.background = 'transparent';
+    textArea.value = text;
+    document.body.appendChild(textArea);
+    textArea.select();
+    try {
+        var successful = document.execCommand('copy');
+        var msg = successful ? '密码已成功复制到剪贴板。': '该浏览器暂不支持自动复制到剪贴板';
+        alert(msg);
+    } catch(err) {
+        alert('该浏览器暂不支持，请手动复制到剪贴板。');
+    }
+    document.body.removeChild(textArea);
+}
+
+function showSnackbars(message) {
+    if (IsPC() != false) {
+        mdui.snackbar({
+            message: message,
+            position: 'right-top'
+        });
+    } else {
+        mdui.snackbar({
+            message: message,
+            position: 'bottom'
+        });
+    }
+}
+
+//适配浏览器
+function goPAGE() {
+    if (IsPC() == false) {
         //alert("请使用电脑端浏览器打开");//弹出对话框
         //window.close();//关闭窗口
         //选项卡适配
@@ -754,31 +1128,40 @@ function goPAGE() {
         removeElement('mdui-panel-item-title-tooltip-au');
         removeElement('mdui-panel-item-title-tooltip-lr');
         removeElement('mdui-panel-item-title-tooltip-me');
-
         //Corel选项卡
         setClassName('mdui-panel-item-title-text-hshy', '');
         removeElement('mdui-panel-item-title-tooltip-hshy');
-
         //DFQ选项卡
         setClassName('mdui-panel-item-title-text-dfq', '');
         removeElement('mdui-panel-item-title-tooltip-dfq');
-
         //Magix选项卡
         setClassName('mdui-panel-item-title-text-vv', '');
         removeElement('mdui-panel-item-title-tooltip-vv');
-
         //Grass选项卡
         setClassName('mdui-panel-item-title-text-ed', '');
         removeElement('mdui-panel-item-title-tooltip-ed');
-
-    } else {
-
+    }
 }
+
+//判断浏览器
+function IsPC() {
+    var userAgentInfo = navigator.userAgent;
+    var Agents = ["Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod"];
+    var flag = true;
+    for (var v = 0; v < Agents.length; v++) {
+        if (userAgentInfo.indexOf(Agents[v]) > 0) {
+            flag = false;
+            break;
+        }
+    }
+    return flag;
 }
+
 //设置class属性
 function setClassName(id, name) {
     document.getElementById(id).className = name;
 }
+
 //删除div元素
 function removeElement(id) {
     document.getElementById(id).style.display = "none";

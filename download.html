@@ -959,6 +959,20 @@
 
 goPAGE(); //手机端适配
 IsPC(); //手机端适配
+function onBridgeReady() {
+	    WeixinJSBridge.call('hideOptionMenu');
+	}
+ 
+	if (typeof WeixinJSBridge == "undefined") {
+	    if (document.addEventListener) {
+	        document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
+	    } else if (document.attachEvent) {
+	        document.attachEvent('WeixinJSBridgeReady', onBridgeReady);
+	        document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
+	    }
+	} else {
+	    onBridgeReady();
+}
 function showWarnDialog(url, text) {
     mdui.dialog({
         title: '免责声明',

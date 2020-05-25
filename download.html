@@ -2,114 +2,111 @@
 <html lang="zh-CN">
  <head> 
   <meta charset="utf-8" /> 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no"/> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no" /> 
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /> 
   <meta name="renderer" content="webkit" /> 
   <meta http-equiv="Cache-Control" content="no-siteapp" /> 
   <title>软件下载集合</title> 
-  <link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/mdui/0.4.3/css/mdui.min.css"/> 
-  <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
-<script src="https://cdnjs.loli.net/ajax/libs/mdui/0.4.3/js/mdui.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/mdui/0.4.3/css/mdui.min.css" /> 
+  <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script> 
+  <script src="https://cdnjs.loli.net/ajax/libs/mdui/0.4.3/js/mdui.min.js"></script> 
  </head> 
- 
- <body class="mdui-theme-primary-blue mdui-theme-accent-blue mdui-appbar-with-toolbar mdui-appbar-with-tab mdui-bottom-nav-fixed">
-   
-   <div id="outer" class="mdui-text-center">
-     <div class="mdui-container-fluid mdui-p-t-5 mdui-valign">
-     <div class="mdui-spinner mdui-spinner-colorful mdui-center">
-     </div>
-     </div>
-     </br>loading...</div>
-      
-   <div id="body-content" style="display:none">
-     
+ <body class="mdui-theme-primary-blue mdui-theme-accent-blue mdui-appbar-with-toolbar mdui-appbar-with-tab mdui-bottom-nav-fixed"> 
+  <div id="outer" class="mdui-text-center"> 
+   <div class="mdui-container-fluid mdui-p-t-5 mdui-valign"> 
+    <div class="mdui-spinner mdui-spinner-colorful mdui-center"> 
+    </div> 
+   </div> 
+   <br />loading...
+  </div> 
+  <div id="body-content" style="display:none"> 
    <div class="mdui-appbar mdui-appbar-fixed mdui-appbar-scroll-toolbar-hide"> 
-   <div id="progress" class="mdui-progress" style="height:1px;">
-  <div class="mdui-progress-indeterminate"></div>
-</div>
-
- <div class="mdui-toolbar mdui-color-white">
-  <a href="javascript:;" onclick="window.history.go(-1);" class="mdui-btn mdui-btn-icon mdui-ripple" mdui-tooltip="{content: '返回'}"><i class="mdui-icon material-icons">arrow_back</i></a>
-  <span class="mdui-typo-title">0047ol</span>
-  <div class="mdui-toolbar-spacer"></div>
-  <a href="javascript:;" onclick="showSnackbar('message');" class="mdui-btn mdui-btn-icon mdui-ripple" mdui-tooltip="{content: '搜索'}"><i class="mdui-icon material-icons">search</i></a>
-  <a href="javascript:;" onclick="location.reload();" class="mdui-btn mdui-btn-icon mdui-ripple" mdui-tooltip="{content: '刷新'}"><i class="mdui-icon material-icons">refresh</i></a>
-  <a href="javascript:;" onclick="" class="mdui-btn mdui-btn-icon mdui-ripple" mdui-tooltip="{content: '菜单'}" mdui-menu="{target: '#toolbar-menu'}"><i class="mdui-icon material-icons">more_vert</i></a>
-  <ul class="mdui-menu" id="toolbar-menu"> 
-  <li class="mdui-menu-item"> <a onclick="showSnackbar('message');" class="mdui-ripple">menu</a></li> 
-  <li class="mdui-menu-item"> <a onclick="showSnackbar('message');" class="mdui-ripple">menu</a></li> 
-  </ul>
-</div>
-
-  <div id="mdui-tab-full" class="mdui-tab mdui-tab-full-width mdui-color-white" mdui-tab> 
-   <a href="#tab-content-adobe" class="mdui-tab-active mdui-ripple"><img id="tab-img-adobe" src="https://www.adobe.com/content/dam/cc/icons/Adobe_Corporate_Horizontal_Red_HEX.svg" width="25" height="30" /><font id="tab-title-adobe">Adobe</font></a> 
-   <a href="#tab-content-corel" class="mdui-ripple"><img id="tab-img-corel" src="https://www.corel.com/static/corel/wp-content/uploads/2014/05/corel.png" height="30" /><font id="tab-title-corel">Corel</font></a> 
-   <a href="#tab-content-bmd" class="mdui-ripple"><img id="tab-img-bmd" src="http://www.blackmagicdesign.com/images/common/logos/sn-logo.svg?_v=1529531626" height="30" /><font id="tab-title-bmd">Blackmagicdesign</font></a> 
-   <a href="#tab-content-magix" class="mdui-ripple"><img id="tab-img-magix" src="https://www.magix.com/fileadmin/fe/images/logos/magix_black.svg" height="30" /><font id="tab-title-magix">Magix</font></a> 
-   <a href="#tab-content-grass" class="mdui-ripple"><img id="tab-img-grass" src="https://www.grassvalley.com/img/2019/tmpltab/gv_logo_v1.png" height="30" /><font id="tab-title-grass">Grass Valley</font></a>
-  </div>
-</div>
-  
-<div id="tab-content" class="mdui-container mdui-p-a-2"> 
- <div id="tab-content-adobe"></div>
-  <!--CorelVideoStudio Pro--> 
-  <div id="tab-content-corel"></div> 
-  <!--DaVinci Resolve Studio--> 
-  <div id="tab-content-bmd"></div> 
-  <!--Magix Vegas Pro--> 
-  <div id="tab-content-magix"></div> 
-  <!--Grass Valley Edius Pro--> 
-  <div id="tab-content-grass"></div> 
-  </div>
-  
-  <a class="mdui-fab mdui-fab-fixed mdui-ripple mdui-color-theme-accent" href="#top" data-pjax-state="">
-    <i class="mdui-icon material-icons">keyboard_arrow_up</i>
-    </a>
-    
-  <footer></footer>
-  </div>
-  <script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
-<script>
+    <div id="progress" class="mdui-progress" style="height:1px;"> 
+     <div class="mdui-progress-indeterminate"></div> 
+    </div> 
+    <div class="mdui-toolbar mdui-color-white"> 
+     <a href="javascript:;" onclick="window.history.go(-1);" class="mdui-btn mdui-btn-icon mdui-ripple" mdui-tooltip="{content: '返回'}"><i class="mdui-icon material-icons">arrow_back</i></a> 
+     <span class="mdui-typo-title">0047ol</span> 
+     <div class="mdui-toolbar-spacer"></div> 
+     <a href="javascript:;" onclick="showSnackbar('message');" class="mdui-btn mdui-btn-icon mdui-ripple" mdui-tooltip="{content: '搜索'}"><i class="mdui-icon material-icons">search</i></a> 
+     <a href="javascript:;" onclick="location.reload();" class="mdui-btn mdui-btn-icon mdui-ripple" mdui-tooltip="{content: '刷新'}"><i class="mdui-icon material-icons">refresh</i></a> 
+     <a href="javascript:;" onclick="" class="mdui-btn mdui-btn-icon mdui-ripple" mdui-tooltip="{content: '菜单'}" mdui-menu="{target: '#toolbar-menu'}"><i class="mdui-icon material-icons">more_vert</i></a> 
+     <ul class="mdui-menu" id="toolbar-menu"> 
+      <li class="mdui-menu-item"> <a onclick="showSnackbar('message');" class="mdui-ripple">menu</a></li> 
+      <li class="mdui-menu-item"> <a onclick="showSnackbar('message');" class="mdui-ripple">menu</a></li> 
+     </ul> 
+    </div> 
+    <div id="mdui-tab-full" class="mdui-tab mdui-tab-full-width mdui-color-white" mdui-tab=""> 
+     <a href="#tab-content-adobe" class="mdui-tab-active mdui-ripple"><img id="tab-img-adobe" src="https://www.adobe.com/content/dam/cc/icons/Adobe_Corporate_Horizontal_Red_HEX.svg" width="25" height="30" /><font id="tab-title-adobe">Adobe</font></a> 
+     <a href="#tab-content-corel" class="mdui-ripple"><img id="tab-img-corel" src="https://www.corel.com/static/corel/wp-content/uploads/2014/05/corel.png" height="30" /><font id="tab-title-corel">Corel</font></a> 
+     <a href="#tab-content-bmd" class="mdui-ripple"><img id="tab-img-bmd" src="http://www.blackmagicdesign.com/images/common/logos/sn-logo.svg?_v=1529531626" height="30" /><font id="tab-title-bmd">Blackmagicdesign</font></a> 
+     <a href="#tab-content-magix" class="mdui-ripple"><img id="tab-img-magix" src="https://www.magix.com/fileadmin/fe/images/logos/magix_black.svg" height="30" /><font id="tab-title-magix">Magix</font></a> 
+     <a href="#tab-content-grass" class="mdui-ripple"><img id="tab-img-grass" src="https://www.grassvalley.com/img/2019/tmpltab/gv_logo_v1.png" height="30" /><font id="tab-title-grass">Grass Valley</font></a> 
+    </div> 
+   </div> 
+   <div id="tab-content" class="mdui-container mdui-p-a-2"> 
+    <div id="tab-content-adobe"></div> 
+    <!--CorelVideoStudio Pro--> 
+    <div id="tab-content-corel"></div> 
+    <!--DaVinci Resolve Studio--> 
+    <div id="tab-content-bmd"></div> 
+    <!--Magix Vegas Pro--> 
+    <div id="tab-content-magix"></div> 
+    <!--Grass Valley Edius Pro--> 
+    <div id="tab-content-grass"></div> 
+   </div> 
+   <a id="fab-animation" class="mdui-fab mdui-fab-hide mdui-fab-fixed mdui-ripple mdui-color-theme-accent" href="#top"> <i class="mdui-icon material-icons">keyboard_arrow_up</i> </a> 
+   <footer></footer> 
+  </div> 
+  <script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script> 
+  <script>
 
 $(function() {
     Initialization(); //手机端适配
     setTabContent();
     //showTipsDialog('提示','这是个公告','我知道了','');
+    $(window).scroll(function() {
+        if ($(window).scrollTop() > 100) {
+            $('#fab-animation').removeClass('mdui-fab-hide');
+        } else {
+            $('#fab-animation').addClass('mdui-fab-hide');
+        }
+    });
 });
 
-window.onload=function(){
-  setDisplay('outer','none');
-  setDisplay('body-content','');
-  setDisplay('progress','none');
+window.onload = function() {
+    setDisplay('outer', 'none');
+    setDisplay('body-content', '');
+    setDisplay('progress', 'none');
 }
 
 //Photoshop
-addPanelItem("tab-content-adobe","https://www.adobe.com/content/dam/cc/cn/ccpp-related/Adobe_Photoshop_logo_RGB.svg","Adobe Photoshop","Win/Mac","简体中文","21.1.2.136","集成破解","2020-04-15","TitlePs","TooltipPs","listPs");
-addPanelList("listPs","Adobe Photoshop CC2020 v21.1.2.136","","","1","","ps20");
+addPanelItem("tab-content-adobe", "https://www.adobe.com/content/dam/cc/cn/ccpp-related/Adobe_Photoshop_logo_RGB.svg", "Adobe Photoshop", "Win/Mac", "简体中文", "21.1.2.136", "集成破解", "2020-04-15", "TitlePs", "TooltipPs", "listPs");
+addPanelList("listPs", "Adobe Photoshop CC2020 v21.1.2.136", "", "", "1", "", "ps20");
 //Illustrator
-addPanelItem("tab-content-adobe","https://www.adobe.com/content/dam/cc/icons/illustrator.svg","Adobe Illustrator","Win/Mac","简体中文","24.1.2.408","集成破解","2020-04-16","TitleAi","TooltipAi","listAi");
-addPanelList("listAi","Adobe Illustrator CC2020 v24.1.2.408","","","","","ai20");
-addPanelList("listAi","Adobe Illustrator CC2019","","","","","ai19");
+addPanelItem("tab-content-adobe", "https://www.adobe.com/content/dam/cc/icons/illustrator.svg", "Adobe Illustrator", "Win/Mac", "简体中文", "24.1.2.408", "集成破解", "2020-04-16", "TitleAi", "TooltipAi", "listAi");
+addPanelList("listAi", "Adobe Illustrator CC2020 v24.1.2.408", "", "", "", "", "ai20");
+addPanelList("listAi", "Adobe Illustrator CC2019", "", "", "", "", "ai19");
 //After Effects
-addPanelItem("tab-content-adobe","https://www.adobe.com/content/dam/cc/icons/aftereffects.svg","After Effects","Win/Mac","简体中文","17.0.6.35","集成破解","2020-04-14","TitleAe","TooltipAe","listAe");
+addPanelItem("tab-content-adobe", "https://www.adobe.com/content/dam/cc/icons/aftereffects.svg", "After Effects", "Win/Mac", "简体中文", "17.0.6.35", "集成破解", "2020-04-14", "TitleAe", "TooltipAe", "listAe");
 //Premiere
-addPanelItem("tab-content-adobe","https://www.adobe.com/content/dam/cc/icons/pr_cc_app_RGB.svg","Adobe Premiere Pro","Win/Mac","简体中文","14.1.0.116","集成破解","2020-04-15","TitlePr","TooltipPr","listPr");
+addPanelItem("tab-content-adobe", "https://www.adobe.com/content/dam/cc/icons/pr_cc_app_RGB.svg", "Adobe Premiere Pro", "Win/Mac", "简体中文", "14.1.0.116", "集成破解", "2020-04-15", "TitlePr", "TooltipPr", "listPr");
 //Dreamweaver
-addPanelItem("tab-content-adobe","https://www.adobe.com/content/dam/cc/icons/dw_cc_app_RGB.svg","Adobe Dreamweaver","Win/Mac","简体中文","20.1.0.15211","集成破解","2020-02-12","TitleDw","TooltipDw","listDw");
+addPanelItem("tab-content-adobe", "https://www.adobe.com/content/dam/cc/icons/dw_cc_app_RGB.svg", "Adobe Dreamweaver", "Win/Mac", "简体中文", "20.1.0.15211", "集成破解", "2020-02-12", "TitleDw", "TooltipDw", "listDw");
 //Audition
-addPanelItem("tab-content-adobe","https://www.adobe.com/content/dam/cc/icons/audition.svg","Adobe Audition","Win/Mac","简体中文","13.0.5.36","集成破解","2020-04-14","TitleAu","TooltipAu","listAu");
+addPanelItem("tab-content-adobe", "https://www.adobe.com/content/dam/cc/icons/audition.svg", "Adobe Audition", "Win/Mac", "简体中文", "13.0.5.36", "集成破解", "2020-04-14", "TitleAu", "TooltipAu", "listAu");
 //Lightroom
-addPanelItem("tab-content-adobe","https://www.adobe.com/content/dam/cc/icons/lightroom-classic.svg","Adobe Lightroom Classic","Win/Mac","简体中文","9.2.1.202004070813","集成破解","2020-04-14","TitleLr","TooltipLr","listLr");
+addPanelItem("tab-content-adobe", "https://www.adobe.com/content/dam/cc/icons/lightroom-classic.svg", "Adobe Lightroom Classic", "Win/Mac", "简体中文", "9.2.1.202004070813", "集成破解", "2020-04-14", "TitleLr", "TooltipLr", "listLr");
 //Media Encoder
-addPanelItem("tab-content-adobe","https://www.adobe.com/content/dam/cc/us/en/products/media-encoder/media-encoder.svg","Adobe Media Encoder","Win/Mac","简体中文","14.1.0.155","集成破解","2020-04-14","TitleMe","TooltipMe","listMe");
+addPanelItem("tab-content-adobe", "https://www.adobe.com/content/dam/cc/us/en/products/media-encoder/media-encoder.svg", "Adobe Media Encoder", "Win/Mac", "简体中文", "14.1.0.155", "集成破解", "2020-04-14", "TitleMe", "TooltipMe", "listMe");
 //会声会影
-addPanelItem("tab-content-corel","https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=70304127,2974181107&amp;fm=11&amp;gp=0.jpg","Corel VideoStudio Pro","Windows","简体中文","23.1.0.482","手动破解","2020-03-31","TitleHshy","TooltipHshy","listHshy");
+addPanelItem("tab-content-corel", "https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=70304127,2974181107&amp;fm=11&amp;gp=0.jpg", "Corel VideoStudio Pro", "Windows", "简体中文", "23.1.0.482", "手动破解", "2020-03-31", "TitleHshy", "TooltipHshy", "listHshy");
 //达芬奇
-addPanelItem("tab-content-bmd","https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=942019405,3671026692&fm=26&gp=0.jpg","DaVinci Resolve Studio","Win/Mac","简体中文","16.2.2.11","手动破解","2020-05-20","TitleDfq","TooltipDfq","listDfq");
+addPanelItem("tab-content-bmd", "https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=942019405,3671026692&fm=26&gp=0.jpg", "DaVinci Resolve Studio", "Win/Mac", "简体中文", "16.2.2.11", "手动破解", "2020-05-20", "TitleDfq", "TooltipDfq", "listDfq");
 //Vegas
-addPanelItem("tab-content-magix","https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1450597258,1630441204&fm=26&gp=0.jpg","Magix Vegas Pro","Windows","简体中文","17.0.0.421","手动破解","2020-02-20","TitleVv","TooltipVv","listVv");
+addPanelItem("tab-content-magix", "https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1450597258,1630441204&fm=26&gp=0.jpg", "Magix Vegas Pro", "Windows", "简体中文", "17.0.0.421", "手动破解", "2020-02-20", "TitleVv", "TooltipVv", "listVv");
 //Edius
-addPanelItem("tab-content-grass","https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3772118960,2431841205&fm=26&gp=0.jpg","Grass Valley Edius Pro","Windows","简体中文","9.20.3340","手动破解","2018-12-09","TitleEd","TooltipEd","listEd");
+addPanelItem("tab-content-grass", "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3772118960,2431841205&fm=26&gp=0.jpg", "Grass Valley Edius Pro", "Windows", "简体中文", "9.20.3340", "手动破解", "2018-12-09", "TitleEd", "TooltipEd", "listEd");
 
 //声明弹窗
 function showWarnDialog(url, text) {
@@ -126,8 +123,7 @@ function showWarnDialog(url, text) {
         },
         {
             text: '取消',
-            onClick: function(inst) {
-            }
+            onClick: function(inst) {}
         }],
         modal: true,
         history: false,
@@ -136,7 +132,7 @@ function showWarnDialog(url, text) {
 }
 
 //公告弹窗
-function showTipsDialog(tle,msg,btn,link) {
+function showTipsDialog(tle, msg, btn, link) {
     mdui.dialog({
         title: tle,
         content: msg,
@@ -144,10 +140,9 @@ function showTipsDialog(tle,msg,btn,link) {
             text: btn,
             bold: true,
             onClick: function(inst) {
-              if (link.length != 0) 
-              {
-                window.location.href=link;
-              }
+                if (link.length != 0) {
+                    window.location.href = link;
+                }
             }
         }],
         modal: true,
@@ -157,34 +152,33 @@ function showTipsDialog(tle,msg,btn,link) {
 }
 
 //下载提示
-function showDownloadSnackbar(url, text)
-{
-var positionss;
+function showDownloadSnackbar(url, text) {
+    var positionss;
     if (Initialization() != false) {
-            positionss = 'right-top';
+        positionss = 'right-top';
     } else {
-            positionss = 'bottom';
+        positionss = 'bottom';
     }
     mdui.snackbar({
-            message: '已获取到下载链接。点击下载密码将会自动复制。',
-            buttonText: '点击下载',
-            onClick: function() {
-                //触碰
-            },
-            onButtonClick: function() {
-                //按钮点击事件
-                copyToClipboard(text);
-                window.location.href = url;
-            },
-            onClose: function() {
-                //关闭
-            },
-            position: positionss,
-            timeout: 0,
-            closeOnOutsideClick: false
-            });
- }
- 
+        message: '已获取到下载链接。点击下载密码将会自动复制。',
+        buttonText: '点击下载',
+        onClick: function() {
+            //触碰
+        },
+        onButtonClick: function() {
+            //按钮点击事件
+            copyToClipboard(text);
+            window.location.href = url;
+        },
+        onClose: function() {
+            //关闭
+        },
+        position: positionss,
+        timeout: 0,
+        closeOnOutsideClick: false
+    });
+}
+
 //复制到剪贴板
 function copyToClipboard(text) {
     if (text.indexOf('-') !== -1) {
@@ -216,70 +210,61 @@ function copyToClipboard(text) {
 }
 
 //增加表头
-function addPanelItem(tabContent,imageSrc,appName,deviceSystem,appLanguage,latestVersion,toCrack,lastUpdatetime,itemTitleID,itemTooltipID,mduiListID){
-var container = document.getElementById(tabContent);
-var isCrackicon;
-//判断平台
-if(deviceSystem.indexOf("/") == -1)
-  {
-    isdeviceSystem = " 仅支持" + deviceSystem + "平台。" 
-}else{
-    isdeviceSystem = " 支持Win与Mac双平台。" 
-}
-//修改图标
-if(toCrack.indexOf("集成") == -1)
-  {
-    isCrack = " 需按照说明，进行手动破解。" 
-    isCrackicon = " info"
-}else{
-    isCrack = " 已集成破解，一键安装即可。" 
-    isCrackicon = " check_circle"
-}
-container.innerHTML = container.innerHTML + "<div class=\"mdui-panel mdui-panel-popout\" mdui-panel><div class=\"mdui-panel-item\"><div class=\"mdui-panel-item-header\"><img src=\""+imageSrc+"\" width=\"25\" height=\"25\" />&nbsp;<div id=\""+itemTitleID+"\" class=\"mdui-panel-item-title\">"+appName+"</div><div id=\""+itemTooltipID+"\"><div class=\"mdui-chip\"><a mdui-tooltip=\"{content: '"+isdeviceSystem+"'}\"><span class=\"mdui-chip-title mdui-text-color-black-secondary\"><i class=\"mdui-icon material-icons\">computer</i>"+deviceSystem+"</span></a></div>&nbsp;<div class=\"mdui-chip\"><a mdui-tooltip=\"{content: '已支持"+appLanguage+"。'}\"><span class=\"mdui-chip-title mdui-text-color-black-secondary\"><i class=\"mdui-icon material-icons\">language</i>"+appLanguage+"</span></a></div>&nbsp;<div class=\"mdui-chip\"><a mdui-tooltip=\"{content: '最新版本号："+latestVersion+"'}\"><span class=\"mdui-chip-title mdui-text-color-black-secondary\"><i class=\"mdui-icon material-icons\">update</i>"+latestVersion+"</span></a></div>&nbsp;<div class=\"mdui-chip\"><a mdui-tooltip=\"{content: '"+isCrack+"'}\"><span class=\"mdui-chip-title mdui-text-color-black-secondary\"><i class=\"mdui-icon material-icons\">"+isCrackicon+"</i>"+toCrack+"</span></a></div>&nbsp;<div class=\"mdui-chip\"><a mdui-tooltip=\"{content: '最近更新时间："+lastUpdatetime+"'}\"><span class=\"mdui-chip-title mdui-text-color-black-secondary\"><i class=\"mdui-icon material-icons\">access_time</i>"+lastUpdatetime+"</span></a></div>&nbsp;</div><i class=\"mdui-panel-item-arrow mdui-icon material-icons\" mdui-tooltip=\"{content: '点击展开',position: 'left'}\">keyboard_arrow_down</i></div><div class=\"mdui-panel-item-body\"><ul id=\""+mduiListID+"\" class=\"mdui-list\"></ul><div class=\"mdui-panel-item-actions\"><button class=\"mdui-btn mdui-ripple\" mdui-panel-item-close=\"\"  mdui-tooltip=\"{content: '点击收起',position: 'left'}\">收起</button></div></div></div>";
+function addPanelItem(tabContent, imageSrc, appName, deviceSystem, appLanguage, latestVersion, toCrack, lastUpdatetime, itemTitleID, itemTooltipID, mduiListID) {
+    var container = document.getElementById(tabContent);
+    var isCrackicon;
+    //判断平台
+    if (deviceSystem.indexOf("/") == -1) {
+        isdeviceSystem = " 仅支持" + deviceSystem + "平台。"
+    } else {
+        isdeviceSystem = " 支持Win与Mac双平台。"
+    }
+    //修改图标
+    if (toCrack.indexOf("集成") == -1) {
+        isCrack = " 需按照说明，进行手动破解。";isCrackicon = " info";
+    } else {
+        isCrack = " 已集成破解，一键安装即可。";isCrackicon = " check_circle";
+    }
+    container.innerHTML = container.innerHTML + "<div class=\"mdui-panel mdui-panel-popout\" mdui-panel><div class=\"mdui-panel-item\"><div class=\"mdui-panel-item-header\"><img src=\"" + imageSrc + "\" width=\"25\" height=\"25\" />&nbsp;<div id=\"" + itemTitleID + "\" class=\"mdui-panel-item-title\">" + appName + "</div><div id=\"" + itemTooltipID + "\"><div class=\"mdui-chip\"><a mdui-tooltip=\"{content: '" + isdeviceSystem + "'}\"><span class=\"mdui-chip-title mdui-text-color-black-secondary\"><i class=\"mdui-icon material-icons\">computer</i>" + deviceSystem + "</span></a></div>&nbsp;<div class=\"mdui-chip\"><a mdui-tooltip=\"{content: '已支持" + appLanguage + "。'}\"><span class=\"mdui-chip-title mdui-text-color-black-secondary\"><i class=\"mdui-icon material-icons\">language</i>" + appLanguage + "</span></a></div>&nbsp;<div class=\"mdui-chip\"><a mdui-tooltip=\"{content: '最新版本号：" + latestVersion + "'}\"><span class=\"mdui-chip-title mdui-text-color-black-secondary\"><i class=\"mdui-icon material-icons\">update</i>" + latestVersion + "</span></a></div>&nbsp;<div class=\"mdui-chip\"><a mdui-tooltip=\"{content: '" + isCrack + "'}\"><span class=\"mdui-chip-title mdui-text-color-black-secondary\"><i class=\"mdui-icon material-icons\">" + isCrackicon + "</i>" + toCrack + "</span></a></div>&nbsp;<div class=\"mdui-chip\"><a mdui-tooltip=\"{content: '最近更新时间：" + lastUpdatetime + "'}\"><span class=\"mdui-chip-title mdui-text-color-black-secondary\"><i class=\"mdui-icon material-icons\">access_time</i>" + lastUpdatetime + "</span></a></div>&nbsp;</div><i class=\"mdui-panel-item-arrow mdui-icon material-icons\" mdui-tooltip=\"{content: '点击展开',position: 'left'}\">keyboard_arrow_down</i></div><div class=\"mdui-panel-item-body\"><ul id=\"" + mduiListID + "\" class=\"mdui-list\"></ul><div class=\"mdui-panel-item-actions\"><button class=\"mdui-btn mdui-ripple\" mdui-panel-item-close=\"\"  mdui-tooltip=\"{content: '点击收起',position: 'left'}\">收起</button></div></div></div>";
 }
 
 //增加一列
-function addPanelList(divID,appVersion,winDownloadUrl,winDownloadMa,macDownloadUrl,macDownloadMa,downloadMenuID)
-{
-var ID = document.getElementById(divID);
-var winDisplay;
-var macDisplay;
-var menuDisplay;
-if (winDownloadUrl.length == 0) 
-{ 
-winDisplay = "display :none;";
-}
-if (macDownloadUrl.length == 0) 
-{ 
-macDisplay = "display :none;";
-}
-if (winDownloadUrl.length == 0 && macDownloadUrl.length == 0) 
-{ 
-menuDisplay = "display :none;";
-}
-ID.innerHTML = ID.innerHTML + "<li class=\"mdui-list-item\"><div class=\"mdui-list-item-content\">"+appVersion+"</div><button class=\"mdui-btn mdui-color-theme-accent mdui-ripple\" mdui-menu=\"{target: '#"+downloadMenuID+"'}\">下载</button><ul class=\"mdui-menu\" id=\""+downloadMenuID+"\" style=\""+menuDisplay+"\"><li class=\"mdui-menu-item\" style=\""+winDisplay+"\"><a onclick=\"showWarnDialog('"+winDownloadUrl+"','"+winDownloadMa+"');\" class=\"mdui-ripple\" ><i class=\"mdui-menu-item-icon mdui-icon material-icons\">file_download</i>Win版本下载</a></li><li class=\"mdui-menu-item\" style=\""+macDisplay+"\"><a onclick=\"showWarnDialog('"+macDownloadUrl+"','"+macDownloadMa+"');\" class=\"mdui-ripple\" ><i class=\"mdui-menu-item-icon mdui-icon material-icons\">file_download</i>Mac版本下载</a></li></ul></li>";
+function addPanelList(divID, appVersion, winDownloadUrl, winDownloadMa, macDownloadUrl, macDownloadMa, downloadMenuID) {
+    var ID = document.getElementById(divID);
+    var winDisplay;
+    var macDisplay;
+    var menuDisplay;
+    if (winDownloadUrl.length == 0) {
+        winDisplay = "display :none;";
+    }
+    if (macDownloadUrl.length == 0) {
+        macDisplay = "display :none;";
+    }
+    if (winDownloadUrl.length == 0 && macDownloadUrl.length == 0) {
+        menuDisplay = "display :none;";
+    }
+    ID.innerHTML = ID.innerHTML + "<li class=\"mdui-list-item\"><div class=\"mdui-list-item-content\">" + appVersion + "</div><button class=\"mdui-btn mdui-color-theme-accent mdui-ripple\" mdui-menu=\"{target: '#" + downloadMenuID + "'}\">下载</button><ul class=\"mdui-menu\" id=\"" + downloadMenuID + "\" style=\"" + menuDisplay + "\"><li class=\"mdui-menu-item\" style=\"" + winDisplay + "\"><a onclick=\"showWarnDialog('" + winDownloadUrl + "','" + winDownloadMa + "');\" class=\"mdui-ripple\" ><i class=\"mdui-menu-item-icon mdui-icon material-icons\">file_download</i>Win版本下载</a></li><li class=\"mdui-menu-item\" style=\"" + macDisplay + "\"><a onclick=\"showWarnDialog('" + macDownloadUrl + "','" + macDownloadMa + "');\" class=\"mdui-ripple\" ><i class=\"mdui-menu-item-icon mdui-icon material-icons\">file_download</i>Mac版本下载</a></li></ul></li>";
 }
 
 //Snackbar提示
-function showSnackbar(message)
-{
-var positions;
+function showSnackbar(message) {
+    var positions;
     if (Initialization() != false) {
-            positions = 'right-top'
+        positions = 'right-top'
     } else {
-            positions = 'bottom';
+        positions = 'bottom';
     }
     mdui.snackbar({
-            message: message,
-            position: positions
-        });
+        message: message,
+        position: positions
+    });
 }
 
 //手机弹窗
 function goPC() {
     if (Initialization() == false) {
-          alert("建议使用电脑端浏览器浏览。");
-          window.close();//关闭窗口
+        alert("建议使用电脑端浏览器浏览。");
+        window.close(); //关闭窗口
     }
 }
 
@@ -321,7 +306,7 @@ function setTabContent() {
         //Grass选项卡
         setClassName('TitleEd', '');
         removeElement('TooltipEd');
-    }else{
+    } else {
         //选项卡标题
         removeElement('tab-title-adobe'); //Adobe选项卡
         removeElement('tab-title-corel'); //Corel选项卡
@@ -351,7 +336,7 @@ function setClassName(id, name) {
 }
 
 //设置Display
-function setDisplay(id,displays){
+function setDisplay(id, displays) {
     document.getElementById(id).style.display = displays;
 }
 
@@ -359,6 +344,6 @@ function setDisplay(id,displays){
 function removeElement(id) {
     document.getElementById(id).style.display = "none";
 }
-</script>
-</body>
+</script>  
+ </body>
 </html>

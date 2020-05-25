@@ -64,6 +64,8 @@
 $(function() {
     Initialization(); //手机端适配
     setTabContent();
+    goPC();
+    
     //showTipsDialog('提示','这是个公告','我知道了','');
     $(window).scroll(function() {
         if ($(window).scrollTop() > 100) {
@@ -82,7 +84,7 @@ window.onload = function() {
 
 //Photoshop
 addPanelItem("tab-content-adobe", "https://www.adobe.com/content/dam/cc/cn/ccpp-related/Adobe_Photoshop_logo_RGB.svg", "Adobe Photoshop", "Win/Mac", "简体中文", "21.1.2.136", "集成破解", "2020-04-15", "TitlePs", "TooltipPs", "listPs");
-addPanelList("listPs", "Adobe Photoshop CC2020 v21.1.2.136", "", "", "1", "", "ps20");
+addPanelList("listPs", "Adobe Photoshop CC2020 v21.1.2.136", "111", "1111", "222", "2222", "ps20");
 //Illustrator
 addPanelItem("tab-content-adobe", "https://www.adobe.com/content/dam/cc/icons/illustrator.svg", "Adobe Illustrator", "Win/Mac", "简体中文", "24.1.2.408", "集成破解", "2020-04-16", "TitleAi", "TooltipAi", "listAi");
 addPanelList("listAi", "Adobe Illustrator CC2020 v24.1.2.408", "", "", "", "", "ai20");
@@ -168,7 +170,7 @@ function showDownloadSnackbar(url, text) {
         onButtonClick: function() {
             //按钮点击事件
             copyToClipboard(text);
-            window.location.href = url;
+            //window.location.href = url;
         },
         onClose: function() {
             //关闭
@@ -201,10 +203,20 @@ function copyToClipboard(text) {
     textArea.select();
     try {
         var successful = document.execCommand('copy');
-        var msg = successful ? '密码已成功复制到剪贴板。': '该浏览器暂不支持自动复制到剪贴板';
-        //alert(msg);
+        var msg = '密码：' +text+ '，已成功复制到剪贴板。';
+        showSnackbar(msg);
     } catch(err) {
-        alert('该浏览器暂不支持，请手动复制到剪贴板。');
+        mdui.prompt('请手动复制下方的密码：','复制失败',
+        function (value) {
+        },function (value) {},
+        {
+          defaultValue: text,
+          confirmText: '我已复制',
+          cancelText: '',
+          modal: true,
+          history: false,
+          closeOnEsc: false
+        });
     }
     document.body.removeChild(textArea);
 }
@@ -263,8 +275,12 @@ function showSnackbar(message) {
 //手机弹窗
 function goPC() {
     if (Initialization() == false) {
-        alert("建议使用电脑端浏览器浏览。");
-        window.close(); //关闭窗口
+      mdui.alert('建议使用电脑端浏览器进行访问。',
+      function(){
+      },{
+          confirmText: '我知道了'
+      });
+        //window.close(); //关闭窗口
     }
 }
 

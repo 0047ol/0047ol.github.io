@@ -320,8 +320,10 @@ function showDownloadSnackbar(url, text) {
         },
         onButtonClick: function() {
             //按钮点击事件
+            if (text.length != 0){
             copyToClipboard(text);
-            //window.location.href = url;
+            }
+            window.location.href = url;
         },
         onClose: function() {
             //关闭

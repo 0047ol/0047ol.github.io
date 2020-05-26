@@ -22,7 +22,7 @@
     }
   </style>
  </head> 
- <body class="mdui-theme-primary-blue mdui-theme-accent-blue mdui-appbar-with-toolbar mdui-appbar-with-tab mdui-bottom-nav-fixed" οncοntextmenu='return false' οndragstart='return false' onselectstart ='return false' οnselect='document.selection.empty()' οncοpy='document.selection.empty()' onbeforecopy='return false' οnmοuseup='document.selection.empty()'> 
+ <body class="mdui-theme-primary-blue mdui-theme-accent-blue mdui-appbar-with-toolbar mdui-appbar-with-tab mdui-bottom-nav-fixed" οncοntextmenu="return false" οndragstart="return false" οnselect="document.selection.empty()" οncοpy="document.selection.empty()" onbeforecopy="return false" οnmοuseup="document.selection.empty()" oncontextmenu=self.event.returnValue=false onselectstart="return false"> 
   <div id="outer" class="mdui-text-center"> 
    <div class="mdui-container-fluid mdui-p-t-5 mdui-valign"> 
     <div class="mdui-spinner mdui-spinner-colorful mdui-center"> 
@@ -118,13 +118,39 @@ $(function() {
         }
     });
     //禁用F12
-    window.onkeydown = window.onkeyup = window.onkeypress = function (event) {
-    // 判断是否按下F12键码为123
-    if (event.keyCode == 123) {
-    event.preventDefault(); // 阻止默认事件行为
-    window.event.returnValue = false;
-    }
-    }
+    /*/屏蔽键盘事件
+            document.onkeydown = function (){
+                var e = window.event || arguments[0];
+                //F12
+                if(e.keyCode == 123){
+                    return false;
+                //Ctrl+Shift+I
+                }else if((e.ctrlKey) && (e.shiftKey) && (e.keyCode == 73)){
+                    return false;
+                //Shift+F10
+                }else if((e.shiftKey) && (e.keyCode == 121)){
+                    return false;
+                //Ctrl+U
+                }else if((e.ctrlKey) && (e.keyCode == 85)){
+                    return false;
+                }
+            };
+    //屏蔽鼠标右键
+    document.oncontextmenu = function (){
+      return false;
+    }*/
+    mdui.prompt('请手动复制下方的密码：','复制失败',
+        function (value) {
+          
+        },function (value) {
+        },{
+          defaultValue: 'text',
+          confirmText: '我已复制',
+          cancelText: '',
+          modal: true,
+          history: false,
+          closeOnEsc: false
+        });
 });
 
 //网页加载结束
@@ -239,27 +265,6 @@ addPanelList("listDfq", "DaVinci Resolve Studio v13", "WIN", "", "MAC", "", "dfq
 addPanelList("listDfq", "DaVinci Resolve Studio v12", "WIN", "", "MAC", "", "dfq12");
 addPanelList("listDfq", "DaVinci Resolve Studio v11", "WIN", "", "MAC", "", "dfq11");
 addPanelList("listDfq", "DaVinci Resolve Studio v10", "WIN", "", "MAC", "", "dfq10");
-
-
-
-
-//Vegas
-addPanelItem("tab-content-magix", "https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1450597258,1630441204&fm=26&gp=0.jpg", "Magix Vegas Pro", "Windows", "简体中文", "17.0.0.421", "手动破解", "2020-02-20", "TitleVv", "TooltipVv", "listVv");
-addPanelList("listVv", "Magix Vegas Pro v17", "https://node4.mkdmirror.workers.dev/VegasPro/vegaspro17.zip", "", "", "", "vv17");
-addPanelList("listVv", "Magix Vegas Pro v16", "https://node4.mkdmirror.workers.dev/VegasPro/vegaspro16.zip", "", "", "", "vv16");
-addPanelList("listVv", "Magix Vegas Pro v15", "WIN", "", "", "", "vv15");
-addPanelList("listVv", "Magix Vegas Pro v14", "WIN", "", "", "", "vv14");
-addPanelList("listVv", "Magix Vegas Pro v13", "WIN", "", "", "", "vv13");
-
-
-
-
-//Edius
-addPanelItem("tab-content-grass", "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3772118960,2431841205&fm=26&gp=0.jpg", "Grass Valley Edius Pro", "Windows", "简体中文", "9.20.3340", "手动破解", "2018-12-09", "TitleEd", "TooltipEd", "listEd");
-addPanelList("listEd", "Grass Valley Edius Pro v9", "https://node4.mkdmirror.workers.dev/Edius9/crack.zip", "", "", "", "ed9");
-addPanelList("listEd", "Grass Valley Edius Pro v8", "WIN", "", "", "", "ed8");
-addPanelList("listEd", "Grass Valley Edius Pro v7", "WIN", "", "", "", "ed7");
-addPanelList("listEd", "Grass Valley Edius Pro v6", "WIN", "", "", "", "ed6");
 
 
 

@@ -7,11 +7,22 @@
   <meta name="renderer" content="webkit" /> 
   <meta http-equiv="Cache-Control" content="no-siteapp" /> 
   <title>软件下载集合</title> 
-  <link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/mdui/0.4.3/css/mdui.min.css" /> 
-  <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script> 
-  <script src="https://cdnjs.loli.net/ajax/libs/mdui/0.4.3/js/mdui.min.js"></script> 
+  <link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/mdui/0.4.3/css/mdui.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/muse-ui/dist/muse-ui.css">
+  <style>
+  *{
+    moz-user-select: -moz-none;
+    -moz-user-select: none;
+    -o-user-select:none;
+    -khtml-user-select:none;
+    -webkit-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+    }
+  </style>
  </head> 
- <body class="mdui-theme-primary-blue mdui-theme-accent-blue mdui-appbar-with-toolbar mdui-appbar-with-tab mdui-bottom-nav-fixed"> 
+ <body class="mdui-theme-primary-blue mdui-theme-accent-blue mdui-appbar-with-toolbar mdui-appbar-with-tab mdui-bottom-nav-fixed" οncοntextmenu='return false' οndragstart='return false' onselectstart ='return false' οnselect='document.selection.empty()' οncοpy='document.selection.empty()' onbeforecopy='return false' οnmοuseup='document.selection.empty()'> 
   <div id="outer" class="mdui-text-center"> 
    <div class="mdui-container-fluid mdui-p-t-5 mdui-valign"> 
     <div class="mdui-spinner mdui-spinner-colorful mdui-center"> 
@@ -20,7 +31,7 @@
    <br />loading...
   </div> 
   <div id="body-content" style="display:none"> 
-   <div class="mdui-appbar mdui-appbar-fixed mdui-appbar-scroll-toolbar-hide"> 
+   <div class="mdui-appbar mdui-appbar-fixed mdui-appbar-scroll-toolbar-hide">
     <div id="progress" class="mdui-progress" style="height:1px;"> 
      <div class="mdui-progress-indeterminate"></div> 
     </div> 
@@ -43,7 +54,8 @@
      <a href="#tab-content-magix" class="mdui-ripple"><img id="tab-img-magix" src="https://www.magix.com/fileadmin/fe/images/logos/magix_black.svg" height="30" /><font id="tab-title-magix">Magix</font></a> 
      <a href="#tab-content-grass" class="mdui-ripple"><img id="tab-img-grass" src="https://www.grassvalley.com/img/2019/tmpltab/gv_logo_v1.png" height="30" /><font id="tab-title-grass">Grass Valley</font></a> 
     </div> 
-   </div> 
+   </div>
+    
    <div id="tab-content" class="mdui-container mdui-p-a-2"> 
     <div id="tab-content-adobe"></div> 
     <!--CorelVideoStudio Pro--> 
@@ -56,17 +68,52 @@
     <div id="tab-content-grass"></div> 
    </div> 
    <a id="fab-animation" class="mdui-fab mdui-fab-hide mdui-fab-fixed mdui-ripple mdui-color-theme-accent" href="#top"> <i class="mdui-icon material-icons">keyboard_arrow_up</i> </a> 
-   <footer></footer> 
+
+   <footer class="page-footer mdui-color-theme-accent">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">关于本站</h5>
+                <p class="grey-text text-lighten-4">本站所有内容均来源于网络，仅限交流学习与研究使用，版权归属原版权方所有，版权争议与本站无关，下载使用者不得用于商业或非法用途，并请于24小时之内删除，否则后果由下载使用者自负。如有侵犯到你的权利，请您联系邮箱 : 2088343717@qq.com，谢谢 。</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">友情链接</h5>
+                <ul>
+                  <li>
+                  <a class="grey-text text-lighten-4" href="https://houqi.xyz">绘影梦后期论坛&nbsp;</a>
+                  <a class="grey-text text-lighten-4" href="http://www.dvedit.cn/">DVEdit论坛&nbsp;</a> 
+                  <a class="grey-text text-lighten-4" href="http://www.lookae.com/">大众脸&nbsp;</a> 
+                  <a class="grey-text text-lighten-4" href="https://www.fxxkmakeding.xyz">fxxkmakeding&nbsp;</a> 
+                  <a class="grey-text text-lighten-4" href="https://www.carrotchou.com">胡萝卜周&nbsp;</a> 
+                  <a class="grey-text text-lighten-4" href="https://www.zdfans.com">ZD423&nbsp;</a> 
+                  <a class="grey-text text-lighten-4" href="https://music.liuzhijin.cn">音乐直链搜索&nbsp;</a> 
+                  <a class="grey-text text-lighten-4" href="http://zhimo.yuanzhumuban.cc/music">全网音乐解析下载&nbsp;</a> 
+                  <a class="grey-text text-lighten-4" href="https://youtube.iiilab.com">视频解析下载&nbsp;</a> 
+                  <a class="grey-text text-lighten-4" href="http://haiya360.com">斗音解析下载&nbsp;</a> 
+                  <a class="grey-text text-lighten-4" href="https://oyqy.info">音乐解锁&nbsp;</a>
+
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container white-text">Copyright ©1999-2020 <a class="white-text" href="https://0047ol.github.io">0047ol</a> All Rights Reserved
+            <a class="white-text right" href="http://beian.miit.gov.cn">京ICP备XXXXXXXXXX号</a>
+            </div>
+          </div>
+        </footer>
+
   </div> 
   <script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script> 
   <script>
-
 $(function() {
     Initialization(); //手机端适配
     setTabContent();
     goPC();
-    
     //showTipsDialog('提示','这是个公告','我知道了','');
+    
+    //回到顶部
     $(window).scroll(function() {
         if ($(window).scrollTop() > 100) {
             $('#fab-animation').removeClass('mdui-fab-hide');
@@ -74,8 +121,18 @@ $(function() {
             $('#fab-animation').addClass('mdui-fab-hide');
         }
     });
+    
+    //禁用F12
+    window.onkeydown = window.onkeyup = window.onkeypress = function (event) {
+    // 判断是否按下F12，F12键码为123
+    if (event.keyCode == 123) {
+    event.preventDefault(); // 阻止默认事件行为
+    window.event.returnValue = false;
+    }
+    }
 });
 
+//网页加载结束
 window.onload = function() {
     setDisplay('outer', 'none');
     setDisplay('body-content', '');
@@ -114,7 +171,7 @@ addPanelItem("tab-content-grass", "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK
 function showWarnDialog(url, text) {
     mdui.dialog({
         title: '<strong>免责声明</strong>',
-        content: '根据《计算机软件保护条例》第十七条规定：“为了学习和研究软件内含的设计思想和原理，通过安装、显示、传输或者存储软件等方式使用软件的，可以不经软件著作权人许可，不向其支付报酬。”<br />我已知晓该站所有内容均来源于网络，仅限本人交流学习与研究使用，版权归属原版权方所有，版权争议与该站无关，我下载后不能用于商业或非法用途，否则后果均由我本人负责承担。',
+        content: '根据《计算机软件保护条例》第十七条规定：“为了学习和研究软件内含的设计思想和原理，通过安装、显示、传输或者存储软件等方式使用软件的，可以不经软件著作权人许可，不向其支付报酬。”<br />我已知晓该站所有内容均来源于网络，仅限本人交流学习与研究使用，版权归属原版权方所有，版权争议与该站无关，我下载后不能用于商业或非法用途，并会在24小时之内删除，否则后果均由我本人负责承担。',
         buttons: [{
             text: '同意并继续',
             bold: true,
@@ -360,6 +417,9 @@ function setDisplay(id, displays) {
 function removeElement(id) {
     document.getElementById(id).style.display = "none";
 }
-</script>  
+</script> 
+<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+<script src="https://cdnjs.loli.net/ajax/libs/mdui/0.4.3/js/mdui.min.js"></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
  </body>
 </html>

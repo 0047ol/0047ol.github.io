@@ -109,7 +109,6 @@ $(function() {
     setTabContent();
     goPC();
     //showTipsDialog('提示','这是个公告','我知道了','');
-    
     //回到顶部
     $(window).scroll(function() {
         if ($(window).scrollTop() > 100) {
@@ -118,10 +117,9 @@ $(function() {
             $('#fab-animation').addClass('mdui-fab-hide');
         }
     });
-    
     //禁用F12
     window.onkeydown = window.onkeyup = window.onkeypress = function (event) {
-    // 判断是否按下F12，F12键码为123
+    // 判断是否按下F12键码为123
     if (event.keyCode == 123) {
     event.preventDefault(); // 阻止默认事件行为
     window.event.returnValue = false;
@@ -136,10 +134,12 @@ window.onload = function() {
     setDisplay('progress', 'none');
 }
 
+
+
 //Photoshop
 addPanelItem("tab-content-adobe", "https://www.adobe.com/content/dam/cc/cn/ccpp-related/Adobe_Photoshop_logo_RGB.svg", "Adobe Photoshop", "Win/Mac", "简体中文", "21.1.2.136", "集成破解", "2020-04-15", "TitlePs", "TooltipPs", "listPs");
 addPanelList("listPs", "Adobe Photoshop CC 2020", "https://cloud189-henan-person.oos-hazz.ctyunapi.cn/1306ad8b-9aa6-481e-bbc6-02e768a818a0?x-amz-UFID=8151228760771254&x-amz-CLIENTNETWORK=UNKNOWN&x-amz-SHID=169098942&x-amz-FSIZE=1866888181&Expires=1590499858&x-amz-UID=262174363&response-content-disposition=attachment%3Bfilename%3D%22Adobe_Photoshop_2020_21.1.3.190_ACR12.2.1_SP_20200518.rar%22&AWSAccessKeyId=532482dfdc85e5d60592&x-amz-limitrate=61440&x-amz-CLOUDTYPEIN=PERSON&x-amz-CLIENTTYPEIN=WEB&Signature=zojPH87LIo%2BTDWZAMX2tv4x6K9Y%3D", "", "MAC", "", "ps20");
-addPanelList("listPs", "Adobe Photoshop CC 2019", "https://cloud189-shandong-person.oos-sdqd.ctyunapi.cn/b1f0630e-1da8-4117-b6a3-3d7281af9b66?x-amz-UFID=1131137414383895&x-amz-CLIENTNETWORK=UNKNOWN&x-amz-SHID=169098942&x-amz-FSIZE=1905346326&Expires=1590496769&x-amz-UID=262174363&response-content-disposition=attachment%3Bfilename%3D%22Adobe_Photoshop_CC_2019_20.0.9.113_ACR12.1_SP_20200329.rar%22&AWSAccessKeyId=caf5e6901807aca55a45&x-amz-limitrate=61440&x-amz-CLOUDTYPEIN=PERSON&x-amz-CLIENTTYPEIN=WEB&Signature=nxWViWHhvKHQF6l2bhnY/BuSUKk%3D", "没有密码", "MAC", "", "ps19");
+addPanelList("listPs", "Adobe Photoshop CC 2019", "https://cloud189-shandong-person.oos-sdqd.ctyunapi.cn/b1f0630e-1da8-4117-b6a3-3d7281af9b66?x-amz-UFID=1131137414383895&x-amz-CLIENTNETWORK=UNKNOWN&x-amz-SHID=169098942&x-amz-FSIZE=1905346326&Expires=1590496769&x-amz-UID=262174363&response-content-disposition=attachment%3Bfilename%3D%22Adobe_Photoshop_CC_2019_20.0.9.113_ACR12.1_SP_20200329.rar%22&AWSAccessKeyId=caf5e6901807aca55a45&x-amz-limitrate=61440&x-amz-CLOUDTYPEIN=PERSON&x-amz-CLIENTTYPEIN=WEB&Signature=nxWViWHhvKHQF6l2bhnY/BuSUKk%3D", "", "MAC", "", "ps19");
 addPanelList("listPs", "Adobe Photoshop CC 2018", "WIN", "", "MAC", "", "ps18");
 addPanelList("listPs", "Adobe Photoshop CC 2017", "WIN", "", "MAC", "", "ps17");
 addPanelList("listPs", "Adobe Photoshop CS6", "WIN", "", "MAC", "", "ps6");
@@ -261,6 +261,7 @@ addPanelList("listEd", "Grass Valley Edius Pro v8", "WIN", "", "", "", "ed8");
 addPanelList("listEd", "Grass Valley Edius Pro v7", "WIN", "", "", "", "ed7");
 addPanelList("listEd", "Grass Valley Edius Pro v6", "WIN", "", "", "", "ed6");
 
+
 //声明弹窗
 function showWarnDialog(url, text) {
     mdui.dialog({
@@ -306,36 +307,19 @@ function showTipsDialog(tle, msg, btn, link) {
 
 //下载提示
 function showDownloadSnackbar(url, text) {
-    var positionss;
-    if (Initialization() != false) {
-        positionss = 'right-top';
-    } else {
-        positionss = 'bottom';
+  if (url.indexOf("http") != -1){
+    if (text.length == 0){
+        showConfirmSnackbar(url,"已成功获取到下载链接。","点击下载");
+    }else{
+        copyToClipboard(text,url);
     }
-    mdui.snackbar({
-        message: '已获取到下载链接。点击下载密码将会自动复制。',
-        buttonText: '点击下载',
-        onClick: function() {
-            //触碰
-        },
-        onButtonClick: function() {
-            //按钮点击事件
-            if (text.length != 0){
-            copyToClipboard(text);
-            }
-            window.location.href = url;
-        },
-        onClose: function() {
-            //关闭
-        },
-        position: positionss,
-        timeout: 0,
-        closeOnOutsideClick: false
-    });
+  }else{
+    showSnackbar("下载失败。未成功获取到下载链接。");
+  }
 }
 
 //复制到剪贴板
-function copyToClipboard(text) {
+function copyToClipboard(text,url) {
     if (text.indexOf('-') !== -1) {
         let arr = text.split('-');
         text = arr[0] + arr[1];
@@ -356,13 +340,14 @@ function copyToClipboard(text) {
     textArea.select();
     try {
         var successful = document.execCommand('copy');
-        var msg = '密码：' +text+ '，已成功复制到剪贴板。';
-        showSnackbar(msg);
+        var msg = '已获取下载链接，密码' +text+ '将会自动复制。';
+        showConfirmSnackbar(url,msg,"继续下载");
     } catch(err) {
         mdui.prompt('请手动复制下方的密码：','复制失败',
         function (value) {
-        },function (value) {},
-        {
+          window.location.href = url;
+        },function (value) {
+        },{
           defaultValue: text,
           confirmText: '我已复制',
           cancelText: '',
@@ -409,6 +394,32 @@ function addPanelList(divID, appVersion, winDownloadUrl, winDownloadMa, macDownl
         menuDisplay = "display :none;";
     }
     ID.innerHTML = ID.innerHTML + "<li class=\"mdui-list-item\"><div class=\"mdui-list-item-content\">" + appVersion + "</div><button class=\"mdui-btn mdui-color-theme-accent mdui-ripple\" mdui-menu=\"{target: '#" + downloadMenuID + "'}\">下载</button><ul class=\"mdui-menu\" id=\"" + downloadMenuID + "\" style=\"" + menuDisplay + "\"><li class=\"mdui-menu-item\" style=\"" + winDisplay + "\"><a onclick=\"showWarnDialog('" + winDownloadUrl + "','" + winDownloadMa + "');\" class=\"mdui-ripple\" ><i class=\"mdui-menu-item-icon mdui-icon material-icons\">file_download</i>Win版本下载</a></li><li class=\"mdui-menu-item\" style=\"" + macDisplay + "\"><a onclick=\"showWarnDialog('" + macDownloadUrl + "','" + macDownloadMa + "');\" class=\"mdui-ripple\" ><i class=\"mdui-menu-item-icon mdui-icon material-icons\">file_download</i>Mac版本下载</a></li></ul></li>";
+}
+
+//Snackbar提示跳转
+function showConfirmSnackbar(url, text,buton) {
+    var positionss;
+    if (Initialization() != false) {
+        positionss = 'right-top';
+    } else {
+        positionss = 'bottom';
+    }
+    mdui.snackbar({
+        message: text,
+        buttonText: buton,
+        onClick: function() {
+            //触碰
+        },
+        onButtonClick: function() {
+          window.location.href = url;
+        },
+        onClose: function() {
+            //关闭
+        },
+        position: positionss,
+        timeout: 0,
+        closeOnOutsideClick: false
+    });
 }
 
 //Snackbar提示

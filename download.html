@@ -44,6 +44,7 @@
      <a href="#tab-content-grass" class="mdui-ripple"><img id="tab-img-grass" src="https://www.grassvalley.com/img/2019/tmpltab/gv_logo_v1.png" height="30" /><font id="tab-title-grass">Grass Valley</font></a> 
     </div> 
    </div>
+    
    <div id="tab-content" class="mdui-container mdui-p-a-2"> 
     <div id="tab-content-adobe"></div> 
     <!--CorelVideoStudio Pro--> 
@@ -56,6 +57,7 @@
     <div id="tab-content-grass"></div> 
    </div> 
    <a id="fab-animation" class="mdui-fab mdui-fab-hide mdui-fab-fixed mdui-ripple mdui-color-theme-accent" href="#top"> <i class="mdui-icon material-icons">keyboard_arrow_up</i> </a> 
+
    <footer class="page-footer mdui-color-theme-accent">
           <div class="container">
             <div class="row">
@@ -75,6 +77,7 @@
                   <a class="grey-text text-lighten-4" href="https://youtube.iiilab.com" mdui-tooltip="{content: '网站介绍'}">视频解析下载&nbsp;</a> 
                   <a class="grey-text text-lighten-4" href="http://haiya360.com" mdui-tooltip="{content: '网站介绍'}">斗音解析下载&nbsp;</a> 
                   <a class="grey-text text-lighten-4" href="https://oyqy.info" mdui-tooltip="{content: '网站介绍'}">音乐解锁&nbsp;</a>
+
                   </li>
                 </ul>
               </div>
@@ -86,14 +89,11 @@
             </div>
           </div>
         </footer>
+
   </div> 
   <script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
-  <script type="text/javascript" src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
-  <script type="text/javascript" src="/download.js"></script>
-  <script type="text/javascript" src="https://cdnjs.loli.net/ajax/libs/mdui/0.4.3/js/mdui.min.js"></script> 
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script type="text/javascript">
-$(function() {
+  <script type="text/javascript">
+  $(function() {
     Initialization(); //手机端适配
     setTabContent();
     goPC();
@@ -128,14 +128,12 @@ $(function() {
       return false;
     }*/
 });
-
 //网页加载结束
 window.onload = function() {
     setDisplay('outer', 'none');
     setDisplay('body-content', '');
     setDisplay('progress', 'none');
 }
-
 //声明弹窗
 function showWarnDialog(url, text) {
     mdui.dialog({
@@ -158,7 +156,6 @@ function showWarnDialog(url, text) {
         closeOnEsc: false
     });
 }
-
 //公告弹窗
 function showTipsDialog(tle, msg, btn, link) {
     mdui.dialog({
@@ -178,7 +175,6 @@ function showTipsDialog(tle, msg, btn, link) {
         closeOnEsc: false
     });
 }
-
 //下载提示
 function showDownloadSnackbar(url, text) {
   if (url.indexOf("http") != -1){
@@ -191,7 +187,6 @@ function showDownloadSnackbar(url, text) {
     showSnackbar("下载失败。未成功获取到下载链接。");
   }
 }
-
 //复制到剪贴板
 function copyToClipboard(text,url) {
     if (text.indexOf('-') !== -1) {
@@ -232,7 +227,6 @@ function copyToClipboard(text,url) {
     }
     document.body.removeChild(textArea);
 }
-
 //增加表头
 function addPanelItem(tabContent, imageSrc, appName, deviceSystem, appLanguage, latestVersion, toCrack, lastUpdatetime, itemTitleID, itemTooltipID, mduiListID) {
     var container = document.getElementById(tabContent);
@@ -251,7 +245,6 @@ function addPanelItem(tabContent, imageSrc, appName, deviceSystem, appLanguage, 
     }
     container.innerHTML = container.innerHTML + "<div class=\"mdui-panel mdui-panel-popout\" mdui-panel><div class=\"mdui-panel-item\"><div class=\"mdui-panel-item-header\"><img src=\"" + imageSrc + "\" width=\"25\" height=\"25\" />&nbsp;<div id=\"" + itemTitleID + "\" class=\"mdui-panel-item-title\">" + appName + "</div><div id=\"" + itemTooltipID + "\"><div class=\"mdui-chip\"><a mdui-tooltip=\"{content: '" + isdeviceSystem + "'}\"><span class=\"mdui-chip-title mdui-text-color-black-secondary\"><i class=\"mdui-icon material-icons\">computer</i>" + deviceSystem + "</span></a></div>&nbsp;<div class=\"mdui-chip\"><a mdui-tooltip=\"{content: '已支持" + appLanguage + "。'}\"><span class=\"mdui-chip-title mdui-text-color-black-secondary\"><i class=\"mdui-icon material-icons\">language</i>" + appLanguage + "</span></a></div>&nbsp;<div class=\"mdui-chip\"><a mdui-tooltip=\"{content: '最新版本号：" + latestVersion + "'}\"><span class=\"mdui-chip-title mdui-text-color-black-secondary\"><i class=\"mdui-icon material-icons\">update</i>" + latestVersion + "</span></a></div>&nbsp;<div class=\"mdui-chip\"><a mdui-tooltip=\"{content: '" + isCrack + "'}\"><span class=\"mdui-chip-title mdui-text-color-black-secondary\"><i class=\"mdui-icon material-icons\">" + isCrackicon + "</i>" + toCrack + "</span></a></div>&nbsp;<div class=\"mdui-chip\"><a mdui-tooltip=\"{content: '最近更新时间：" + lastUpdatetime + "'}\"><span class=\"mdui-chip-title mdui-text-color-black-secondary\"><i class=\"mdui-icon material-icons\">access_time</i>" + lastUpdatetime + "</span></a></div>&nbsp;</div><i class=\"mdui-panel-item-arrow mdui-icon material-icons\" mdui-tooltip=\"{content: '点击展开',position: 'left'}\">keyboard_arrow_down</i></div><div class=\"mdui-panel-item-body\"><ul id=\"" + mduiListID + "\" class=\"mdui-list\"></ul><div class=\"mdui-panel-item-actions\"><button class=\"mdui-btn mdui-ripple\" mdui-panel-item-close=\"\"  mdui-tooltip=\"{content: '点击收起',position: 'left'}\">收起</button></div></div></div>";
 }
-
 //增加一列
 function addPanelList(divID, appVersion, winDownloadUrl, winDownloadMa, macDownloadUrl, macDownloadMa, downloadMenuID) {
     var ID = document.getElementById(divID);
@@ -269,7 +262,6 @@ function addPanelList(divID, appVersion, winDownloadUrl, winDownloadMa, macDownl
     }
     ID.innerHTML = ID.innerHTML + "<li class=\"mdui-list-item\"><div class=\"mdui-list-item-content\">" + appVersion + "</div><button class=\"mdui-btn mdui-color-theme-accent mdui-ripple\" mdui-menu=\"{target: '#" + downloadMenuID + "'}\">下载</button><ul class=\"mdui-menu\" id=\"" + downloadMenuID + "\" style=\"" + menuDisplay + "\"><li class=\"mdui-menu-item\" style=\"" + winDisplay + "\"><a onclick=\"showWarnDialog('" + winDownloadUrl + "','" + winDownloadMa + "');\" class=\"mdui-ripple\" ><i class=\"mdui-menu-item-icon mdui-icon material-icons\">file_download</i>Win版本下载</a></li><li class=\"mdui-menu-item\" style=\"" + macDisplay + "\"><a onclick=\"showWarnDialog('" + macDownloadUrl + "','" + macDownloadMa + "');\" class=\"mdui-ripple\" ><i class=\"mdui-menu-item-icon mdui-icon material-icons\">file_download</i>Mac版本下载</a></li></ul></li>";
 }
-
 //Snackbar提示跳转
 function showConfirmSnackbar(url, text,buton) {
     var positionss;
@@ -295,7 +287,6 @@ function showConfirmSnackbar(url, text,buton) {
         closeOnOutsideClick: false
     });
 }
-
 //Snackbar提示
 function showSnackbar(message) {
     var positions;
@@ -309,7 +300,6 @@ function showSnackbar(message) {
         position: positions
     });
 }
-
 //手机弹窗
 function goPC() {
     if (Initialization() == false) {
@@ -321,7 +311,6 @@ function goPC() {
         //window.close(); //关闭窗口
     }
 }
-
 //选项卡适配
 function setTabContent() {
     if (Initialization() == false) {
@@ -369,7 +358,6 @@ function setTabContent() {
         removeElement('tab-title-grass'); //Grass选项卡
     }
 }
-
 //判断浏览器
 function Initialization() {
     var userAgentInfo = navigator.userAgent;
@@ -383,21 +371,21 @@ function Initialization() {
     }
     return flag;
 }
-
 //设置Class
 function setClassName(id, name) {
     document.getElementById(id).className = name;
 }
-
 //设置Display
 function setDisplay(id, displays) {
     document.getElementById(id).style.display = displays;
 }
-
 //删除元素
 function removeElement(id) {
     document.getElementById(id).style.display = "none";
 }
-</script>
+</script> 
+<script src="/download.js"></script> 
+<script src="https://cdnjs.loli.net/ajax/libs/mdui/0.4.3/js/mdui.min.js"></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
 </html>

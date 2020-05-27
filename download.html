@@ -1856,7 +1856,6 @@
 	</g>
 </g>
 </svg>
-
        <font id="tab-title-corel">Corel</font></a> 
      <a href="#tab-content-bmd" class="mdui-ripple">
      <svg version="1.1" id="tab-img-bmd" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -1959,7 +1958,6 @@
 		L1.42,7.91z M5.33,13.17c1.17-0.66,1.75-1.59,1.75-2.8c0-1.02-0.34-1.81-1.03-2.39s-1.7-0.87-3.03-0.87H0.49v12.6h3.57
 		c1.26,0,2.25-0.3,2.99-0.91c0.74-0.6,1.1-1.42,1.1-2.44C8.14,14.65,7.21,13.59,5.33,13.17L5.33,13.17z"/>
 </g></svg>
-
        <font id="tab-title-bmd">Blackmagicdesign</font></a> 
      <a href="#tab-content-magix" class="mdui-ripple">
      <svg version="1.1" id="tab-img-magix" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -2169,7 +2167,6 @@ function showWarnDialog(url, text) {
             bold: true,
             onClick: function(inst) {
                 showDownloadSnackbar(url, text);
-                //showSnackbar("下载失败。当前正在维护中。");
             }
         },
         {
@@ -2376,6 +2373,12 @@ function Initialization() {
 }
 function setClassName(id, name) {
     document.getElementById(id).className = name;
+}
+function removeClassName(id, name) {
+    document.getElementById(id).classList.remove(name);
+}
+function addClassName(id, name) {
+    document.getElementById(id).classList.add(name);
 }
 function setDisplay(id, displays) {
     document.getElementById(id).style.display = displays;

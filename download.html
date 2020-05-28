@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
- <head>
+ <head> 
   <meta charset="utf-8" /> 
   <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no" /> 
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /> 
   <meta name="renderer" content="webkit" /> 
   <meta http-equiv="Cache-Control" content="no-siteapp" /> 
   <title>软件下载集合</title> 
+  <link rel="shortcut icon" href="https://s1.ax1x.com/2020/05/29/tmViJe.png" type="image/x-icon"/>
   <link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/mdui/0.4.3/css/mdui.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <link rel="stylesheet" href="https://unpkg.com/muse-ui/dist/muse-ui.css">
  </head> 
  <body id="bodys" class="mdui-theme-primary-blue mdui-theme-accent-blue mdui-appbar-with-toolbar mdui-appbar-with-tab mdui-bottom-nav-fixed" οncοntextmenu="return false" οndragstart="return false" οnselect="document.selection.empty()" οncοpy="document.selection.empty()" onbeforecopy="return false" οnmοuseup="document.selection.empty()" oncontextmenu=self.event.returnValue=false onselectstart="return false"> 
+ <!---加载--->
   <div id="loader" class="mdui-text-center"> 
    <div class="mdui-container-fluid mdui-p-t-5 mdui-valign"> 
     <div class="mdui-spinner mdui-spinner-colorful mdui-center"> 
@@ -19,25 +21,27 @@
    </div> 
    <br />loading...
   </div> 
+  <!---body--->
   <div id="body-content" style="display:none"> 
+  <!---应用栏--->
    <div class="mdui-appbar mdui-appbar-fixed mdui-appbar-scroll-toolbar-hide">
     <div class="mdui-toolbar mdui-color-white"> 
      <a href="javascript:;" onclick="closeWindows();" class="mdui-btn mdui-btn-icon mdui-ripple" mdui-tooltip="{content: '返回'}"><i class="mdui-icon material-icons">arrow_back</i></a> 
-     <span class="mdui-typo-title">0047ol</span> 
+     <span id="typotitle" class="mdui-typo-title">0047ol</span> 
      <div class="mdui-toolbar-spacer"></div> 
-     <a href="javascript:;" onclick="showSnackbar('message');" class="mdui-btn mdui-btn-icon mdui-ripple" mdui-tooltip="{content: '搜索'}"><i class="mdui-icon material-icons">search</i></a> 
+     <a href="javascript:;" onclick="showSnackbar('error');" class="mdui-btn mdui-btn-icon mdui-ripple" mdui-tooltip="{content: '搜索'}"><i class="mdui-icon material-icons">search</i></a> 
      <a href="javascript:;" onclick="setThemes();" class="mdui-btn mdui-btn-icon mdui-ripple" mdui-tooltip="{content: '主题'}"><i class="mdui-icon material-icons">brightness_4</i></a> 
      <a href="javascript:;" onclick="location.reload();" class="mdui-btn mdui-btn-icon mdui-ripple" mdui-tooltip="{content: '刷新'}"><i class="mdui-icon material-icons">refresh</i></a> 
      <a href="javascript:;" onclick="" class="mdui-btn mdui-btn-icon mdui-ripple" mdui-tooltip="{content: '菜单'}" mdui-menu="{target: '#toolbar-menu'}"><i class="mdui-icon material-icons">more_vert</i></a> 
      <ul class="mdui-menu" id="toolbar-menu"> 
-      <li class="mdui-menu-item"> <a onclick="showSnackbar('message');" class="mdui-ripple">menu</a></li> 
-      <li class="mdui-menu-item"> <a onclick="showSnackbar('message');" class="mdui-ripple">menu</a></li> 
+      <li class="mdui-menu-item"> <a onclick="showSnackbar('error');" class="mdui-ripple">menu</a></li> 
+      <li class="mdui-menu-item"> <a onclick="showSnackbar('error');" class="mdui-ripple">menu</a></li> 
      </ul> 
     </div> 
-    <div id="mdui-tab-full" class="mdui-tab mdui-tab-full-width mdui-color-white" mdui-tab=""> 
-     <a href="#tab-content-adobe" class="mdui-tab-active mdui-ripple">
-       <svg version="1.1" id="tab-img-adobe" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 121 30" style="enable-background:new 0 0 121 30;" xml:space="preserve" fill="#fa0f00" height="24px">
+  <!---选项卡--->
+  <div id="mdui-tab-full" class="mdui-tab mdui-tab-full-width mdui-color-white" mdui-tab=""> 
+  <a href="#tab-content-adobe" class="mdui-tab-active mdui-ripple">
+ <svg version="1.1" id="tab-img-adobe" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 121 30" style="enable-background:new 0 0 121 30;" xml:space="preserve" fill="#fa0f00" height="24px">
 <style id="tab-img-adobe-style" type="text/css">
 	.st463{fill:#fa0f00;}
 </style>
@@ -50,10 +54,9 @@
 	<path class="st463" d="M96.47,3.55c0.2,0,0.25,0.03,0.25,0.2v6.4c0.93-0.36,1.91-0.62,3.09-0.62c3.9,0,6.26,2.81,6.26,6.43 c0,4.88-3.85,7.75-8.28,7.75c-1.46,0-2.75-0.14-4.3-0.59c-0.11-0.06-0.17-0.17-0.17-0.28V3.74c0-0.14,0.06-0.2,0.2-0.2H96.47z M98.97,12.25c-0.81,0-1.57,0.11-2.25,0.48v8.23c0.45,0.14,0.96,0.17,1.52,0.17c2.08,0,4.35-1.54,4.35-4.77 C102.59,13.63,101.11,12.25,98.97,12.25z"/>
 	<path class="st463" d="M112,17.3c0.06,2.13,1.38,3.65,4.21,3.65c1.04,0,2.3-0.17,3.51-0.7c0.08-0.03,0.17,0,0.17,0.14v2.25 c0,0.2-0.06,0.25-0.17,0.31c-1.09,0.56-2.42,0.76-4.21,0.79c-5.11,0-6.96-3.48-6.96-7.02c0-4.01,2.39-7.19,6.6-7.19 c4.13,0,5.78,3.14,5.78,5.76c0,1.21-0.14,1.77-0.25,1.85c-0.34,0.14-1.4,0.17-2.95,0.17H112z M116.5,15.14 c1.04,0,1.21-0.11,1.24-0.22c0-0.06,0-0.2,0-0.31c0-0.84-0.56-2.67-2.72-2.67c-1.83,0-2.78,1.4-3,3.2H116.5z"/>
 </svg>
-       <font id="tab-title-adobe">Adobe</font></a> 
-     <a href="#tab-content-corel" class="mdui-ripple">
-       <svg version="1.1" id="tab-img-corel" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 97 30" style="enable-background:new 0 0 97 30;" xml:space="preserve" height="30px">
+<font id="tab-title-adobe">Adobe</font></a> 
+<a href="#tab-content-corel" class="mdui-ripple">
+<svg version="1.1" id="tab-img-corel" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 97 30" style="enable-background:new 0 0 97 30;" xml:space="preserve" height="30px">
 <style id="tab-img-corel-style" type="text/css">
 	.st0{fill:#2C62F8;}
 	.st1{fill:#439DFD;}
@@ -1856,10 +1859,9 @@
 	</g>
 </g>
 </svg>
-       <font id="tab-title-corel">Corel</font></a> 
-     <a href="#tab-content-bmd" class="mdui-ripple">
-     <svg version="1.1" id="tab-img-bmd" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 124 30" style="enable-background:new 0 0 124 30;" xml:space="preserve" height="30px">
+<font id="tab-title-corel">Corel</font></a> 
+<a href="#tab-content-bmd" class="mdui-ripple">
+<svg version="1.1" id="tab-img-bmd" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 124 30" style="enable-background:new 0 0 124 30;" xml:space="preserve" height="30px">
 <style id="tab-img-bmd-style" type="text/css">
 	.st464{fill-rule:evenodd;clip-rule:evenodd;fill:#A7423B;}
 	.st466{fill-rule:evenodd;clip-rule:evenodd;fill:#DE6D36;}
@@ -1957,11 +1959,11 @@
 		C7.14,17.12,6.87,17.74,6.33,18.2L6.33,18.2z M1.42,7.91H2.7c2.24,0,3.36,0.84,3.36,2.52c0,1.67-1.11,2.51-3.33,2.51H1.42V7.91
 		L1.42,7.91z M5.33,13.17c1.17-0.66,1.75-1.59,1.75-2.8c0-1.02-0.34-1.81-1.03-2.39s-1.7-0.87-3.03-0.87H0.49v12.6h3.57
 		c1.26,0,2.25-0.3,2.99-0.91c0.74-0.6,1.1-1.42,1.1-2.44C8.14,14.65,7.21,13.59,5.33,13.17L5.33,13.17z"/>
-</g></svg>
-       <font id="tab-title-bmd">Blackmagicdesign</font></a> 
-     <a href="#tab-content-magix" class="mdui-ripple">
-     <svg version="1.1" id="tab-img-magix" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 174 30" style="enable-background:new 0 0 174 30;" xml:space="preserve" height="18px">
+</g>
+</svg>
+<font id="tab-title-bmd">Blackmagicdesign</font></a> 
+<a href="#tab-content-magix" class="mdui-ripple">
+<svg version="1.1" id="tab-img-magix" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 174 30" style="enable-background:new 0 0 174 30;" xml:space="preserve" height="18px">
 <style id="tab-img-magix-style" type="text/css">
 	.st465{fill:#333333;}
 </style>
@@ -1973,13 +1975,11 @@
 <path class="st465" d="M72.62,27.39h-5.78V11.4l-7.46,10.16h-0.15L51.76,11.4v15.99h-5.78V2.67h5.45l7.87,10.53l7.87-10.53h5.45 L72.62,27.39L72.62,27.39z"/>
 <path class="st465" d="M2.78,23.62c-0.37,0-0.74-0.07-1.09-0.22c-1.41-0.6-2.07-2.24-1.46-3.65L5.18,8.17 c0.6-1.41,2.24-2.06,3.65-1.46c1.41,0.6,2.07,2.24,1.46,3.65L5.34,21.93C4.88,22.98,3.86,23.62,2.78,23.62z"/>
 <path class="st465" d="M10.7,29.85c-0.36,0-0.74-0.07-1.09-0.23c-1.41-0.6-2.07-2.24-1.46-3.65L18.5,1.8c0.6-1.41,2.24-2.06,3.65-1.46 c1.41,0.6,2.07,2.24,1.46,3.65L13.26,28.16C12.81,29.22,11.78,29.85,10.7,29.85z"/>
-<path class="st465" d="M22.6,26.87c-0.36,0-0.74-0.07-1.09-0.22c-1.41-0.6-2.07-2.24-1.46-3.65l7.81-18.23
-	c0.6-1.41,2.24-2.07,3.65-1.46c1.41,0.6,2.07,2.24,1.46,3.65l-7.81,18.23C24.7,26.24,23.68,26.87,22.6,26.87z"/>
+<path class="st465" d="M22.6,26.87c-0.36,0-0.74-0.07-1.09-0.22c-1.41-0.6-2.07-2.24-1.46-3.65l7.81-18.23 c0.6-1.41,2.24-2.07,3.65-1.46c1.41,0.6,2.07,2.24,1.46,3.65l-7.81,18.23C24.7,26.24,23.68,26.87,22.6,26.87z"/>
 </svg>
-       <font id="tab-title-magix">Magix</font></a> 
-     <a href="#tab-content-grass" class="mdui-ripple">
-       <svg version="1.1" id="tab-img-grass" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 187.6 30" style="enable-background:new 0 0 187.6 30;" xml:space="preserve" height="23px" fill="#ffffff">
+<font id="tab-title-magix">Magix</font></a> 
+<a href="#tab-content-grass" class="mdui-ripple">
+<svg version="1.1" id="tab-img-grass" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 187.6 30" style="enable-background:new 0 0 187.6 30;" xml:space="preserve" height="23px" fill="#ffffff">
 <style id="tab-img-grass-style" type="text/css">
 	.st471{fill:#5F1069;}
 	.st472{fill:#221F1F;}
@@ -2054,9 +2054,10 @@
 	</g>
 </g>
 </svg>
-       <font id="tab-title-grass">Grass Valley</font></a> 
-    </div> 
+   <font id="tab-title-grass">Grass Valley</font></a> 
+   </div> 
    </div>
+   <!---选项卡内容--->
    <div id="tab-content" class="mdui-container mdui-p-a-2"> 
     <div id="tab-content-adobe"></div> 
     <!--CorelVideoStudio Pro--> 
@@ -2068,13 +2069,16 @@
     <!--Grass Valley Edius Pro--> 
     <div id="tab-content-grass"></div> 
    </div> 
+   <!---回到顶部--->
    <a id="fab-animation" class="mdui-fab mdui-fab-hide mdui-fab-fixed mdui-ripple mdui-color-theme-accent mdui-m-b-4" href="#top">
      <i class="mdui-icon material-icons">keyboard_arrow_up</i>
    </a> 
+   <!---页脚--->
    <footer class="page-footer mdui-color-theme-accent">
           <div class="container">
             <div class="row">
               <div class="col l4 s12">
+                <!---友链--->
                 <h5><a class="white-text" mdui-tooltip="{content: '互加友链请联系邮箱：2088343717@qq.com',position: 'right'}"><i class="mdui-icon material-icons">thumb_up</i>&nbsp;友情链接</a></h5>
                 <ul>
                   <li>
@@ -2094,9 +2098,10 @@
               </div>
             </div>
           </div>
+          <!---版权--->
           <div class="footer-copyright">
             <div class="container white-text">Copyright ©1999-2020 <a class="white-text" href="https://0047ol.github.io">0047ol</a> All Rights Reserved
-            <a class="white-text right" href="http://beian.miit.gov.cn">京ICP备XXXXXXXXXX号</a>
+            <!--<a class="white-text right" href="http://beian.miit.gov.cn">京ICP备XXXXXXXXXX号</a>-->
             </div>
           </div>
         </footer>
@@ -2104,9 +2109,12 @@
   <script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
   <script type="text/javascript">
   $(function() {
-    Initialization();
+    Initialization(); //手机端适配
     setTabContent();
     goPC();
+    document.getElementById('typotitle').innerHTML = document.title;
+    //showTipsDialog('提示','这是个公告','我知道了','');
+    //回到顶部
     $(window).scroll(function() {
         if ($(window).scrollTop() > 100) {
             $('#fab-animation').removeClass('mdui-fab-hide');
@@ -2114,29 +2122,38 @@
             $('#fab-animation').addClass('mdui-fab-hide');
         }
     });
+    //屏蔽键盘事件
     document.onkeydown = function (){
       var e = window.event || arguments[0];
+      //F12
       if(e.keyCode == 123){
         return false;
+      //Ctrl+Shift+I
     }else if((e.ctrlKey) && (e.shiftKey) && (e.keyCode == 73)){
         return false;
+      //Shift+F10
     }else if((e.shiftKey) && (e.keyCode == 121)){
         return false;
+      //Ctrl+U
     }else if((e.ctrlKey) && (e.keyCode == 85)){
         return false;
     }
    };
+    //屏蔽鼠标右键
     document.oncontextmenu = function (){
       return false;
     }
 });
+//网页加载结束
 window.onload = function() {
     setDisplay('loader', 'none');
     setDisplay('body-content', '');
 }
+//关闭窗口
 function closeWindows(){
 window.close();
 }
+//设置主题
 function setThemes() {
 var id = "bodys";
 var theme = "mdui-theme-layout-dark";
@@ -2158,6 +2175,7 @@ if(body.indexOf(theme) != -1)
    document.getElementById('tab-img-grass-style').innerHTML = ".st465{fill:#ffffff;}";
   }
 }
+//声明弹窗
 function showWarnDialog(url, text) {
     mdui.dialog({
         title: '<strong>免责声明</strong>',
@@ -2167,6 +2185,7 @@ function showWarnDialog(url, text) {
             bold: true,
             onClick: function(inst) {
                 showDownloadSnackbar(url, text);
+                //showSnackbar("下载失败。当前正在维护中。");
             }
         },
         {
@@ -2178,6 +2197,7 @@ function showWarnDialog(url, text) {
         closeOnEsc: false
     });
 }
+//公告弹窗
 function showTipsDialog(tle, msg, btn, link) {
     mdui.dialog({
         title: tle,
@@ -2196,6 +2216,7 @@ function showTipsDialog(tle, msg, btn, link) {
         closeOnEsc: false
     });
 }
+//下载提示
 function showDownloadSnackbar(url, text) {
   if (url.indexOf("http") != -1){
     if (text.length == 0){
@@ -2207,6 +2228,7 @@ function showDownloadSnackbar(url, text) {
     showSnackbar("下载失败。未成功获取到下载链接。");
   }
 }
+//复制到剪贴板
 function copyToClipboard(text,url) {
     if (text.indexOf('-') !== -1) {
         let arr = text.split('-');
@@ -2246,14 +2268,17 @@ function copyToClipboard(text,url) {
     }
     document.body.removeChild(textArea);
 }
+//增加表头
 function addPanelItem(tabContent, imageSrc, appName, deviceSystem, appLanguage, latestVersion, toCrack, lastUpdatetime, itemTitleID, itemTooltipID, mduiListID) {
     var container = document.getElementById(tabContent);
     var isCrackicon;
+    //判断平台
     if (deviceSystem.indexOf("/") == -1) {
         isdeviceSystem = " 仅支持" + deviceSystem + "平台。"
     } else {
         isdeviceSystem = " 支持Win与Mac双平台。"
     }
+    //修改图标
     if (toCrack.indexOf("集成") == -1) {
         isCrack = " 需按照说明，进行手动破解。";isCrackicon = " info";
     } else {
@@ -2261,6 +2286,7 @@ function addPanelItem(tabContent, imageSrc, appName, deviceSystem, appLanguage, 
     }
     container.innerHTML = container.innerHTML + "<div class=\"mdui-panel mdui-panel-popout\" mdui-panel><div class=\"mdui-panel-item\"><div class=\"mdui-panel-item-header\"><img src=\"" + imageSrc + "\" width=\"25\" height=\"25\" />&nbsp;<div id=\"" + itemTitleID + "\" class=\"mdui-panel-item-title\">" + appName + "</div><div id=\"" + itemTooltipID + "\"><div class=\"mdui-chip\"><a mdui-tooltip=\"{content: '" + isdeviceSystem + "'}\"><span class=\"mdui-chip-title mdui-text-color-black-secondary mdui-text-color-theme-text\"><i class=\"mdui-icon material-icons\">computer</i>" + deviceSystem + "</span></a></div>&nbsp;<div class=\"mdui-chip\"><a mdui-tooltip=\"{content: '已支持" + appLanguage + "。'}\"><span class=\"mdui-chip-title mdui-text-color-black-secondary mdui-text-color-theme-text\"><i class=\"mdui-icon material-icons\">language</i>" + appLanguage + "</span></a></div>&nbsp;<div class=\"mdui-chip\"><a mdui-tooltip=\"{content: '最新版本号：" + latestVersion + "'}\"><span class=\"mdui-chip-title mdui-text-color-black-secondary mdui-text-color-theme-text\"><i class=\"mdui-icon material-icons\">update</i>" + latestVersion + "</span></a></div>&nbsp;<div id=\"thisCrack\" class=\"mdui-chip\"><a mdui-tooltip=\"{content: '" + isCrack + "'}\"><span class=\"mdui-chip-title mdui-text-color-black-secondary mdui-text-color-theme-text\"><i class=\"mdui-icon material-icons\">" + isCrackicon + "</i>" + toCrack + "</span></a></div>&nbsp;<div class=\"mdui-chip\"><a mdui-tooltip=\"{content: '最近更新时间：" + lastUpdatetime + "'}\"><span class=\"mdui-chip-title mdui-text-color-black-secondary mdui-text-color-theme-text\"><i class=\"mdui-icon material-icons\">access_time</i>" + lastUpdatetime + "</span></a></div>&nbsp;</div><i class=\"mdui-panel-item-arrow mdui-icon material-icons\" mdui-tooltip=\"{content: '点击展开',position: 'left'}\">keyboard_arrow_down</i></div><div class=\"mdui-panel-item-body\"><ul id=\"" + mduiListID + "\" class=\"mdui-list\"></ul><div class=\"mdui-panel-item-actions\"><button class=\"mdui-btn mdui-ripple\" mdui-panel-item-close=\"\"  mdui-tooltip=\"{content: '点击收起',position: 'left'}\">收起</button></div></div></div>";
 }
+//增加一列
 function addPanelList(divID, appVersion, winDownloadUrl, winDownloadMa, winCrackDownloadUrl, winCrackDownloadMa,macDownloadUrl, macDownloadMa,macCrackDownloadUrl, macCrackDownloadMa,downloadMenuID) {
     var ID = document.getElementById(divID);
     var menuDisplay;
@@ -2285,6 +2311,7 @@ function addPanelList(divID, appVersion, winDownloadUrl, winDownloadMa, winCrack
     }
     ID.innerHTML = ID.innerHTML + "<li class=\"mdui-list-item\"><div class=\"mdui-list-item-content\">" + appVersion + "</div><button class=\"mdui-btn mdui-color-theme-accent mdui-ripple\" mdui-menu=\"{target: '#" + downloadMenuID + "'}\">下载</button><ul class=\"mdui-menu\" id=\"" + downloadMenuID + "\" style=\"" + menuDisplay + "\"><li class=\"mdui-menu-item\" style=\"" + winDisplay + "\"><a onclick=\"showWarnDialog('" + winDownloadUrl + "','" + winDownloadMa + "');\" class=\"mdui-ripple\" ><i class=\"mdui-menu-item-icon mdui-icon material-icons\">file_download</i>Win版本下载</a></li><li class=\"mdui-menu-item\" style=\"" + winCrackDisplay + "\"><a onclick=\"showWarnDialog('" + winCrackDownloadUrl + "','" + winCrackDownloadMa + "');\" class=\"mdui-ripple\" ><i class=\"mdui-menu-item-icon mdui-icon material-icons\">file_download</i>Win补丁下载</a></li><li class=\"mdui-menu-item\" style=\"" + macDisplay + "\"><a onclick=\"showWarnDialog('" + macDownloadUrl + "','" + macDownloadMa + "');\" class=\"mdui-ripple\" ><i class=\"mdui-menu-item-icon mdui-icon material-icons\">file_download</i>Mac版本下载</a></li><li class=\"mdui-menu-item\" style=\"" + macCrackDisplay + "\"><a onclick=\"showWarnDialog('" + macCrackDownloadUrl + "','" + macCrackDownloadMa + "');\" class=\"mdui-ripple\" ><i class=\"mdui-menu-item-icon mdui-icon material-icons\">file_download</i>Mac补丁下载</a></li></ul></li>";
 }
+//Snackbar提示跳转
 function showConfirmSnackbar(url, text,buton) {
     var positionss;
     if (Initialization() != false) {
@@ -2296,17 +2323,20 @@ function showConfirmSnackbar(url, text,buton) {
         message: text,
         buttonText: buton,
         onClick: function() {
+            //触碰
         },
         onButtonClick: function() {
           window.location.href = url;
         },
         onClose: function() {
+            //关闭
         },
         position: positionss,
         timeout: 0,
         closeOnOutsideClick: false
     });
 }
+//Snackbar提示
 function showSnackbar(message) {
     var positions;
     if (Initialization() != false) {
@@ -2319,6 +2349,7 @@ function showSnackbar(message) {
         position: positions
     });
 }
+//手机弹窗
 function goPC() {
     if (Initialization() == false) {
       mdui.alert('建议使用电脑端浏览器进行访问。',
@@ -2326,15 +2357,19 @@ function goPC() {
       },{
           confirmText: '我知道了'
       });
+        //window.close(); //关闭窗口
     }
 }
+//选项卡适配
 function setTabContent() {
     if (Initialization() == false) {
-        removeElement('tab-img-adobe');
-        removeElement('tab-img-corel'); 
-        removeElement('tab-img-bmd'); 
-        removeElement('tab-img-magix'); 
-        removeElement('tab-img-grass');
+        //选项卡图标
+        removeElement('tab-img-adobe'); //Adobe选项卡
+        removeElement('tab-img-corel'); //Corel选项卡
+        removeElement('tab-img-bmd'); //DFQ选项卡
+        removeElement('tab-img-magix'); //Magix选项卡
+        removeElement('tab-img-grass'); //Grass选项卡
+        //Adobe选项卡
         setClassName('TitlePs', '');
         setClassName('TitleAi', '');
         setClassName('TitleAe', '');
@@ -2351,22 +2386,28 @@ function setTabContent() {
         removeElement('TooltipAu');
         removeElement('TooltipLr');
         removeElement('TooltipMe');
+        //Corel选项卡
         setClassName('TitleHshy', '');
         removeElement('TooltipHshy');
+        //DFQ选项卡
         setClassName('TitleDfq', '');
         removeElement('TooltipDfq');
+        //Magix选项卡
         setClassName('TitleVv', '');
         removeElement('TooltipVv');
+        //Grass选项卡
         setClassName('TitleEd', '');
         removeElement('TooltipEd');
     } else {
-        removeElement('tab-title-adobe'); 
-        removeElement('tab-title-corel'); 
-        removeElement('tab-title-bmd');
-        removeElement('tab-title-magix');
-        removeElement('tab-title-grass');
+        //选项卡标题
+        removeElement('tab-title-adobe'); //Adobe选项卡
+        removeElement('tab-title-corel'); //Corel选项卡
+        removeElement('tab-title-bmd'); //DFQ选项卡
+        removeElement('tab-title-magix'); //Magix选项卡
+        removeElement('tab-title-grass'); //Grass选项卡
     }
 }
+//判断浏览器
 function Initialization() {
     var userAgentInfo = navigator.userAgent;
     var Agents = ["Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod"];
@@ -2379,22 +2420,27 @@ function Initialization() {
     }
     return flag;
 }
+//清空Class
 function setClassName(id, name) {
     document.getElementById(id).className = name;
 }
+//删除Class
 function removeClassName(id, name) {
     document.getElementById(id).classList.remove(name);
 }
+//追加Class
 function addClassName(id, name) {
     document.getElementById(id).classList.add(name);
 }
+//设置Display
 function setDisplay(id, displays) {
     document.getElementById(id).style.display = displays;
 }
+//删除元素
 function removeElement(id) {
     document.getElementById(id).style.display = "none";
 }
-</script>
+</script> 
 <script src="/download.js"></script> 
 <script src="https://cdnjs.loli.net/ajax/libs/mdui/0.4.3/js/mdui.min.js"></script> 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>

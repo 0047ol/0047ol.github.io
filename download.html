@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <link rel="stylesheet" href="https://unpkg.com/muse-ui/dist/muse-ui.css">
  </head> 
- <body id="bodys" class="mdui-theme-layout-dark mdui-theme-primary-blue mdui-theme-accent-blue mdui-appbar-with-toolbar mdui-appbar-with-tab mdui-bottom-nav-fixed" οncοntextmenu="return false" οndragstart="return false" οnselect="document.selection.empty()" οncοpy="document.selection.empty()" onbeforecopy="return false" οnmοuseup="document.selection.empty()" oncontextmenu=self.event.returnValue=false onselectstart="return false"> 
+ <body id="bodys" class="mdui-theme-primary-blue mdui-theme-accent-blue mdui-appbar-with-toolbar mdui-appbar-with-tab mdui-bottom-nav-fixed" οncοntextmenu="return false" οndragstart="return false" οnselect="document.selection.empty()" οncοpy="document.selection.empty()" onbeforecopy="return false" οnmοuseup="document.selection.empty()" oncontextmenu=self.event.returnValue=false onselectstart="return false"> 
   <div id="loader" class="mdui-text-center"> 
    <div class="mdui-container-fluid mdui-p-t-5 mdui-valign"> 
     <div class="mdui-spinner mdui-spinner-colorful mdui-center"> 
@@ -2259,23 +2259,31 @@ function addPanelItem(tabContent, imageSrc, appName, deviceSystem, appLanguage, 
     } else {
         isCrack = " 已集成破解，一键安装即可。";isCrackicon = " check_circle";
     }
-    container.innerHTML = container.innerHTML + "<div class=\"mdui-panel mdui-panel-popout\" mdui-panel><div class=\"mdui-panel-item\"><div class=\"mdui-panel-item-header\"><img src=\"" + imageSrc + "\" width=\"25\" height=\"25\" />&nbsp;<div id=\"" + itemTitleID + "\" class=\"mdui-panel-item-title\">" + appName + "</div><div id=\"" + itemTooltipID + "\"><div class=\"mdui-chip\"><a mdui-tooltip=\"{content: '" + isdeviceSystem + "'}\"><span class=\"mdui-chip-title mdui-text-color-black-secondary mdui-text-color-theme-text\"><i class=\"mdui-icon material-icons\">computer</i>" + deviceSystem + "</span></a></div>&nbsp;<div class=\"mdui-chip\"><a mdui-tooltip=\"{content: '已支持" + appLanguage + "。'}\"><span class=\"mdui-chip-title mdui-text-color-black-secondary mdui-text-color-theme-text\"><i class=\"mdui-icon material-icons\">language</i>" + appLanguage + "</span></a></div>&nbsp;<div class=\"mdui-chip\"><a mdui-tooltip=\"{content: '最新版本号：" + latestVersion + "'}\"><span class=\"mdui-chip-title mdui-text-color-black-secondary mdui-text-color-theme-text\"><i class=\"mdui-icon material-icons\">update</i>" + latestVersion + "</span></a></div>&nbsp;<div class=\"mdui-chip\"><a mdui-tooltip=\"{content: '" + isCrack + "'}\"><span class=\"mdui-chip-title mdui-text-color-black-secondary mdui-text-color-theme-text\"><i class=\"mdui-icon material-icons\">" + isCrackicon + "</i>" + toCrack + "</span></a></div>&nbsp;<div class=\"mdui-chip\"><a mdui-tooltip=\"{content: '最近更新时间：" + lastUpdatetime + "'}\"><span class=\"mdui-chip-title mdui-text-color-black-secondary mdui-text-color-theme-text\"><i class=\"mdui-icon material-icons\">access_time</i>" + lastUpdatetime + "</span></a></div>&nbsp;</div><i class=\"mdui-panel-item-arrow mdui-icon material-icons\" mdui-tooltip=\"{content: '点击展开',position: 'left'}\">keyboard_arrow_down</i></div><div class=\"mdui-panel-item-body\"><ul id=\"" + mduiListID + "\" class=\"mdui-list\"></ul><div class=\"mdui-panel-item-actions\"><button class=\"mdui-btn mdui-ripple\" mdui-panel-item-close=\"\"  mdui-tooltip=\"{content: '点击收起',position: 'left'}\">收起</button></div></div></div>";
+    container.innerHTML = container.innerHTML + "<div class=\"mdui-panel mdui-panel-popout\" mdui-panel><div class=\"mdui-panel-item\"><div class=\"mdui-panel-item-header\"><img src=\"" + imageSrc + "\" width=\"25\" height=\"25\" />&nbsp;<div id=\"" + itemTitleID + "\" class=\"mdui-panel-item-title\">" + appName + "</div><div id=\"" + itemTooltipID + "\"><div class=\"mdui-chip\"><a mdui-tooltip=\"{content: '" + isdeviceSystem + "'}\"><span class=\"mdui-chip-title mdui-text-color-black-secondary mdui-text-color-theme-text\"><i class=\"mdui-icon material-icons\">computer</i>" + deviceSystem + "</span></a></div>&nbsp;<div class=\"mdui-chip\"><a mdui-tooltip=\"{content: '已支持" + appLanguage + "。'}\"><span class=\"mdui-chip-title mdui-text-color-black-secondary mdui-text-color-theme-text\"><i class=\"mdui-icon material-icons\">language</i>" + appLanguage + "</span></a></div>&nbsp;<div class=\"mdui-chip\"><a mdui-tooltip=\"{content: '最新版本号：" + latestVersion + "'}\"><span class=\"mdui-chip-title mdui-text-color-black-secondary mdui-text-color-theme-text\"><i class=\"mdui-icon material-icons\">update</i>" + latestVersion + "</span></a></div>&nbsp;<div id=\"thisCrack\" class=\"mdui-chip\"><a mdui-tooltip=\"{content: '" + isCrack + "'}\"><span class=\"mdui-chip-title mdui-text-color-black-secondary mdui-text-color-theme-text\"><i class=\"mdui-icon material-icons\">" + isCrackicon + "</i>" + toCrack + "</span></a></div>&nbsp;<div class=\"mdui-chip\"><a mdui-tooltip=\"{content: '最近更新时间：" + lastUpdatetime + "'}\"><span class=\"mdui-chip-title mdui-text-color-black-secondary mdui-text-color-theme-text\"><i class=\"mdui-icon material-icons\">access_time</i>" + lastUpdatetime + "</span></a></div>&nbsp;</div><i class=\"mdui-panel-item-arrow mdui-icon material-icons\" mdui-tooltip=\"{content: '点击展开',position: 'left'}\">keyboard_arrow_down</i></div><div class=\"mdui-panel-item-body\"><ul id=\"" + mduiListID + "\" class=\"mdui-list\"></ul><div class=\"mdui-panel-item-actions\"><button class=\"mdui-btn mdui-ripple\" mdui-panel-item-close=\"\"  mdui-tooltip=\"{content: '点击收起',position: 'left'}\">收起</button></div></div></div>";
 }
-function addPanelList(divID, appVersion, winDownloadUrl, winDownloadMa, macDownloadUrl, macDownloadMa, downloadMenuID) {
+function addPanelList(divID, appVersion, winDownloadUrl, winDownloadMa, winCrackDownloadUrl, winCrackDownloadMa,macDownloadUrl, macDownloadMa,macCrackDownloadUrl, macCrackDownloadMa,downloadMenuID) {
     var ID = document.getElementById(divID);
+    var menuDisplay;
     var winDisplay;
     var macDisplay;
-    var menuDisplay;
+    var winCrackDisplay;
+    var macCrackDisplay;
+    if (winDownloadUrl.length == 0 && macDownloadUrl.length == 0) {
+        menuDisplay = "display :none;";
+    }
     if (winDownloadUrl.length == 0) {
         winDisplay = "display :none;";
+    }
+    if (winCrackDownloadUrl.length == 0) {
+        winCrackDisplay = "display :none;";
     }
     if (macDownloadUrl.length == 0) {
         macDisplay = "display :none;";
     }
-    if (winDownloadUrl.length == 0 && macDownloadUrl.length == 0) {
-        menuDisplay = "display :none;";
+    if (macCrackDownloadUrl.length == 0) {
+        macCrackDisplay = "display :none;";
     }
-    ID.innerHTML = ID.innerHTML + "<li class=\"mdui-list-item\"><div class=\"mdui-list-item-content\">" + appVersion + "</div><button class=\"mdui-btn mdui-color-theme-accent mdui-ripple\" mdui-menu=\"{target: '#" + downloadMenuID + "'}\">下载</button><ul class=\"mdui-menu\" id=\"" + downloadMenuID + "\" style=\"" + menuDisplay + "\"><li class=\"mdui-menu-item\" style=\"" + winDisplay + "\"><a onclick=\"showWarnDialog('" + winDownloadUrl + "','" + winDownloadMa + "');\" class=\"mdui-ripple\" ><i class=\"mdui-menu-item-icon mdui-icon material-icons\">file_download</i>Win版本下载</a></li><li class=\"mdui-menu-item\" style=\"" + macDisplay + "\"><a onclick=\"showWarnDialog('" + macDownloadUrl + "','" + macDownloadMa + "');\" class=\"mdui-ripple\" ><i class=\"mdui-menu-item-icon mdui-icon material-icons\">file_download</i>Mac版本下载</a></li></ul></li>";
+    ID.innerHTML = ID.innerHTML + "<li class=\"mdui-list-item\"><div class=\"mdui-list-item-content\">" + appVersion + "</div><button class=\"mdui-btn mdui-color-theme-accent mdui-ripple\" mdui-menu=\"{target: '#" + downloadMenuID + "'}\">下载</button><ul class=\"mdui-menu\" id=\"" + downloadMenuID + "\" style=\"" + menuDisplay + "\"><li class=\"mdui-menu-item\" style=\"" + winDisplay + "\"><a onclick=\"showWarnDialog('" + winDownloadUrl + "','" + winDownloadMa + "');\" class=\"mdui-ripple\" ><i class=\"mdui-menu-item-icon mdui-icon material-icons\">file_download</i>Win版本下载</a></li><li class=\"mdui-menu-item\" style=\"" + winCrackDisplay + "\"><a onclick=\"showWarnDialog('" + winCrackDownloadUrl + "','" + winCrackDownloadMa + "');\" class=\"mdui-ripple\" ><i class=\"mdui-menu-item-icon mdui-icon material-icons\">file_download</i>Win补丁下载</a></li><li class=\"mdui-menu-item\" style=\"" + macDisplay + "\"><a onclick=\"showWarnDialog('" + macDownloadUrl + "','" + macDownloadMa + "');\" class=\"mdui-ripple\" ><i class=\"mdui-menu-item-icon mdui-icon material-icons\">file_download</i>Mac版本下载</a></li><li class=\"mdui-menu-item\" style=\"" + macCrackDisplay + "\"><a onclick=\"showWarnDialog('" + macCrackDownloadUrl + "','" + macCrackDownloadMa + "');\" class=\"mdui-ripple\" ><i class=\"mdui-menu-item-icon mdui-icon material-icons\">file_download</i>Mac补丁下载</a></li></ul></li>";
 }
 function showConfirmSnackbar(url, text,buton) {
     var positionss;

@@ -62,23 +62,23 @@ addPanelList("listHshy", "Corel VideoStudio Pro X9", "Win包", "","Win补丁",""
 addPanelList("listHshy", "Corel VideoStudio Pro X8", "Win包", "", "Win补丁","","", "","","", "hshy8");
 //达芬奇
 addPanelItem("tab-content-bmd", "https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=942019405,3671026692&fm=26&gp=0.jpg", "DaVinci Resolve Studio", "Win/Mac", "简体中文", "16.2.2.11", "手动破解", "2020-05-20", "TitleDfq", "TooltipDfq", "listDfq");
-addPanelList("listDfq", "DaVinci Resolve Studio v16", "Win包", "","Win补丁","", "Mac包", "", "Mac补丁","","dfq16");
-addPanelList("listDfq", "DaVinci Resolve Studio v15", "Win包", "", "Win补丁","","Mac包", "", "Mac补丁","","dfq15");
-addPanelList("listDfq", "DaVinci Resolve Studio v14", "Win包", "", "Win补丁","","Mac包", "", "Mac补丁","","dfq14");
-addPanelList("listDfq", "DaVinci Resolve Studio v13", "Win包", "","Win补丁","", "Mac包", "", "Mac补丁","","dfq13");
-addPanelList("listDfq", "DaVinci Resolve Studio v12", "Win包", "","Win补丁","", "Mac包", "", "Mac补丁","","dfq12");
-addPanelList("listDfq", "DaVinci Resolve Studio v11", "Win包", "","Win补丁","", "Mac包", "", "Mac补丁","","dfq11");
-addPanelList("listDfq", "DaVinci Resolve Studio v10", "Win包", "","Win补丁","", "Mac包", "","Mac补丁","", "dfq10");
+addPanelList("listDfq", "DaVinci Resolve Studio 16", "Win包", "","Win补丁","", "Mac包", "", "Mac补丁","","dfq16");
+addPanelList("listDfq", "DaVinci Resolve Studio 15", "Win包", "", "Win补丁","","Mac包", "", "Mac补丁","","dfq15");
+addPanelList("listDfq", "DaVinci Resolve Studio 14", "Win包", "", "Win补丁","","Mac包", "", "Mac补丁","","dfq14");
+addPanelList("listDfq", "DaVinci Resolve Studio 13", "Win包", "","Win补丁","", "Mac包", "", "Mac补丁","","dfq13");
+addPanelList("listDfq", "DaVinci Resolve Studio 12", "Win包", "","Win补丁","", "Mac包", "", "Mac补丁","","dfq12");
+addPanelList("listDfq", "DaVinci Resolve Studio 11", "Win包", "","Win补丁","", "Mac包", "", "Mac补丁","","dfq11");
+addPanelList("listDfq", "DaVinci Resolve Studio 10", "Win包", "","Win补丁","", "Mac包", "","Mac补丁","", "dfq10");
 //Vegas
 addPanelItem("tab-content-magix", "https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1450597258,1630441204&fm=26&gp=0.jpg", "Magix Vegas Pro", "Windows", "简体中文", "17.0.0.421", "手动破解", "2020-02-20", "TitleVv", "TooltipVv", "listVv");
-addPanelList("listVv", "Magix Vegas Pro v17", "Win包", "","Win补丁","", "", "","","", "vv17");
-addPanelList("listVv", "Magix Vegas Pro v16", "Win包", "", "Win补丁","","", "","","", "vv16");
-addPanelList("listVv", "Magix Vegas Pro v15", "Win包", "", "Win补丁","","", "","","", "vv15");
-addPanelList("listVv", "Magix Vegas Pro v14", "Win包", "","Win补丁","", "", "", "","","vv14");
-addPanelList("listVv", "Magix Vegas Pro v13", "Win包", "","Win补丁","", "", "","","", "vv13");
+addPanelList("listVv", "Magix Vegas Pro 17", "http://211.136.65.167/cache/xiazai.vegaschina.cn/full/Vegas_Pro_17.zip?ich_args2=62-28162208046295_fc95889a7719664222c67c2ec4b6cd38_10001002_9c896d2cd1c6f5d0913e518939a83798_5616117601c144a66d18d889bf726184", "","https://lanzous.com/i9iacrg","", "", "","","", "vv17");
+addPanelList("listVv", "Magix Vegas Pro 16", "https://node4.mkdmirror.workers.dev/VegasPro/vegaspro16.zip", "", "","","", "","","", "vv16");
+addPanelList("listVv", "Magix Vegas Pro 15", "https://pan.baidu.com/s/1MlbsRb0_r6c_lH0uEUIp6A", "jqc2", "","","", "","","", "vv15");
+addPanelList("listVv", "Magix Vegas Pro 14", "https://pan.baidu.com/s/1_wAot-oIwve5WUR_KMfvmw", "eiey","","", "", "", "","","vv14");
+addPanelList("listVv", "Magix Vegas Pro 13", "https://pan.baidu.com/s/1-xRK9puvBAEbJD_niXQFTA", "svkg","","", "", "","","", "vv13");
 //Edius
 addPanelItem("tab-content-grass", "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3772118960,2431841205&fm=26&gp=0.jpg", "Grass Valley Edius Pro", "Windows", "简体中文", "9.20.3340", "手动破解", "2018-12-09", "TitleEd", "TooltipEd", "listEd");
-addPanelList("listEd", "Grass Valley Edius Pro v9", "Win包", "","Win补丁","", "", "","","", "ed9");
-addPanelList("listEd", "Grass Valley Edius Pro v8", "Win包", "", "Win补丁","","", "","","", "ed8");
-addPanelList("listEd", "Grass Valley Edius Pro v7", "Win包", "","Win补丁","", "", "", "","","ed7");
-addPanelList("listEd", "Grass Valley Edius Pro v6", "Win包", "","Win补丁","", "", "", "","","ed6");
+addPanelList("listEd", "Grass Valley Edius Pro 9", "https://node4.mkdmirror.workers.dev/Edius9/edius9.zip", "","https://node4.mkdmirror.workers.dev/Edius9/crack.zip","", "", "","","", "ed9");
+addPanelList("listEd", "Grass Valley Edius Pro 8", "https://www.tenlonstudio.com/goto/2nfn", "", "","","", "","","", "ed8");
+addPanelList("listEd", "Grass Valley Edius Pro 7", "https://www.tenlonstudio.com/goto/an5z", "","","", "", "", "","","ed7");
+addPanelList("listEd", "Grass Valley Edius Pro 6", "https://pan.baidu.com/s/1_hQpg4Xjotb5EpNR32ieZw", "p9ur","","", "", "", "","","ed6");

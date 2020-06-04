@@ -1,339 +1,154 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no">
-<title>0047ol</title>
-<style>
-html, body {
-  background: #28254C;
-  font-family: 'Ubuntu';
-}
-* {
-  box-sizing: border-box;
-}
-.box {
-  width: 100%;
-  height: 100%;
-  max-height: 600px;
-  min-height: 450px;
-  border-radius: 20px;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  padding: 30px 50px;
-}
-.box .box__ghost {
-  padding: 15px 25px 25px;
-  position: absolute;
-  left: 50%;
-  top: 30%;
-  transform: translate(-50%, -30%);
-}
-.box .box__ghost .symbol:nth-child(1) {
-  opacity: .2;
-  animation: shine 4s ease-in-out 3s infinite;
-}
-.box .box__ghost .symbol:nth-child(1):before, .box .box__ghost .symbol:nth-child(1):after {
-  content: '';
-  width: 12px;
-  height: 4px;
-  background: #fff;
-  position: absolute;
-  border-radius: 5px;
-  bottom: 65px;
-  left: 0;
-}
-.box .box__ghost .symbol:nth-child(1):before {
-  transform: rotate(45deg);
-}
-.box .box__ghost .symbol:nth-child(1):after {
-  transform: rotate(-45deg);
-}
-.box .box__ghost .symbol:nth-child(2) {
-  position: absolute;
-  left: -5px;
-  top: 30px;
-  height: 18px;
-  width: 18px;
-  border: 4px solid;
-  border-radius: 50%;
-  border-color: #fff;
-  opacity: .2;
-  animation: shine 4s ease-in-out 1.3s infinite;
-}
-.box .box__ghost .symbol:nth-child(3) {
-  opacity: .2;
-  animation: shine 3s ease-in-out .5s infinite;
-}
-.box .box__ghost .symbol:nth-child(3):before, .box .box__ghost .symbol:nth-child(3):after {
-  content: '';
-  width: 12px;
-  height: 4px;
-  background: #fff;
-  position: absolute;
-  border-radius: 5px;
-  top: 5px;
-  left: 40px;
-}
-.box .box__ghost .symbol:nth-child(3):before {
-  transform: rotate(90deg);
-}
-.box .box__ghost .symbol:nth-child(3):after {
-  transform: rotate(180deg);
-}
-.box .box__ghost .symbol:nth-child(4) {
-  opacity: .2;
-  animation: shine 6s ease-in-out 1.6s infinite;
-}
-.box .box__ghost .symbol:nth-child(4):before, .box .box__ghost .symbol:nth-child(4):after {
-  content: '';
-  width: 15px;
-  height: 4px;
-  background: #fff;
-  position: absolute;
-  border-radius: 5px;
-  top: 10px;
-  right: 30px;
-}
-.box .box__ghost .symbol:nth-child(4):before {
-  transform: rotate(45deg);
-}
-.box .box__ghost .symbol:nth-child(4):after {
-  transform: rotate(-45deg);
-}
-.box .box__ghost .symbol:nth-child(5) {
-  position: absolute;
-  right: 5px;
-  top: 40px;
-  height: 12px;
-  width: 12px;
-  border: 3px solid;
-  border-radius: 50%;
-  border-color: #fff;
-  opacity: .2;
-  animation: shine 1.7s ease-in-out 7s infinite;
-}
-.box .box__ghost .symbol:nth-child(6) {
-  opacity: .2;
-  animation: shine 2s ease-in-out 6s infinite;
-}
-.box .box__ghost .symbol:nth-child(6):before, .box .box__ghost .symbol:nth-child(6):after {
-  content: '';
-  width: 15px;
-  height: 4px;
-  background: #fff;
-  position: absolute;
-  border-radius: 5px;
-  bottom: 65px;
-  right: -5px;
-}
-.box .box__ghost .symbol:nth-child(6):before {
-  transform: rotate(90deg);
-}
-.box .box__ghost .symbol:nth-child(6):after {
-  transform: rotate(180deg);
-}
-.box .box__ghost .box__ghost-container {
-  background: #fff;
-  width: 100px;
-  height: 100px;
-  border-radius: 100px 100px 0 0;
-  position: relative;
-  margin: 0 auto;
-  animation: upndown 3s ease-in-out infinite;
-}
-.box .box__ghost .box__ghost-container .box__ghost-eyes {
-  position: absolute;
-  left: 50%;
-  top: 45%;
-  height: 12px;
-  width: 70px;
-}
-.box .box__ghost .box__ghost-container .box__ghost-eyes .box__eye-left {
-  width: 12px;
-  height: 12px;
-  background: #332F63;
-  border-radius: 50%;
-  margin: 0 10px;
-  position: absolute;
-  left: 0;
-}
-.box .box__ghost .box__ghost-container .box__ghost-eyes .box__eye-right {
-  width: 12px;
-  height: 12px;
-  background: #332F63;
-  border-radius: 50%;
-  margin: 0 10px;
-  position: absolute;
-  right: 0;
-}
-.box .box__ghost .box__ghost-container .box__ghost-bottom {
-  display: flex;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
-}
-.box .box__ghost .box__ghost-container .box__ghost-bottom div {
-  flex-grow: 1;
-  position: relative;
-  top: -10px;
-  height: 20px;
-  border-radius: 100%;
-  background-color: #fff;
-}
-.box .box__ghost .box__ghost-container .box__ghost-bottom div:nth-child(2n) {
-  top: -12px;
-  margin: 0 -0px;
-  border-top: 15px solid #332F63;
-  background: transparent;
-}
-.box .box__ghost .box__ghost-shadow {
-  height: 20px;
-  box-shadow: 0 50px 15px 5px #3B3769;
-  border-radius: 50%;
-  margin: 0 auto;
-  animation: smallnbig 3s ease-in-out infinite;
-}
-.box .box__description {
-  position: absolute;
-  bottom: 185px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-.box .box__description .box__description-container {
-  color: #fff;
-  text-align: center;
-  width: 400px;
-  font-size: 16px;
-  margin: 0 auto;
-}
-.box .box__description .box__description-container .box__description-title {
-  font-size: 40px;
-  letter-spacing: .5px;
-}
-.box .box__description .box__description-container .box__description-text {
-  color: #8C8AA7;
-  line-height: 20px;
-  margin-top: 22px;
-}
-.box .box__description .box__button {
-  display: block;
-  position: relative;
-  background: #FF5E65;
-  border: 1px solid transparent;
-  border-radius: 50px;
-  height: 50px;
-  text-align: center;
-  text-decoration: none;
-  color: #fff;
-  line-height: 50px;
-  font-size: 18px;
-  padding: 0 70px;
-  white-space: nowrap;
-  margin-top: 25px;
-  transition: background .5s ease;
-  overflow: hidden;
-}
-.box .box__description .box__button:before {
-  content: '';
-  position: absolute;
-  width: 20px;
-  height: 100px;
-  background: #fff;
-  bottom: -25px;
-  left: 0;
-  border: 2px solid #fff;
-  transform: translateX(-50px) rotate(45deg);
-  transition: transform .5s ease;
-}
-.box .box__description .box__button:hover {
-  background: transparent;
-  border-color: #fff;
-}
-.box .box__description .box__button:hover:before {
-  transform: translateX(250px) rotate(45deg);
-}
-
-@keyframes upndown {
-  0% {
-    transform: translateY(5px);
-  }
-  50% {
-    transform: translateY(15px);
-  }
-  100% {
-    transform: translateY(5px);
-  }
-}
-@keyframes smallnbig {
-  0% {
-    width: 90px;
-  }
-  50% {
-    width: 100px;
-  }
-  100% {
-    width: 90px;
-  }
-}
-@keyframes shine {
-  0% {
-    opacity: .2;
-  }
-  25% {
-    opacity: .1;
-  }
-  50% {
-    opacity: .2;
-  }
-  100% {
-    opacity: .2;
-  }
-}
-.footer{
-  position:absolute;
-  bottom:0;
-  text-align: center;	
-}
-</style>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Home</title>
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/png">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/LineIcons.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body οncοntextmenu="return false" οndragstart="return false" οnselect="document.selection.empty()" οncοpy="document.selection.empty()" onbeforecopy="return false" οnmοuseup="document.selection.empty()" oncontextmenu=self.event.returnValue=false onselectstart="return false"> 
-<div class="box">
-  <div class="box__ghost">
-    <div class="symbol"></div>
-    <div class="symbol"></div>
-    <div class="symbol"></div>
-    <div class="symbol"></div>
-    <div class="symbol"></div>
-    <div class="symbol"></div>
-    <div class="box__ghost-container">
-      <div class="box__ghost-eyes">
-        <div class="box__eye-left"></div>
-        <div class="box__eye-right"></div>
-      </div>
-      <div class="box__ghost-bottom">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
+<body>
+    <div class="preloader">
+        <div class="loader_34">
+            <div class="ytp-spinner">
+                <div class="ytp-spinner-container">
+                    <div class="ytp-spinner-rotator">
+                        <div class="ytp-spinner-left">
+                            <div class="ytp-spinner-circle"></div>
+                        </div>
+                        <div class="ytp-spinner-right">
+                            <div class="ytp-spinner-circle"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="box__ghost-shadow"></div>
-  </div>
-  <div class="box__description">
-    <div class="box__description-container">
-      <div class="box__description-title">你好</div>
-      <div class="box__description-text">越过山坡终有灯火，沿途高歌也终有人应和。</div>
-    </div>
-  </div>
-</div>
-<footer class="footer">
-</footer>
-<script>
+    <header id="home" class="header-area">
+        <div id="parallax" class="header-content d-flex align-items-center">
+            <div class="header-shape shape-one layer" data-depth="0.10">
+                <img src="assets/images/banner/shape/shape-1.png" alt="Shape">
+            </div> <!-- header shape -->
+            <div class="header-shape shape-tow layer" data-depth="0.30">
+                <img src="assets/images/banner/shape/shape-2.png" alt="Shape">
+            </div> <!-- header shape -->
+            <div class="header-shape shape-three layer" data-depth="0.40">
+                <img src="assets/images/banner/shape/shape-3.png" alt="Shape">
+            </div> <!-- header shape -->
+            <div class="header-shape shape-fore layer" data-depth="0.60">
+                <img src="assets/images/banner/shape/shape-2.png" alt="Shape">
+            </div> <!-- header shape -->
+            <div class="header-shape shape-five layer" data-depth="0.20">
+                <img src="assets/images/banner/shape/shape-1.png" alt="Shape">
+            </div> <!-- header shape -->
+            <div class="header-shape shape-six layer" data-depth="0.15">
+                <img src="assets/images/banner/shape/shape-4.png" alt="Shape">
+            </div> <!-- header shape -->
+            <div class="header-shape shape-seven layer" data-depth="0.50">
+                <img src="assets/images/banner/shape/shape-5.png" alt="Shape">
+            </div> <!-- header shape -->
+            <div class="header-shape shape-eight layer" data-depth="0.40">
+                <img src="assets/images/banner/shape/shape-3.png" alt="Shape">
+            </div> <!-- header shape -->
+            <div class="header-shape shape-nine layer" data-depth="0.20">
+                <img src="assets/images/banner/shape/shape-6.png" alt="Shape">
+            </div> <!-- header shape -->
+            <div class="header-shape shape-ten layer" data-depth="0.30">
+                <img src="assets/images/banner/shape/shape-3.png" alt="Shape">
+            </div> <!-- header shape -->
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-xl-5 col-lg-6">
+                        <div class="header-content-right">
+                            <h4 class="sub-title">欢迎光临</h4>
+                            <h1 class="title">0047ol的博客</h1>
+                            <p>越过山坡终有灯火，沿途高歌也终有人应和。</p>
+                            
+							
+							<div class="header-social">
+                
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="header-social-icon">
+                                <ul>
+                                    <li><a href="http://wpa.qq.com/msgrd?v=3&uin=2088343717&site=qq&menu=yes">
+									<svg t="1591272396284" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="9394" width="30" height="30"><path d="M511.09761 957.257c-80.159 0-153.737-25.019-201.11-62.386-24.057 6.702-54.831 17.489-74.252 30.864-16.617 11.439-14.546 23.106-11.55 27.816 13.15 20.689 225.583 13.211 286.912 6.767v-3.061z" fill="#FAAD08" p-id="9395"></path><path d="M496.65061 957.257c80.157 0 153.737-25.019 201.11-62.386 24.057 6.702 54.83 17.489 74.253 30.864 16.616 11.439 14.543 23.106 11.55 27.816-13.15 20.689-225.584 13.211-286.914 6.767v-3.061z" fill="#FAAD08" p-id="9396"></path><path d="M497.12861 474.524c131.934-0.876 237.669-25.783 273.497-35.34 8.541-2.28 13.11-6.364 13.11-6.364 0.03-1.172 0.542-20.952 0.542-31.155C784.27761 229.833 701.12561 57.173 496.64061 57.162 292.15661 57.173 209.00061 229.832 209.00061 401.665c0 10.203 0.516 29.983 0.547 31.155 0 0 3.717 3.821 10.529 5.67 33.078 8.98 140.803 35.139 276.08 36.034h0.972z" fill="#000000" p-id="9397"></path><path d="M860.28261 619.782c-8.12-26.086-19.204-56.506-30.427-85.72 0 0-6.456-0.795-9.718 0.148-100.71 29.205-222.773 47.818-315.792 46.695h-0.962C410.88561 582.017 289.65061 563.617 189.27961 534.698 185.44461 533.595 177.87261 534.063 177.87261 534.063 166.64961 563.276 155.56661 593.696 147.44761 619.782 108.72961 744.168 121.27261 795.644 130.82461 796.798c20.496 2.474 79.78-93.637 79.78-93.637 0 97.66 88.324 247.617 290.576 248.996a718.01 718.01 0 0 1 5.367 0C708.80161 950.778 797.12261 800.822 797.12261 703.162c0 0 59.284 96.111 79.783 93.637 9.55-1.154 22.093-52.63-16.623-177.017" fill="#000000" p-id="9398"></path><path d="M434.38261 316.917c-27.9 1.24-51.745-30.106-53.24-69.956-1.518-39.877 19.858-73.207 47.764-74.454 27.875-1.224 51.703 30.109 53.218 69.974 1.527 39.877-19.853 73.2-47.742 74.436m206.67-69.956c-1.494 39.85-25.34 71.194-53.24 69.956-27.888-1.238-49.269-34.559-47.742-74.435 1.513-39.868 25.341-71.201 53.216-69.974 27.909 1.247 49.285 34.576 47.767 74.453" fill="#FFFFFF" p-id="9399"></path><path d="M683.94261 368.627c-7.323-17.609-81.062-37.227-172.353-37.227h-0.98c-91.29 0-165.031 19.618-172.352 37.227a6.244 6.244 0 0 0-0.535 2.505c0 1.269 0.393 2.414 1.006 3.386 6.168 9.765 88.054 58.018 171.882 58.018h0.98c83.827 0 165.71-48.25 171.881-58.016a6.352 6.352 0 0 0 1.002-3.395c0-0.897-0.2-1.736-0.531-2.498" fill="#FAAD08" p-id="9400"></path><path d="M467.63161 256.377c1.26 15.886-7.377 30-19.266 31.542-11.907 1.544-22.569-10.083-23.836-25.978-1.243-15.895 7.381-30.008 19.25-31.538 11.927-1.549 22.607 10.088 23.852 25.974m73.097 7.935c2.533-4.118 19.827-25.77 55.62-17.886 9.401 2.07 13.75 5.116 14.668 6.316 1.355 1.77 1.726 4.29 0.352 7.684-2.722 6.725-8.338 6.542-11.454 5.226-2.01-0.85-26.94-15.889-49.905 6.553-1.579 1.545-4.405 2.074-7.085 0.242-2.678-1.834-3.786-5.553-2.196-8.135" fill="#000000" p-id="9401"></path><path d="M504.33261 584.495h-0.967c-63.568 0.752-140.646-7.504-215.286-21.92-6.391 36.262-10.25 81.838-6.936 136.196 8.37 137.384 91.62 223.736 220.118 224.996H506.48461c128.498-1.26 211.748-87.612 220.12-224.996 3.314-54.362-0.547-99.938-6.94-136.203-74.654 14.423-151.745 22.684-215.332 21.927" fill="#FFFFFF" p-id="9402"></path><path d="M323.27461 577.016v137.468s64.957 12.705 130.031 3.91V591.59c-41.225-2.262-85.688-7.304-130.031-14.574" fill="#EB1C26" p-id="9403"></path><path d="M788.09761 432.536s-121.98 40.387-283.743 41.539h-0.962c-161.497-1.147-283.328-41.401-283.744-41.539l-40.854 106.952c102.186 32.31 228.837 53.135 324.598 51.926l0.96-0.002c95.768 1.216 222.4-19.61 324.6-51.924l-40.855-106.952z" fill="#EB1C26" p-id="9404"></path></svg>
+									</a></li>
+                                    <li><a href="/wechat.html">
+									<svg t="1591272346073" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="8640" width="28" height="28"><path d="M1024 619.52c0-143.36-138.24-256-307.2-256s-307.2 112.64-307.2 256 138.24 256 307.2 256c30.72 0 61.44-5.12 92.16-10.24l97.28 51.2-25.6-76.8c87.04-51.2 143.36-128 143.36-220.16z m-414.72-40.96c-30.72 0-51.2-20.48-51.2-51.2s20.48-51.2 51.2-51.2 51.2 20.48 51.2 51.2c0 25.6-25.6 51.2-51.2 51.2z m209.92 0c-30.72 0-51.2-20.48-51.2-51.2s20.48-51.2 51.2-51.2 51.2 20.48 51.2 51.2c0 25.6-25.6 51.2-51.2 51.2z" fill="#46BB36" p-id="8641" data-spm-anchor-id="a313x.7781069.0.i27" class="selected"></path><path d="M358.4 609.28c0-158.72 153.6-286.72 348.16-286.72h15.36c-40.96-133.12-179.2-235.52-353.28-235.52-204.8 0-368.64 138.24-368.64 307.2 0 107.52 66.56 204.8 168.96 256l-30.72 92.16L256 686.08c35.84 10.24 71.68 15.36 112.64 15.36h10.24c-15.36-30.72-20.48-61.44-20.48-92.16z m138.24-414.72c35.84 0 66.56 30.72 66.56 66.56s-30.72 66.56-66.56 66.56C460.8 322.56 430.08 291.84 430.08 256S460.8 194.56 496.64 194.56zM245.76 322.56c-35.84 0-61.44-30.72-61.44-66.56s30.72-66.56 66.56-66.56 61.44 30.72 61.44 66.56-30.72 66.56-66.56 66.56z" fill="#46BB36" p-id="8642" data-spm-anchor-id="a313x.7781069.0.i28" class="selected"></path></svg>
+									</a></li>
+                                    <li><a href="https://weibo.com/Z1927">
+									<svg t="1591272470731" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="11063" width="30" height="30"><path d="M851.4 590.193c-22.196-66.233-90.385-90.422-105.912-91.863-15.523-1.442-29.593-9.94-19.295-27.505 10.302-17.566 29.304-68.684-7.248-104.681-36.564-36.14-116.512-22.462-173.094 0.866-56.434 23.327-53.39 7.055-51.65-8.925 1.89-16.848 32.355-111.02-60.791-122.395C311.395 220.86 154.85 370.754 99.572 457.15 16 587.607 29.208 675.873 29.208 675.873h0.58c10.009 121.819 190.787 218.869 412.328 218.869 190.5 0 350.961-71.853 398.402-169.478 0 0 0.143-0.433 0.575-1.156 4.938-10.506 8.71-21.168 11.035-32.254 6.668-26.205 11.755-64.215-0.728-101.66z m-436.7 251.27c-157.71 0-285.674-84.095-285.674-187.768 0-103.671 127.82-187.76 285.674-187.76 157.705 0 285.673 84.089 285.673 187.76 0 103.815-127.968 187.768-285.673 187.768z" fill="#E71F19" p-id="11064"></path><path d="M803.096 425.327c2.896 1.298 5.945 1.869 8.994 1.869 8.993 0 17.7-5.328 21.323-14.112 5.95-13.964 8.993-28.793 8.993-44.205 0-62.488-51.208-113.321-114.181-113.321-15.379 0-30.32 3.022-44.396 8.926-11.755 4.896-17.263 18.432-12.335 30.24 4.933 11.662 18.572 17.134 30.465 12.238 8.419-3.46 17.268-5.33 26.41-5.33 37.431 0 67.752 30.241 67.752 67.247 0 9.068-1.735 17.857-5.369 26.202a22.832 22.832 0 0 0 12.335 30.236l0.01 0.01z" fill="#F5AA15" p-id="11065"></path><path d="M726.922 114.157c-25.969 0-51.65 3.744-76.315 10.942-18.423 5.472-28.868 24.622-23.5 42.91 5.509 18.29 24.804 28.657 43.237 23.329a201.888 201.888 0 0 1 56.578-8.064c109.253 0 198.189 88.271 198.189 196.696 0 19.436-2.905 38.729-8.419 57.16-5.508 18.289 4.79 37.588 23.212 43.053 3.342 1.014 6.817 1.442 10.159 1.442 14.943 0 28.725-9.648 33.37-24.48 7.547-24.906 11.462-50.826 11.462-77.175-0.143-146.588-120.278-265.813-267.973-265.813z" fill="#F5AA15" p-id="11066"></path><path d="M388.294 534.47c-84.151 0-152.34 59.178-152.34 132.334 0 73.141 68.189 132.328 152.34 132.328 84.148 0 152.337-59.182 152.337-132.328 0-73.15-68.19-132.334-152.337-132.334zM338.53 752.763c-29.454 0-53.39-23.755-53.39-52.987 0-29.228 23.941-52.989 53.39-52.989 29.453 0 53.39 23.76 53.39 52.989 0 29.227-23.937 52.987-53.39 52.987z m99.82-95.465c-6.382 11.086-19.296 15.696-28.726 10.219-9.43-5.323-11.75-18.717-5.37-29.803 6.386-11.09 19.297-15.7 28.725-10.224 9.43 5.472 11.755 18.864 5.37 29.808z" fill="#040000" p-id="11067"></path></svg>
+									</a></li>
+                                    <li><a href="https://github.com/0047ol">
+									<svg t="1591272747889" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="12445" width="28" height="28"><path d="M465.981 1001.74a89.578 89.578 0 0 1-89.889-88.955l-0.356-63.666c-176.662 38.422-213.927-74.93-213.927-74.93-28.895-73.372-70.523-92.873-70.523-92.873-57.61-39.446 4.364-38.645 4.364-38.645 63.71 4.452 97.28 65.447 97.28 65.447 56.631 97.058 148.569 69.009 184.765 52.803 5.699-41.049 22.172-69.053 40.337-84.947-141.045-16.028-289.303-70.523-289.303-313.79 0-69.32 24.799-125.952 65.447-170.429-6.589-16.028-28.316-80.584 6.144-168.025 0 0 53.337-17.052 174.659 65.09a609.28 609.28 0 0 1 158.943-21.37c53.915 0.223 108.276 7.257 159.031 21.37C814.186 6.679 867.434 23.73 867.434 23.73c34.549 87.485 12.822 152.042 6.233 168.025 40.693 44.433 65.358 101.109 65.358 170.43 0 243.89-148.57 297.583-289.926 313.299 22.751 19.723 43.053 58.323 43.053 117.582 0 84.992-0.312 119.674-0.312 119.674a89.622 89.622 0 0 1-89.8 89H465.98z" fill="#2c2c2c" p-id="12446"></path></svg>
+									</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+              
+            </div>
+							
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </header>
+     <script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+    <script src="assets/js/parallax.min.js"></script>
+    <script>
+	(function($){
+    Initialization();
+	goPC();
+    $(window).on('load', function(event) {
+        $('.preloader').delay(500).fadeOut(500);
+    });
+    // Parallaxmouse js
+    function parallaxMouse() {
+        if ($('#parallax').length) {
+            var scene = document.getElementById('parallax');
+            var parallax = new Parallax(scene);
+        };
+    };
+    parallaxMouse();
+    //===== Progress Bar
+    if($('.progress-line').length){
+        $('.progress-line').appear(function(){
+            var el = $(this);
+            var percent = el.data('width');
+            $(el).css('width',percent+'%');
+        },{accY: 0});
+    }
+}(jQuery));
+function goPC() {
+    if (Initialization() == false) {
+      mdui.alert('建议使用电脑端浏览器进行访问。',
+      function(){
+      },{
+          confirmText: '我知道了'
+      });
+        window.location.href='/mobile.html';
+    }
+}
+function Initialization() {
+    var userAgentInfo = navigator.userAgent;
+    var Agents = ["Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod"];
+    var flag = true;
+    for (var v = 0; v < Agents.length; v++) {
+        if (userAgentInfo.indexOf(Agents[v]) > 0) {
+            flag = false;
+            break;
+        }
+    }
+    return flag;
+}
 </script>
 </body>
 </html>

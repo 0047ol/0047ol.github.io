@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <title>Editor</title>
+	<link rel="shortcut icon" href="https://s1.ax1x.com/2020/05/29/tmViJe.png" type="image/png">
+    <link rel="stylesheet" href="https://www.mdui.org/docs/assets/demo/css/demo.css"/>
+<link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/mdui/0.4.3/css/mdui.min.css" />
+</head>
+<body>
+<div class="preview-container"></div>
+<div class="editor-panel">
+    <div class="editor-controls mdui-p-x-1">
+        <div class="editor-control-html mdui-ripple editor-control-active" onclick="Editor.toogleHTML();">HTML</div>
+        <div class="editor-control-css mdui-ripple " onclick="Editor.toogleCSS();">CSS</div>
+        <div class="editor-control-js mdui-ripple " onclick="Editor.toogleJS();">JavaScript</div>
+        <div class="editor-controls-drag"></div>
+		<div class="mdui-controls-download mdui-btn mdui-btn-icon mdui-ripple mdui-m-x-1 mdui-text-color-black-secondary" mdui-tooltip="{content: '关于'}" onclick="Editor.download();"><i class="mdui-icon material-icons">info</i></div>
+        <div class="editor-controls-run mdui-btn mdui-btn-icon mdui-ripple mdui-m-x-1 mdui-text-color-black-secondary" mdui-tooltip="{content: '运行Ctrl+Enter'}" onclick="Editor.run();"><i class="mdui-icon material-icons">play_arrow</i></div>
+        <label class="editor-controls-live-mode mdui-switch mdui-m-x-1" mdui-tooltip="{content: '实时预览'}" onchange="Editor.toogleLiveMode();">
+            <input type="checkbox" checked/>
+            <i class="mdui-switch-icon"></i>
+        </label>
+    </div>
+    <div class="editor-container editor-container-html">
+        <div class="editor-container-label">HTML</div>
+        <pre id="editor-ace-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;utf-8&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width&quot;&gt;
+  &lt;title&gt;0047ol&lt;/title&gt;
+  &lt;link rel=&quot;shortcut icon&quot; href=&quot;https://s1.ax1x.com/2020/05/29/tmViJe.png&quot; type=&quot;image/png&quot;/&gt;
+  &lt;style type=&quot;text/css&quot;&gt;
+  
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;/body&gt;
+  &lt;script type=&quot;text/javascript&quot;&gt;
+  
+  &lt;/script&gt;
+&lt;/html&gt;</pre>
+    </div>
+    <div class="editor-container editor-container-css">
+        <div class="editor-container-label">CSS</div>
+        <pre id="editor-ace-css"></pre>
+    </div>
+    <div class="editor-container editor-container-js">
+        <div class="editor-container-label">JavaScript</div>
+        <pre id="editor-ace-js"></pre>
+    </div>
+</div>
+<script src="https://cdnjs.loli.net/ajax/libs/mdui/0.4.3/js/mdui.min.js"></script> 
+<script src="https://www.mdui.org/docs/assets/ace-1.2.6/ace.js"></script>
+<script src="https://www.mdui.org/docs/assets/ace-1.2.6/ext-language_tools.js"></script>
+<script src="assets/js/live-editor.js"></script>
+<script>  
+  var Editor = new LiveEditor();
+</script>
+</body>
+</html>

@@ -4,19 +4,16 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no">
 <title>0047ol</title>
-<link rel="shortcut icon" href="https://s1.ax1x.com/2020/05/29/tmViJe.png" type="image/x-icon"/>
 <style>
 html, body {
   background: #28254C;
   font-family: 'Ubuntu';
 }
-
 * {
   box-sizing: border-box;
 }
-
 .box {
-  width: 350px;
+  width: 100%;
   height: 100%;
   max-height: 600px;
   min-height: 450px;
@@ -202,25 +199,25 @@ html, body {
 }
 .box .box__description {
   position: absolute;
-  bottom: 200px;
+  bottom: 185px;
   left: 50%;
   transform: translateX(-50%);
 }
 .box .box__description .box__description-container {
   color: #fff;
   text-align: center;
-  width: 300px;
+  width: 400px;
   font-size: 16px;
   margin: 0 auto;
 }
 .box .box__description .box__description-container .box__description-title {
-  font-size: 50px;
+  font-size: 40px;
   letter-spacing: .5px;
 }
 .box .box__description .box__description-container .box__description-text {
   color: #8C8AA7;
   line-height: 20px;
-  margin-top: 20px;
+  margin-top: 22px;
 }
 .box .box__description .box__button {
   display: block;
@@ -296,6 +293,11 @@ html, body {
     opacity: .2;
   }
 }
+.footer{
+  position:absolute;
+  bottom:0;
+  text-align: center;	
+}
 </style>
 </head>
 <body οncοntextmenu="return false" οndragstart="return false" οnselect="document.selection.empty()" οncοpy="document.selection.empty()" onbeforecopy="return false" οnmοuseup="document.selection.empty()" oncontextmenu=self.event.returnValue=false onselectstart="return false"> 
@@ -324,25 +326,14 @@ html, body {
   </div>
   <div class="box__description">
     <div class="box__description-container">
-      <div class="box__description-title">欢迎</div>
-      <div class="box__description-text">品味人生百态，笑谈悲欢离合。</div>
+      <div class="box__description-title">你好</div>
+      <div class="box__description-text">越过山坡终有灯火，沿途高歌也终有人应和。</div>
     </div>
   </div>
 </div>
+<footer class="footer">
+</footer>
 <script>
-var pageX = $(document).width();
-var pageY = $(document).height();
-var mouseY=0;
-var mouseX=0;
-$(document).mousemove(function( event ) {
-  //verticalAxis
-  mouseY = event.pageY;
-  yAxis = (pageY/2-mouseY)/pageY*300; 
-  //horizontalAxis
-  mouseX = event.pageX / -pageX;
-  xAxis = -mouseX * 100 - 100;
-  $('.box__ghost-eyes').css({ 'transform': 'translate('+ xAxis +'%,-'+ yAxis +'%)' }); 
-});
 </script>
 </body>
 </html>

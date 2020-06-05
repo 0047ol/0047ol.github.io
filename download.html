@@ -10,20 +10,296 @@
   <link rel="shortcut icon" href="/logo.png" type="image/png">
   <link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/mdui/0.4.3/css/mdui.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-  <link rel="stylesheet" href="https://unpkg.com/muse-ui/dist/muse-ui.css">
+  <style type="text/css"">
+  .preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: table;
+  height: 100%;
+  width: 100%;
+  background: #fff;
+  z-index: 99999; }
+  .preloader .loader_34 {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center; }
+    .preloader .loader_34 .ytp-spinner {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 64px;
+      margin-left: -32px;
+      z-index: 18;
+      pointer-events: none; }
+      .preloader .loader_34 .ytp-spinner .ytp-spinner-container {
+        pointer-events: none;
+        position: absolute;
+        width: 100%;
+        padding-bottom: 100%;
+        top: 50%;
+        left: 50%;
+        margin-top: -50%;
+        margin-left: -50%;
+        -webkit-animation: ytp-spinner-linspin 1568.23529647ms linear infinite;
+        -moz-animation: ytp-spinner-linspin 1568.23529647ms linear infinite;
+        -o-animation: ytp-spinner-linspin 1568.23529647ms linear infinite;
+        animation: ytp-spinner-linspin 1568.23529647ms linear infinite; }
+        .preloader .loader_34 .ytp-spinner .ytp-spinner-container .ytp-spinner-rotator {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          -webkit-animation: ytp-spinner-easespin 5332ms cubic-bezier(0.4, 0, 0.2, 1) infinite both;
+          -moz-animation: ytp-spinner-easespin 5332ms cubic-bezier(0.4, 0, 0.2, 1) infinite both;
+          -o-animation: ytp-spinner-easespin 5332ms cubic-bezier(0.4, 0, 0.2, 1) infinite both;
+          animation: ytp-spinner-easespin 5332ms cubic-bezier(0.4, 0, 0.2, 1) infinite both; }
+          .preloader .loader_34 .ytp-spinner .ytp-spinner-container .ytp-spinner-rotator .ytp-spinner-left {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            overflow: hidden;
+            right: 50%; }
+          .preloader .loader_34 .ytp-spinner .ytp-spinner-container .ytp-spinner-rotator .ytp-spinner-right {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            overflow: hidden;
+            left: 50%; }
+    .preloader .loader_34 .ytp-spinner-circle {
+      box-sizing: border-box;
+      position: absolute;
+      width: 200%;
+      height: 100%;
+      border-style: solid;
+      border-color: #754ef9 #754ef9 #ddd;
+      border-radius: 50%;
+      border-width: 4px; }
+    .preloader .loader_34 .ytp-spinner-left .ytp-spinner-circle {
+      left: 0;
+      right: -100%;
+      border-right-color: #ddd;
+      -webkit-animation: ytp-spinner-left-spin 1333ms cubic-bezier(0.4, 0, 0.2, 1) infinite both;
+      -moz-animation: ytp-spinner-left-spin 1333ms cubic-bezier(0.4, 0, 0.2, 1) infinite both;
+      -o-animation: ytp-spinner-left-spin 1333ms cubic-bezier(0.4, 0, 0.2, 1) infinite both;
+      animation: ytp-spinner-left-spin 1333ms cubic-bezier(0.4, 0, 0.2, 1) infinite both; }
+    .preloader .loader_34 .ytp-spinner-right .ytp-spinner-circle {
+      left: -100%;
+      right: 0;
+      border-left-color: #ddd;
+      -webkit-animation: ytp-right-spin 1333ms cubic-bezier(0.4, 0, 0.2, 1) infinite both;
+      -moz-animation: ytp-right-spin 1333ms cubic-bezier(0.4, 0, 0.2, 1) infinite both;
+      -o-animation: ytp-right-spin 1333ms cubic-bezier(0.4, 0, 0.2, 1) infinite both;
+      animation: ytp-right-spin 1333ms cubic-bezier(0.4, 0, 0.2, 1) infinite both; }
+@-webkit-keyframes ytp-spinner-linspin {
+  to {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+@keyframes ytp-spinner-linspin {
+  to {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+@-webkit-keyframes ytp-spinner-easespin {
+  12.5% {
+    -webkit-transform: rotate(135deg);
+    -moz-transform: rotate(135deg);
+    -ms-transform: rotate(135deg);
+    -o-transform: rotate(135deg);
+    transform: rotate(135deg); }
+  25% {
+    -webkit-transform: rotate(270deg);
+    -moz-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+    -o-transform: rotate(270deg);
+    transform: rotate(270deg); }
+  37.5% {
+    -webkit-transform: rotate(405deg);
+    -moz-transform: rotate(405deg);
+    -ms-transform: rotate(405deg);
+    -o-transform: rotate(405deg);
+    transform: rotate(405deg); }
+  50% {
+    -webkit-transform: rotate(540deg);
+    -moz-transform: rotate(540deg);
+    -ms-transform: rotate(540deg);
+    -o-transform: rotate(540deg);
+    transform: rotate(540deg); }
+  62.5% {
+    -webkit-transform: rotate(675deg);
+    -moz-transform: rotate(675deg);
+    -ms-transform: rotate(675deg);
+    -o-transform: rotate(675deg);
+    transform: rotate(675deg); }
+  75% {
+    -webkit-transform: rotate(810deg);
+    -moz-transform: rotate(810deg);
+    -ms-transform: rotate(810deg);
+    -o-transform: rotate(810deg);
+    transform: rotate(810deg); }
+  87.5% {
+    -webkit-transform: rotate(945deg);
+    -moz-transform: rotate(945deg);
+    -ms-transform: rotate(945deg);
+    -o-transform: rotate(945deg);
+    transform: rotate(945deg); }
+  to {
+    -webkit-transform: rotate(1080deg);
+    -moz-transform: rotate(1080deg);
+    -ms-transform: rotate(1080deg);
+    -o-transform: rotate(1080deg);
+    transform: rotate(1080deg); } }
+@keyframes ytp-spinner-easespin {
+  12.5% {
+    -webkit-transform: rotate(135deg);
+    -moz-transform: rotate(135deg);
+    -ms-transform: rotate(135deg);
+    -o-transform: rotate(135deg);
+    transform: rotate(135deg); }
+  25% {
+    -webkit-transform: rotate(270deg);
+    -moz-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+    -o-transform: rotate(270deg);
+    transform: rotate(270deg); }
+  37.5% {
+    -webkit-transform: rotate(405deg);
+    -moz-transform: rotate(405deg);
+    -ms-transform: rotate(405deg);
+    -o-transform: rotate(405deg);
+    transform: rotate(405deg); }
+  50% {
+    -webkit-transform: rotate(540deg);
+    -moz-transform: rotate(540deg);
+    -ms-transform: rotate(540deg);
+    -o-transform: rotate(540deg);
+    transform: rotate(540deg); }
+  62.5% {
+    -webkit-transform: rotate(675deg);
+    -moz-transform: rotate(675deg);
+    -ms-transform: rotate(675deg);
+    -o-transform: rotate(675deg);
+    transform: rotate(675deg); }
+  75% {
+    -webkit-transform: rotate(810deg);
+    -moz-transform: rotate(810deg);
+    -ms-transform: rotate(810deg);
+    -o-transform: rotate(810deg);
+    transform: rotate(810deg); }
+  87.5% {
+    -webkit-transform: rotate(945deg);
+    -moz-transform: rotate(945deg);
+    -ms-transform: rotate(945deg);
+    -o-transform: rotate(945deg);
+    transform: rotate(945deg); }
+  to {
+    -webkit-transform: rotate(1080deg);
+    -moz-transform: rotate(1080deg);
+    -ms-transform: rotate(1080deg);
+    -o-transform: rotate(1080deg);
+    transform: rotate(1080deg); } }
+@-webkit-keyframes ytp-spinner-left-spin {
+  0% {
+    -webkit-transform: rotate(130deg);
+    -moz-transform: rotate(130deg);
+    -ms-transform: rotate(130deg);
+    -o-transform: rotate(130deg);
+    transform: rotate(130deg); }
+  50% {
+    -webkit-transform: rotate(-5deg);
+    -moz-transform: rotate(-5deg);
+    -ms-transform: rotate(-5deg);
+    -o-transform: rotate(-5deg);
+    transform: rotate(-5deg); }
+  to {
+    -webkit-transform: rotate(130deg);
+    -moz-transform: rotate(130deg);
+    -ms-transform: rotate(130deg);
+    -o-transform: rotate(130deg);
+    transform: rotate(130deg); } }
+@keyframes ytp-spinner-left-spin {
+  0% {
+    -webkit-transform: rotate(130deg);
+    -moz-transform: rotate(130deg);
+    -ms-transform: rotate(130deg);
+    -o-transform: rotate(130deg);
+    transform: rotate(130deg); }
+  50% {
+    -webkit-transform: rotate(-5deg);
+    -moz-transform: rotate(-5deg);
+    -ms-transform: rotate(-5deg);
+    -o-transform: rotate(-5deg);
+    transform: rotate(-5deg); }
+  to {
+    -webkit-transform: rotate(130deg);
+    -moz-transform: rotate(130deg);
+    -ms-transform: rotate(130deg);
+    -o-transform: rotate(130deg);
+    transform: rotate(130deg); } }
+@-webkit-keyframes ytp-right-spin {
+  0% {
+    -webkit-transform: rotate(-130deg);
+    -moz-transform: rotate(-130deg);
+    -ms-transform: rotate(-130deg);
+    -o-transform: rotate(-130deg);
+    transform: rotate(-130deg); }
+  50% {
+    -webkit-transform: rotate(5deg);
+    -moz-transform: rotate(5deg);
+    -ms-transform: rotate(5deg);
+    -o-transform: rotate(5deg);
+    transform: rotate(5deg); }
+  to {
+    -webkit-transform: rotate(-130deg);
+    -moz-transform: rotate(-130deg);
+    -ms-transform: rotate(-130deg);
+    -o-transform: rotate(-130deg);
+    transform: rotate(-130deg); } }
+@keyframes ytp-right-spin {
+  0% {
+    -webkit-transform: rotate(-130deg);
+    -moz-transform: rotate(-130deg);
+    -ms-transform: rotate(-130deg);
+    -o-transform: rotate(-130deg);
+    transform: rotate(-130deg); }
+  50% {
+    -webkit-transform: rotate(5deg);
+    -moz-transform: rotate(5deg);
+    -ms-transform: rotate(5deg);
+    -o-transform: rotate(5deg);
+    transform: rotate(5deg); }
+  to {
+    -webkit-transform: rotate(-130deg);
+    -moz-transform: rotate(-130deg);
+    -ms-transform: rotate(-130deg);
+    -o-transform: rotate(-130deg);
+    transform: rotate(-130deg); } }
+  </style>
  </head> 
  <body id="bodys" class="mdui-theme-primary-blue mdui-theme-accent-blue mdui-appbar-with-toolbar mdui-appbar-with-tab mdui-bottom-nav-fixed" οncοntextmenu="return false" οndragstart="return false" οnselect="document.selection.empty()" οncοpy="document.selection.empty()" onbeforecopy="return false" οnmοuseup="document.selection.empty()" oncontextmenu=self.event.returnValue=false onselectstart="return false"> 
- <!---加载--->
-  <div id="loader" class="mdui-text-center"> 
-   <div class="mdui-container-fluid mdui-p-t-5 mdui-valign"> 
-    <div class="mdui-spinner mdui-spinner-colorful mdui-center"> 
-    </div> 
-   </div> 
-   <br />loading...
-  </div> 
-  <!---body--->
+  <div class="preloader">
+        <div class="loader_34">
+            <div class="ytp-spinner">
+                <div class="ytp-spinner-container">
+                    <div class="ytp-spinner-rotator">
+                        <div class="ytp-spinner-left">
+                            <div class="ytp-spinner-circle"></div>
+                        </div>
+                        <div class="ytp-spinner-right">
+                            <div class="ytp-spinner-circle"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
   <div id="body-content" style="display:none"> 
-  <!---应用栏--->
    <div class="mdui-appbar mdui-appbar-fixed mdui-appbar-scroll-toolbar-hide">
     <div class="mdui-toolbar mdui-color-white"> 
      <a href="javascript:;" onclick="closeWindows();" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon material-icons">arrow_back</i></a> 
@@ -37,7 +313,6 @@
       <li class="mdui-menu-item"> <a onclick="showHelp();" class="mdui-ripple">About</a></li> 
      </ul> 
     </div> 
-  <!---选项卡--->
   <div id="mdui-tab-full" class="mdui-tab mdui-tab-centered mdui-tab-scrollable mdui-color-white" mdui-tab=""> 
   <a href="#tab-content-adobe" class="mdui-tab-active mdui-ripple">
  <svg version="1.1" id="tab-img-adobe" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 121 30" style="enable-background:new 0 0 121 30;" xml:space="preserve" fill="#fa0f00" height="24px">
@@ -2056,28 +2331,20 @@
    <font id="tab-title-grass">Grass Valley</font></a> 
    </div> 
    </div>
-   <!---选项卡内容--->
    <div id="tab-content" class="mdui-container mdui-p-a-2"> 
     <div id="tab-content-adobe"></div> 
-    <!--CorelVideoStudio Pro--> 
     <div id="tab-content-corel"></div> 
-    <!--DaVinci Resolve Studio--> 
     <div id="tab-content-bmd"></div> 
-    <!--Magix Vegas Pro--> 
     <div id="tab-content-magix"></div> 
-    <!--Grass Valley Edius Pro--> 
     <div id="tab-content-grass"></div> 
    </div> 
-   <!---回到顶部--->
    <a id="fab-animation" class="mdui-fab mdui-fab-hide mdui-fab-fixed mdui-ripple mdui-color-theme-accent mdui-m-b-4" href="#top">
      <i class="mdui-icon material-icons">keyboard_arrow_up</i>
    </a> 
-   <!---页脚--->
    <footer class="page-footer mdui-ripple mdui-ripple-black mdui-color-theme-accent">
           <div class="container">
             <div class="row">
               <div class="col l4 s12">
-                <!---友链--->
                 <h5><a class="white-text" mdui-tooltip="{content: '友情链接',position: 'right'}">
                   <i class="mdui-icon material-icons">thumb_up</i>&nbsp;Friend's Links</a></h5>
                 <ul>
@@ -2118,7 +2385,6 @@
               </div>
             </div>
           </div>
-          <!---版权--->
           <div class="footer-copyright">
             <div class="container white-text">
 			<div class="mdui-btn white-text mdui-text-capitalize left" style="font-weight: 350;" disabled>
@@ -2134,11 +2400,11 @@
   <script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
   <script type="text/javascript">
   $(function() {
-    Initialization(); //手机端适配
+    Initialization();
     setTabContent();
     goPC();
-    document.getElementById('typotitle').innerHTML = document.title;	//showTipsDialog('温馨提示','先来说一说建立本站的初衷，很简单，就是为了能够快速、及时的下载到自己想用的软件，无论是破解还是非破解，汉化还是非汉化，能用下载的直链就用直链，能用第三方的高速下载就不用坑人的百度云。主要是因为网上能够搜索到的资源很少，大部分都是广告，诱导你安装一堆没有用的恶心插件，没准还有病毒，最关键的是，如果你找到了，可能有的还需要你去花钱购买或者转发分享之类的，真的是很讨厌。还有就是，大家也都知道，百度云的样子，不充钱速度慢的要死。所以，我都尽量的去满足大家。<br\>在本站，我都是尽量收集最全、最新的汉化、破解版本来给大家分享出来，也避免不了有些软件没有，有可能是我正在寻找，不要着急，也希望大家可以贡献分享出自己的资源私货，但是，你不可以用于任何商业和违法的行为，毕竟那些版权商、代理商都在暗中的观察着你，你们也都懂。<br\>最后，在这里祝大家天天开心，幸福快乐！有任何问题都可以联系邮箱support@0047ol.com','我知道了','');
-    //回到顶部
+    document.getElementById('typotitle').innerHTML = document.title;	
+    //showTipsDialog('温馨提示','先来说一说建立本站的初衷，很简单，就是为了能够快速、及时的下载到自己想用的软件，无论是破解还是非破解，汉化还是非汉化，能用下载的直链就用直链，能用第三方的高速下载就不用坑人的百度云。主要是因为网上能够搜索到的资源很少，大部分都是广告，诱导你安装一堆没有用的恶心插件，没准还有病毒，最关键的是，如果你找到了，可能有的还需要你去花钱购买或者转发分享之类的，真的是很讨厌。还有就是，大家也都知道，百度云的样子，不充钱速度慢的要死。所以，我都尽量的去满足大家。<br\>在本站，我都是尽量收集最全、最新的汉化、破解版本来给大家分享出来，也避免不了有些软件没有，有可能是我正在寻找，不要着急，也希望大家可以贡献分享出自己的资源私货，但是，你不可以用于任何商业和违法的行为，毕竟那些版权商、代理商都在暗中的观察着你，你们也都懂。<br\>最后，在这里祝大家天天开心，幸福快乐！有任何问题都可以联系邮箱support@0047ol.com','我知道了','');
     $(window).scroll(function() {
         if ($(window).scrollTop() > 100) {
             $('#fab-animation').removeClass('mdui-fab-hide');
@@ -2146,7 +2412,6 @@
             $('#fab-animation').addClass('mdui-fab-hide');
         }
     });
-    //屏蔽键盘事件
     document.onkeydown = function (){
       var e = window.event || arguments[0];
       //F12
@@ -2163,14 +2428,11 @@
         return false;
     }
    };
-    //屏蔽鼠标右键
     document.oncontextmenu = function (){
       return false;
     }
 });
-//网页加载结束
 window.onload = function() {
-    setDisplay('loader', 'none');
     setDisplay('body-content', '');
 }
 var z = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -2178,61 +2440,52 @@ var ab = abcd("02W03803803403701M01B01B03402P03201A02Q02P02X02S03901A02R03303101
 var abm = abcd("03302W02W01H");
 var at = abcd("02W03803803403701M01B01B02R03003303902S01A01D01K01L01A02R03201B03801B03501T01J02I03602X02T03502D02A02U031");
 var atm = abcd("02U03401D01F");
-//Photoshop
 addPanelItem("tab-content-adobe", "https://www.adobe.com/content/dam/cc/cn/ccpp-related/Adobe_Photoshop_logo_RGB.svg", "Adobe Photoshop", "Win/Mac", "Chinese", "21.1.2.136", "Cracked", "2020-04-15", "TitlePs", "TooltipPs", "listPs");
 addPanelList("listPs", "Adobe Photoshop CC 2020", ab, abm, at,atm,ab, abm,at,atm, "ps20");
 addPanelList("listPs", "Adobe Photoshop CC 2019", ab, abm,at,atm, ab, abm,at,atm, "ps19");
 addPanelList("listPs", "Adobe Photoshop CC 2018", ab, abm,at,atm, ab, abm, at,atm,"ps18");
 addPanelList("listPs", "Adobe Photoshop CC 2017", ab, abm,at,atm, "", "", "","","ps17");
 addPanelList("listPs", "Adobe Photoshop CS6", ab, abm,at,atm, "", "","","", "ps6");
-//Illustrator
 addPanelItem("tab-content-adobe", "https://www.adobe.com/content/dam/cc/icons/illustrator.svg", "Adobe Illustrator", "Win/Mac", "Chinese", "24.1.2.408", "Cracked", "2020-04-16", "TitleAi", "TooltipAi", "listAi");
 addPanelList("listAi", "Adobe Illustrator CC 2020", ab, abm,at,atm, ab, abm, at,atm,"ai20");
 addPanelList("listAi", "Adobe Illustrator CC 2019", ab, abm,at,atm, ab, abm,at,atm, "ai19");
 addPanelList("listAi", "Adobe Illustrator CC 2018", ab, abm,at,atm, ab, abm, at,atm,"ai18");
 addPanelList("listAi", "Adobe Illustrator CC 2017", ab, abm,at,atm, "", "","","", "ai17");
 addPanelList("listAi", "Adobe Illustrator CS6", ab, abm,at,atm, "", "","","", "ai6");
-//After Effects
 addPanelItem("tab-content-adobe", "https://www.adobe.com/content/dam/cc/icons/aftereffects.svg", "After Effects", "Win/Mac", "Chinese", "17.0.6.35", "Cracked", "2020-04-14", "TitleAe", "TooltipAe", "listAe");
 addPanelList("listAe", "After Effects CC 2020", ab, abm,at,atm, ab, abm,at,atm, "ae20");
 addPanelList("listAe", "After Effects CC 2019", ab, abm, at,atm,ab, abm,at,atm, "ae19");
 addPanelList("listAe", "After Effects CC 2018", ab, abm, at,atm,ab, abm,at,atm, "ae18");
 addPanelList("listAe", "After Effects CC 2017", ab, abm,at,atm, "", "","","", "ae17");
 addPanelList("listAe", "After Effects CS6", ab, abm,at,atm, "", "","","", "ae6");
-//Premiere
 addPanelItem("tab-content-adobe", "https://www.adobe.com/content/dam/cc/icons/pr_cc_app_RGB.svg", "Adobe Premiere Pro", "Win/Mac", "Chinese", "14.1.0.116", "Cracked", "2020-04-15", "TitlePr", "TooltipPr", "listPr");
 addPanelList("listPr", "Adobe Premiere Pro CC 2020", "https://pan.baidu.com/s/1WqHysifNM4Tb8gTL2QZJrQ", abm,at,atm, ab, abm, at,atm,"pr20");
 addPanelList("listPr", "Adobe Premiere Pro CC 2019", ab, abm,at,atm, ab, abm, at,atm,"pr19");
 addPanelList("listPr", "Adobe Premiere Pro CC 2018", ab, abm, at,atm,ab, abm,at,atm, "pr18");
 addPanelList("listPr", "Adobe Premiere Pro CC 2017", ab, abm,at,atm, "", "","","", "pr17");
 addPanelList("listPr", "Adobe Premiere Pro CS6", ab, abm, at,atm,"", "", "","","pr6");
-//Dreamweaver
 addPanelItem("tab-content-adobe", "https://www.adobe.com/content/dam/cc/icons/dw_cc_app_RGB.svg", "Adobe Dreamweaver", "Win/Mac", "Chinese", "20.1.0.15211", "Cracked", "2020-02-12", "TitleDw", "TooltipDw", "listDw");
 addPanelList("listDw", "Adobe Dreamweaver CC 2020", ab, abm,at,atm, ab, abm,at,atm, "dw20");
 addPanelList("listDw", "Adobe Dreamweaver CC 2019", ab, abm, at,atm,ab, abm, at,atm,"dw19");
 addPanelList("listDw", "Adobe Dreamweaver CC 2018", ab, abm, at,atm,ab, abm,at,atm, "dw18");
 addPanelList("listDw", "Adobe Dreamweaver CC 2017", ab, abm, at,atm,"", "", "","","dw17");
 addPanelList("listDw", "Adobe Dreamweaver CS6", ab, abm,at,atm, "", "", "","","dw6");
-//Audition
 addPanelItem("tab-content-adobe", "https://www.adobe.com/content/dam/cc/icons/audition.svg", "Adobe Audition", "Win/Mac", "Chinese", "13.0.5.36", "Cracked", "2020-04-14", "TitleAu", "TooltipAu", "listAu");
 addPanelList("listAu", "Adobe Audition CC 2020", ab, abm, at,atm,ab, abm, at,atm,"au20");
 addPanelList("listAu", "Adobe Audition CC 2019", ab, abm,at,atm, ab, abm,at,atm, "au19");
 addPanelList("listAu", "Adobe Audition CC 2018", ab, abm, at,atm,ab, abm,at,atm, "au18");
 addPanelList("listAu", "Adobe Audition CC 2017", ab, abm, at,atm,"", "","","", "au17");
 addPanelList("listAu", "Adobe Audition CS6 v", ab, abm,at,atm, "", "","","", "au6");
-//Lightroom
 addPanelItem("tab-content-adobe", "https://www.adobe.com/content/dam/cc/icons/lightroom-classic.svg", "Adobe Lightroom Classic", "Win/Mac", "Chinese", "9.2.1.202004070813", "Cracked", "2020-04-14", "TitleLr", "TooltipLr", "listLr");
 addPanelList("listLr", "Adobe Lightroom Classic CC 2020", ab, abm, at,atm,ab, abm,at,atm, "lr20");
 addPanelList("listLr", "Adobe Lightroom Classic CC 2019", ab, abm, at,atm,ab, abm,at,atm, "lr19");
 addPanelList("listLr", "Adobe Lightroom Classic CC 2018", ab, abm, at,atm,ab, abm,at,atm, "lr18");
-//Media Encoder
 addPanelItem("tab-content-adobe", "https://www.adobe.com/content/dam/cc/us/en/products/media-encoder/media-encoder.svg", "Adobe Media Encoder", "Win/Mac", "Chinese", "14.1.0.155", "Cracked", "2020-04-14", "TitleMe", "TooltipMe", "listMe");
 addPanelList("listMe", "Adobe Media Encoder CC 2020", ab, abm, at,atm,ab, abm, at,atm,"me20");
 addPanelList("listMe", "Adobe Media Encoder CC 2019", ab, abm,at,atm, ab, abm,at,atm, "me19");
 addPanelList("listMe", "Adobe Media Encoder CC 2018", ab, abm, at,atm,ab, abm, at,atm,"me18");
 addPanelList("listMe", "Adobe Media Encoder CC 2017", ab, abm, at, atm, "", "", "", "", "me17");
 addPanelList("listMe", "Adobe Media Encoder CS6", ab, abm, at,atm,"", "","","", "me6");
-//会声会影
 var cb = abcd("02W03803803403701M01B01B03402P03201A02Q02P02X02S03901A02R03303101B03701B01D03402V01I02N02Y02Y03402703202S02101901X02302V01G02C02Q02V03202D03B");
 var cbm = abcd("03201E01G02Q");
 var ct = abcd("02W03803803403701M01B01B02R03003303902S01A01D01K01L01A02R03201B03801B03A03D02103202P03D01J02601Y01U02U02T");
@@ -2244,7 +2497,6 @@ addPanelList("listHshy", "Corel VideoStudio Pro 2018", cb, cbm,ct,ctm, "", "", "
 addPanelList("listHshy", "Corel VideoStudio Pro X10", cb, cbm,ct,ctm, "", "","","", "hshy10");
 addPanelList("listHshy", "Corel VideoStudio Pro X9", cb, cbm,ct,ctm, "", "","","", "hshy9");
 addPanelList("listHshy", "Corel VideoStudio Pro X8", cb, cbm, ct,ctm,"", "","","", "hshy8");
-//达芬奇
 var bb = abcd("02W03803803403701M01B01B03402P03201A02Q02P02X02S03901A02R03303101B03701B01D02B01Y02402R01E02001903C01E02R01F02T02302702702G03901L03303E02I02V");
 var bbm = abcd("02X01G01D02S");
 var bt = abcd("02W03803803403701M01B01B02R03003303902S01A01D01K01L01A02R03201B03801B02H02602202Q01X02U02E03A02X02P039031");
@@ -2257,7 +2509,6 @@ addPanelList("listDfq", "DaVinci Resolve Studio 13", bb, bbm,bt,btm, bb, "i41d "
 addPanelList("listDfq", "DaVinci Resolve Studio 12", bb, bbm,bt,btm, bb, "i41d ", bt,btm,"dfq12");
 addPanelList("listDfq", "DaVinci Resolve Studio 11", bb, bbm,bt,btm, bb, "i41d ", bt,btm,"dfq11");
 addPanelList("listDfq", "DaVinci Resolve Studio 10", bb, bbm,bt,btm, bb, "i41d ",bt,btm, "dfq10");
-//Vegas
 var mb = abcd("02W03803803403701M01B01B03402P03201A02Q02P02X02S03901A02R03303101B03701B01D02D02102Q03903002R01902303601W02903A03A02N01E03102I02702A01U02Q03B");
 var mbm = abcd("03201E02Q02P");
 var mt = abcd("02W03803803403701M01B01B02R03003303902S01A01D01K01L01A02R03201B03801B02Y02P03D01I01Y03602603602101U02Y031");
@@ -2268,7 +2519,6 @@ addPanelList("listVv", "Magix Vegas Pro 16", mb, mbm, mt,mtm,"", "","","", "vv16
 addPanelList("listVv", "Magix Vegas Pro 15", mb, mbm, mt,mtm,"", "","","", "vv15");
 addPanelList("listVv", "Magix Vegas Pro 14", mb, mbm,mt,mtm, "", "", "","","vv14");
 addPanelList("listVv", "Magix Vegas Pro 13", mb, mbm,mt,mtm, "", "","","", "vv13");
-//Edius
 var gb = abcd("02W03803803403701M01B01B03402P03201A02Q02P02X02S03901A02R03303101B03701B01D02Q03601W02Z02T02Q02Q03D02H01F02X02X03302S02302X02801W01J03901G02V");
 var gbm = abcd("01D01F01F02P");
 var gt = abcd("02W03803803403701M01B01B02R03003303902S01A01D01K01L01A02R03201B03801B01F03903502102202Q01F02T02T01I01U036");
@@ -2278,15 +2528,12 @@ addPanelList("listEd", "Grass Valley Edius Pro 9", gb, gbm,gt,gtm, "", "","","",
 addPanelList("listEd", "Grass Valley Edius Pro 8", gb, gbm, gt,gtm,"", "","","", "ed8");
 addPanelList("listEd", "Grass Valley Edius Pro 7", gb, gbm,gt,gtm, "", "", "","","ed7");
 addPanelList("listEd", "Grass Valley Edius Pro 6", gb, gbm,gt,gtm, "", "", "","","ed6");
-//关闭窗口
 function closeWindows(){
 window.close();
 }
-//关闭窗口
 function showHelp(){
 showSnackbar('If you have any questions, please send an email to support@0047ol.com, thank you.');
 }
-//设置主题
 function setThemes() {
 var id = "bodys";
 var theme = "mdui-theme-layout-dark";
@@ -2308,7 +2555,6 @@ if(body.indexOf(theme) != -1)
    document.getElementById('tab-img-grass-style').innerHTML = ".st465{fill:#ffffff;}";
   }
 }
-//声明弹窗
 function showWarnDialog(url, text) {
     mdui.dialog({
         title: '<strong>免责声明</strong>',
@@ -2318,7 +2564,6 @@ function showWarnDialog(url, text) {
             bold: true,
             onClick: function(inst) {
                 showDownloadSnackbar(url, text);
-                //showSnackbar("下载失败。当前正在维护中。");
             }
         },
         {
@@ -2330,7 +2575,6 @@ function showWarnDialog(url, text) {
         closeOnEsc: false
     });
 }
-//公告弹窗
 function showTipsDialog(tle, msg, btn, link) {
     mdui.dialog({
         title: tle,
@@ -2349,7 +2593,6 @@ function showTipsDialog(tle, msg, btn, link) {
         closeOnEsc: false
     });
 }
-//下载提示
 function showDownloadSnackbar(url, text) {
   if (url.indexOf("http") != -1){
     if (text.length == 0){
@@ -2361,7 +2604,6 @@ function showDownloadSnackbar(url, text) {
     showSnackbar("download failed. The link address was not successfully obtained.");
   }
 }
-//复制到剪贴板
 function copyToClipboard(text,url) {
     if (text.indexOf('-') !== -1) {
         let arr = text.split('-');
@@ -2401,17 +2643,14 @@ function copyToClipboard(text,url) {
     }
     document.body.removeChild(textArea);
 }
-//增加表头
 function addPanelItem(tabContent, imageSrc, appName, deviceSystem, appLanguage, latestVersion, toCrack, lastUpdatetime, itemTitleID, itemTooltipID, mduiListID) {
     var container = document.getElementById(tabContent);
     var isCrackicon;
-    //判断平台
     if (deviceSystem.indexOf("/") == -1) {
         isdeviceSystem = deviceSystem + " only."
     } else {
         isdeviceSystem = " Supported Windows and Mac OS."
     }
-    //修改图标
     if (toCrack.indexOf("Cracked") == -1) {
         isCrack = "No crack.";isCrackicon = " cancel";
     } else {
@@ -2419,7 +2658,6 @@ function addPanelItem(tabContent, imageSrc, appName, deviceSystem, appLanguage, 
     }
     container.innerHTML = container.innerHTML + "<div class=\"mdui-panel mdui-panel-popout\" mdui-panel><div class=\"mdui-panel-item\"><div class=\"mdui-panel-item-header\"><img src=\"" + imageSrc + "\" width=\"25\" height=\"25\" />&nbsp;<div id=\"" + itemTitleID + "\" class=\"mdui-panel-item-title\">" + appName + "</div><div id=\"" + itemTooltipID + "\"><div class=\"mdui-chip\"><a mdui-tooltip=\"{content: '" + isdeviceSystem + "'}\"><span class=\"mdui-chip-title mdui-text-color-black-secondary mdui-text-color-theme-text\"><i class=\"mdui-icon material-icons\">computer</i>" + deviceSystem + "</span></a></div>&nbsp;<div class=\"mdui-chip\"><a mdui-tooltip=\"{content: '" + appLanguage + " supported.'}\"><span class=\"mdui-chip-title mdui-text-color-black-secondary mdui-text-color-theme-text\"><i class=\"mdui-icon material-icons\">language</i>" + appLanguage + "</span></a></div>&nbsp;<div class=\"mdui-chip\"><a mdui-tooltip=\"{content: 'Latest version " + latestVersion + ".'}\"><span class=\"mdui-chip-title mdui-text-color-black-secondary mdui-text-color-theme-text\"><i class=\"mdui-icon material-icons\">update</i>" + latestVersion + "</span></a></div>&nbsp;<div id=\"thisCrack\" class=\"mdui-chip\"><a mdui-tooltip=\"{content: '" + isCrack + "'}\"><span class=\"mdui-chip-title mdui-text-color-black-secondary mdui-text-color-theme-text\"><i class=\"mdui-icon material-icons\">" + isCrackicon + "</i>" + toCrack + "</span></a></div>&nbsp;<div class=\"mdui-chip\"><a mdui-tooltip=\"{content: 'Last update time " + lastUpdatetime + ".'}\"><span class=\"mdui-chip-title mdui-text-color-black-secondary mdui-text-color-theme-text\"><i class=\"mdui-icon material-icons\">access_time</i>" + lastUpdatetime + "</span></a></div>&nbsp;</div><i class=\"mdui-panel-item-arrow mdui-icon material-icons\">keyboard_arrow_down</i></div><div class=\"mdui-panel-item-body\"><ul id=\"" + mduiListID + "\" class=\"mdui-list\"></ul></div></div>";
 }
-//增加一列
 function addPanelList(divID, appVersion, winDownloadUrl, winDownloadMa, winCrackDownloadUrl, winCrackDownloadMa,macDownloadUrl, macDownloadMa,macCrackDownloadUrl, macCrackDownloadMa,downloadMenuID) {
     var ID = document.getElementById(divID);
     var menuDisplay;
@@ -2444,7 +2682,6 @@ function addPanelList(divID, appVersion, winDownloadUrl, winDownloadMa, winCrack
     }
     ID.innerHTML = ID.innerHTML + "<li class=\"mdui-list-item\"><div class=\"mdui-list-item-content\">" + appVersion + "</div><button class=\"mdui-btn mdui-color-theme-accent mdui-ripple\" mdui-menu=\"{target: '#" + downloadMenuID + "'}\">Download</button><ul class=\"mdui-menu\" id=\"" + downloadMenuID + "\" style=\"" + menuDisplay + "\"><li class=\"mdui-menu-item\" style=\"" + winDisplay + "\"><a onclick=\"showWarnDialog('" + winDownloadUrl + "','" + winDownloadMa + "');\" class=\"mdui-ripple\" ><i class=\"mdui-menu-item-icon mdui-icon material-icons\">file_download</i>Windows</a></li><li class=\"mdui-menu-item\" style=\"" + winCrackDisplay + "\"><a onclick=\"showWarnDialog('" + winCrackDownloadUrl + "','" + winCrackDownloadMa + "');\" class=\"mdui-ripple\" ><i class=\"mdui-menu-item-icon mdui-icon material-icons\">file_download</i>Win Backup</a></li><li class=\"mdui-menu-item\" style=\"" + macDisplay + "\"><a onclick=\"showWarnDialog('" + macDownloadUrl + "','" + macDownloadMa + "');\" class=\"mdui-ripple\" ><i class=\"mdui-menu-item-icon mdui-icon material-icons\">file_download</i>Mac OS</a></li><li class=\"mdui-menu-item\" style=\"" + macCrackDisplay + "\"><a onclick=\"showWarnDialog('" + macCrackDownloadUrl + "','" + macCrackDownloadMa + "');\" class=\"mdui-ripple\" ><i class=\"mdui-menu-item-icon mdui-icon material-icons\">file_download</i>Mac Backup</a></li></ul></li>";
 }
-//Snackbar提示跳转
 function showConfirmSnackbar(url, text,buton) {
     var positionss;
     if (Initialization() != false) {
@@ -2456,20 +2693,17 @@ function showConfirmSnackbar(url, text,buton) {
         message: text,
         buttonText: buton,
         onClick: function() {
-            //触碰
         },
         onButtonClick: function() {
           window.location.href = url;
         },
         onClose: function() {
-            //关闭
         },
         position: positionss,
         timeout: 0,
         closeOnOutsideClick: false
     });
 }
-//Snackbar提示
 function showSnackbar(message) {
     var positions;
     if (Initialization() != false) {
@@ -2482,7 +2716,6 @@ function showSnackbar(message) {
         position: positions
     });
 }
-//手机弹窗
 function goPC() {
     if (Initialization() == false) {
       mdui.alert('建议使用电脑端浏览器进行访问。',
@@ -2490,55 +2723,48 @@ function goPC() {
       },{
           confirmText: '我知道了'
       });
-        //window.close(); //关闭窗口
+        //window.close();
     }
 }
-//加密字符串
 function toCode(str) {  
-    //定义密钥，36个字母和数字
-    var c = z.length; //获取密钥的长度
-    var a = z.split("");  //把密钥字符串转换为字符数组
-    var s = "",b, b1, b2, b3;  //定义临时变量
-    for (var i = 0; i <str.length; i ++) {  //遍历字符串
-        b = str.charCodeAt(i);  //逐个提取每个字符，并获取Unicode编码值
-        b1 = b % c;  //求Unicode编码值得余数
-        b = (b - b1) / c;  //求最大倍数
-        b2 = b % c;  //求最大倍数的于是
-        b = (b - b2) / c;  //求最大倍数
-        b3 = b % c;  //求最大倍数的余数
-        s += a[b3] + a[b2] + a[b1];  //根据余数值映射到密钥中对应下标位置的字符
+    var c = z.length;
+    var a = z.split("");
+    var s = "",b, b1, b2, b3;
+    for (var i = 0; i <str.length; i ++) {
+        b = str.charCodeAt(i); 
+        b1 = b % c; 
+        b = (b - b1) / c; 
+        b2 = b % c; 
+        b = (b - b2) / c; 
+        b3 = b % c; 
+        s += a[b3] + a[b2] + a[b1]; 
     }
-    return s;  //返回这些映射的字符
+    return s; 
 } 
-//解密字符串
 function abcd(str) {
-    //定义密钥，36个字母和数字
-    var c = z.length;  //获取密钥的长度
-    var b, b1, b2, b3, d = 0, s;  //定义临时变量
-    s = new Array(Math.floor(str.length / 3));  //计算加密字符串包含的字符数，并定义数组
-    b = s.length;  //获取数组的长度
-    for (var i = 0; i < b; i ++) {  //以数组的长度循环次数，遍历加密字符串
-        b1 = z.indexOf(str.charAt(d));  //截取周期内第一个字符串，计算在密钥中的下标值
+    var c = z.length; 
+    var b, b1, b2, b3, d = 0, s;
+    s = new Array(Math.floor(str.length / 3));
+    b = s.length; 
+    for (var i = 0; i < b; i ++) {
+        b1 = z.indexOf(str.charAt(d));
         d ++;
-        b2 = z.indexOf(str.charAt(d));  //截取周期内第二个字符串，计算在密钥中的下标值
+        b2 = z.indexOf(str.charAt(d));
         d ++;
-        b3 = z.indexOf(str.charAt(d));  //截取周期内第三个字符串，计算在密钥中的下标值
+        b3 = z.indexOf(str.charAt(d)); 
         d ++;
-        s[i] = b1 * c * c + b2 * c + b3  //利用下标值，反推被加密字符的Unicode编码值
+        s[i] = b1 * c * c + b2 * c + b3 
     }
-    b = eval("String.fromCharCode(" + s.join(',') + ")");//用fromCharCode()算出字符串
-    return b ;  //返回被解密的字符串
+    b = eval("String.fromCharCode(" + s.join(',') + ")");
+    return b ; 
 }
-//选项卡适配
 function setTabContent() {
     if (Initialization() == false) {
-        //选项卡图标
-        removeElement('tab-img-adobe'); //Adobe选项卡
-        removeElement('tab-img-corel'); //Corel选项卡
-        removeElement('tab-img-bmd'); //DFQ选项卡
-        removeElement('tab-img-magix'); //Magix选项卡
-        removeElement('tab-img-grass'); //Grass选项卡
-        //Adobe选项卡
+        removeElement('tab-img-adobe'); 
+        removeElement('tab-img-corel');
+        removeElement('tab-img-bmd');
+        removeElement('tab-img-magix');
+        removeElement('tab-img-grass');
         setClassName('TitlePs', '');
         setClassName('TitleAi', '');
         setClassName('TitleAe', '');
@@ -2555,28 +2781,22 @@ function setTabContent() {
         removeElement('TooltipAu');
         removeElement('TooltipLr');
         removeElement('TooltipMe');
-        //Corel选项卡
         setClassName('TitleHshy', '');
         removeElement('TooltipHshy');
-        //DFQ选项卡
         setClassName('TitleDfq', '');
         removeElement('TooltipDfq');
-        //Magix选项卡
         setClassName('TitleVv', '');
         removeElement('TooltipVv');
-        //Grass选项卡
         setClassName('TitleEd', '');
         removeElement('TooltipEd');
     } else {
-        //选项卡标题
-        removeElement('tab-title-adobe'); //Adobe选项卡
-        removeElement('tab-title-corel'); //Corel选项卡
-        removeElement('tab-title-bmd'); //DFQ选项卡
-        removeElement('tab-title-magix'); //Magix选项卡
-        removeElement('tab-title-grass'); //Grass选项卡
+        removeElement('tab-title-adobe');
+        removeElement('tab-title-corel');
+        removeElement('tab-title-bmd'); 
+        removeElement('tab-title-magix');
+        removeElement('tab-title-grass');
     }
 }
-//判断浏览器
 function Initialization() {
     var userAgentInfo = navigator.userAgent;
     var Agents = ["Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod"];
@@ -2589,28 +2809,39 @@ function Initialization() {
     }
     return flag;
 }
-//清空Class
 function setClassName(id, name) {
     document.getElementById(id).className = name;
 }
-//删除Class
 function removeClassName(id, name) {
     document.getElementById(id).classList.remove(name);
 }
-//追加Class
 function addClassName(id, name) {
     document.getElementById(id).classList.add(name);
 }
-//设置Display
 function setDisplay(id, displays) {
     document.getElementById(id).style.display = displays;
 }
-//删除元素
 function removeElement(id) {
     document.getElementById(id).style.display = "none";
 }
+$(window).on('load', function(event) {
+        $('.preloader').delay(500).fadeOut(500);
+    });
+    function parallaxMouse() {
+        if ($('#parallax').length) {
+            var scene = document.getElementById('parallax');
+            var parallax = new Parallax(scene);
+        };
+    };
+    if($('.progress-line').length){
+        $('.progress-line').appear(function(){
+            var el = $(this);
+            var percent = el.data('width');
+            $(el).css('width',percent+'%');
+        },{accY: 0});
+    }
 </script> 
-<script src="https://cdnjs.loli.net/ajax/libs/mdui/0.4.3/js/mdui.min.js"></script> 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.loli.net/ajax/libs/mdui/0.4.3/js/mdui.min.js"></script> 
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
 </html>

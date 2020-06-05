@@ -340,6 +340,7 @@ var LiveEditor = (function () {
     iframe.close();
   };
   LiveEditor.prototype.download = function () {
+    window.location.href='/index.html';
   };
   return LiveEditor;
 })();

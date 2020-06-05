@@ -40,6 +40,7 @@ var LiveEditor = (function () {
   };
   $.throttle = function (fn, delay) {
     var timer = null;
+
     return function () {
       var _this = this;
       var args = arguments;
@@ -142,13 +143,17 @@ var LiveEditor = (function () {
     _this.isLiveMode = dom.controlLiveMode.checked;
     _this.liveMode();
     _this.resizePanelEvent();
+
     window.addEventListener('resize', function () {
       _this.resizePanel();
     });
+
     _this.run();
   };
   LiveEditor.prototype.hotkey = function () {
     var _this = this;
+
+    // Ctrl + enter 运行
     document.addEventListener('keydown', function (e) {
       e = e || window.event;
       var keyCode = e.keyCode || e.charCode;
@@ -159,6 +164,7 @@ var LiveEditor = (function () {
   };
   LiveEditor.prototype.liveMode = function () {
     var _this = this;
+
     $.each(editors, function (i, editor) {
       editor.inst.on('change', $.throttle(function () {
         if (_this.isLiveMode) {
@@ -171,8 +177,8 @@ var LiveEditor = (function () {
     var _this = this;
     if (typeof Top === 'undefined') {
       if (window.innerWidth < 600) {
-       // dom.preview.style.height = document.body.offsetHeight + 'px';
-       // dom.panel.style.display = 'none';
+       dom.preview.style.height = document.body.offsetHeight + 'px';
+       dom.panel.style.display = 'none';
         return;
       }
       Top = document.body.offsetHeight / 2;
@@ -192,6 +198,7 @@ var LiveEditor = (function () {
   };
   LiveEditor.prototype.resizePanelEvent = function () {
     var _this = this;
+
     dom.controlsDrag.onmousedown = function (e) {
       var panelTopOrigin = dom.panel.offsetTop;
       var tempHeight = e.clientY - panelTopOrigin;
@@ -330,17 +337,27 @@ var LiveEditor = (function () {
     document.head.appendChild($favicon);
     }
  };
-    var ico = html.match(/shortcut icon\" href=\"(\S*)\"/)[1];
-    var tle = html.match(/title\>(\S*)\<\/title/)[1];
-    changeFavicon(ico);
-    document.title = tle;
+    if (html.indexOf('shortcut icon') !== -1){
+	changeFavicon(html.match(/shortcut icon\" href=\"(\S*)\"/)[1]);
+	}else{
+	changeFavicon('https://s1.ax1x.com/2020/05/29/tmViJe.png');
+	}
+	if (html.indexOf('<title>') !== -1){
+    document.title = html.match(/title\>(\S*)\<\/title/)[1];
+	}else{
+	document.title = 'Editor';
+	}
     var iframe = iframeEle.contentDocument || iframeEle.contentWindow.document;
     iframe.open();
-    iframe.write(html + '<style>' + css + '</style>' + '<script>' + js + '</script>');
+	if (window.innerWidth < 600) {
+    iframe.write("<div style='position:fixed;width:200px;height:150px;top:50%;left:50%;margin-top:-75px;margin-left:-100px;'><div style='text-align:center;line-height:150px;'>对不起，暂不支持手机端。</div></div>");
+    }else{
+	iframe.write(html + '<style>' + css + '</style>' + '<script>' + js + '</script>');
+	}
     iframe.close();
   };
   LiveEditor.prototype.download = function () {
-    window.location.href='/index.html';
+	 window.location.href='/index.html';
   };
   return LiveEditor;
 })();

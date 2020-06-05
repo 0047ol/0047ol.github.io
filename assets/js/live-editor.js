@@ -40,7 +40,6 @@ var LiveEditor = (function () {
   };
   $.throttle = function (fn, delay) {
     var timer = null;
-
     return function () {
       var _this = this;
       var args = arguments;
@@ -143,17 +142,13 @@ var LiveEditor = (function () {
     _this.isLiveMode = dom.controlLiveMode.checked;
     _this.liveMode();
     _this.resizePanelEvent();
-
     window.addEventListener('resize', function () {
       _this.resizePanel();
     });
-
     _this.run();
   };
   LiveEditor.prototype.hotkey = function () {
     var _this = this;
-
-    // Ctrl + enter 运行
     document.addEventListener('keydown', function (e) {
       e = e || window.event;
       var keyCode = e.keyCode || e.charCode;
@@ -164,7 +159,6 @@ var LiveEditor = (function () {
   };
   LiveEditor.prototype.liveMode = function () {
     var _this = this;
-
     $.each(editors, function (i, editor) {
       editor.inst.on('change', $.throttle(function () {
         if (_this.isLiveMode) {
@@ -176,7 +170,6 @@ var LiveEditor = (function () {
   LiveEditor.prototype.resizePanel = function (Top) {
     var _this = this;
     if (typeof Top === 'undefined') {
-      // 在小屏幕设备上隐藏面板
       if (window.innerWidth < 600) {
        // dom.preview.style.height = document.body.offsetHeight + 'px';
        // dom.panel.style.display = 'none';
@@ -199,7 +192,6 @@ var LiveEditor = (function () {
   };
   LiveEditor.prototype.resizePanelEvent = function () {
     var _this = this;
-
     dom.controlsDrag.onmousedown = function (e) {
       var panelTopOrigin = dom.panel.offsetTop;
       var tempHeight = e.clientY - panelTopOrigin;
@@ -348,7 +340,6 @@ var LiveEditor = (function () {
     iframe.close();
   };
   LiveEditor.prototype.download = function () {
-	  window.location.href='/index.html';
   };
   return LiveEditor;
 })();

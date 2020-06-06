@@ -21,14 +21,12 @@ var LiveEditor = (function () {
       return;
     }
     if ($.isArray(obj)) {
-      // Array
       for (i = 0; i < obj.length; i++) {
         if (callback(i, obj[i]) === false) {
           break;
         }
       }
     } else {
-      // Object
       for (prop in obj) {
         if (obj.hasOwnProperty(prop)) {
           if (callback(prop, obj[prop]) === false) {
@@ -147,13 +145,10 @@ var LiveEditor = (function () {
     window.addEventListener('resize', function () {
       _this.resizePanel();
     });
-
     _this.run();
   };
   LiveEditor.prototype.hotkey = function () {
     var _this = this;
-
-    // Ctrl + enter 运行
     document.addEventListener('keydown', function (e) {
       e = e || window.event;
       var keyCode = e.keyCode || e.charCode;
@@ -164,7 +159,6 @@ var LiveEditor = (function () {
   };
   LiveEditor.prototype.liveMode = function () {
     var _this = this;
-
     $.each(editors, function (i, editor) {
       editor.inst.on('change', $.throttle(function () {
         if (_this.isLiveMode) {
@@ -198,7 +192,6 @@ var LiveEditor = (function () {
   };
   LiveEditor.prototype.resizePanelEvent = function () {
     var _this = this;
-
     dom.controlsDrag.onmousedown = function (e) {
       var panelTopOrigin = dom.panel.offsetTop;
       var tempHeight = e.clientY - panelTopOrigin;
@@ -317,7 +310,6 @@ var LiveEditor = (function () {
     var html = editor.html.getValue();
     var css = editor.css.getValue();
     var js = editor.js.getValue();
-    // 移除旧的 iframe
     var iframeEle = document.getElementById('preview-iframe');
     if (iframeEle) {
       iframeEle.parentNode.removeChild(iframeEle);
@@ -357,7 +349,7 @@ var LiveEditor = (function () {
     iframe.close();
   };
   LiveEditor.prototype.download = function () {
-	 window.location.href='/index.html';
+	 window.location.href='index.html';
   };
   return LiveEditor;
 })();

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,viewport-fit=cover">
+    <title>打开浏览器</title>
+	<link rel="shortcut icon" href="https://res.wx.qq.com/a/wx_fed/assets/res/NTI4MWU5.ico" type="image/png">
+    <link rel="stylesheet" href="https://weui.io/style/weui.css">
+    <link rel="stylesheet" href="https://weui.io/example.css">
+</head>
+<body οncοntextmenu="return false" ondragstart="return false" οnselect="document.selection.empty()" οncοpy="document.selection.empty()" onbeforecopy="return false" οnmοuseup="document.selection.empty()" oncontextmenu=self.event.returnValue=false onselectstart="return false"> 
+<div class="container" id="container">
+<div class="page msg_success js_show">
+    <div class="weui-msg">
+        <div class="weui-msg__icon-area"><i class="weui-icon-info weui-icon_msg"></i></div>
+        <div class="weui-msg__text-area">
+            <h2 class="weui-msg__title">请使用浏览器访问</h2>
+            <p class="weui-msg__desc">由于微信内置浏览器的兼容性，我们建议您复制链接后使用外部浏览器打开，感谢你的支持和理解。</p>
+        </div>
+        <div class="weui-msg__opr-area">
+            <p class="weui-btn-area">
+                <a href="javascript:;" id="showIOSDialog" class="weui-btn weui-btn_primary">复制链接</a>
+            </p>
+        </div>
+    </div>
+
+    <div id="dialogs">
+        <div class="js_dialog" id="iosDialog" style="opacity: 0; display: none;">
+            <div class="weui-mask"></div>
+            <div class="weui-dialog">
+                <div class="weui-dialog__bd">网址链接已成功复制，请打开浏览器粘贴访问。</div>
+                <div class="weui-dialog__ft">
+                    <a href="javascript:" id="isIOSDialog" class="weui-dialog__btn weui-dialog__btn_primary">知道了</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+	</div>
+	<script type="text/javascript" src="https://weui.io/zepto.min.js"></script>
+	<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script type="text/javascript" src="https://res.wx.qq.com/open/libs/weuijs/1.2.1/weui.min.js"></script>
+    <script type="text/javascript" src="https://weui.io/example.js"></script>
+	<script type="text/javascript" src="assets/js/0047ol.js"></script>
+<script type="text/javascript">
+    $(function(){
+	if (Initialization() == false) {
+	if (isWxnqq() == "weixin") {
+	}else if(isWxnqq() == "QQ"){
+	closeWindows();
+	}else{
+        closeWindows();
+		}
+    }else{
+	closeWindows();
+	}
+        var $iosDialog = $('#iosDialog');
+        $('#dialogs').on('click', '.weui-dialog__btn', function(){
+            $(this).parents('.js_dialog').fadeOut(200);
+        });
+        $('#showIOSDialog').on('click', function(){
+            $iosDialog.fadeIn(200);
+			copyToClipboard(url);
+        });
+		$('#isIOSDialog').on('click', function(){
+            closeWindows();
+        });
+    });
+</script>
+</body>
+</html>

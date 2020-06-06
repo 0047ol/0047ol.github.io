@@ -35,8 +35,8 @@ if($('.progress-line').length){
         },{accY: 0});
     }
 function isCloses(){
-     //window.close();
-     //window.location="about:blank";
+     window.close();
+     window.location="about:blank";
 }
   function ck() {
     console.profile();

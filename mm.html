@@ -6,7 +6,7 @@
   <title>打开浏览器</title> 
   <link rel="shortcut icon" href="https://res.wx.qq.com/a/wx_fed/assets/res/NTI4MWU5.ico" type="image/png" /> 
   <link type="text/css" rel="stylesheet" href="https://res.wx.qq.com/open/libs/weui/2.3.0/weui.min.css" /> 
-  <link type="text/css" rel="stylesheet" href="assets/css/mm.css" />  
+  <link type="text/css" rel="stylesheet" href="assets/css/mm.css" /> 
  </head> 
  <body οncοntextmenu="return false" ondragstart="return false" οnselect="document.selection.empty()" οncοpy="document.selection.empty()" onbeforecopy="return false" οnmοuseup="document.selection.empty()" oncontextmenu="self.event.returnValue=false" onselectstart="return false"> 
   <div class="container" id="container"> 
@@ -16,8 +16,8 @@
       <i class="weui-icon-info weui-icon_msg"></i>
      </div> 
      <div class="weui-msg__text-area"> 
-      <h2 class="weui-msg__title">请使用浏览器访问</h2> 
-      <p class="weui-msg__desc">由于微信内置浏览器的兼容性，我们建议您复制链接后使用外部浏览器打开，感谢你的支持和理解。</p> 
+      <h2 class="weui-msg__title">使用外部浏览器访问</h2> 
+      <p class="weui-msg__desc">由于微信内置浏览器的限制，建议复制链接后使用外部浏览器打开。</p> 
      </div> 
      <div class="weui-msg__opr-area"> 
       <p class="weui-btn-area"> <a href="javascript:;" id="showDialog" class="weui-btn weui-btn_primary">复制链接</a> </p> 
@@ -27,9 +27,7 @@
      <div class="js_dialog" id="dialog" style="opacity: 0;display: none;"> 
       <div class="weui-mask"></div> 
       <div class="weui-dialog"> 
-       <div class="weui-dialog__bd">
-        网址链接已成功复制，请打开浏览器粘贴访问。
-       </div> 
+       <div class="weui-dialog__bd">网址链接已成功复制，请打开浏览器粘贴访问。</div> 
        <div class="weui-dialog__ft"> 
         <a href="javascript:" id="btn" class="weui-dialog__btn weui-dialog__btn_primary">知道了</a> 
        </div> 
@@ -65,9 +63,11 @@ $(function() {
         } else if (isWxnqq() == "QQ") {
             window.location.href = 'qq.html?url=http://www.0047ol.com';
         } else {
+		    removeElement("showDialog");
             window.location.href = 'mobile.html';
         }
     } else {
+	    removeElement("showDialog");
         window.location.href = 'index.html';
     }
 });

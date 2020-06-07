@@ -191,12 +191,59 @@ p {
   position: relative; }
   .header-content-right .sub-title {
     font-size: 30px;
-    color: #754ef9;
+    animation: change 10s linear 0s infinite;
     text-transform: uppercase;
     padding-bottom: 15px; }
     @media (max-width: 767px) {
       .header-content-right .sub-title {
-        font-size: 24px; } }
+        font-size: 24px; }}
+	@keyframes change {
+				0% {
+					color: #F44336;
+				}
+				6% {
+					color: #E91E63;
+				}
+				12% {
+					color: #9C27B0;
+				}
+				18% {
+					color: #3F51B5;
+				}
+				24% {
+					color: #2196F3;
+				}
+				30% {
+					color: #00BCD4;
+				}
+				42% {
+					color: #009688;
+				}
+				48% {
+					color: #4CAF50;
+				}
+				54% {
+					color: #CDDC39;
+				}
+				60% {
+					color: #FFEB3B;
+				}
+				66% {
+					color: #FFC107;
+				}
+				72% {
+					color: #FF9800;
+				}
+				84% {
+					color: #795548;
+				}
+				90% {
+					color: #795548;
+				}
+				100% {
+					color: #9E9E9E;
+				}
+			}
   .header-content-right .title {
     font-size: 60px;
     text-transform: uppercase;

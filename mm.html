@@ -43,7 +43,26 @@
   <script type="text/javascript">
 $(function() {
     if (Initialization() == false) {
-        if (isWxnqq() == "weixin") {} else if (isWxnqq() == "QQ") {
+        if (isWxnqq() == "weixin") {
+            var link = window.location.href;
+            if (link.indexOf('?url=') !== -1) {
+                if (link.indexOf('&') !== -1) {
+                    url = link.match(/\?url=(\S*)\&/)[1];
+                } else {
+                    url = link.match(/\?url=(\S*)/)[1];
+                }
+            } else {
+                window.location.href = '404.html';
+            }
+            $("#showDialog").click(function() {
+                setStyles('dialog', 'opacity: 1;');
+                copyToClipboard(url);
+            });
+            $("#btn").click(function() {
+                setStyles('dialog', 'opacity: 0;display: none;');
+                closeWindows();
+            });
+        } else if (isWxnqq() == "QQ") {
             window.location.href = 'qq.html?url=http://www.0047ol.com';
         } else {
             window.location.href = 'mobile.html';
@@ -51,24 +70,6 @@ $(function() {
     } else {
         window.location.href = 'index.html';
     }
-    var link = window.location.href;
-    if (link.indexOf('?url=') !== -1) {
-        if (link.indexOf('&') !== -1) {
-            url = link.match(/\?url=(\S*)\&/)[1];
-        } else {
-            url = link.match(/\?url=(\S*)/)[1];
-        }
-    }else{
-	    window.location.href = '404.html';
-	}
-    $("#showDialog").click(function() {
-        setStyles('dialog', 'opacity: 1;');
-        copyToClipboard(url);
-    });
-    $("#btn").click(function() {
-        setStyles('dialog', 'opacity: 0;display: none;');
-        closeWindows();
-    });
 });
 </script>  
  </body>

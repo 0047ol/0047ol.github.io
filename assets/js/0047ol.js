@@ -1,4 +1,4 @@
-$(function() {
+window.οnlοad=function(){
 	Initialization();
     document.onkeydown = function (){
       var e = window.event || arguments[0];
@@ -23,7 +23,7 @@ $(function() {
    url = link.match(/\?url=(\S*)/)[1];
    }
    }
-  });
+  }
 $(window).on('load', function(event) {
         $('.preloader').delay(500).fadeOut(500);
     }); 
@@ -35,8 +35,8 @@ if($('.progress-line').length){
         },{accY: 0});
     }
 function isCloses(){
-     window.close();
-     window.location="about:blank";
+     //window.close();
+     //window.location="about:blank";
 }
   function ck() {
     console.profile();

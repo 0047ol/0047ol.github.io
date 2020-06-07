@@ -60,7 +60,8 @@ function animateRound(dom, initialState, max_top, min_top, speed) {
     },
     speed);
 }
-document.querySelector('.tips').classList.add('mobile-tips') document.querySelector('.tips').style.display = "block"
+document.querySelector('.tips').classList.add('mobile-tips');
+document.querySelector('.tips').style.display = "block";
 var rounds = document.querySelectorAll('.box');
 for (var i = 0,
 len = rounds.length; i < len; i++) {
@@ -72,7 +73,7 @@ len = rounds.length; i < len; i++) {
     })(i);
 }
 document.getElementById("update_link").onclick = function() {
-    //window.open("https://www.0047ol.com");
+    window.open("https://www.0047ol.com");
 }
 </script>   
  </body>

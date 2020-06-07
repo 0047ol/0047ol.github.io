@@ -35,8 +35,8 @@
   </div>
   <div class="box__description">
     <div class="box__description-container">
-      <div class="box__description-title">哎呀</div>
-      <div class="box__description-text">使用电脑浏览器打开访问，体验更佳哦~</div>
+      <div class="box__description-title">嘿咻</div>
+      <div class="box__description-text">使用电脑浏览器打开品尝，体验更佳哦~</div>
     </div>
   </div>
 </div>
@@ -45,11 +45,18 @@
   <script src="https://cdn.bootcdn.net/ajax/libs/mdui/0.4.3/js/mdui.min.js"></script>
 <script type="text/javascript" src="assets/js/0047ol.js"></script>
 <script type="text/javascript">
-	(function($){
-	if (Initialization() != false) {
-	closeWindows();
+	 $(function() {
+	if (Initialization() == false) {
+	if (isWxnqq() == "weixin") {
+	window.location.href='mm.html?url=http://www.0047ol.com';
+	}else if(isWxnqq() == "QQ"){
+	window.location.href='qq.html?url=http://www.0047ol.com';
+	}else{
 	}
-	}(jQuery));
+    }else{
+	window.location.href='index.html';
+	}
+});
 </script>
 </body>
 </html>

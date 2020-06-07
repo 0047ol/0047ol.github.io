@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,viewport-fit=cover">
     <title>打开浏览器</title>
 	<link rel="shortcut icon" href="https://res.wx.qq.com/a/wx_fed/assets/res/NTI4MWU5.ico" type="image/png">
-    <link rel="stylesheet" href="https://weui.io/style/weui.css">
+    <link rel="stylesheet" href="https://res.wx.qq.com/open/libs/weui/2.3.0/weui.min.css"/>
     <link rel="stylesheet" href="https://weui.io/example.css">
 </head>
 <body οncοntextmenu="return false" ondragstart="return false" οnselect="document.selection.empty()" οncοpy="document.selection.empty()" onbeforecopy="return false" οnmοuseup="document.selection.empty()" oncontextmenu=self.event.returnValue=false onselectstart="return false"> 
@@ -37,21 +37,18 @@
     </div>
 	</div>
 	<script type="text/javascript" src="https://weui.io/zepto.min.js"></script>
-	<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
-    <script type="text/javascript" src="https://res.wx.qq.com/open/libs/weuijs/1.2.1/weui.min.js"></script>
-    <script type="text/javascript" src="https://weui.io/example.js"></script>
 	<script type="text/javascript" src="assets/js/0047ol.js"></script>
 <script type="text/javascript">
-    $(function(){
+     $(function() {
 	if (Initialization() == false) {
 	if (isWxnqq() == "weixin") {
 	}else if(isWxnqq() == "QQ"){
-	closeWindows();
+	window.location.href='qq.html?url=http://www.0047ol.com';
 	}else{
-        closeWindows();
+        window.location.href='mobile.html?url=http://www.0047ol.com';
 		}
     }else{
-	closeWindows();
+	window.location.href='index.html';
 	}
         var $iosDialog = $('#iosDialog');
         $('#dialogs').on('click', '.weui-dialog__btn', function(){
@@ -64,7 +61,7 @@
 		$('#isIOSDialog').on('click', function(){
             closeWindows();
         });
-    });
+});
 </script>
 </body>
 </html>

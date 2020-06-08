@@ -62,14 +62,14 @@ html {
 }
 
 .icon {
-	width: 88px;
-	height: 88px;
+	width: 80px;
+	height: 80px;
 	margin: 0 auto;
 }
 
 .title {
 	font-size: 1.25rem;
-	margin-top: 20px;
+	margin-top: 28px;
 }
 
 .more a, .p {

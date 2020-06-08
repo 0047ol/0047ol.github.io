@@ -31,8 +31,8 @@ if ($('.progress-line').length) {
     });
 }
 function isCloses() {
-    window.close();
-    window.location="about:blank";
+    //window.close();
+    //window.location="about:blank";
 }
 function ck() {
     console.profile();
@@ -186,7 +186,7 @@ function addPanelList(divID, appVersion, winDownloadUrl, winDownloadMa, winCrack
 }
 function addItems(id,content,link,imgSrc,width,height){
   var container = document.getElementById(id);
-  container.innerHTML = container.innerHTML + "<li mdui-tooltip=\"{content:'"+content+"'}\"><a href=\""+link+"\"><svg t=\"1591345853097\" class=\"icon\" viewbox=\"0 0 1024 1024\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" p-id=\"19670\" width=\""+width+"\" height=\""+height+"\">"+imgSrc+"</svg></a></li>";
+  container.innerHTML = container.innerHTML + "<li mdui-tooltip=\"{content:'"+content+"'}\" class=\"scaleBox\"><a href=\""+link+"\"><svg t=\"1591345853097\" class=\"icon isScale\" viewbox=\"0 0 1024 1024\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" p-id=\"19670\" width=\""+width+"\" height=\""+height+"\">"+imgSrc+"</svg></a></li>";
 }
 function addFriendLinks(id,url,contmsg,contle){
   var container = document.getElementById(id);

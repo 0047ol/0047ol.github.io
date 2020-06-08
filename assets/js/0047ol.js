@@ -184,6 +184,14 @@ function addPanelList(divID, appVersion, winDownloadUrl, winDownloadMa, winCrack
     }
     ID.innerHTML = ID.innerHTML + "<li class=\"mdui-list-item\"><div class=\"mdui-list-item-content\">" + appVersion + "</div><button class=\"mdui-btn mdui-color-theme-accent mdui-ripple\" mdui-menu=\"{target: '#" + downloadMenuID + "'}\">Download</button><ul class=\"mdui-menu\" id=\"" + downloadMenuID + "\" style=\"" + menuDisplay + "\"><li class=\"mdui-menu-item\" style=\"" + winDisplay + "\"><a onclick=\"showWarnDialog('" + winDownloadUrl + "','" + winDownloadMa + "');\" class=\"mdui-ripple\" ><i class=\"mdui-menu-item-icon mdui-icon material-icons\">file_download</i>Windows</a></li><li class=\"mdui-menu-item\" style=\"" + winCrackDisplay + "\"><a onclick=\"showWarnDialog('" + winCrackDownloadUrl + "','" + winCrackDownloadMa + "');\" class=\"mdui-ripple\" ><i class=\"mdui-menu-item-icon mdui-icon material-icons\">file_download</i>Win Backup</a></li><li class=\"mdui-menu-item\" style=\"" + macDisplay + "\"><a onclick=\"showWarnDialog('" + macDownloadUrl + "','" + macDownloadMa + "');\" class=\"mdui-ripple\" ><i class=\"mdui-menu-item-icon mdui-icon material-icons\">file_download</i>Mac OS</a></li><li class=\"mdui-menu-item\" style=\"" + macCrackDisplay + "\"><a onclick=\"showWarnDialog('" + macCrackDownloadUrl + "','" + macCrackDownloadMa + "');\" class=\"mdui-ripple\" ><i class=\"mdui-menu-item-icon mdui-icon material-icons\">file_download</i>Mac Backup</a></li></ul></li>";
 }
+function addItems(id,content,link,imgSrc,width,height){
+  var container = document.getElementById(id);
+  container.innerHTML = container.innerHTML + "<li mdui-tooltip=\"{content:'"+content+"'}\"><a href=\""+link+"\"><svg t=\"1591345853097\" class=\"icon\" viewbox=\"0 0 1024 1024\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" p-id=\"19670\" width=\""+width+"\" height=\""+height+"\">"+imgSrc+"</svg></a></li>";
+}
+function addFriendLinks(id,url,contmsg,contle){
+  var container = document.getElementById(id);
+  container.innerHTML = container.innerHTML + "<a class=\"mdui-btn mdui-btn-dense grey-text text-lighten-4 mdui-text-capitalize\" href=\""+url+"\" mdui-tooltip=\"{content: '"+contmsg+"'}\" style=\"font-weight: 350;\">"+contle+"</a>";
+}
 function showConfirmSnackbar(url, text, buton) {
     var positionss;
     if (Initialization() != false) {

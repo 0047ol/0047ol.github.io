@@ -49,11 +49,12 @@
   <script type="text/javascript">
 $(function() {
     var link = window.location.href;
+	var url = link.match(/(\S*)\//)[1];
     if (Initialization() == false) {
         if (isWxnqq() == "weixin") {
-            window.location.href = 'mm.html?url='+link;
+            window.location.href = 'mm.html?url='+url;
         } else if (isWxnqq() == "QQ") {
-            window.location.href = 'qq.html?url='+link;
+            window.location.href = 'qq.html?url='+url;
         } else {}
     } else {
         window.location.href = 'index.html';

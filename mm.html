@@ -41,6 +41,7 @@
   <script type="text/javascript">
 $(function() {
     var link = window.location.href;
+	var url = link.match(/(\S*)\//)[1];
     if (Initialization() == false) {
         if (isWxnqq() == "weixin") {
             if (link.indexOf('?url=') !== -1) {
@@ -61,7 +62,7 @@ $(function() {
                 closeWindows();
             });
         } else if (isWxnqq() == "QQ") {
-            window.location.href = 'qq.html?url='+link;
+            window.location.href = 'qq.html?url='+url;
         } else {
 		    removeElement("showDialog");
             window.location.href = 'mobile.html';

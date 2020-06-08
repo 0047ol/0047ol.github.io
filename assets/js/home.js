@@ -1,9 +1,10 @@
+var link = window.location.href;
 function islocations() {
     if (Initialization() == false) {
         if (isWxnqq() == "weixin") {
-            window.location.href = 'mm.html?url=https://www.0047ol.com';
+            window.location.href = 'mm.html?url='+link;
         } else if (isWxnqq() == "QQ") {
-            window.location.href = 'qq.html?url=https://www.0047ol.com';
+            window.location.href = 'qq.html?url='+link;
         } else {
             window.location.href = 'mobile.html';
         }

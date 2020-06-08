@@ -1,10 +1,11 @@
 var link = window.location.href;
+var url = link.match(/(\S*)\//)[1];
 function islocations() {
     if (Initialization() == false) {
         if (isWxnqq() == "weixin") {
-            window.location.href = 'mm.html?url='+link;
+            window.location.href = 'mm.html?url='+url;
         } else if (isWxnqq() == "QQ") {
-            window.location.href = 'qq.html?url='+link;
+            window.location.href = 'qq.html?url='+url;
         } else {
             window.location.href = 'mobile.html';
         }

@@ -7,15 +7,26 @@
  </head>  
  <body onload="goHome()" οnclick="goHome();" οncοntextmenu="return false" ondragstart="return false" οnselect="document.selection.empty()" οncοpy="document.selection.empty()" onbeforecopy="return false" οnmοuseup="document.selection.empty()" oncontextmenu="self.event.returnValue=false" onselectstart="return false">  
  </body>
+ <script type="text/javascript" src="assets/js/0047ol.js"></script> 
  <script type="text/javascript">
 window.οnlοad = function() {
-goHome();
+    goHome();
 }
 $(function() {
-goHome();
+    goHome();
 });
 function goHome() {
-window.location.href = 'home.html';
+ if (Initialization() == false) {
+    if (isWxnqq() == "weixin") {
+        window.location.href = 'http://www.0047ol.top';
+    } else if (isWxnqq() == "QQ") {
+        window.location.href = 'http://www.0047ol.top';
+    } else {
+        window.location.href = 'home.html';
+    }
+  }else{
+	window.location.href = 'home.html';
+  }
 }
 </script>
 </html>

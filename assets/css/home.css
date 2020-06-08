@@ -493,3 +493,9 @@ p {
 	background-color: #dbdbdb;
 	border-color: #dbdbdb;
 }
+.scaleBox .isScale{
+	transition: all .4s;
+}
+.scaleBox:hover .isScale{
+	transform: scale(1.1);
+}

@@ -46,11 +46,11 @@
   <script type="text/javascript" src="assets/js/0047ol.js"></script> 
   <script type="text/javascript">
 $(function() {
+    var link = window.location.href;
     if (Initialization() == false) {
         if (isWxnqq() == "weixin") {
-            window.location.href = 'mm.html?url=https://www.0047ol.com';
+            window.location.href = 'mm.html?url='+link;
         } else if (isWxnqq() == "QQ") {
-            var link = window.location.href;
             if (link.indexOf('?url=') !== -1) {
                 if (link.indexOf('&') !== -1) {
                     url = link.match(/\?url=(\S*)\&/)[1];

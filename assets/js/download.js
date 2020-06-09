@@ -131,7 +131,7 @@ addFriendLinks(friend_links_id,"https://hxp.plus","This guy is too lazy and busy
 addFriendLinks(friend_links_id,"http://go.wumings.com","OneDrive网盘导航","OneGo");
 addFriendLinks(friend_links_id,"https://hhw-happy.top","温柔正确的人总是难以生存，因为这世界既不温柔，也不正确。","文の破站");
 addFriendLinks(friend_links_id,"https://aimerneige.com","Le vent se l&egrave;ve, il faut tenter de vivre. &lt;br\&gt;風立ちぬ、いざ生きめやも。&lt;br\&gt;Always Keep Calm And Believe Yourself.","AimerNeige");
-addFriendLinks(friend_links_id,"http://jyb.xyz","该站点暂无描述。","JYB.XYZ");
+addFriendLinks(friend_links_id,"http://jyb.xyz","一个奇妙的网站。","甲乙丙");
 addFriendLinks(friend_links_id,"http://1717.pro","实用工具导航|自动收录|批量检查反链","1717钥匙导航");
 addFriendLinks(friend_links_id,"https://music.liuzhijin.cn","特制多站合一音乐搜索解决方案。","音乐直链搜索");
 addFriendLinks(friend_links_id,"http://zhimo.yuanzhumuban.cc/music","该网站无描述。","全网音乐解析下载");

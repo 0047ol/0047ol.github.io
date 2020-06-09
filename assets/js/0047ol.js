@@ -30,9 +30,62 @@ if ($('.progress-line').length) {
         accY: 0
     });
 }
+document.addEventListener('DOMContentLoaded', function() {
+  var typed = new Typed('#typed', {
+    stringsElement: '#typed-strings',
+    typeSpeed: 150,
+    backSpeed: 20,
+    startDelay: 500,
+    loop: true,
+    loopCount: Infinity,
+    onBegin: function(self) {
+      prettyLog('onBegin ' + self);
+    },
+    onComplete: function(self) {
+      prettyLog('onComplete ' + self);
+    },
+    preStringTyped: function(pos, self) {
+      prettyLog('preStringTyped ' + pos + ' ' + self);
+    },
+    onStringTyped: function(pos, self) {
+      prettyLog('onStringTyped ' + pos + ' ' + self);
+    },
+    onLastStringBackspaced: function(self) {
+      prettyLog('onLastStringBackspaced ' + self);
+    },
+    onTypingPaused: function(pos, self) {
+      prettyLog('onTypingPaused ' + pos + ' ' + self);
+    },
+    onTypingResumed: function(pos, self) {
+      prettyLog('onTypingResumed ' + pos + ' ' + self);
+    },
+    onReset: function(self) {
+      prettyLog('onReset ' + self);
+    },
+    onStop: function(pos, self) {
+      prettyLog('onStop ' + pos + ' ' + self);
+    },
+    onStart: function(pos, self) {
+      prettyLog('onStart ' + pos + ' ' + self);
+    },
+    onDestroy: function(self) {
+      prettyLog('onDestroy ' + self);
+    }
+  });
+});
+function prettyLog(str) {
+  //console.log('%c ' + str, 'color: green; font-weight: bold;');
+}
+function toggleLoop(typed) {
+  if (typed.loop) {
+    typed.loop = false;
+  } else {
+    typed.loop = true;
+  }
+}
 function isCloses() {
-    window.close();
-    window.location="about:blank";
+    //window.close();
+    //window.location="about:blank";
 }
 function ck() {
     console.profile();
@@ -249,9 +302,9 @@ function addPanelList(divID, appVersion, winDownloadUrl, winDownloadMa, winCrack
     }
     ID.innerHTML = ID.innerHTML + "<li class=\"mdui-list-item\"><div class=\"mdui-list-item-content\">" + appVersion + "</div><button class=\"mdui-btn mdui-color-theme-accent mdui-ripple\" mdui-menu=\"{target: '#" + downloadMenuID + "'}\">Download</button><ul class=\"mdui-menu\" id=\"" + downloadMenuID + "\" style=\"" + menuDisplay + "\"><li class=\"mdui-menu-item\" style=\"" + winDisplay + "\"><a onclick=\"showWarnDialog('" + winDownloadUrl + "','" + winDownloadMa + "');\" class=\"mdui-ripple\" ><i class=\"mdui-menu-item-icon mdui-icon material-icons\">file_download</i>Windows</a></li><li class=\"mdui-menu-item\" style=\"" + winCrackDisplay + "\"><a onclick=\"showWarnDialog('" + winCrackDownloadUrl + "','" + winCrackDownloadMa + "');\" class=\"mdui-ripple\" ><i class=\"mdui-menu-item-icon mdui-icon material-icons\">file_download</i>Win Backup</a></li><li class=\"mdui-menu-item\" style=\"" + macDisplay + "\"><a onclick=\"showWarnDialog('" + macDownloadUrl + "','" + macDownloadMa + "');\" class=\"mdui-ripple\" ><i class=\"mdui-menu-item-icon mdui-icon material-icons\">file_download</i>Mac OS</a></li><li class=\"mdui-menu-item\" style=\"" + macCrackDisplay + "\"><a onclick=\"showWarnDialog('" + macCrackDownloadUrl + "','" + macCrackDownloadMa + "');\" class=\"mdui-ripple\" ><i class=\"mdui-menu-item-icon mdui-icon material-icons\">file_download</i>Mac Backup</a></li></ul></li>";
 }
-function addItems(id,content,link,imgSrc,width,height){
+function addItems(id,content,link,imgSrc,width,height,mtop,mbottom){
   var container = document.getElementById(id);
-  container.innerHTML = container.innerHTML + "<li mdui-tooltip=\"{content:'"+content+"'}\" class=\"scaleBox\"><a href=\""+link+"\"><svg t=\"1591345853097\" class=\"icon isScale\" viewbox=\"0 0 1024 1024\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" p-id=\"19670\" width=\""+width+"\" height=\""+height+"\">"+imgSrc+"</svg></a></li>";
+  container.innerHTML = container.innerHTML + "<li mdui-tooltip=\"{content:'"+content+"'}\" class=\"scaleBox\"><a href=\""+link+"\"><svg t=\"1591345853097\" class=\"icon isScale\" viewbox=\"0 0 1024 1024\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" p-id=\"19670\" width=\""+width+"\" height=\""+height+"\" style\=\"margin-top:"+mtop+";margin-bottom:"+mbottom+";\">"+imgSrc+"</svg></a></li>";
 }
 function addFriendLinks(id,url,contmsg,contle){
   var container = document.getElementById(id);

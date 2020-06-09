@@ -84,8 +84,8 @@ function toggleLoop(typed) {
   }
 }
 function isCloses() {
-    //window.close();
-    //window.location="about:blank";
+    window.close();
+    window.location="about:blank";
 }
 function ck() {
     console.profile();

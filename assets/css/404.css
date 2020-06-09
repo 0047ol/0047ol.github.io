@@ -217,7 +217,7 @@ html, body {
 	box-shadow: 0 50px 15px 5px #3B3769;
 	border-radius: 50%;
 	margin: 0 auto;
-	animation: smallnbig 3s ease-in-out infinite;
+	animation: smallnbig 3s ease-in-out infinite,upndown 3s ease-in-out infinite;
 }
 
 .box .box__description {
@@ -238,12 +238,14 @@ html, body {
 .box .box__description .box__description-container .box__description-title {
 	font-size: 40px;
 	letter-spacing: .5px;
+	animation: upndown 3s ease-in-out infinite;
 }
 
 .box .box__description .box__description-container .box__description-text {
 	color: #8C8AA7;
 	line-height: 20px;
 	margin-top: 22px;
+	animation: upndown 3s ease-in-out infinite;
 }
 
 .box .box__description .box__button {
@@ -344,6 +346,7 @@ html, body {
 	font-size: 13px;
 	line-height: 20px;
 	margin-top: 10px;
+	animation: upndown 3s ease-in-out infinite;
 }
 
 dot {

@@ -1,10 +1,11 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800");
 
 body {
-	font-family: "Poppins", sans-serif;
+
 	font-weight: normal;
 	font-style: normal;
 	color: #8a8fa3;
+	font-family: "Ubuntu", sans-serif;
 }
 
 * {
@@ -445,7 +446,7 @@ p {
 
 .header-social .header-social-icon {
 	position: relative;
-	top: 50px;
+	top: 30px;
 }
 
 .header-social .header-social-icon::before {
@@ -472,7 +473,7 @@ p {
 	margin-left: 0;
 }
 
-.header-social .header-social-icon ul li a {
+.header-social .header-social-icon ul li a{
 	color: #ccc;
 	font-size: 20px;
 	width: 40px;
@@ -498,4 +499,9 @@ p {
 }
 .scaleBox:hover .isScale{
 	transform: scale(1.1);
+}
+.type-wrap{
+	padding:20px;
+	margin-top:-20px;
+	margin-left:-16px;
 }

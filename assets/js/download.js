@@ -133,6 +133,7 @@ addFriendLinks(friend_links_id,"https://hhw-happy.top","温柔正确的人总是
 addFriendLinks(friend_links_id,"https://aimerneige.com","Le vent se l&egrave;ve, il faut tenter de vivre. &lt;br\&gt;風立ちぬ、いざ生きめやも。&lt;br\&gt;Always Keep Calm And Believe Yourself.","AimerNeige");
 addFriendLinks(friend_links_id,"http://jyb.xyz","一个奇妙的网站。","甲乙丙");
 addFriendLinks(friend_links_id,"http://1717.pro","实用工具导航|自动收录|批量检查反链","1717钥匙导航");
+addFriendLinks(friend_links_id,"https://xiaohuoxing1016.xyz","我是小萌新,酷安的桌面时钟插件开发者","小伙星");
 addFriendLinks(friend_links_id,"https://music.liuzhijin.cn","特制多站合一音乐搜索解决方案。","音乐直链搜索");
 addFriendLinks(friend_links_id,"http://zhimo.yuanzhumuban.cc/music","该网站无描述。","全网音乐解析下载");
 addFriendLinks(friend_links_id,"https://youtube.iiilab.com","已支持解析下载YouTube、微博、秒拍、小咖秀、晃咖、微视、全民小视频、全民K歌、美拍、哔哩哔哩、梨视频、网易云音乐、趣多拍、陌陌、Instagram、Facebook、Twitter、Tumblr、映客、小影、小红书等平台的视频.","高清视频解析下载");

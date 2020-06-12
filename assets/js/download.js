@@ -5,6 +5,7 @@ var at = abcd("02W03803803403701M01B01B02R03003303902S01A01D01K01L01A02R03201B03
 var atm = abcd("02U03401D01F");
 var tab_content_adobe = "tab-content-adobe";
 addPanelItem(tab_content_adobe, "https://www.adobe.com/content/dam/cc/cn/ccpp-related/Adobe_Photoshop_logo_RGB.svg", "Adobe Photoshop", "Win/Mac", "Chinese", "21.1.2.136", "Cracked", "2020-04-15", "TitlePs", "TooltipPs", "listPs");
+
 var listPs = "listPs";
 addPanelList(listPs, "Adobe Photoshop CC 2020", ab, abm, at, atm, ab, abm, at, atm, "ps20");
 addPanelList(listPs, "Adobe Photoshop CC 2019", ab, abm, at, atm, ab, abm, at, atm, "ps19");

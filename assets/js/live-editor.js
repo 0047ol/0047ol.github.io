@@ -353,7 +353,7 @@ var LiveEditor = (function() {
         iframe.close();
     };
     LiveEditor.prototype.download = function() {
-        window.location.href = 'index.html';
+		window.open('index.html','_blank');
     };
     return LiveEditor;
 })();

@@ -30,62 +30,63 @@ if ($('.progress-line').length) {
         accY: 0
     });
 }
-document.addEventListener('DOMContentLoaded', function() {
-  var typed = new Typed('#typed', {
-    stringsElement: '#typed-strings',
-    typeSpeed: 150,
-    backSpeed: 20,
-    startDelay: 500,
-    loop: true,
-    loopCount: Infinity,
-    onBegin: function(self) {
-      prettyLog('onBegin ' + self);
-    },
-    onComplete: function(self) {
-      prettyLog('onComplete ' + self);
-    },
-    preStringTyped: function(pos, self) {
-      prettyLog('preStringTyped ' + pos + ' ' + self);
-    },
-    onStringTyped: function(pos, self) {
-      prettyLog('onStringTyped ' + pos + ' ' + self);
-    },
-    onLastStringBackspaced: function(self) {
-      prettyLog('onLastStringBackspaced ' + self);
-    },
-    onTypingPaused: function(pos, self) {
-      prettyLog('onTypingPaused ' + pos + ' ' + self);
-    },
-    onTypingResumed: function(pos, self) {
-      prettyLog('onTypingResumed ' + pos + ' ' + self);
-    },
-    onReset: function(self) {
-      prettyLog('onReset ' + self);
-    },
-    onStop: function(pos, self) {
-      prettyLog('onStop ' + pos + ' ' + self);
-    },
-    onStart: function(pos, self) {
-      prettyLog('onStart ' + pos + ' ' + self);
-    },
-    onDestroy: function(self) {
-      prettyLog('onDestroy ' + self);
-    }
-  });
+document.addEventListener('DOMContentLoaded',
+function() {
+    var typed = new Typed('#typed', {
+        stringsElement: '#typed-strings',
+        typeSpeed: 150,
+        backSpeed: 20,
+        startDelay: 500,
+        loop: true,
+        loopCount: Infinity,
+        onBegin: function(self) {
+            prettyLog('onBegin ' + self);
+        },
+        onComplete: function(self) {
+            prettyLog('onComplete ' + self);
+        },
+        preStringTyped: function(pos, self) {
+            prettyLog('preStringTyped ' + pos + ' ' + self);
+        },
+        onStringTyped: function(pos, self) {
+            prettyLog('onStringTyped ' + pos + ' ' + self);
+        },
+        onLastStringBackspaced: function(self) {
+            prettyLog('onLastStringBackspaced ' + self);
+        },
+        onTypingPaused: function(pos, self) {
+            prettyLog('onTypingPaused ' + pos + ' ' + self);
+        },
+        onTypingResumed: function(pos, self) {
+            prettyLog('onTypingResumed ' + pos + ' ' + self);
+        },
+        onReset: function(self) {
+            prettyLog('onReset ' + self);
+        },
+        onStop: function(pos, self) {
+            prettyLog('onStop ' + pos + ' ' + self);
+        },
+        onStart: function(pos, self) {
+            prettyLog('onStart ' + pos + ' ' + self);
+        },
+        onDestroy: function(self) {
+            prettyLog('onDestroy ' + self);
+        }
+    });
 });
 function prettyLog(str) {
-  //console.log('%c ' + str, 'color: green; font-weight: bold;');
+    //console.log('%c ' + str, 'color: green; font-weight: bold;');
 }
 function toggleLoop(typed) {
-  if (typed.loop) {
-    typed.loop = false;
-  } else {
-    typed.loop = true;
-  }
+    if (typed.loop) {
+        typed.loop = false;
+    } else {
+        typed.loop = true;
+    }
 }
 function isCloses() {
-    //window.close();
-    //window.location="about:blank";
+    window.close();
+    window.location="about:blank";
 }
 function ck() {
     console.profile();
@@ -136,7 +137,7 @@ function setThemes() {
         addClassName(id, theme);
         repClassName(foter, themess, themes);
         document.getElementById('tab-img-adobe-style').innerHTML = ".st463{fill:#ffffff;}";
-		document.getElementById('tab-img-corel-style').innerHTML = ".st0{fill:#ffffff;} .st1{fill:#ffffff;} .st2{fill:#ffffff;} .st3{fill:#ffffff;} .st4{fill:#ffffff;} .st5{fill:#ffffff;} .st6{fill:#ffffff;} .st7{fill:#ffffff;} .st8{fill:#ffffff;} .st9{fill:#ffffff;} .st10{fill:#ffffff;} .st11{fill:#ffffff;} .st12{fill:#ffffff;} .st13{fill:#ffffff;} .st14{fill:#ffffff;} .st15{fill:#ffffff;} .st16{fill:#ffffff;} .st17{fill:#ffffff;} .st18{fill:#ffffff;} .st19{fill:#ffffff;} .st20{fill:#ffffff;} .st21{fill:#ffffff;} .st22{fill:#ffffff;} .st23{fill:#ffffff;} .st24{fill:#ffffff;} .st25{fill:#ffffff;} .st26{fill:#ffffff;} .st27{fill:#ffffff;} .st28{fill:#ffffff;} .st29{fill:#ffffff;} .st30{fill:#ffffff;} .st31{fill:#ffffff;} .st32{fill:#ffffff;} .st33{fill:#ffffff;} .st34{fill:#ffffff;} .st35{fill:#ffffff;} .st36{fill:#ffffff;} .st37{fill:#ffffff;} .st38{fill:#ffffff;} .st39{fill:#ffffff;} .st40{fill:#ffffff;} .st41{fill:#ffffff;} .st42{fill:#ffffff;} .st43{fill:#ffffff;} .st44{fill:#ffffff;} .st45{fill:#ffffff;} .st46{fill:#ffffff;} .st47{fill:#ffffff;} .st48{fill:#ffffff;} .st49{fill:#ffffff;} .st50{fill:#ffffff;} .st51{fill:#ffffff;} .st52{fill:#ffffff;} .st53{fill:#ffffff;} .st54{fill:#ffffff;} .st55{fill:#ffffff;} .st56{fill:#ffffff;} .st57{fill:#ffffff;} .st58{fill:#ffffff;} .st59{fill:#ffffff;} .st60{fill:#ffffff;} .st61{fill:#ffffff;} .st62{fill:#ffffff;} .st63{fill:#ffffff;} .st64{fill:#ffffff;} .st65{fill:#ffffff;} .st66{fill:#ffffff;} .st67{fill:#ffffff;} .st68{fill:#ffffff;} .st69{fill:#ffffff;} .st70{fill:#ffffff;} .st71{fill:#ffffff;} .st72{fill:#ffffff;} .st73{fill:#ffffff;} .st74{fill:#ffffff;} .st75{fill:#ffffff;} .st76{fill:#ffffff;} .st77{fill:#ffffff;} .st78{fill:#ffffff;} .st79{fill:#ffffff;} .st80{fill:#ffffff;} .st81{fill:#ffffff;} .st82{fill:#ffffff;} .st83{fill:#ffffff;} .st84{fill:#ffffff;} .st85{fill:#ffffff;} .st86{fill:#ffffff;} .st87{fill:#ffffff;} .st88{fill:#ffffff;} .st89{fill:#ffffff;} .st90{fill:#ffffff;} .st91{fill:#ffffff;} .st92{fill:#ffffff;} .st93{fill:#ffffff;} .st94{fill:#ffffff;} .st95{fill:#ffffff;} .st96{fill:#ffffff;} .st97{fill:#ffffff;} .st98{fill:#ffffff;} .st99{fill:#ffffff;} .st100{fill:#ffffff;} .st101{fill:#ffffff;} .st102{fill:#ffffff;} .st103{fill:#ffffff;} .st104{fill:#ffffff;} .st105{fill:#ffffff;} .st106{fill:#ffffff;} .st107{fill:#ffffff;} .st108{fill:#ffffff;} .st109{fill:#ffffff;} .st110{fill:#ffffff;} .st111{fill:#ffffff;} .st112{fill:#ffffff;} .st113{fill:#ffffff;} .st114{fill:#ffffff;} .st115{fill:#ffffff;} .st116{fill:#ffffff;} .st117{fill:#ffffff;} .st118{fill:#ffffff;} .st119{fill:#ffffff;} .st120{fill:#ffffff;} .st121{fill:#ffffff;} .st122{fill:#ffffff;} .st123{fill:#ffffff;} .st124{fill:#ffffff;} .st125{fill:#ffffff;} .st126{fill:#ffffff;} .st127{fill:#ffffff;} .st128{fill:#ffffff;} .st129{fill:#ffffff;} .st130{fill:#ffffff;} .st131{fill:#ffffff;} .st132{fill:#ffffff;} .st133{fill:#ffffff;} .st134{fill:#ffffff;} .st135{fill:#ffffff;} .st136{fill:#ffffff;} .st137{fill:#ffffff;} .st138{fill:#ffffff;} .st139{fill:#ffffff;} .st140{fill:#ffffff;} .st141{fill:#ffffff;} .st142{fill:#ffffff;} .st143{fill:#ffffff;} .st144{fill:#ffffff;} .st145{fill:#ffffff;} .st146{fill:#ffffff;} .st147{fill:#ffffff;} .st148{fill:#ffffff;} .st149{fill:#ffffff;} .st150{fill:#ffffff;} .st151{fill:#ffffff;} .st152{fill:#ffffff;} .st153{fill:#ffffff;} .st154{fill:#ffffff;} .st155{fill:#ffffff;} .st156{fill:#ffffff;} .st157{fill:#ffffff;} .st158{fill:#ffffff;} .st159{fill:#ffffff;} .st160{fill:#ffffff;} .st161{fill:#ffffff;} .st162{fill:#ffffff;} .st163{fill:#ffffff;} .st164{fill:#ffffff;} .st165{fill:#ffffff;} .st166{fill:#ffffff;} .st167{fill:#ffffff;} .st168{fill:#ffffff;} .st169{fill:#ffffff;} .st170{fill:#ffffff;} .st171{fill:#ffffff;} .st172{fill:#ffffff;} .st173{fill:#ffffff;} .st174{fill:#ffffff;} .st175{fill:#ffffff;} .st176{fill:#ffffff;} .st177{fill:#ffffff;} .st178{fill:#ffffff;} .st179{fill:#ffffff;} .st180{fill:#ffffff;} .st181{fill:#ffffff;} .st182{fill:#ffffff;} .st183{fill:#ffffff;} .st184{fill:#ffffff;} .st185{fill:#ffffff;} .st186{fill:#ffffff;} .st187{fill:#ffffff;} .st188{fill:#ffffff;} .st189{fill:#ffffff;} .st190{fill:#ffffff;} .st191{fill:#ffffff;} .st192{fill:#ffffff;} .st193{fill:#ffffff;} .st194{fill:#ffffff;} .st195{fill:#ffffff;} .st196{fill:#ffffff;} .st197{fill:#ffffff;} .st198{fill:#ffffff;} .st199{fill:#ffffff;} .st200{fill:#ffffff;} .st201{fill:#ffffff;} .st202{fill:#ffffff;} .st203{fill:#ffffff;} .st204{fill:#ffffff;} .st205{fill:#ffffff;} .st206{fill:#ffffff;} .st207{fill:#ffffff;} .st208{fill:#ffffff;} .st209{fill:#ffffff;} .st210{fill:#ffffff;} .st211{fill:#ffffff;} .st212{fill:#ffffff;} .st213{fill:#ffffff;} .st214{fill:#ffffff;} .st215{fill:#ffffff;} .st216{fill:#ffffff;} .st217{fill:#ffffff;} .st218{fill:#ffffff;} .st219{fill:#ffffff;} .st220{fill:#ffffff;} .st221{fill:#ffffff;} .st222{fill:#ffffff;} .st223{fill:#ffffff;} .st224{fill:#ffffff;} .st225{fill:#ffffff;} .st226{fill:#ffffff;} .st227{fill:#ffffff;} .st228{fill:#ffffff;} .st229{fill:#ffffff;} .st230{fill:#ffffff;} .st231{fill:#ffffff;} .st232{fill:#ffffff;} .st233{fill:#ffffff;} .st234{fill:#ffffff;} .st235{fill:#ffffff;} .st236{fill:#ffffff;} .st237{fill:#ffffff;} .st238{fill:#ffffff;} .st239{fill:#ffffff;} .st240{fill:#ffffff;} .st241{fill:#ffffff;} .st242{fill:#ffffff;} .st243{fill:#ffffff;} .st244{fill:#ffffff;} .st245{fill:#ffffff;} .st246{fill:#ffffff;} .st247{fill:#ffffff;} .st248{fill:#ffffff;} .st249{fill:#ffffff;} .st250{fill:#ffffff;} .st251{fill:#ffffff;} .st252{fill:#ffffff;} .st253{fill:#ffffff;} .st254{fill:#ffffff;} .st255{fill:#ffffff;} .st256{fill:#ffffff;} .st257{fill:#ffffff;} .st258{fill:#ffffff;} .st259{fill:#ffffff;} .st260{fill:#ffffff;} .st261{fill:#ffffff;} .st262{fill:#ffffff;} .st263{fill:#ffffff;} .st264{fill:#ffffff;} .st265{fill:#ffffff;} .st266{fill:#ffffff;} .st267{fill:#ffffff;} .st268{fill:#ffffff;} .st269{fill:#ffffff;} .st270{fill:#ffffff;} .st271{fill:#ffffff;} .st272{fill:#ffffff;} .st273{fill:#ffffff;} .st274{fill:#ffffff;} .st275{fill:#ffffff;} .st276{fill:#ffffff;} .st277{fill:#ffffff;} .st278{fill:#ffffff;} .st279{fill:#ffffff;} .st280{fill:#ffffff;} .st281{fill:#ffffff;} .st282{fill:#ffffff;} .st283{fill:#ffffff;} .st284{fill:#ffffff;} .st285{fill:#ffffff;} .st286{fill:#ffffff;} .st287{fill:#ffffff;} .st288{fill:#ffffff;} .st289{fill:#ffffff;} .st290{fill:#ffffff;} .st291{fill:#ffffff;} .st292{fill:#ffffff;} .st293{fill:#ffffff;} .st294{fill:#ffffff;} .st295{fill:#ffffff;} .st296{fill:#ffffff;} .st297{fill:#ffffff;} .st298{fill:#ffffff;} .st299{fill:#ffffff;} .st300{fill:#ffffff;} .st301{fill:#ffffff;} .st302{fill:#ffffff;} .st303{fill:#ffffff;} .st304{fill:#ffffff;} .st305{fill:#ffffff;} .st306{fill:#ffffff;} .st307{fill:#ffffff;} .st308{fill:#ffffff;} .st309{fill:#ffffff;} .st310{fill:#ffffff;} .st311{fill:#ffffff;} .st312{fill:#ffffff;} .st313{fill:#ffffff;} .st314{fill:#ffffff;} .st315{fill:#ffffff;} .st316{fill:#ffffff;} .st317{fill:#ffffff;} .st318{fill:#ffffff;} .st319{fill:#ffffff;} .st320{fill:#ffffff;} .st321{fill:#ffffff;} .st322{fill:#ffffff;} .st323{fill:#ffffff;} .st324{fill:#ffffff;} .st325{fill:#ffffff;} .st326{fill:#ffffff;} .st327{fill:#ffffff;} .st328{fill:#ffffff;} .st329{fill:#ffffff;} .st330{fill:#ffffff;} .st331{fill:#ffffff;} .st332{fill:#ffffff;} .st333{fill:#ffffff;} .st334{fill:#ffffff;} .st335{fill:#ffffff;} .st336{fill:#ffffff;} .st337{fill:#ffffff;} .st338{fill:#ffffff;} .st339{fill:#ffffff;} .st340{fill:#ffffff;} .st341{fill:#ffffff;} .st342{fill:#ffffff;} .st343{fill:#ffffff;} .st344{fill:#ffffff;} .st345{fill:#ffffff;} .st346{fill:#ffffff;} .st347{fill:#ffffff;} .st348{fill:#ffffff;} .st349{fill:#ffffff;} .st350{fill:#ffffff;} .st351{fill:#ffffff;} .st352{fill:#ffffff;} .st353{fill:#ffffff;} .st354{fill:#ffffff;} .st355{fill:#ffffff;} .st356{fill:#ffffff;} .st357{fill:#ffffff;} .st358{fill:#ffffff;} .st359{fill:#ffffff;} .st360{fill:#ffffff;} .st361{fill:#ffffff;} .st362{fill:#ffffff;} .st363{fill:#ffffff;} .st364{fill:#ffffff;} .st365{fill:#ffffff;} .st366{fill:#ffffff;} .st367{fill:#ffffff;} .st368{fill:#ffffff;} .st369{fill:#ffffff;} .st370{fill:#ffffff;} .st371{fill:#ffffff;} .st372{fill:#ffffff;} .st373{fill:#ffffff;} .st374{fill:#ffffff;} .st375{fill:#ffffff;} .st376{fill:#ffffff;} .st377{fill:#ffffff;} .st378{fill:#ffffff;} .st379{fill:#ffffff;} .st380{fill:#ffffff;} .st381{fill:#ffffff;} .st382{fill:#ffffff;} .st383{fill:#ffffff;} .st384{fill:#ffffff;} .st385{fill:#ffffff;} .st386{fill:#ffffff;} .st387{fill:#ffffff;} .st388{fill:#ffffff;} .st389{fill:#ffffff;} .st390{fill:#ffffff;} .st391{fill:#ffffff;} .st392{fill:#ffffff;} .st393{fill:#ffffff;} .st394{fill:#ffffff;} .st395{fill:#ffffff;} .st396{fill:#ffffff;} .st397{fill:#ffffff;} .st398{fill:#ffffff;} .st399{fill:#ffffff;} .st400{fill:#ffffff;} .st401{fill:#ffffff;} .st402{fill:#ffffff;} .st403{fill:#ffffff;} .st404{fill:#ffffff;} .st405{fill:#ffffff;} .st406{fill:#ffffff;} .st407{fill:#ffffff;} .st408{fill:#ffffff;} .st409{fill:#ffffff;} .st410{fill:#ffffff;} .st411{fill:#ffffff;} .st412{fill:#ffffff;} .st413{fill:#ffffff;} .st414{fill:#ffffff;} .st415{fill:#ffffff;} .st416{fill:#ffffff;} .st417{fill:#ffffff;} .st418{fill:#ffffff;} .st419{fill:#ffffff;} .st420{fill:#ffffff;} .st421{fill:#ffffff;} .st422{fill:#ffffff;} .st423{fill:#ffffff;} .st424{fill:#ffffff;} .st425{fill:#ffffff;} .st426{fill:#ffffff;} .st427{fill:#ffffff;} .st428{fill:#ffffff;} .st429{fill:#ffffff;} .st430{fill:#ffffff;} .st431{fill:#ffffff;} .st432{fill:#ffffff;} .st433{fill:#ffffff;} .st434{fill:#ffffff;} .st435{fill:#ffffff;} .st436{fill:#ffffff;} .st437{fill:#ffffff;} .st438{fill:#ffffff;} .st439{fill:#ffffff;} .st440{fill:#ffffff;} .st441{fill:#ffffff;} .st442{fill:#ffffff;} .st443{fill:#ffffff;} .st444{fill:#ffffff;} .st445{fill:#ffffff;} .st446{fill:#ffffff;} .st447{fill:#ffffff;} .st448{fill:#ffffff;} .st449{fill:#ffffff;} .st450{fill:#ffffff;} .st451{fill:#ffffff;} .st452{fill:#ffffff;} .st453{fill:#ffffff;} .st454{fill:#ffffff;} .st455{fill:#ffffff;} .st456{fill:#ffffff;} .st457{fill:#ffffff;} .st458{fill:#ffffff;} .st459{fill:#ffffff;} .st460{fill:#ffffff;} .st461{fill:#ffffff;}";
+        document.getElementById('tab-img-corel-style').innerHTML = ".st0{fill:#ffffff;} .st1{fill:#ffffff;} .st2{fill:#ffffff;} .st3{fill:#ffffff;} .st4{fill:#ffffff;} .st5{fill:#ffffff;} .st6{fill:#ffffff;} .st7{fill:#ffffff;} .st8{fill:#ffffff;} .st9{fill:#ffffff;} .st10{fill:#ffffff;} .st11{fill:#ffffff;} .st12{fill:#ffffff;} .st13{fill:#ffffff;} .st14{fill:#ffffff;} .st15{fill:#ffffff;} .st16{fill:#ffffff;} .st17{fill:#ffffff;} .st18{fill:#ffffff;} .st19{fill:#ffffff;} .st20{fill:#ffffff;} .st21{fill:#ffffff;} .st22{fill:#ffffff;} .st23{fill:#ffffff;} .st24{fill:#ffffff;} .st25{fill:#ffffff;} .st26{fill:#ffffff;} .st27{fill:#ffffff;} .st28{fill:#ffffff;} .st29{fill:#ffffff;} .st30{fill:#ffffff;} .st31{fill:#ffffff;} .st32{fill:#ffffff;} .st33{fill:#ffffff;} .st34{fill:#ffffff;} .st35{fill:#ffffff;} .st36{fill:#ffffff;} .st37{fill:#ffffff;} .st38{fill:#ffffff;} .st39{fill:#ffffff;} .st40{fill:#ffffff;} .st41{fill:#ffffff;} .st42{fill:#ffffff;} .st43{fill:#ffffff;} .st44{fill:#ffffff;} .st45{fill:#ffffff;} .st46{fill:#ffffff;} .st47{fill:#ffffff;} .st48{fill:#ffffff;} .st49{fill:#ffffff;} .st50{fill:#ffffff;} .st51{fill:#ffffff;} .st52{fill:#ffffff;} .st53{fill:#ffffff;} .st54{fill:#ffffff;} .st55{fill:#ffffff;} .st56{fill:#ffffff;} .st57{fill:#ffffff;} .st58{fill:#ffffff;} .st59{fill:#ffffff;} .st60{fill:#ffffff;} .st61{fill:#ffffff;} .st62{fill:#ffffff;} .st63{fill:#ffffff;} .st64{fill:#ffffff;} .st65{fill:#ffffff;} .st66{fill:#ffffff;} .st67{fill:#ffffff;} .st68{fill:#ffffff;} .st69{fill:#ffffff;} .st70{fill:#ffffff;} .st71{fill:#ffffff;} .st72{fill:#ffffff;} .st73{fill:#ffffff;} .st74{fill:#ffffff;} .st75{fill:#ffffff;} .st76{fill:#ffffff;} .st77{fill:#ffffff;} .st78{fill:#ffffff;} .st79{fill:#ffffff;} .st80{fill:#ffffff;} .st81{fill:#ffffff;} .st82{fill:#ffffff;} .st83{fill:#ffffff;} .st84{fill:#ffffff;} .st85{fill:#ffffff;} .st86{fill:#ffffff;} .st87{fill:#ffffff;} .st88{fill:#ffffff;} .st89{fill:#ffffff;} .st90{fill:#ffffff;} .st91{fill:#ffffff;} .st92{fill:#ffffff;} .st93{fill:#ffffff;} .st94{fill:#ffffff;} .st95{fill:#ffffff;} .st96{fill:#ffffff;} .st97{fill:#ffffff;} .st98{fill:#ffffff;} .st99{fill:#ffffff;} .st100{fill:#ffffff;} .st101{fill:#ffffff;} .st102{fill:#ffffff;} .st103{fill:#ffffff;} .st104{fill:#ffffff;} .st105{fill:#ffffff;} .st106{fill:#ffffff;} .st107{fill:#ffffff;} .st108{fill:#ffffff;} .st109{fill:#ffffff;} .st110{fill:#ffffff;} .st111{fill:#ffffff;} .st112{fill:#ffffff;} .st113{fill:#ffffff;} .st114{fill:#ffffff;} .st115{fill:#ffffff;} .st116{fill:#ffffff;} .st117{fill:#ffffff;} .st118{fill:#ffffff;} .st119{fill:#ffffff;} .st120{fill:#ffffff;} .st121{fill:#ffffff;} .st122{fill:#ffffff;} .st123{fill:#ffffff;} .st124{fill:#ffffff;} .st125{fill:#ffffff;} .st126{fill:#ffffff;} .st127{fill:#ffffff;} .st128{fill:#ffffff;} .st129{fill:#ffffff;} .st130{fill:#ffffff;} .st131{fill:#ffffff;} .st132{fill:#ffffff;} .st133{fill:#ffffff;} .st134{fill:#ffffff;} .st135{fill:#ffffff;} .st136{fill:#ffffff;} .st137{fill:#ffffff;} .st138{fill:#ffffff;} .st139{fill:#ffffff;} .st140{fill:#ffffff;} .st141{fill:#ffffff;} .st142{fill:#ffffff;} .st143{fill:#ffffff;} .st144{fill:#ffffff;} .st145{fill:#ffffff;} .st146{fill:#ffffff;} .st147{fill:#ffffff;} .st148{fill:#ffffff;} .st149{fill:#ffffff;} .st150{fill:#ffffff;} .st151{fill:#ffffff;} .st152{fill:#ffffff;} .st153{fill:#ffffff;} .st154{fill:#ffffff;} .st155{fill:#ffffff;} .st156{fill:#ffffff;} .st157{fill:#ffffff;} .st158{fill:#ffffff;} .st159{fill:#ffffff;} .st160{fill:#ffffff;} .st161{fill:#ffffff;} .st162{fill:#ffffff;} .st163{fill:#ffffff;} .st164{fill:#ffffff;} .st165{fill:#ffffff;} .st166{fill:#ffffff;} .st167{fill:#ffffff;} .st168{fill:#ffffff;} .st169{fill:#ffffff;} .st170{fill:#ffffff;} .st171{fill:#ffffff;} .st172{fill:#ffffff;} .st173{fill:#ffffff;} .st174{fill:#ffffff;} .st175{fill:#ffffff;} .st176{fill:#ffffff;} .st177{fill:#ffffff;} .st178{fill:#ffffff;} .st179{fill:#ffffff;} .st180{fill:#ffffff;} .st181{fill:#ffffff;} .st182{fill:#ffffff;} .st183{fill:#ffffff;} .st184{fill:#ffffff;} .st185{fill:#ffffff;} .st186{fill:#ffffff;} .st187{fill:#ffffff;} .st188{fill:#ffffff;} .st189{fill:#ffffff;} .st190{fill:#ffffff;} .st191{fill:#ffffff;} .st192{fill:#ffffff;} .st193{fill:#ffffff;} .st194{fill:#ffffff;} .st195{fill:#ffffff;} .st196{fill:#ffffff;} .st197{fill:#ffffff;} .st198{fill:#ffffff;} .st199{fill:#ffffff;} .st200{fill:#ffffff;} .st201{fill:#ffffff;} .st202{fill:#ffffff;} .st203{fill:#ffffff;} .st204{fill:#ffffff;} .st205{fill:#ffffff;} .st206{fill:#ffffff;} .st207{fill:#ffffff;} .st208{fill:#ffffff;} .st209{fill:#ffffff;} .st210{fill:#ffffff;} .st211{fill:#ffffff;} .st212{fill:#ffffff;} .st213{fill:#ffffff;} .st214{fill:#ffffff;} .st215{fill:#ffffff;} .st216{fill:#ffffff;} .st217{fill:#ffffff;} .st218{fill:#ffffff;} .st219{fill:#ffffff;} .st220{fill:#ffffff;} .st221{fill:#ffffff;} .st222{fill:#ffffff;} .st223{fill:#ffffff;} .st224{fill:#ffffff;} .st225{fill:#ffffff;} .st226{fill:#ffffff;} .st227{fill:#ffffff;} .st228{fill:#ffffff;} .st229{fill:#ffffff;} .st230{fill:#ffffff;} .st231{fill:#ffffff;} .st232{fill:#ffffff;} .st233{fill:#ffffff;} .st234{fill:#ffffff;} .st235{fill:#ffffff;} .st236{fill:#ffffff;} .st237{fill:#ffffff;} .st238{fill:#ffffff;} .st239{fill:#ffffff;} .st240{fill:#ffffff;} .st241{fill:#ffffff;} .st242{fill:#ffffff;} .st243{fill:#ffffff;} .st244{fill:#ffffff;} .st245{fill:#ffffff;} .st246{fill:#ffffff;} .st247{fill:#ffffff;} .st248{fill:#ffffff;} .st249{fill:#ffffff;} .st250{fill:#ffffff;} .st251{fill:#ffffff;} .st252{fill:#ffffff;} .st253{fill:#ffffff;} .st254{fill:#ffffff;} .st255{fill:#ffffff;} .st256{fill:#ffffff;} .st257{fill:#ffffff;} .st258{fill:#ffffff;} .st259{fill:#ffffff;} .st260{fill:#ffffff;} .st261{fill:#ffffff;} .st262{fill:#ffffff;} .st263{fill:#ffffff;} .st264{fill:#ffffff;} .st265{fill:#ffffff;} .st266{fill:#ffffff;} .st267{fill:#ffffff;} .st268{fill:#ffffff;} .st269{fill:#ffffff;} .st270{fill:#ffffff;} .st271{fill:#ffffff;} .st272{fill:#ffffff;} .st273{fill:#ffffff;} .st274{fill:#ffffff;} .st275{fill:#ffffff;} .st276{fill:#ffffff;} .st277{fill:#ffffff;} .st278{fill:#ffffff;} .st279{fill:#ffffff;} .st280{fill:#ffffff;} .st281{fill:#ffffff;} .st282{fill:#ffffff;} .st283{fill:#ffffff;} .st284{fill:#ffffff;} .st285{fill:#ffffff;} .st286{fill:#ffffff;} .st287{fill:#ffffff;} .st288{fill:#ffffff;} .st289{fill:#ffffff;} .st290{fill:#ffffff;} .st291{fill:#ffffff;} .st292{fill:#ffffff;} .st293{fill:#ffffff;} .st294{fill:#ffffff;} .st295{fill:#ffffff;} .st296{fill:#ffffff;} .st297{fill:#ffffff;} .st298{fill:#ffffff;} .st299{fill:#ffffff;} .st300{fill:#ffffff;} .st301{fill:#ffffff;} .st302{fill:#ffffff;} .st303{fill:#ffffff;} .st304{fill:#ffffff;} .st305{fill:#ffffff;} .st306{fill:#ffffff;} .st307{fill:#ffffff;} .st308{fill:#ffffff;} .st309{fill:#ffffff;} .st310{fill:#ffffff;} .st311{fill:#ffffff;} .st312{fill:#ffffff;} .st313{fill:#ffffff;} .st314{fill:#ffffff;} .st315{fill:#ffffff;} .st316{fill:#ffffff;} .st317{fill:#ffffff;} .st318{fill:#ffffff;} .st319{fill:#ffffff;} .st320{fill:#ffffff;} .st321{fill:#ffffff;} .st322{fill:#ffffff;} .st323{fill:#ffffff;} .st324{fill:#ffffff;} .st325{fill:#ffffff;} .st326{fill:#ffffff;} .st327{fill:#ffffff;} .st328{fill:#ffffff;} .st329{fill:#ffffff;} .st330{fill:#ffffff;} .st331{fill:#ffffff;} .st332{fill:#ffffff;} .st333{fill:#ffffff;} .st334{fill:#ffffff;} .st335{fill:#ffffff;} .st336{fill:#ffffff;} .st337{fill:#ffffff;} .st338{fill:#ffffff;} .st339{fill:#ffffff;} .st340{fill:#ffffff;} .st341{fill:#ffffff;} .st342{fill:#ffffff;} .st343{fill:#ffffff;} .st344{fill:#ffffff;} .st345{fill:#ffffff;} .st346{fill:#ffffff;} .st347{fill:#ffffff;} .st348{fill:#ffffff;} .st349{fill:#ffffff;} .st350{fill:#ffffff;} .st351{fill:#ffffff;} .st352{fill:#ffffff;} .st353{fill:#ffffff;} .st354{fill:#ffffff;} .st355{fill:#ffffff;} .st356{fill:#ffffff;} .st357{fill:#ffffff;} .st358{fill:#ffffff;} .st359{fill:#ffffff;} .st360{fill:#ffffff;} .st361{fill:#ffffff;} .st362{fill:#ffffff;} .st363{fill:#ffffff;} .st364{fill:#ffffff;} .st365{fill:#ffffff;} .st366{fill:#ffffff;} .st367{fill:#ffffff;} .st368{fill:#ffffff;} .st369{fill:#ffffff;} .st370{fill:#ffffff;} .st371{fill:#ffffff;} .st372{fill:#ffffff;} .st373{fill:#ffffff;} .st374{fill:#ffffff;} .st375{fill:#ffffff;} .st376{fill:#ffffff;} .st377{fill:#ffffff;} .st378{fill:#ffffff;} .st379{fill:#ffffff;} .st380{fill:#ffffff;} .st381{fill:#ffffff;} .st382{fill:#ffffff;} .st383{fill:#ffffff;} .st384{fill:#ffffff;} .st385{fill:#ffffff;} .st386{fill:#ffffff;} .st387{fill:#ffffff;} .st388{fill:#ffffff;} .st389{fill:#ffffff;} .st390{fill:#ffffff;} .st391{fill:#ffffff;} .st392{fill:#ffffff;} .st393{fill:#ffffff;} .st394{fill:#ffffff;} .st395{fill:#ffffff;} .st396{fill:#ffffff;} .st397{fill:#ffffff;} .st398{fill:#ffffff;} .st399{fill:#ffffff;} .st400{fill:#ffffff;} .st401{fill:#ffffff;} .st402{fill:#ffffff;} .st403{fill:#ffffff;} .st404{fill:#ffffff;} .st405{fill:#ffffff;} .st406{fill:#ffffff;} .st407{fill:#ffffff;} .st408{fill:#ffffff;} .st409{fill:#ffffff;} .st410{fill:#ffffff;} .st411{fill:#ffffff;} .st412{fill:#ffffff;} .st413{fill:#ffffff;} .st414{fill:#ffffff;} .st415{fill:#ffffff;} .st416{fill:#ffffff;} .st417{fill:#ffffff;} .st418{fill:#ffffff;} .st419{fill:#ffffff;} .st420{fill:#ffffff;} .st421{fill:#ffffff;} .st422{fill:#ffffff;} .st423{fill:#ffffff;} .st424{fill:#ffffff;} .st425{fill:#ffffff;} .st426{fill:#ffffff;} .st427{fill:#ffffff;} .st428{fill:#ffffff;} .st429{fill:#ffffff;} .st430{fill:#ffffff;} .st431{fill:#ffffff;} .st432{fill:#ffffff;} .st433{fill:#ffffff;} .st434{fill:#ffffff;} .st435{fill:#ffffff;} .st436{fill:#ffffff;} .st437{fill:#ffffff;} .st438{fill:#ffffff;} .st439{fill:#ffffff;} .st440{fill:#ffffff;} .st441{fill:#ffffff;} .st442{fill:#ffffff;} .st443{fill:#ffffff;} .st444{fill:#ffffff;} .st445{fill:#ffffff;} .st446{fill:#ffffff;} .st447{fill:#ffffff;} .st448{fill:#ffffff;} .st449{fill:#ffffff;} .st450{fill:#ffffff;} .st451{fill:#ffffff;} .st452{fill:#ffffff;} .st453{fill:#ffffff;} .st454{fill:#ffffff;} .st455{fill:#ffffff;} .st456{fill:#ffffff;} .st457{fill:#ffffff;} .st458{fill:#ffffff;} .st459{fill:#ffffff;} .st460{fill:#ffffff;} .st461{fill:#ffffff;}";
         document.getElementById('tab-img-bmd-style').innerHTML = ".st464{fill-rule:evenodd;clip-rule:evenodd;fill:#ffffff;} .st466{fill-rule:evenodd;clip-rule:evenodd;fill:#ffffff;} .st467{fill-rule:evenodd;clip-rule:evenodd;fill:#ffffff;} .st468{fill:#ffffff;} .st469{fill-rule:evenodd;clip-rule:evenodd;fill:#ffffff;} .st470{fill-rule:evenodd;clip-rule:evenodd;fill:#ffffff;}";
         document.getElementById('tab-img-magix-style').innerHTML = ".st471{fill:#ffffff;} .st472{fill:#ffffff;}";
         document.getElementById('tab-img-grass-style').innerHTML = ".st465{fill:#ffffff;}";
@@ -276,95 +277,95 @@ function addPanelItem(tabContent, imageSrc, appName, deviceSystem, appLanguage, 
         isCrack = "Cracked, please check the instructions to install.";
         isCrackicon = " check_circle";
     }
-var mdui_panel_popout=document.createElement("div");
-mdui_panel_popout.setAttribute("mdui-panel","");
-mdui_panel_popout.className="mdui-panel mdui-panel-popout";
-container.appendChild(mdui_panel_popout);
-var mdui_panel_item=document.createElement("div");
-mdui_panel_item.className="mdui-panel-item";
-mdui_panel_popout.appendChild(mdui_panel_item);
-var mdui_panel_item_header=document.createElement("div");
-mdui_panel_item_header.className="mdui-panel-item-header";
-mdui_panel_item.appendChild(mdui_panel_item_header);
-var app_icon=document.createElement("img");
-app_icon.src=imageSrc;
-app_icon.width="25";
-app_icon.height="25";
-mdui_panel_item_header.appendChild(app_icon);
-var app_name=document.createElement("div");
-app_name.id=itemTitleID;
-app_name.className="mdui-panel-item-title";
-app_name.style="margin-left:5px;";
-app_name.innerHTML=appName;
-mdui_panel_item_header.appendChild(app_name);
-var item_tooltip=document.createElement("div");
-item_tooltip.id=itemTooltipID;
-mdui_panel_item_header.appendChild(item_tooltip);
-var chip1=document.createElement("div");
-chip1.className="mdui-chip";
-item_tooltip.appendChild(chip1);
-var device_system=document.createElement("a");
-device_system.setAttribute("mdui-tooltip","{content:'"+isdeviceSystem+"'}");
-chip1.appendChild(device_system);
-var device_system_text=document.createElement("span");
-device_system_text.className="mdui-chip-title mdui-text-color-black-secondary mdui-text-color-theme-text";
-device_system_text.innerHTML=toIcon("computer")+deviceSystem;
-device_system.appendChild(device_system_text);
-var chip2=document.createElement("div");
-chip2.className="mdui-chip";
-chip2.style="margin-left:5px;";
-item_tooltip.appendChild(chip2);
-var app_Language=document.createElement("a");
-app_Language.setAttribute("mdui-tooltip","{content:'"+appLanguage+" supported.'}");
-chip2.appendChild(app_Language);
-var app_Language_text=document.createElement("span");
-app_Language_text.className="mdui-chip-title mdui-text-color-black-secondary mdui-text-color-theme-text";
-app_Language_text.innerHTML=toIcon("language")+appLanguage;
-app_Language.appendChild(app_Language_text);
-var chip3=document.createElement("div");
-chip3.className="mdui-chip";
-chip3.style="margin-left:5px;";
-item_tooltip.appendChild(chip3);
-var latest_version=document.createElement("a");
-latest_version.setAttribute("mdui-tooltip","{content: 'Latest version "+latestVersion+".'}");
-chip3.appendChild(latest_version);
-var latest_version_text=document.createElement("span");
-latest_version_text.className="mdui-chip-title mdui-text-color-black-secondary mdui-text-color-theme-text";
-latest_version_text.innerHTML=toIcon("update")+latestVersion;
-latest_version.appendChild(latest_version_text);
-var chip4=document.createElement("div");
-chip4.className="mdui-chip";
-chip4.style="margin-left:5px;";
-item_tooltip.appendChild(chip4);
-var is_to_crack=document.createElement("a");
-is_to_crack.setAttribute("mdui-tooltip","{content:'"+isCrack+"'}");
-chip4.appendChild(is_to_crack);
-var is_to_crack_text=document.createElement("span");
-is_to_crack_text.className="mdui-chip-title mdui-text-color-black-secondary mdui-text-color-theme-text";
-is_to_crack_text.innerHTML=toIcon(isCrackicon)+toCrack;
-is_to_crack.appendChild(is_to_crack_text);
-var chip5=document.createElement("div");
-chip5.className="mdui-chip";
-chip5.style="margin-left:5px;";
-item_tooltip.appendChild(chip5);
-var lastUpdate_time=document.createElement("a");
-lastUpdate_time.setAttribute("mdui-tooltip","{content:'Last update time "+lastUpdatetime+".'}");
-chip5.appendChild(lastUpdate_time);
-var lastUpdate_time_text=document.createElement("span");
-lastUpdate_time_text.className="mdui-chip-title mdui-text-color-black-secondary mdui-text-color-theme-text";
-lastUpdate_time_text.innerHTML=toIcon("access_time")+lastUpdatetime;
-lastUpdate_time.appendChild(lastUpdate_time_text);
-var mdui_panel_item_down_icon=document.createElement("i");
-mdui_panel_item_down_icon.className="mdui-panel-item-arrow mdui-icon material-icons";
-mdui_panel_item_down_icon.innerHTML="keyboard_arrow_down";
-mdui_panel_item_header.appendChild(mdui_panel_item_down_icon);
-var mdui_panel_item_body=document.createElement("div");
-mdui_panel_item_body.className="mdui-panel-item-body";
-mdui_panel_item.appendChild(mdui_panel_item_body);
-var mdui_lists=document.createElement("ul");
-mdui_lists.id=mduiListID;
-mdui_lists.className="mdui-list";
-mdui_panel_item_body.appendChild(mdui_lists);
+    var mdui_panel_popout = document.createElement("div");
+    mdui_panel_popout.setAttribute("mdui-panel", "");
+    mdui_panel_popout.className = "mdui-panel mdui-panel-popout";
+    container.appendChild(mdui_panel_popout);
+    var mdui_panel_item = document.createElement("div");
+    mdui_panel_item.className = "mdui-panel-item";
+    mdui_panel_popout.appendChild(mdui_panel_item);
+    var mdui_panel_item_header = document.createElement("div");
+    mdui_panel_item_header.className = "mdui-panel-item-header";
+    mdui_panel_item.appendChild(mdui_panel_item_header);
+    var app_icon = document.createElement("img");
+    app_icon.src = imageSrc;
+    app_icon.width = "25";
+    app_icon.height = "25";
+    mdui_panel_item_header.appendChild(app_icon);
+    var app_name = document.createElement("div");
+    app_name.id = itemTitleID;
+    app_name.className = "mdui-panel-item-title";
+    app_name.style = "margin-left:5px;";
+    app_name.innerHTML = appName;
+    mdui_panel_item_header.appendChild(app_name);
+    var item_tooltip = document.createElement("div");
+    item_tooltip.id = itemTooltipID;
+    mdui_panel_item_header.appendChild(item_tooltip);
+    var chip1 = document.createElement("div");
+    chip1.className = "mdui-chip";
+    item_tooltip.appendChild(chip1);
+    var device_system = document.createElement("a");
+    device_system.setAttribute("mdui-tooltip", "{content:'" + isdeviceSystem + "'}");
+    chip1.appendChild(device_system);
+    var device_system_text = document.createElement("span");
+    device_system_text.className = "mdui-chip-title mdui-text-color-black-secondary mdui-text-color-theme-text";
+    device_system_text.innerHTML = toIcon("computer") + deviceSystem;
+    device_system.appendChild(device_system_text);
+    var chip2 = document.createElement("div");
+    chip2.className = "mdui-chip";
+    chip2.style = "margin-left:5px;";
+    item_tooltip.appendChild(chip2);
+    var app_Language = document.createElement("a");
+    app_Language.setAttribute("mdui-tooltip", "{content:'" + appLanguage + " supported.'}");
+    chip2.appendChild(app_Language);
+    var app_Language_text = document.createElement("span");
+    app_Language_text.className = "mdui-chip-title mdui-text-color-black-secondary mdui-text-color-theme-text";
+    app_Language_text.innerHTML = toIcon("language") + appLanguage;
+    app_Language.appendChild(app_Language_text);
+    var chip3 = document.createElement("div");
+    chip3.className = "mdui-chip";
+    chip3.style = "margin-left:5px;";
+    item_tooltip.appendChild(chip3);
+    var latest_version = document.createElement("a");
+    latest_version.setAttribute("mdui-tooltip", "{content: 'Latest version " + latestVersion + ".'}");
+    chip3.appendChild(latest_version);
+    var latest_version_text = document.createElement("span");
+    latest_version_text.className = "mdui-chip-title mdui-text-color-black-secondary mdui-text-color-theme-text";
+    latest_version_text.innerHTML = toIcon("update") + latestVersion;
+    latest_version.appendChild(latest_version_text);
+    var chip4 = document.createElement("div");
+    chip4.className = "mdui-chip";
+    chip4.style = "margin-left:5px;";
+    item_tooltip.appendChild(chip4);
+    var is_to_crack = document.createElement("a");
+    is_to_crack.setAttribute("mdui-tooltip", "{content:'" + isCrack + "'}");
+    chip4.appendChild(is_to_crack);
+    var is_to_crack_text = document.createElement("span");
+    is_to_crack_text.className = "mdui-chip-title mdui-text-color-black-secondary mdui-text-color-theme-text";
+    is_to_crack_text.innerHTML = toIcon(isCrackicon) + toCrack;
+    is_to_crack.appendChild(is_to_crack_text);
+    var chip5 = document.createElement("div");
+    chip5.className = "mdui-chip";
+    chip5.style = "margin-left:5px;";
+    item_tooltip.appendChild(chip5);
+    var lastUpdate_time = document.createElement("a");
+    lastUpdate_time.setAttribute("mdui-tooltip", "{content:'Last update time " + lastUpdatetime + ".'}");
+    chip5.appendChild(lastUpdate_time);
+    var lastUpdate_time_text = document.createElement("span");
+    lastUpdate_time_text.className = "mdui-chip-title mdui-text-color-black-secondary mdui-text-color-theme-text";
+    lastUpdate_time_text.innerHTML = toIcon("access_time") + lastUpdatetime;
+    lastUpdate_time.appendChild(lastUpdate_time_text);
+    var mdui_panel_item_down_icon = document.createElement("i");
+    mdui_panel_item_down_icon.className = "mdui-panel-item-arrow mdui-icon material-icons";
+    mdui_panel_item_down_icon.innerHTML = "keyboard_arrow_down";
+    mdui_panel_item_header.appendChild(mdui_panel_item_down_icon);
+    var mdui_panel_item_body = document.createElement("div");
+    mdui_panel_item_body.className = "mdui-panel-item-body";
+    mdui_panel_item.appendChild(mdui_panel_item_body);
+    var mdui_lists = document.createElement("ul");
+    mdui_lists.id = mduiListID;
+    mdui_lists.className = "mdui-list";
+    mdui_panel_item_body.appendChild(mdui_lists);
 }
 function addPanelList(divID, appVersion, winDownloadUrl, winDownloadMa, winCrackDownloadUrl, winCrackDownloadMa, macDownloadUrl, macDownloadMa, macCrackDownloadUrl, macCrackDownloadMa, downloadMenuID) {
     var ID = document.getElementById(divID);
@@ -388,84 +389,84 @@ function addPanelList(divID, appVersion, winDownloadUrl, winDownloadMa, winCrack
     if (macCrackDownloadUrl.length == 0) {
         macCrackDisplay = "display :none;";
     }
-    var mdui_list_item=document.createElement("li");
-    mdui_list_item.className="mdui-list-item";
+    var mdui_list_item = document.createElement("li");
+    mdui_list_item.className = "mdui-list-item";
     ID.appendChild(mdui_list_item);
-    var mdui_list_item_content=document.createElement("div");
-    mdui_list_item_content.className="mdui-list-item-content";
-    mdui_list_item_content.innerHTML=appVersion;
+    var mdui_list_item_content = document.createElement("div");
+    mdui_list_item_content.className = "mdui-list-item-content";
+    mdui_list_item_content.innerHTML = appVersion;
     mdui_list_item.appendChild(mdui_list_item_content);
-    var download_button=document.createElement("button");
-    download_button.className="mdui-btn mdui-color-theme-accent mdui-ripple";
-    download_button.setAttribute("mdui-menu","{target: '#"+downloadMenuID+"'}");
-    download_button.innerHTML="Download";
+    var download_button = document.createElement("button");
+    download_button.className = "mdui-btn mdui-color-theme-accent mdui-ripple";
+    download_button.setAttribute("mdui-menu", "{target: '#" + downloadMenuID + "'}");
+    download_button.innerHTML = "Download";
     mdui_list_item.appendChild(download_button);
-    var mdui_menu=document.createElement("ul");
-    mdui_menu.className="mdui-menu";
-    mdui_menu.id=downloadMenuID;
-    mdui_menu.style=menuDisplay;
+    var mdui_menu = document.createElement("ul");
+    mdui_menu.className = "mdui-menu";
+    mdui_menu.id = downloadMenuID;
+    mdui_menu.style = menuDisplay;
     mdui_list_item.appendChild(mdui_menu);
-    var mdui_menu_item1=document.createElement("li");
-    mdui_menu_item1.className="mdui-menu-item";
-    mdui_menu_item1.style=winDisplay;
+    var mdui_menu_item1 = document.createElement("li");
+    mdui_menu_item1.className = "mdui-menu-item";
+    mdui_menu_item1.style = winDisplay;
     mdui_menu.appendChild(mdui_menu_item1);
-	var windows=document.createElement("a");
-    windows.className="mdui-ripple";
-    windows.innerHTML=toIcon("file_download")+"Windows";
-    windows.setAttribute("onclick","showWarnDialog('"+winDownloadUrl+"','"+winDownloadMa+"');");
+    var windows = document.createElement("a");
+    windows.className = "mdui-ripple";
+    windows.innerHTML = toIcon("file_download") + "Windows";
+    windows.setAttribute("onclick", "showWarnDialog('" + winDownloadUrl + "','" + winDownloadMa + "');");
     mdui_menu_item1.appendChild(windows);
-    var mdui_menu_item2=document.createElement("li");
-    mdui_menu_item2.className="mdui-menu-item";
-    mdui_menu_item2.style=winCrackDisplay;
+    var mdui_menu_item2 = document.createElement("li");
+    mdui_menu_item2.className = "mdui-menu-item";
+    mdui_menu_item2.style = winCrackDisplay;
     mdui_menu.appendChild(mdui_menu_item2);
-    var win_backup=document.createElement("a");
-    win_backup.className="mdui-ripple";
-    win_backup.innerHTML=toIcon("file_download")+"Win Backup";
-    win_backup.setAttribute("onclick","showWarnDialog('"+winCrackDownloadUrl+"','"+winCrackDownloadMa+"');");
+    var win_backup = document.createElement("a");
+    win_backup.className = "mdui-ripple";
+    win_backup.innerHTML = toIcon("file_download") + "Win Backup";
+    win_backup.setAttribute("onclick", "showWarnDialog('" + winCrackDownloadUrl + "','" + winCrackDownloadMa + "');");
     mdui_menu_item2.appendChild(win_backup);
-    var mdui_menu_item3=document.createElement("li");
-    mdui_menu_item3.className="mdui-menu-item";
-    mdui_menu_item3.style=macDisplay;
+    var mdui_menu_item3 = document.createElement("li");
+    mdui_menu_item3.className = "mdui-menu-item";
+    mdui_menu_item3.style = macDisplay;
     mdui_menu.appendChild(mdui_menu_item3);
-    var mac_os=document.createElement("a");
-    mac_os.className="mdui-ripple";
-    mac_os.innerHTML=toIcon("file_download")+"Mac OS";
-    mac_os.setAttribute("onclick","showWarnDialog('"+macDownloadUrl+"','"+macDownloadMa+"');");
+    var mac_os = document.createElement("a");
+    mac_os.className = "mdui-ripple";
+    mac_os.innerHTML = toIcon("file_download") + "Mac OS";
+    mac_os.setAttribute("onclick", "showWarnDialog('" + macDownloadUrl + "','" + macDownloadMa + "');");
     mdui_menu_item3.appendChild(mac_os);
-    var mdui_menu_item4=document.createElement("li");
-    mdui_menu_item4.className="mdui-menu-item";
-    mdui_menu_item4.style=macCrackDisplay;
+    var mdui_menu_item4 = document.createElement("li");
+    mdui_menu_item4.className = "mdui-menu-item";
+    mdui_menu_item4.style = macCrackDisplay;
     mdui_menu.appendChild(mdui_menu_item4);
-    var mac_backup=document.createElement("a");
-    mac_backup.className="mdui-ripple";
-    mac_backup.innerHTML=toIcon("file_download")+"Mac Backup";
-    mac_backup.setAttribute("onclick","showWarnDialog('"+macCrackDownloadUrl+"','"+macCrackDownloadMa+"');");
+    var mac_backup = document.createElement("a");
+    mac_backup.className = "mdui-ripple";
+    mac_backup.innerHTML = toIcon("file_download") + "Mac Backup";
+    mac_backup.setAttribute("onclick", "showWarnDialog('" + macCrackDownloadUrl + "','" + macCrackDownloadMa + "');");
     mdui_menu_item4.appendChild(mac_backup);
-    
+
 }
-function addItems(id,content,links,imgSrc,widths,heights,mtop,mbottom){
-  var container = document.getElementById(id);
-      var buttons=document.createElement("li");
-    buttons.className="scaleBox";
-	buttons.setAttribute("mdui-tooltip","{content:'"+content+"'}");
+function addItems(id, content, links, imgSrc, widths, heights, mtop, mbottom) {
+    var container = document.getElementById(id);
+    var buttons = document.createElement("li");
+    buttons.className = "scaleBox image-shadow";
+    buttons.setAttribute("mdui-tooltip", "{content:'" + content + "'}");
     container.appendChild(buttons);
-	var button_link=document.createElement("a");
-	button_link.setAttribute("onclick","window.open('"+links+"','_blank');");
-	button_link.innerHTML="<svg t=\"1591345853097\" class=\"icon isScale\" viewbox=\"0 0 1024 1024\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" p-id=\"19670\" width=\""+widths+"\" height=\""+heights+"\" style=\"margin-top:"+mtop+";margin-bottom:"+mbottom+";\">"+imgSrc+"</svg>";
+    var button_link = document.createElement("a");
+    button_link.setAttribute("onclick", "window.open('" + links + "','_blank');");
+    button_link.innerHTML = "<svg t=\"1591345853097\" class=\"icon isScale\" viewbox=\"0 0 1024 1024\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" p-id=\"19670\" width=\"" + widths + "\" height=\"" + heights + "\" style=\"margin-top:" + mtop + ";margin-bottom:" + mbottom + ";\">" + imgSrc + "</svg>";
     buttons.appendChild(button_link);
 }
-function addFriendLinks(id,url,contmsg,contle){
-  var container = document.getElementById(id);
-  var links_button=document.createElement("a");
-    links_button.className="mdui-btn mdui-btn-dense grey-text text-lighten-4 mdui-text-capitalize";
-    links_button.innerHTML=contle;
-	links_button.style="font-weight:350;";
-	links_button.setAttribute("onclick","window.open('"+url+"','_blank');");
-	links_button.setAttribute("mdui-tooltip","{content:'"+contmsg+"'}");
+function addFriendLinks(id, url, contmsg, contle) {
+    var container = document.getElementById(id);
+    var links_button = document.createElement("a");
+    links_button.className = "mdui-btn mdui-btn-dense grey-text text-lighten-4 mdui-text-capitalize";
+    links_button.innerHTML = contle;
+    links_button.style = "font-weight:350;";
+    links_button.setAttribute("onclick", "window.open('" + url + "','_blank');");
+    links_button.setAttribute("mdui-tooltip", "{content:'" + contmsg + "'}");
     container.appendChild(links_button);
 }
-function toIcon(icon){
-return "<i class=\"mdui-icon material-icons\">"+icon+"</i>";
+function toIcon(icon) {
+    return "<i class=\"mdui-icon material-icons\">" + icon + "</i>";
 }
 function showConfirmSnackbar(url, text, buton) {
     var positionss;

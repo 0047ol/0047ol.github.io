@@ -75,7 +75,6 @@ function() {
     });
 });
 function prettyLog(str) {
-    //console.log('%c ' + str, 'color: green; font-weight: bold;');
 }
 function toggleLoop(typed) {
     if (typed.loop) {
@@ -452,7 +451,11 @@ function addItems(id, content, links, imgSrc, widths, heights, mtop, mbottom) {
     container.appendChild(buttons);
     var button_link = document.createElement("a");
     button_link.setAttribute("onclick", "window.open('" + links + "','_blank');");
-    button_link.innerHTML = "<svg t=\"1591345853097\" class=\"icon isScale\" viewbox=\"0 0 1024 1024\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" p-id=\"19670\" width=\"" + widths + "\" height=\"" + heights + "\" style=\"margin-top:" + mtop + ";margin-bottom:" + mbottom + ";\">" + imgSrc + "</svg>";
+	if (imgSrc.indexOf("<path d=\"") != -1) {
+    button_link.innerHTML = "<svg t=\"1591345853097\" class=\"icon isScale\" viewbox=\"0 0 1024 1024\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" p-id=\"19670\" width=\"" + widths + "\" height=\"" + heights + "\" style=\"margin-top:" + mtop + "px;margin-bottom:" + mbottom + "px;\">" + imgSrc + "</svg>";
+	}else{
+	button_link.innerHTML = "<img class=\"isScale\" src=\""+imgSrc+"\" width=\"" + widths + "\" height=\"" + heights + "\" style=\"margin-top:" + mtop + "px;margin-bottom:" + mbottom + "px;\" align=\"middle\"/>";
+	}
     buttons.appendChild(button_link);
 }
 function addFriendLinks(id, url, contmsg, contle) {

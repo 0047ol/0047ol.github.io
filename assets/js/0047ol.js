@@ -106,7 +106,7 @@ function mb(istf){
     description_title.innerHTML = tle[parseInt(Math.random() * tle.length)];
     description_text.innerHTML = msg[parseInt(Math.random() * msg.length)];
 	  setTimeout(function(){
-		window.location.href = 'https://www.0047ol.com/index.html';
+		window.location.href = 'index.html';
 	  },3000);
 	}
 }
@@ -411,17 +411,17 @@ if(link.indexOf('/404') == -1) {
         if(isWxnqq() == "weixin") {
 			console.log("1微信");
 			if(link.indexOf(wx) == -1) {
-			window.location.href = wx + '&url=' + web;
+			window.location.href = webs + wx + '&url=' + web;
 		    }
         }else if(isWxnqq() == "QQ") {
 			console.log("1QQ");
 			if(link.indexOf(qq) == -1) {
-			window.location.href = qq + '&url=' + web;
+			window.location.href = webs + qq + '&url=' + web;
 		    }
         }else{
 			  console.log("1移动");
 			  if(link.indexOf(yd) == -1 && link.indexOf('/download') == -1 && link.indexOf('/edit') == -1) {
-              window.location.href = yd;
+              window.location.href = webs + yd;
 			  }
         }
     }else{

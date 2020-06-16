@@ -322,17 +322,6 @@ var LiveEditor = (function() {
         tempParent.innerHTML = '<iframe id="preview-iframe" sandbox="allow-modals allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts" name="iframe" frameborder="0"></iframe>';
         iframeEle = $.toArray(tempParent.childNodes)[0];
         dom.preview.appendChild(iframeEle);
-        const changeFavicon = link =>{
-            let $favicon = document.querySelector('link[rel="icon"]');
-            if ($favicon !== null) {
-                $favicon.href = link;
-            } else {
-                $favicon = document.createElement("link");
-                $favicon.rel = "icon";
-                $favicon.href = link;
-                document.head.appendChild($favicon);
-            }
-        };
         if (html.indexOf('shortcut icon') !== -1) {
             changeFavicon(html.match(/shortcut icon\" href=\"(\S*)\"/)[1]);
         } else {

@@ -1,6 +1,10 @@
-window.οnlοad = function() {
-    Initialization();
-    document.onkeydown = function() {
+var link = window.location.href;
+var web = link.match(/(\S*)\//)[1];
+if (link.indexOf('&url=') != -1){
+   url = link.match(/\&url=(\S*)/)[1];
+}
+window.onload=function(){
+document.onkeydown = function() {
         var e = window.event || arguments[0];
         if (e.keyCode == 123) {
             return false;
@@ -16,8 +20,431 @@ window.οnlοad = function() {
         return false;
     }
 }
-$(window).on('load',
-function(event) {
+function mb(istf){
+	document.body.innerHTML = "";
+	document.body.style.backgroundColor = "#28254C";
+    var box = document.createElement("div");
+    box.className = "box";
+    document.body.appendChild(box);
+	var box_ghost = document.createElement("div");
+    box_ghost.className = "box__ghost";
+    box.appendChild(box_ghost);
+	var symbol1 = document.createElement("div");
+    symbol1.className = "symbol";
+	box_ghost.appendChild(symbol1);
+	var symbol2 = document.createElement("div");
+    symbol2.className = "symbol";
+	box_ghost.appendChild(symbol2);
+	var symbol3 = document.createElement("div");
+    symbol3.className = "symbol";
+	box_ghost.appendChild(symbol3);
+	var symbol4 = document.createElement("div");
+    symbol4.className = "symbol";
+	box_ghost.appendChild(symbol4);
+	var symbol5 = document.createElement("div");
+    symbol5.className = "symbol";
+	box_ghost.appendChild(symbol5);
+	var symbol6 = document.createElement("div");
+    symbol6.className = "symbol";
+	box_ghost.appendChild(symbol6);
+	var box_ghost_container = document.createElement("div");
+    box_ghost_container.className = "box__ghost-container";
+	box_ghost.appendChild(box_ghost_container);
+	var box_ghost_eyes = document.createElement("div");
+    box_ghost_eyes.className = "box__ghost-eyes";
+	box_ghost_container.appendChild(box_ghost_eyes);
+	var box_eye_left = document.createElement("div");
+    box_eye_left.className = "box__eye-left";
+	box_ghost_eyes.appendChild(box_eye_left);
+	var box_eye_right = document.createElement("div");
+    box_eye_right.className = "box__eye-right";
+	box_ghost_eyes.appendChild(box_eye_right);
+	var box_ghost_bottom = document.createElement("div");
+    box_ghost_bottom.className = "box__ghost-bottom";
+	box_ghost_container.appendChild(box_ghost_bottom);
+	var div1 = document.createElement("div");
+	box_ghost_bottom.appendChild(div1);
+	var div2 = document.createElement("div");
+	box_ghost_bottom.appendChild(div2);
+	var div3 = document.createElement("div");
+	box_ghost_bottom.appendChild(div3);
+	var div4 = document.createElement("div");
+	box_ghost_bottom.appendChild(div4);
+	var div5 = document.createElement("div");
+	box_ghost_bottom.appendChild(div5);
+	var box_ghost_shadow = document.createElement("div");
+    box_ghost_shadow.className = "box__ghost-shadow";
+	box_ghost.appendChild(box_ghost_shadow);
+	var box_description = document.createElement("div");
+    box_description.className = "box__description";
+    box.appendChild(box_description);
+	var box_description_container = document.createElement("div");
+    box_description_container.className = "box__description-container";
+    box_description.appendChild(box_description_container);
+	var description_title = document.createElement("div");
+    description_title.className = "box__description-title";
+    box_description_container.appendChild(description_title);
+	var description_text = document.createElement("div");
+    description_text.className = "box__description-text";
+    box_description_container.appendChild(description_text);
+	var description_msg = document.createElement("div");
+    description_msg.className = "box_description-msg";
+    box_description_container.appendChild(description_msg);
+	if (istf == true){
+	changeFavicon("https://www.0047ol.com/logo.png");
+	document.title = "使用电脑访问";
+	description_title.innerHTML = "嘿咻";
+	description_text.innerHTML = "<div id=\"typed-strings\"><p>当前手机端在完善中，请晚点再来哦~</p><p>使用电脑浏览器打开品尝，体验更佳哦~</p></div><span id=\"typed\"></span>";
+	}else if (istf == false){
+	changeFavicon("https://www.0047ol.com/logo.png");
+	document.title = "错误";
+	description_title.id = "description_title";
+	description_text.id = "description_text";
+	description_msg.innerHTML = "<span class=\"cell\"><div class=\"num\">3 2 1 0</div></span>&nbsp;&nbsp;&nbsp;&nbsp;秒后返回<dot>...</dot>";
+    var tle = ["阿哦", "我天", "哎呀", "OMG", "噗～", "oh no...", "抱歉", "END", "ERROR"];
+    var msg = ["看来是找不到你要的那一页了", "你要找的那一页可能在宇宙中漂泊", "你要找的那一页可能已经去火星了", "你要找的那页可能被外星人绑架了", "你要找的那一页可能被黑客盗走了", "你要找的那一页可能在银河中漂流", "你要找的那页可能已经飞出大气层", "你要找的那页可能已经穿过太阳系", "当前页面正在努力完善中ing..."];
+    description_title.innerHTML = tle[parseInt(Math.random() * tle.length)];
+    description_text.innerHTML = msg[parseInt(Math.random() * msg.length)];
+	  setTimeout(function(){
+		window.location.href = 'index.html';
+	  },3000);
+	}
+}
+    
+	function vx(){
+	changeFavicon("https://res.wx.qq.com/a/wx_fed/assets/res/NTI4MWU5.ico");
+	document.title = "添加好友";
+	document.body.innerHTML = "";
+    document.body.style.backgroundColor = "#333333";
+	var preloader = document.createElement("div");
+    preloader.className = "preloader";
+    document.body.appendChild(preloader);
+	var loader_34 = document.createElement("div");
+    loader_34.className = "loader_34";
+    preloader.appendChild(loader_34);
+	var ytp_spinner = document.createElement("div");
+    ytp_spinner.className = "ytp-spinner";
+    loader_34.appendChild(ytp_spinner);
+	var ytp_spinner_container = document.createElement("div");
+    ytp_spinner_container.className = "ytp-spinner-container";
+    ytp_spinner.appendChild(ytp_spinner_container);
+	var ytp_spinner_rotator = document.createElement("div");
+    ytp_spinner_rotator.className = "ytp-spinner-rotator";
+    ytp_spinner_container.appendChild(ytp_spinner_rotator);
+	var ytp_spinner_left = document.createElement("div");
+    ytp_spinner_left.className = "ytp-spinner-left";
+    ytp_spinner_rotator.appendChild(ytp_spinner_left);
+	var ytp_spinner_circle1 = document.createElement("div");
+    ytp_spinner_circle1.className = "ytp-spinner-circle";
+    ytp_spinner_left.appendChild(ytp_spinner_circle1);
+	var ytp_spinner_right = document.createElement("div");
+    ytp_spinner_right.className = "ytp-spinner-right";
+    ytp_spinner_rotator.appendChild(ytp_spinner_right);
+	var ytp_spinner_circle2 = document.createElement("div");
+    ytp_spinner_circle2.className = "ytp-spinner-circle";
+    ytp_spinner_right.appendChild(ytp_spinner_circle2);
+	var containers = document.createElement("div");
+    containers.className = "container";
+	containers.style = "padding: 50px;";
+    document.body.appendChild(containers);
+	var old_template = document.createElement("div");
+    old_template.className = "old-template";
+    containers.appendChild(old_template);
+	var main_impowerBox = document.createElement("div");
+    main_impowerBox.className = "main impowerBox";
+    old_template.appendChild(main_impowerBox);
+	var loginPanel_normalPanel = document.createElement("div");
+    loginPanel_normalPanel.className = "loginPanel normalPanel";
+    main_impowerBox.appendChild(loginPanel_normalPanel);
+	var titles = document.createElement("div");
+    titles.className = "title";
+	titles.style = "color:#FFFFFF";
+	titles.innerHTML = "我的微信二维码";
+    loginPanel_normalPanel.appendChild(titles);
+	var waiting_panelContent = document.createElement("div");
+    waiting_panelContent.className = "waiting panelContent";
+    loginPanel_normalPanel.appendChild(waiting_panelContent);
+	var wrp_code = document.createElement("div");
+    wrp_code.className = "wrp_code";
+	waiting_panelContent.appendChild(wrp_code);
+	var qrcode_lightBorder = document.createElement("img");
+    qrcode_lightBorder.className = "qrcode lightBorder";
+	qrcode_lightBorder.src = "wechat.jpg";
+	wrp_code.appendChild(qrcode_lightBorder);
+	var info = document.createElement("div");
+    info.className = "info";
+	waiting_panelContent.appendChild(info);
+	var wx_default_tip = document.createElement("div");
+    wx_default_tip.className = "status status_browser js_status js_wx_default_tip normal";
+	wx_default_tip.id = "wx_default_tip";
+	info.appendChild(wx_default_tip);
+	var p1 = document.createElement("p");
+	p1.innerHTML = "请用微信扫描此二维码加我为好友";
+    p1.style = "color:#FFFFFF";
+	wx_default_tip.appendChild(p1);
+  }
+	
+	function qq(){
+	changeFavicon("https://im.qq.com/favicon.ico");
+	document.title = "打开浏览器";
+	document.body.innerHTML = "";
+	document.body.style.backgroundColor = "#f2f2f2";
+	var ui_containers = document.createElement("section");
+    ui_containers.className = "ui-container ui-row ui-whitespace";
+    document.body.appendChild(ui_containers);
+	var notice = document.createElement("section");
+    notice.id = "notice";
+    ui_containers.appendChild(notice);
+	var block = document.createElement("div");
+    block.className = "demo-block";
+    notice.appendChild(block);
+	var ui_dialog = document.createElement("div");
+    ui_dialog.className = "ui-dialog";
+	ui_dialog.id = "dialog"
+    block.appendChild(ui_dialog);
+	var ui_dialog_cnt = document.createElement("div");
+    ui_dialog_cnt.className = "ui-dialog-cnt";
+    ui_dialog.appendChild(ui_dialog_cnt);
+	var ui_dialog_bd = document.createElement("div");
+    ui_dialog_bd.className = "ui-dialog-bd";
+	ui_dialog_cnt.appendChild(ui_dialog_bd);
+	var title = document.createElement("h3");
+	title.innerHTML = "复制成功";
+	ui_dialog_bd.appendChild(title);
+	var message = document.createElement("p");
+	message.innerHTML = "网址链接已成功复制，请打开浏览器粘贴访问。";
+	ui_dialog_bd.appendChild(message);
+	var ui_dialog_ft = document.createElement("div");
+    ui_dialog_ft.className = "ui-dialog-ft";
+	ui_dialog_cnt.appendChild(ui_dialog_ft);
+	var button = document.createElement("button");
+	button.id = "btn"
+	button.setAttribute("data-role","button");
+	button.setAttribute("type","button");
+	button.innerHTML = "我知道了";
+    ui_dialog_ft.appendChild(button);
+	var sections = document.createElement("section");
+    block.appendChild(sections);
+	var containers = document.createElement("div");
+    containers.id = "container";
+	containers.className = "container";
+	containers.style = "margin-top: 5.0625rem;";
+    sections.appendChild(containers);
+	var picon = document.createElement("div");
+	picon.style = "width: 80px; height: 80px; margin: 0 auto; display: block; margin-top: 1px;";
+	containers.appendChild(picon);
+	var icon = document.createElement("img");
+	icon.src = "data:image/png;base64,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";
+	icon.style = "width: 80px; height: 80px; margin: 0 auto; display: block; margin-top: 1px;";
+	picon.appendChild(icon);
+	var titles = document.createElement("h3");
+	titles.innerHTML = "<strong>使用外部浏览器访问</strong>";
+	titles.style = "font-size: 1.25rem; margin-top: 21px; text-align: center;";
+	containers.appendChild(titles);
+	var messages = document.createElement("p");
+	messages.style = "font-size: 0.875rem; line-height: 1.45rem; margin-top: 0.7rem; color: #878B99;text-align: center;";
+	messages.innerHTML = "由于QQ内置浏览器的限制，建议<br/>复制链接后使用外部浏览器打开。";
+	containers.appendChild(messages);
+	var footer = document.createElement("div");
+    footer.id = "footer";
+	footer.className = "footer";
+	footer.style = "position: fixed; right: 0; bottom: 37.3px; left: 0; margin-top: 0px;";
+    block.appendChild(footer);
+	var footer_btns = document.createElement("div");
+	footer_btns.className = "ui-btn-wrap ui-btn-wrap-middle";
+    footer.appendChild(footer_btns);
+	var footer_btn = document.createElement("button");
+	footer_btn.id = "showDialog";
+	footer_btn.className = "ui-btn-lg ui-btn-primary";
+	footer_btn.innerHTML = "复制链接";
+    footer_btns.appendChild(footer_btn);
+    $("#showDialog").click(function() {
+      $('#dialog').addClass('show');
+      copyToClipboard(url);
+    });
+    $("#btn").click(function() {
+      $("#dialog").removeClass("show");
+      closeWindows();
+    });
+}
+	function mm(){
+	changeFavicon("https://res.wx.qq.com/a/wx_fed/assets/res/NTI4MWU5.ico");
+	document.title = "打开浏览器";
+	document.body.innerHTML = "";
+    var ui_containers = document.createElement("div");
+    ui_containers.className = "container";
+	ui_containers.id = "container";
+    document.body.appendChild(ui_containers);
+    var page = document.createElement("div");
+    page.className = "page msg_success js_show";
+    ui_containers.appendChild(page);
+    var weui_msg = document.createElement("div");
+    weui_msg.className = "weui-msg";
+    page.appendChild(weui_msg);
+	var icon_area = document.createElement("div");
+    icon_area.className = "weui-msg__icon-area";
+    weui_msg.appendChild(icon_area);
+	var icon_msg = document.createElement("i");
+    icon_msg.className = "weui-icon-info weui-icon_msg";
+    icon_area.appendChild(icon_msg);
+	var text_area = document.createElement("div");
+    text_area.className = "weui-msg__text-area";
+    weui_msg.appendChild(text_area);
+	var msg_title = document.createElement("h2");
+    msg_title.className = "weui-msg__title";
+	msg_title.innerHTML = "使用外部浏览器访问";
+    text_area.appendChild(msg_title);
+	var msg_desc = document.createElement("p");
+    msg_desc.className = "weui-msg__desc";
+	msg_desc.innerHTML = "由于微信内置浏览器的限制，建议复制链接后使用外部浏览器打开。";
+    text_area.appendChild(msg_desc);
+	var opr_area = document.createElement("div");
+    opr_area.className = "weui-msg__opr-area";
+    weui_msg.appendChild(opr_area);
+	var btn_area = document.createElement("p");
+    btn_area.className = "weui-btn-area";
+    opr_area.appendChild(btn_area);
+	var weui_btn = document.createElement("a");
+    weui_btn.className = "weui-btn weui-btn_primary";
+	weui_btn.href = "javascript:;";
+	weui_btn.id = "showDialog";
+	weui_btn.innerHTML = "复制链接";
+    btn_area.appendChild(weui_btn);
+	var dialog = document.createElement("div");
+    page.appendChild(dialog);
+	var js_dialog = document.createElement("div");
+    js_dialog.className = "js_dialog";
+	js_dialog.id = "dialog";
+	js_dialog.style = "opacity: 0;display: none;";
+    dialog.appendChild(js_dialog);
+	var weui_mask = document.createElement("div");
+    weui_mask.className = "weui-mask";
+    js_dialog.appendChild(weui_mask);
+	var weui_dialog = document.createElement("div");
+    weui_dialog.className = "weui-dialog";
+    js_dialog.appendChild(weui_dialog);
+	var dialog_bd = document.createElement("div");
+    dialog_bd.className = "weui-dialog__bd";
+	dialog_bd.innerHTML = "网址链接已成功复制，请打开浏览器粘贴访问。";
+    weui_dialog.appendChild(dialog_bd);
+	var dialog_ft = document.createElement("div");
+    dialog_ft.className = "weui-dialog__ft";
+    weui_dialog.appendChild(dialog_ft);
+	var dialog_btn = document.createElement("a");
+    dialog_btn.className = "weui-dialog__btn weui-dialog__btn_primary";
+	dialog_btn.id = "btn";
+	dialog_btn.innerHTML = "知道了";
+	dialog_btn.href = "javascript:;";
+    dialog_ft.appendChild(dialog_btn);
+	$("#showDialog").click(function() {
+      setStyles('dialog', 'opacity: 1;');
+      copyToClipboard(url);
+    });
+    $("#btn").click(function() {
+      setStyles('dialog', 'opacity: 0;display: none;');
+      closeWindows();
+    });
+	}
+function m404(){
+	if(Initialization() == false){
+		console.log("2手机");
+        if(isWxnqq() == "weixin"){
+			if(link.indexOf('?key=weixin') != -1){
+			  mm();
+			  console.log("2微信");
+		    }else{
+			  if(link.indexOf('?key=wechat') == -1){
+              mb(false);
+			  console.log("2微信：错误");
+			  }else{
+			    vx();
+				console.log("2扫码");
+		      }
+			}
+        }else if(isWxnqq() == "QQ"){
+			if(link.indexOf('?key=mobileqq') != -1){
+			  qq();
+			  console.log("2QQ");
+		    }else{
+			  if(link.indexOf('?key=wechat') == -1){
+              mb(false);
+			  console.log("2QQ：错误");
+			  }else{
+			    vx(); 
+				console.log("2扫码");
+		      }
+			}
+        }else{
+			  if(link.indexOf('?key=wechat') == -1){ 
+			  if(link.indexOf('?key=mobile') != -1 || link.indexOf('?key=mobileqq') != -1 || link.indexOf('?key=weixin') != -1){
+              mb(true);
+			  console.log("2移动");
+			  }else{
+			  mb(false);
+			  console.log("2错误");  
+			  }
+			  }else{
+			    vx();
+				console.log("2扫码");
+		      }
+        }
+    }else{
+		console.log("2电脑");
+		  if(link.indexOf('?key=wechat') == -1){
+	      mb(false);
+		  console.log("2错误");
+		  }else{
+			vx();
+			console.log("2扫码");
+		  }
+	}
+}
+function isIocation() {
+var yd = '/404.html?key=mobile';
+var wx = '/404.html?key=weixin';
+var qq = '/404.html?key=mobileqq';
+var vx = '/404.html?key=wechat';
+var webs = 'https://0047ol.github.io/blog'
+if(link.indexOf('/404') == -1) {
+    if(Initialization() == false) {
+	console.log("1手机");
+        if(isWxnqq() == "weixin") {
+			console.log("1微信");
+			if(link.indexOf(wx) == -1) {
+			window.location.href = wx + '&url=' + web;
+		    }
+        }else if(isWxnqq() == "QQ") {
+			console.log("1QQ");
+			if(link.indexOf(qq) == -1) {
+			window.location.href = qq + '&url=' + web;
+		    }
+        }else{
+			  console.log("1移动");
+			  if(link.indexOf(yd) == -1 && link.indexOf('/download') == -1 && link.indexOf('/edit') == -1) {
+              window.location.href = yd;
+			  }
+        }
+    }else{
+	    if(link.indexOf('/index') == -1 && link.indexOf('/download') == -1 && link.indexOf('/edit') == -1) {
+		  console.log("1电脑");
+	      window.location.href = 'https://www.0047ol.com/index.html';
+	    }
+	}
+  }
+}
+const changeFavicon = link =>{
+            let $favicon = document.querySelector('link[rel="icon"]');
+            if ($favicon !== null) {
+                $favicon.href = link;
+            } else {
+                $favicon = document.createElement("link");
+                $favicon.rel = "icon";
+                $favicon.href = link;
+                document.head.appendChild($favicon);
+            }
+        };
+$(window).on('load',function(event) {
+	isIocation();
     $('.preloader').delay(500).fadeOut(500);
 });
 if ($('.progress-line').length) {
@@ -30,8 +457,7 @@ if ($('.progress-line').length) {
         accY: 0
     });
 }
-document.addEventListener('DOMContentLoaded',
-function() {
+document.addEventListener('DOMContentLoaded',function() {
     var typed = new Typed('#typed', {
         stringsElement: '#typed-strings',
         typeSpeed: 150,
@@ -610,4 +1036,41 @@ if ($('.progress-line').length) {
     {
         accY: 0
     });
+}
+function htmlClick(dfs) {
+jQuery(document).ready(function($) {
+    $("html,body").click(function(e) {
+        var n = Math.floor(Math.random() * dfs.length + 1) - 1;
+        var $i = $("<p/>").text(dfs[n]);
+        var x = e.pageX,
+        y = e.pageY;
+        $i.css({
+            "z-index": 99999,
+            "top": y - 20,
+            "left": x,
+            "position": "absolute",
+            "font-size": "15px",
+            "cursor": "default",
+			"color": "transparent",
+            "-moz-user-select": "none",
+            "-webkit-user-select": "none",
+            "-ms-user-select": "none",
+            "-khtml-user-select": "none",
+            "user-select": "none",
+			"background-image": "linear-gradient(to right,#4DA0B0,#D39D38)",
+			"-webkit-background-clip": "text",
+			"-webkit-text-fill-color": "transparent",
+        });
+        $("body").append($i);
+        $i.animate({
+            "top": y - 180,
+            "opacity": 0
+        },
+        1500,
+        function() {
+            $i.remove();
+        });
+        e.stopPropagation();
+    });
+});
 }

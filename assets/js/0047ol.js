@@ -1,5 +1,6 @@
 var link = window.location.href;
-var web = link.match(/(\S*)\//)[1];
+//var web = link.match(/(\S*)\//)[1];
+var web = "https://www.0047ol.com";
 if (link.indexOf('&url=') != -1){
    url = link.match(/\&url=(\S*)/)[1];
 }
@@ -347,55 +348,55 @@ function mb(istf){
 	}
 function m404(){
 	if(Initialization() == false){
-		console.log("2手机");
+		//console.log("2手机");
         if(isWxnqq() == "weixin"){
 			if(link.indexOf('?key=weixin') != -1){
 			  mm();
-			  console.log("2微信");
+			  //console.log("2微信");
 		    }else{
 			  if(link.indexOf('?key=wechat') == -1){
               mb(false);
-			  console.log("2微信：错误");
+			  //console.log("2微信：错误");
 			  }else{
 			    vx();
-				console.log("2扫码");
+				//console.log("2扫码");
 		      }
 			}
         }else if(isWxnqq() == "QQ"){
 			if(link.indexOf('?key=mobileqq') != -1){
 			  qq();
-			  console.log("2QQ");
+			  //console.log("2QQ");
 		    }else{
 			  if(link.indexOf('?key=wechat') == -1){
               mb(false);
-			  console.log("2QQ：错误");
+			  //console.log("2QQ：错误");
 			  }else{
 			    vx(); 
-				console.log("2扫码");
+				//console.log("2扫码");
 		      }
 			}
         }else{
 			  if(link.indexOf('?key=wechat') == -1){ 
 			  if(link.indexOf('?key=mobile') != -1 || link.indexOf('?key=mobileqq') != -1 || link.indexOf('?key=weixin') != -1){
               mb(true);
-			  console.log("2移动");
+			  //console.log("2移动");
 			  }else{
 			  mb(false);
-			  console.log("2错误");  
+			  //console.log("2错误");  
 			  }
 			  }else{
 			    vx();
-				console.log("2扫码");
+				//console.log("2扫码");
 		      }
         }
     }else{
 		console.log("2电脑");
 		  if(link.indexOf('?key=wechat') == -1){
 	      mb(false);
-		  console.log("2错误");
+		  //console.log("2错误");
 		  }else{
 			vx();
-			console.log("2扫码");
+			//console.log("2扫码");
 		  }
 	}
 }

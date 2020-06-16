@@ -169,7 +169,7 @@ function mb(istf){
 	waiting_panelContent.appendChild(wrp_code);
 	var qrcode_lightBorder = document.createElement("img");
     qrcode_lightBorder.className = "qrcode lightBorder";
-	qrcode_lightBorder.src = "wechat.jpg";
+	qrcode_lightBorder.src = "https://www.0047ol.com/wechat.jpg";
 	wrp_code.appendChild(qrcode_lightBorder);
 	var info = document.createElement("div");
     info.className = "info";

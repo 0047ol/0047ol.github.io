@@ -4,65 +4,20 @@
   <meta charset="utf-8" /> 
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" /> 
   <title>错误</title> 
-  <link rel="shortcut icon" href="logo.png" type="image/png" /> 
-  <link type="text/css" rel="stylesheet" href="assets/css/404.css" /> 
-  <link type="text/css" rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/mdui/0.4.3/css/mdui.min.css" /> 
+  <link rel="shortcut icon" href="logo.png" type="image/png" />
+  <link type="text/css" rel="stylesheet" href="https://res.wx.qq.com/connect/zh_CN/htmledition/style/impowerApp45a337.css" /> 
+  <link type="text/css" rel="stylesheet" href="https://i.gtimg.cn/vipstyle/frozenui/2.0.0/css/frozen.css" /> 
+  <link type="text/css" rel="stylesheet" href="https://3gimg.qq.com/tele_safe/safeurl/css/sweet-alert.css" /> 
+  <link type="text/css" rel="stylesheet" href="https://res.wx.qq.com/open/libs/weui/2.3.0/weui.min.css" />
+  <link type="text/css" rel="stylesheet" href="assets/css/404.css" />
+  <link type="text/css" rel="stylesheet" href="assets/css/0047ol.css" />
+  <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/css/mdui.min.css" />
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script> 
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/js/mdui.min.js"></script> 
+  <script type="text/javascript" src="assets/js/0047ol.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js"></script>
  </head> 
- <body οncοntextmenu="return false" ondragstart="return false" οnselect="document.selection.empty()" οncοpy="document.selection.empty()" onbeforecopy="return false" οnmοuseup="document.selection.empty()" oncontextmenu="self.event.returnValue=false" onselectstart="return false"> 
-  <div class="box"> 
-   <div class="box__ghost"> 
-    <div class="symbol"></div> 
-    <div class="symbol"></div> 
-    <div class="symbol"></div> 
-    <div class="symbol"></div> 
-    <div class="symbol"></div> 
-    <div class="symbol"></div> 
-    <div class="box__ghost-container"> 
-     <div class="box__ghost-eyes"> 
-      <div class="box__eye-left"></div> 
-      <div class="box__eye-right"></div> 
-     </div> 
-     <div class="box__ghost-bottom"> 
-      <div></div> 
-      <div></div> 
-      <div></div> 
-      <div></div> 
-      <div></div> 
-     </div> 
-    </div> 
-    <div class="box__ghost-shadow"></div> 
-   </div> 
-   <div class="box__description"> 
-    <div class="box__description-container"> 
-     <div id="description_title" class="box__description-title"></div> 
-     <div id="description_text" class="box__description-text"></div> 
-     <div class="box_description-msg"><span id="totalSecond">3</span>秒后返回<dot>...</dot></div> 
-    </div> 
-   </div> 
-  </div> 
-  <script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
-  <script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/mdui/0.4.3/js/mdui.min.js"></script> 
-  <script type="text/javascript" src="assets/js/0047ol.js"></script> 
-  <script type="text/javascript">
-var second = document.getElementById('totalSecond').textContent;
-if (navigator.appName.indexOf("Explorer") > -1) {
-    second = document.getElementById('totalSecond').innerText;
-}
-function redirect() {
-    if (second < 0) {
-        window.location.href = 'index.html';
-    } else {
-        document.getElementById('totalSecond').innerText = second--;
-        document.title = '错误（' + second + '）';
-    }
-}
-setInterval("redirect()", 1000);
-$(function() {
-    var tle = ["阿哦", "我天", "哎呀", "OMG", "噗～", "oh no...", "抱歉", "END", "ERROR"];
-    var msg = ["看来是找不到你要的那一页了", "你要找的那一页可能在宇宙中漂泊", "你要找的那一页可能已经去火星了", "你要找的那页可能被外星人绑架了", "你要找的那一页可能被黑客盗走了", "你要找的那一页可能在银河中漂流", "你要找的那页可能已经飞出大气层", "你要找的那页可能已经穿过太阳系", "当前页面正在努力完善中ing..."];
-    document.getElementById("description_title").innerHTML = tle[parseInt(Math.random() * tle.length)];
-    document.getElementById("description_text").innerHTML = msg[parseInt(Math.random() * msg.length)];
-});
-</script>  
+ <body οncοntextmenu="return false" ondragstart="return false" οnselect="document.selection.empty()" οncοpy="document.selection.empty()" onbeforecopy="return false" οnmοuseup="document.selection.empty()" oncontextmenu="self.event.returnValue=false" onselectstart="return false">
+ <script type="text/javascript" src="assets/js/404.js"></script>
  </body>
 </html>

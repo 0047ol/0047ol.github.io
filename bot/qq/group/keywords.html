@@ -8,7 +8,7 @@
   <title>关键词列表</title> 
   <link rel="stylesheet" href="https://qq-web.cdn-go.cn/web.qun.qq.com_qun_robot/f8446e52//data/index.css" /> 
   <link href="https://qzonestyle.gtimg.cn/qq-group/welcome/set.css" rel="stylesheet" /> 
-  <link rel="stylesheet" href="https://qzonestyle.gtimg.cn/qq-group/welcome/all.css" />
+  <link rel="stylesheet" href="https://qzonestyle.gtimg.cn/qq-group/welcome/all.css">
   <link rel="stylesheet" href="https://qq-web.cdn-go.cn/web.qun.qq.com_qun_robot/f8446e52//questionSetting/index.css" /> 
   <link rel="stylesheet" href="https://qq-web.cdn-go.cn/web.qun.qq.com_qun_robot/f8446e52//questionEdit/index.css" />
   <link rel="stylesheet" href="https://i.gtimg.cn/vipstyle/frozenui/2.0.0/css/frozen.css" /> 
@@ -55,56 +55,99 @@
  document.querySelector('.mf-name').addEventListener('click',function() {
 	var mBottomActionDialog = new BottomActionDialog();
 	//mBottomActionDialog.setTitle('这是标题');
-	mBottomActionDialog.setContent('<div><div class="page-descript" style="padding-bottom: 0;">备注名</div><div class="qui-input" style="font-size: 15px;"><input placeholder="填写关键词备注，不超过10字" maxlength="10" style="height: 40px;" /></div></div><div><div class="page-descript" style="padding-top: 0;">匹配类型</div><div class="main-edit" style="padding-top: 0;padding-bottom: 10px;width: auto;"><div class="mp-tabs match-type"><div class="mt-item" style="height: 40px;padding-left: 10px;padding-right: 10px;margin: 5px 10px 5px;border-radius: 5px;width: auto;border-width: 0.01px;border-style: solid;border-color: #e7e7e9;"><span class="mi-text1 match-type-text" style="font-size: 15px;margin-right: 0;">点击选择所要匹配类型</span><span class="mi-text2"></span><span class="mi-right"></span></div></div></div></div><div><div class="page-descript keywords-tips" style="padding-bottom: 0;padding-top: 0;">设置关键词</div><div class="qui-input" style="font-size: 15px;"><input class="keywords-input" placeholder="填写关键词，不超过10字" maxlength="20" style="height: 40px;" /></div></div><div><div class="page-descript" style="padding-top: 0;">执行操作</div><div class="main-edit perform-action" style="padding-top: 0;padding-bottom: 10px;width: auto;"><div class="mp-tabs"><div class="mt-item" style="height: 40px;padding-left: 10px;padding-right: 10px;margin: 5px 10px 5px;border-radius: 5px;width: auto;border-width: 0.01px;border-style: solid;border-color: #e7e7e9;"><span class="mi-text1" style="font-size: 15px;margin-right: 0;">点击选择要执行的操作</span><span class="mi-text2"></span><span class="mi-right"></span></div></div></div></div><div style="display:none;"><div class="page-descript" style="padding-bottom: 0;padding-top: 0;">设置禁言时间</div><div class="ui-form-item" style="font-size: 15px;line-height: 40px;height: 40px;"><div style="padding-top: 10px;"><div class="ui-select-group" style="margin-left: 0;float: left;"><div class="ui-select"><select><option selected="">0天</option><option>1天</option><option>29天</option></select></div><div class="ui-select"><select><option selected="">0小时</option><option>1小时</option><option>23小时</option></select></div><div class="ui-select"><select><option selected="">0分钟</option><option>2分钟</option><option>59分钟</option></select></div><div class="ui-select"><select><option selected="">1秒</option><option>2秒</option><option>59秒</option></select></div></div></div><div class="qui-checkbox" style="color: #878b99;float: right;right: 10;position: absolute;display: -webkit-box;"><input type="checkbox" /><p>随机时间</p></div></div></div><div style="display:none;"><div class="page-descript" style="padding-bottom: 0;">设置发送群</div><div class="main-edit" style="padding-top: 0;padding-bottom: 10px;width: auto;"><div class="mp-tabs"><div class="mt-item" style="height: 40px;padding-left: 10px;padding-right: 10px;margin: 5px 10px 5px;border-radius: 5px;width: auto;border-width: 0.01px;border-style: solid;border-color: #e7e7e9;"><span class="mi-text1" style="font-size: 15px;margin-right: 0;">点击选择要发送的群</span><span class="mi-text2"></span><span class="mi-right"></span></div></div></div></div><div style="display:none;"><div class="page-descript" style="padding-top: 0;">设置发送内容</div><div class="qui-textarea" style="font-size: 15px;background: rgb(247 247 248);border-radius: 5px;margin: 5px 10px 5px;"><textarea placeholder="提示文字" maxlength="100" style="padding: 10px 0 10px;height: 118px;overflow-y: hidden;"></textarea><div style="width: .56rem;height: .56rem;position: absolute;bottom: 0;right: 0;margin-right: 5px;"><span style="display: inline-block;background-image: url(https://qzonestyle.gtimg.cn/qq-group/welcome/sprite/all-man190904123640.rem@2x.png);background-position: 0 -.5rem;background-size: 1.44rem .9rem;width: .48rem;height: .4rem;"></span></div></div></div>');
-	mBottomActionDialog.setCancelButton('关闭',
-	function(button) {
+	mBottomActionDialog.setContent('<div><div class="page-descript" style="padding-bottom: 0;">备注名</div><div class="qui-input" style="font-size: 15px;"><input placeholder="填写关键词备注，不超过10字" maxlength="10" style="height: 40px;" /></div></div><div><div class="page-descript" style="padding-top: 0;">匹配类型</div><div class="main-edit" style="padding-top: 0;padding-bottom: 10px;width: auto;"><div class="mp-tabs match-type"><div class="mt-item" style="height: 40px;padding-left: 10px;padding-right: 10px;margin: 5px 10px 5px;border-radius: 5px;width: auto;border-width: 0.01px;border-style: solid;border-color: #e7e7e9;"><span class="mi-text1 match-type-text" style="font-size: 15px;margin-right: 0;">点击选择所要匹配类型</span><span class="mi-text2"></span><span class="mi-right"></span></div></div></div></div><div><div class="page-descript keywords-tips" style="padding-bottom: 0;padding-top: 0;">设置关键词</div><div class="qui-input" style="font-size: 15px;"><input class="keywords-input" placeholder="填写关键词，不超过10字" maxlength="20" style="height: 40px;" /></div></div><div><div class="page-descript" style="padding-top: 0;">执行操作</div><div class="main-edit perform-action" style="padding-top: 0;padding-bottom: 10px;width: auto;"><div class="mp-tabs"><div class="mt-item" style="height: 40px;padding-left: 10px;padding-right: 10px;margin: 5px 10px 5px;border-radius: 5px;width: auto;border-width: 0.01px;border-style: solid;border-color: #e7e7e9;"><span class="perform-action-text mi-text1" style="font-size: 15px;margin-right: 0;">点击选择要执行的操作</span><span class="mi-text2"></span><span class="mi-right"></span></div></div></div></div><div class="mute-setting" style="display:none;"><div class="page-descript" style="padding-bottom: 0;padding-top: 0;">设置禁言时间</div><div class="mute-setting-time ui-form-item" style="font-size: 15px;line-height: 40px;height: 40px;"><div style="padding-top: 10px;"><div class="ui-select-group" style="margin-left: 0;float: left;"><div class="ui-select"><select class="mute-setting-time-day"><option selected>0天</option><option>1天</option><option>2天</option><option>3天</option><option>4天</option><option>5天</option><option>6天</option><option>7天</option><option>8天</option><option>9天</option><option>10天</option><option>11天</option><option>12天</option><option>13天</option><option>14天</option><option>15天</option><option>16天</option><option>17天</option><option>18天</option><option>19天</option><option>20天</option><option>21天</option><option>22天</option><option>23天</option><option>24天</option><option>25天</option><option>26天</option><option>27天</option><option>28天</option><option>29天</option></select></div><div class="ui-select"><select class="mute-setting-time-hour"><option selected>0小时</option><option>1小时</option><option>2小时</option><option>3小时</option><option>4小时</option><option>5小时</option><option>6小时</option><option>7小时</option><option>8小时</option><option>9小时</option><option>10小时</option><option>11小时</option><option>12小时</option><option>13小时</option><option>14小时</option><option>15小时</option><option>16小时</option><option>17小时</option><option>18小时</option><option>19小时</option><option>20小时</option><option>21小时</option><option>22小时</option><option>23小时</option><option>24小时</option><option>25小时</option><option>26小时</option><option>27小时</option><option>28小时</option><option>29小时</option><option>30小时</option><option>31小时</option><option>32小时</option><option>33小时</option><option>34小时</option><option>35小时</option><option>36小时</option><option>37小时</option><option>38小时</option><option>39小时</option><option>40小时</option><option>41小时</option><option>42小时</option><option>43小时</option><option>44小时</option><option>45小时</option><option>46小时</option><option>47小时</option><option>48小时</option><option>49小时</option><option>50小时</option><option>51小时</option><option>52小时</option><option>53小时</option><option>54小时</option><option>55小时</option><option>56小时</option><option>57小时</option><option>58小时</option><option>59小时</option></select></div><div class="ui-select"><select class="mute-setting-time-minute"><option>0分钟</option><option selected>1分钟</option><option>2分钟</option><option>3分钟</option><option>4分钟</option><option>5分钟</option><option>6分钟</option><option>7分钟</option><option>8分钟</option><option>9分钟</option><option>10分钟</option><option>11分钟</option><option>12分钟</option><option>13分钟</option><option>14分钟</option><option>15分钟</option><option>16分钟</option><option>17分钟</option><option>18分钟</option><option>19分钟</option><option>20分钟</option><option>21分钟</option><option>22分钟</option><option>23分钟</option><option>24分钟</option><option>25分钟</option><option>26分钟</option><option>27分钟</option><option>28分钟</option><option>29分钟</option><option>30分钟</option><option>31分钟</option><option>32分钟</option><option>33分钟</option><option>34分钟</option><option>35分钟</option><option>36分钟</option><option>37分钟</option><option>38分钟</option><option>39分钟</option><option>40分钟</option><option>41分钟</option><option>42分钟</option><option>43分钟</option><option>44分钟</option><option>45分钟</option><option>46分钟</option><option>47分钟</option><option>48分钟</option><option>49分钟</option><option>50分钟</option><option>51分钟</option><option>52分钟</option><option>53分钟</option><option>54分钟</option><option>55分钟</option><option>56分钟</option><option>57分钟</option><option>58分钟</option><option>59分钟</option></select></div><div class="ui-select"><select class="mute-setting-time-second"><option selected>0秒</option><option>1秒</option><option>2秒</option><option>3秒</option><option>4秒</option><option>5秒</option><option>6秒</option><option>7秒</option><option>8秒</option><option>9秒</option><option>10秒</option><option>11秒</option><option>12秒</option><option>13秒</option><option>14秒</option><option>15秒</option><option>16秒</option><option>17秒</option><option>18秒</option><option>19秒</option><option>20秒</option><option>21秒</option><option>22秒</option><option>23秒</option><option>24秒</option><option>25秒</option><option>26秒</option><option>27秒</option><option>28秒</option><option>29秒</option><option>30秒</option><option>31秒</option><option>32秒</option><option>33秒</option><option>34秒</option><option>35秒</option><option>36秒</option><option>37秒</option><option>38秒</option><option>39秒</option><option>40秒</option><option>41秒</option><option>42秒</option><option>43秒</option><option>44秒</option><option>45秒</option><option>46秒</option><option>47秒</option><option>48秒</option><option>49秒</option><option>50秒</option><option>51秒</option><option>52秒</option><option>53秒</option><option>54秒</option><option>55秒</option><option>56秒</option><option>57秒</option><option>58秒</option><option>59秒</option></select></div></div></div><div class="qui-checkbox mute-setting-random" style="color: #878b99;float: right;right: 10;position: absolute;display: -webkit-box;"><input class="mute-setting-random-input" type="checkbox" /><p>随机时间</p></div></div></div><div class="send-msg-group" style="display:none;"><div class="page-descript" style="padding-bottom: 0;">设置发送群</div><div class="main-edit" style="padding-top: 0;padding-bottom: 10px;width: auto;"><div class="mp-tabs"><div class="mt-item" style="height: 40px;padding-left: 10px;padding-right: 10px;margin: 5px 10px 5px;border-radius: 5px;width: auto;border-width: 0.01px;border-style: solid;border-color: #e7e7e9;"><span class="mi-text1" style="font-size: 15px;margin-right: 0;">点击选择要发送的群</span><span class="mi-text2"></span><span class="mi-right"></span></div></div></div></div><div class="send-msg-cont" style="display:none;"><div class="page-descript" style="padding-top: 0;">设置发送内容</div><div class="qui-textarea" style="font-size: 15px;background: rgb(247 247 248);border-radius: 5px;margin: 5px 10px 5px;"><textarea placeholder="不可包含违禁词汇，不超过100字。" maxlength="100" style="padding: 10px 0 10px;height: 118px;overflow-y: hidden;"></textarea><div style="width: .56rem;height: .56rem;position: absolute;bottom: 0;right: 0;margin-right: 5px;"><span style="display: inline-block;background-image: url(https://qzonestyle.gtimg.cn/qq-group/welcome/sprite/all-man190904123640.rem@2x.png);background-position: 0 -.5rem;background-size: 1.44rem .9rem;width: .48rem;height: .4rem;"></span></div></div></div>');
+	/*mBottomActionDialog.setCancelButton('取消', function(button) {
 		//new Toast().setMessage(button).show();
-	});
-	mBottomActionDialog.setConfirmButton('完成',
-	function(button) {
+	});*/
+	mBottomActionDialog.setConfirmButton('添加', function(button) {
 		new Toast().setMessage(button).show();
 		mBottomActionDialog.close();
 	});
 	//mBottomActionDialog.setCancelable(false);
 	//mBottomActionDialog.setCanceledOnTouchOutside(true);
-	mBottomActionDialog.setCanceledonScrollOutside(true);
+	//mBottomActionDialog.setCanceledonScrollOutside(true);
 	mBottomActionDialog.show();
 	document.querySelector('.match-type').addEventListener('click',function() {
 		let mBottomSheetMenu = new BottomSheetMenu();
 		mBottomSheetMenu.setTitle('选择所要匹配的类型');
 		mBottomSheetMenu.setMenuItem('模糊匹配',mBottomSheetMenu.ITEM_TEXT_COLOR_NORMAL,function(text) {
-			document.querySelector('.match-type-text').innerText = '已选择模糊匹配，点击修改';
-			document.querySelector('.keywords-tips').innerText = '设置关键词';
+			document.querySelector('.match-type-text').innerText = '已选择' + text + '，点击修改';
+			document.querySelector('.keywords-tips').innerText = text + '关键词';
 			document.querySelector('.keywords-input').setAttribute('placeholder', '填写关键词，不超过10字');
 		});
 		mBottomSheetMenu.setMenuItem('精确匹配',mBottomSheetMenu.ITEM_TEXT_COLOR_NORMAL,function(text) {
-			document.querySelector('.match-type-text').innerText = '已选择精确匹配，点击修改';
-			document.querySelector('.keywords-tips').innerText = '设置关键词';
+			document.querySelector('.match-type-text').innerText = '已选择' + text + '，点击修改';
+			document.querySelector('.keywords-tips').innerText = text + '关键词';
 			document.querySelector('.keywords-input').setAttribute('placeholder', '填写关键词，不超过10字');
 		});
 		mBottomSheetMenu.setMenuItem('正则匹配',mBottomSheetMenu.ITEM_TEXT_COLOR_NORMAL,function(text) {
-			document.querySelector('.match-type-text').innerText = '已选择正则匹配，点击修改';
-			document.querySelector('.keywords-tips').innerText = '设置正则表达式';
+			document.querySelector('.match-type-text').innerText = '已选择' + text + '，点击修改';
+			document.querySelector('.keywords-tips').innerText = '正则表达式';
 			document.querySelector('.keywords-input').setAttribute('placeholder', '填写正则表达式，不超过50字');
 		});
 		mBottomSheetMenu.show();
 	});
 	document.querySelector('.perform-action').addEventListener('click',function() {
-		let mBottomSheetMenu = new BottomSheetMenu();
-		mBottomSheetMenu.setTitle('选择要执行的操作');
-		mBottomSheetMenu.setMenuItem('发消息',mBottomSheetMenu.ITEM_TEXT_COLOR_NORMAL,function(text) {
-			new Toast().setMessage(text).show();
+		let mBottomSheetMenu1 = new BottomSheetMenu();
+		mBottomSheetMenu1.setTitle('选择要执行的操作');
+		mBottomSheetMenu1.setMenuItem('在本群发消息',mBottomSheetMenu1.ITEM_TEXT_COLOR_NORMAL,function(text) {
+			document.querySelector('.perform-action-text').innerText = '触发后' + text + '，点击修改';
+			document.querySelector('.send-msg-group').style.display = 'none';
+			document.querySelector('.send-msg-cont').style.display = 'block';
+			document.querySelector('.mute-setting').style.display = 'none';
 		});
-		mBottomSheetMenu.setMenuItem('撤回',mBottomSheetMenu.ITEM_TEXT_COLOR_NORMAL,function(text) {
-			new Toast().setMessage(text).show();
+		mBottomSheetMenu1.setMenuItem('在其他群发消息',mBottomSheetMenu1.ITEM_TEXT_COLOR_NORMAL,function(text) {
+			document.querySelector('.perform-action-text').innerText = '触发后' + text + '，点击修改';
+			document.querySelector('.send-msg-group').style.display = 'block';
+			document.querySelector('.send-msg-cont').style.display = 'block';
+			document.querySelector('.mute-setting').style.display = 'none';
 		});
-		mBottomSheetMenu.setMenuItem('禁言',mBottomSheetMenu.ITEM_TEXT_COLOR_NORMAL,function(text) {
-			new Toast().setMessage(text).show();
+		mBottomSheetMenu1.setMenuItem('撤回该条消息',mBottomSheetMenu1.ITEM_TEXT_COLOR_NORMAL,function(text) {
+			document.querySelector('.perform-action-text').innerText = '触发后' + text + '，点击修改';
+			document.querySelector('.send-msg-group').style.display = 'none';
+			document.querySelector('.send-msg-cont').style.display = 'none';
+			document.querySelector('.mute-setting').style.display = 'none';
 		});
-		mBottomSheetMenu.setMenuItem('踢出',mBottomSheetMenu.ITEM_TEXT_COLOR_DANGER,function(text) {
-			new Toast().setMessage(text).show();
+		mBottomSheetMenu1.setMenuItem('禁言此人',mBottomSheetMenu1.ITEM_TEXT_COLOR_NORMAL,function(text) {
+			document.querySelector('.perform-action-text').innerText = '触发后' + text + '，点击修改';
+			document.querySelector('.send-msg-group').style.display = 'none';
+			document.querySelector('.send-msg-cont').style.display = 'none';
+			document.querySelector('.mute-setting').style.display = 'block';
 		});
-		mBottomSheetMenu.show();
+		mBottomSheetMenu1.setMenuItem('踢出此人',mBottomSheetMenu1.ITEM_TEXT_COLOR_DANGER,function(text) {
+			document.querySelector('.perform-action-text').innerText = '触发后' + text + '，点击修改';
+			document.querySelector('.send-msg-group').style.display = 'none';
+			document.querySelector('.send-msg-cont').style.display = 'none';
+			document.querySelector('.mute-setting').style.display = 'none';
+		});
+		mBottomSheetMenu1.show();
+	});
+	document.querySelector('.mute-setting-random-input').addEventListener('change',function() {
+		if(this.checked){
+			document.querySelector('.mute-setting-time-day').setAttribute('disabled', '');
+			document.querySelector('.mute-setting-time-hour').setAttribute('disabled', '');
+			document.querySelector('.mute-setting-time-minute').setAttribute('disabled', '');
+			document.querySelector('.mute-setting-time-second').setAttribute('disabled', '');
+		} else {
+			document.querySelector('.mute-setting-time-day').removeAttribute('disabled');
+			document.querySelector('.mute-setting-time-hour').removeAttribute('disabled');
+			document.querySelector('.mute-setting-time-minute').removeAttribute('disabled');
+			document.querySelector('.mute-setting-time-second').removeAttribute('disabled');
+		}
+	});
+	document.querySelector('.send-msg-group').addEventListener('click',function() {
+		let mBottomActionDialog1 = new BottomActionDialog();
+		//mBottomActionDialog1.setTitle('选择群');
+		mBottomActionDialog1.setContent('<div class="ui-form-item"><label class="ui-checkbox"><input type="checkbox"></label><p>这是一个测试</p></div><div class="ui-form-item"><label class="ui-checkbox"><input type="checkbox"></label><p>这是一个测试</p></div><div class="ui-form-item"><label class="ui-checkbox"><input type="checkbox"></label><p>这是一个测试</p></div><div class="ui-form-item"><label class="ui-checkbox"><input type="checkbox"></label><p>这是一个测试</p></div><div class="ui-form-item"><label class="ui-checkbox"><input type="checkbox"></label><p>这是一个测试</p></div><div class="ui-form-item"><label class="ui-checkbox"><input type="checkbox"></label><p>这是一个测试</p></div><div class="ui-form-item"><label class="ui-checkbox"><input type="checkbox"></label><p>这是一个测试</p></div><div class="ui-form-item"><label class="ui-checkbox"><input type="checkbox"></label><p>这是一个测试</p></div><div class="ui-form-item"><label class="ui-checkbox"><input type="checkbox"></label><p>这是一个测试</p></div><div class="ui-form-item"><label class="ui-checkbox"><input type="checkbox"></label><p>这是一个测试</p></div><div class="ui-form-item"><label class="ui-checkbox"><input type="checkbox"></label><p>这是一个测试</p></div><div class="ui-form-item"><label class="ui-checkbox"><input type="checkbox"></label><p>这是一个测试</p></div><div class="ui-form-item"><label class="ui-checkbox"><input type="checkbox"></label><p>这是一个测试</p></div><div class="ui-form-item"><label class="ui-checkbox"><input type="checkbox"></label><p>这是一个测试</p></div><div class="ui-form-item"><label class="ui-checkbox"><input type="checkbox"></label><p>这是一个测试</p></div><div class="ui-form-item"><label class="ui-checkbox"><input type="checkbox"></label><p>这是一个测试</p></div><div class="ui-form-item"><label class="ui-checkbox"><input type="checkbox"></label><p>这是一个测试</p></div><div class="ui-form-item"><label class="ui-checkbox"><input type="checkbox"></label><p>这是一个测试</p></div><div class="ui-form-item"><label class="ui-checkbox"><input type="checkbox"></label><p>这是一个测试</p></div><div class="ui-form-item"><label class="ui-checkbox"><input type="checkbox"></label><p>这是一个测试</p></div><div class="ui-form-item"><label class="ui-checkbox"><input type="checkbox"></label><p>这是一个测试</p></div><div class="ui-form-item"><label class="ui-checkbox"><input type="checkbox"></label><p>这是一个测试</p></div><div class="ui-form-item"><label class="ui-checkbox"><input type="checkbox"></label><p>这是一个测试</p></div><div class="ui-form-item"><label class="ui-checkbox"><input type="checkbox"></label><p>这是一个测试</p></div><div class="ui-form-item"><label class="ui-checkbox"><input type="checkbox"></label><p>这是一个测试</p></div><div class="ui-form-item"><label class="ui-checkbox"><input type="checkbox"></label><p>这是一个测试</p></div><div class="ui-form-item"><label class="ui-checkbox"><input type="checkbox"></label><p>这是一个测试</p></div><div class="ui-form-item"><label class="ui-checkbox"><input type="checkbox"></label><p>这是一个测试</p></div><div class="ui-form-item"><label class="ui-checkbox"><input type="checkbox"></label><p>这是一个测试</p></div><div class="ui-form-item"><label class="ui-checkbox"><input type="checkbox"></label><p>这是一个测试</p></div><div class="ui-form-item"><label class="ui-checkbox"><input type="checkbox"></label><p>这是一个测试</p></div>');
+		mBottomActionDialog1.setCanceledonScrollOutside(true);
+		mBottomActionDialog1.setCancelButton('关闭', function(button) {
+			//new Toast().setMessage(button).show();
+		});
+		mBottomActionDialog1.setConfirmButton('完成', function(button) {
+			new Toast().setMessage(button).show();
+			mBottomActionDialog1.close();
+		});
+		mBottomActionDialog1.show();
 	});
  });
  </script>

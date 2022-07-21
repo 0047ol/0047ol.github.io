@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+ <head> 
+  <meta charset="utf-8" /> 
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" /> 
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" /> 
+  <meta name="x5-pagetype" content="optpage" /> 
+  <meta name="format-detection" content="telephone=no" /> 
+  <title>验证QQ</title> 
+  <link type="image/png" rel="shortcut icon" href="https://qun.qq.com/favicon.ico" /> 
+  <link rel="stylesheet" href="https://i.gtimg.cn/vipstyle/frozenui/2.0.0/css/frozen.css" /> 
+  <link rel="stylesheet" href="https://www.0047ol.cn/assets/css/qq_widget.css" /> 
+  <link rel="stylesheet" href="https://www.0047ol.cn/assets/css/group_bot_set_fix.css" /> 
+  <script type="text/javascript" src="https://www.0047ol.cn/assets/js/tool.js"></script> 
+  <script type="text/javascript" src="https://www.0047ol.cn/assets/js/qq_widget.js"></script> 
+ </head> 
+ <body ontouchstart> 
+  <div class="inputs-page securityphone-change">
+    <div class="inputs-page__hd android">
+     <div class="inputs-page__hd-main">验证QQ</div> 
+     <div class="inputs-page__hd-sub">操作还未完成，需要验证您的QQ<span></span>号<span></span>码</div>
+    </div> 
+    <div class="inputs-page__bd">
+     <div class="qui-input">
+      <div class="qui-input__label">
+       <div>Q Q</div>
+      </div>
+      <div class="qui-input__wrap">
+       <input type="number" placeholder="请填写您刚登录的 QQ 号" maxlength="11" pattern="\d*" />
+      </div>
+     </div> 
+    </div> 
+    <div class="inputs-page__ft">
+     <button class="action-button qui-button qui-button-primary" disabled>继续</button>
+    </div>
+  </div> 
+ </body>
+ <script type="text/javascript">
+ var avatar = decodeURIComponent(getParam(location.href,'avatar'));
+ var redirect_uri = decodeURIComponent(getParam(location.href,'redirect_uri'));
+ if(!isEmpty(avatar) && !isEmpty(redirect_uri)){
+	let mDialog = new Dialog();
+	mDialog.setTitle('温馨提示');
+	mDialog.setMessage('验证需提交本人QQ<span></span>号码，本页不会储存任何信息，请不要输入你的<span style="color:rgb(253, 71, 43);">Q<span></span>Q<span></span>密<span></span>码</span>！');
+	mDialog.setCancelable(false);
+	mDialog.setCanceledOnTouchOutside(false);
+	mDialog.setPositiveButton('放弃验证',mDialog.BUTTON_TEXT_COLOR_NORMAL,function(text){
+		jumpUrl(0,1);
+	});
+	mDialog.setNegativeButton('同意并继续',mDialog.BUTTON_TEXT_COLOR_PRIMARY,function(text){});
+	mDialog.show();
+ }else{
+	document.title = '验证失败';
+	let mTipsPage = new TipsPage();
+	mTipsPage.setType(mTipsPage.PAGE_TYPE_WARNING);
+	mTipsPage.setTitle('验证失败');
+	mTipsPage.setCancelable(false);
+	mTipsPage.show();
+ }
+ document.querySelector('.inputs-page__ft button').addEventListener('click',function(){
+	let qq = document.querySelector('.qui-input__wrap input').value;
+	if(isEmpty(qq)){
+		new Toast().setMessage('请填写您刚登录的QQ号').show();
+	}else if(!isQQNum(qq)){
+		new Toast().setMessage('请填写正确的QQ号码').show();
+	}else{
+		checkQQ(qq);
+	}
+ });
+ document.querySelector('.qui-input__wrap input').addEventListener('input',function(){
+	if(isEmpty(this.value)){
+		document.querySelector('.inputs-page__ft button').setAttribute('disabled','');
+	}else{
+		document.querySelector('.inputs-page__ft button').removeAttribute('disabled');
+	}
+ });
+ function checkQQ(qq){
+	let getQQCheck = new XMLHttpRequest();
+	getQQCheck.open('POST', 'https://api.0047ol.cn/v1/login/qq/', true);
+	getQQCheck.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+	getQQCheck.send('key=' + getParam(avatar,'k') + '&qq=' + qq);
+	getQQCheck.onloadend = function() {
+		if (this.readyState == 4 && this.status == 200) {
+			let responseText = JSON.parse(this.responseText);
+			let code = responseText.code;
+			if(code == 200){
+				new Toast().setMessage('验证通过，跳转中...').setType(1).show();
+				jumpUrl(qq,0);
+			}else if(code == 204){
+				new Toast().setMessage('验证不通过，非本人QQ').setType(2).show();
+			}else{
+				new Toast().setMessage(responseText.msg).show();
+			}
+		}else{
+			new Toast().setMessage('服务器错误').setType(2).show();
+		}
+	}
+	getQQCheck.onerror = function() {
+		new Toast().setMessage('网络连接失败').setType(2).show();
+	}
+ }
+ function jumpUrl(qq,type){
+	let fg = isExist(redirect_uri,'?')?'&':'?';
+	redirect_uri = redirect_uri + fg;
+	let uid = decodeURIComponent(getParam(location.href,'uid'));
+	let name = decodeURIComponent(getParam(location.href,'name'));
+	let return_avatar = decodeURIComponent(getParam(location.href,'return_avatar'));
+	let state = decodeURIComponent(getParam(location.href,'state'));
+	if(!isEmpty(qq) && type != 1){
+		 redirect_uri += 'qq=' + qq;
+	}
+	if(!isEmpty(uid) && type != 1){
+		redirect_uri += '&uid=' + uid;
+	}
+	if(!isEmpty(name) && type != 1){
+		redirect_uri += '&name=' + name;
+	}
+	if(!isEmpty(avatar) && return_avatar == 'true' && type != 1){
+		redirect_uri += '&avatar=' + avatar;
+	}
+	if(!isEmpty(state)){
+		if(type == 1){
+			redirect_uri += 'state=' + state;
+		}else{
+			redirect_uri += '&state=' + state;
+		}
+	}
+	locaUrl(redirect_uri, true, 500);
+ }
+ </script>
+</html>

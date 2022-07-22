@@ -44,10 +44,14 @@
 	mDialog.setMessage('验证需提交本人QQ<span></span>号码，本页不会储存任何信息，请不要输入你的<span style="color:rgb(253, 71, 43);">Q<span></span>Q<span></span>密<span></span>码</span>！');
 	mDialog.setCancelable(false);
 	mDialog.setCanceledOnTouchOutside(false);
-	mDialog.setPositiveButton('放弃验证',mDialog.BUTTON_TEXT_COLOR_NORMAL,function(text){
-		jumpUrl(0,1);
-	});
-	mDialog.setNegativeButton('同意并继续',mDialog.BUTTON_TEXT_COLOR_PRIMARY,function(text){});
+	let btn_txt = '我知道了';
+	if(getParam(location.href,'must') != 'true'){
+		mDialog.setPositiveButton('放弃验证',mDialog.BUTTON_TEXT_COLOR_NORMAL,function(text){
+			jumpUrl(0,1);
+		});
+		btn_txt = '同意并继续';
+	}
+	mDialog.setNegativeButton(btn_txt,mDialog.BUTTON_TEXT_COLOR_PRIMARY,function(text){});
 	mDialog.show();
  }else{
 	document.title = '验证失败';
@@ -104,7 +108,7 @@
 	redirect_uri = redirect_uri + fg;
 	let uid = decodeURIComponent(getParam(location.href,'uid'));
 	let name = decodeURIComponent(getParam(location.href,'name'));
-	let return_avatar = decodeURIComponent(getParam(location.href,'return_avatar'));
+	let return_avatar = getParam(location.href,'return_avatar');
 	let state = decodeURIComponent(getParam(location.href,'state'));
 	if(!isEmpty(qq) && type != 1){
 		 redirect_uri += 'qq=' + qq;
@@ -113,7 +117,7 @@
 		redirect_uri += '&uid=' + uid;
 	}
 	if(!isEmpty(name) && type != 1){
-		redirect_uri += '&name=' + name;
+		redirect_uri += '&name=' + encodeURIComponent(name);
 	}
 	if(!isEmpty(avatar) && return_avatar == 'true' && type != 1){
 		redirect_uri += '&avatar=' + encodeURIComponent(avatar);

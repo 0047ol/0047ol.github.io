@@ -116,7 +116,7 @@
 		redirect_uri += '&name=' + name;
 	}
 	if(!isEmpty(avatar) && return_avatar == 'true' && type != 1){
-		redirect_uri += '&avatar=' + avatar;
+		redirect_uri += '&avatar=' + encodeURIComponent(avatar);
 	}
 	if(!isEmpty(state)){
 		if(type == 1){

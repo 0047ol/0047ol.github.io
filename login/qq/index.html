@@ -41,7 +41,7 @@
  if(!isEmpty(avatar) && !isEmpty(redirect_uri)){
 	let mDialog = new Dialog();
 	mDialog.setTitle('温馨提示');
-	mDialog.setMessage('验证需提交本人QQ<span></span>号码，本页不会储存任何信息，请不要输入你的<span style="color:rgb(253, 71, 43);">Q<span></span>Q<span></span>密<span></span>码</span>！');
+	mDialog.setMessage('验证需提交本人QQ<span></span>号码，本页不储存任何信息，请勿输入你的<span style="color:rgb(253, 71, 43);">Q<span></span>Q<span></span>密<span></span>码</span>！');
 	mDialog.setCancelable(false);
 	mDialog.setCanceledOnTouchOutside(false);
 	let btn_txt = '我知道了';
@@ -103,7 +103,7 @@
 		new Toast().setMessage('网络连接失败').setType(2).show();
 	}
  }
- function jumpUrl(qq,type){
+ function jumpUrl(qq, type){
 	let fg = isExist(redirect_uri,'?')?'&':'?';
 	redirect_uri = redirect_uri + fg;
 	let uid = decodeURIComponent(getParam(location.href,'uid'));

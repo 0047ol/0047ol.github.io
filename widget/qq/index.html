@@ -13,25 +13,46 @@
   </head>
  <body ontouchstart> 
   <div style="padding: 10px;">
-    <!--<button class="ui-btn-lg" toast="{'SUCCESS','test',1500}">Toast</button>-->
-	<button class="ui-btn-lg" id="showToast" >Toast</button>
+    <button class="ui-btn-lg" qui-toast="{'SUCCESS','test',1500}">Toast</button>
+	<button class="ui-btn-lg" id="showToast" style="margin: 10px 0 10px;">Toast2</button>
 	<button class="ui-btn-lg" id="showLoadingTip" style="margin: 10px 0 10px;">LoadingTip</button>
     <button class="ui-btn-lg" id="showDialog" style="margin: 10px 0 10px;">Dialog</button>
     <button class="ui-btn-lg" id="showActionSheet" style="margin: 10px 0 10px;">SheetMenu</button>
-    <button class="ui-btn-lg" id="showPrompt" style="margin: 10px 0 10px;">PromptDialog</button>
-	<button class="ui-btn-lg" id="showBottomActionDialogSignel" style="margin: 10px 0 10px;">BottomActionSignel</button>
-	<button class="ui-btn-lg" id="showBottomActionDialog" style="margin: 10px 0 10px;">BottomAction</button>
+    <button class="ui-btn-lg" id="showPromptDialog" style="margin: 10px 0 10px;">PromptDialog</button>
+	<button class="ui-btn-lg" id="showBottomAction" style="margin: 10px 0 10px;">BottomAction</button>
+	<button class="ui-btn-lg" id="showChooseDialog" style="margin: 10px 0 10px;">ChooseDialog</button>
 	<button class="ui-btn-lg" id="showTipsPage">TipsPage</button>
   </div>
   
-  <section class="qui-page" style="background-color: #f5f6fa;display:none;">
-	  <div class="banner">
-	    <img class="connect-logo-img qui-icon-guild" />
-		<div class="connect-load"><i class="loading-dot"></i></div>
-		<img class="connect-logo-img qui-icon-github" />
+    <div id="BottomActionDialog" class="qui-bottom-action">
+	  <div class="qui-bottom-action-mask"></div>
+	  <div class="qui-bottom-action-content">
+	    <div class="qui-bottom-action-header">
+		  <div class="qui-bottom-action-header-btn-cancel">关闭</div>
+	      <div class="qui-bottom-action-header-bar">
+			<div class="qui-bottom-action-header-bar-cont"></div>
+	      </div>
+		  <div class="qui-bottom-action-header-btn-confirm">完成</div>
+	    </div>
+	    <div class="qui-bottom-action-panel">
+	      <div class="ui-form-item"><label class="ui-checkbox"><input type="checkbox"></label><p>这是一个测试</p></div>
+	      <div class="ui-form-item"><label class="ui-checkbox"><input type="checkbox"></label><p>这是一个测试</p></div>
+	      <div class="ui-form-item"><label class="ui-checkbox"><input type="checkbox"></label><p>这是一个测试</p></div>
+		  <div class="ui-form-item"><label class="ui-checkbox"><input type="checkbox"></label><p>这是一个测试</p></div>
+		  <div class="ui-form-item"><label class="ui-checkbox"><input type="checkbox"></label><p>这是一个测试</p></div>
+		  <div class="ui-form-item"><label class="ui-checkbox"><input type="checkbox"></label><p>这是一个测试</p></div>
+		  <div class="ui-form-item"><label class="ui-checkbox"><input type="checkbox"></label><p>这是一个测试</p></div>
+		  <div class="ui-form-item"><label class="ui-checkbox"><input type="checkbox"></label><p>这是一个测试</p></div>
+		  <div class="ui-form-item"><label class="ui-checkbox"><input type="checkbox"></label><p>这是一个测试</p></div>
+		  <div class="ui-form-item"><label class="ui-checkbox"><input type="checkbox"></label><p>这是一个测试</p></div>
+		  <div class="ui-form-item"><label class="ui-checkbox"><input type="checkbox"></label><p>这是一个测试</p></div>
+		  <div class="ui-form-item"><label class="ui-checkbox"><input type="checkbox"></label><p>这是一个测试</p></div>
+		  <div class="ui-form-item"><label class="ui-checkbox"><input type="checkbox"></label><p>这是一个测试</p></div>
+		  <div class="ui-form-item"><label class="ui-checkbox"><input type="checkbox"></label><p>这是一个测试</p></div>
+		  <div class="ui-form-item"><label class="ui-checkbox"><input type="checkbox"></label><p>这是一个测试</p></div>
+	    </div>
 	  </div>
-	  <p>正在绑定你的账户</p>
-   </section>
+   </div>
   
  <script type="text/javascript">
 document.querySelector('#showToast').addEventListener('click',function() {
@@ -79,7 +100,7 @@ document.querySelector('#showActionSheet').addEventListener('click',function() {
 	mBottomSheetMenu.show();
 });
 
-document.querySelector('#showPrompt').addEventListener('click',function() {
+document.querySelector('#showPromptDialog').addEventListener('click',function() {
 	let mBottomPromptDialog = new BottomPromptDialog();
 	mBottomPromptDialog.setTitle('这是标题');
 	mBottomPromptDialog.setInputHint('提示文字');
@@ -98,26 +119,35 @@ document.querySelector('#showPrompt').addEventListener('click',function() {
 	mBottomPromptDialog.onButtonClick = function(value, checked) {
 		new Toast().setMessage('value:' + value + ';checked:' + checked).show();
 	};
-	mBottomPromptDialog.setCanceledonScrollOutside(true);
 	mBottomPromptDialog.show();
 });
 
-document.querySelector('#showBottomActionDialogSignel').addEventListener('click',function() {
-	let mBottomActionDialog = new BottomActionDialog();
-	mBottomActionDialog.setTitle('这是标题');
-	mBottomActionDialog.setContent('<div class="ui-form-item"><label class="ui-checkbox"><input type="checkbox"></label><p>这是一个测试</p></div><div class="ui-form-item"><label class="ui-checkbox"><input type="checkbox"></label><p>这是一个测试</p></div><div class="ui-form-item"><label class="ui-checkbox"><input type="checkbox"></label><p>这是一个测试</p></div>');
-	mBottomActionDialog.setCanceledonScrollOutside(true);
-	mBottomActionDialog.show();
+document.querySelector('#showChooseDialog').addEventListener('click',function() {
+	let mBottomChooseDialog = new BottomChooseDialog();
+	mBottomChooseDialog.setChooseType(0);
+	mBottomChooseDialog.setMenuItem('','选项一','123');
+	mBottomChooseDialog.setMenuItem('','选项二','456');
+	mBottomChooseDialog.setMenuItem('https://0047ol.cn/favicon.ico','选项三','135');
+	mBottomChooseDialog.setMenuItem('https://0047ol.cn/favicon.ico','选项四','246');
+	mBottomChooseDialog.setMenuItem('https://0047ol.cn/favicon.ico','选项五','789');
+	mBottomChooseDialog.setConfirmButton('完成',function(data) {
+		new Toast().setMessage('button').show();
+		console.log(data);
+	});
+	mBottomChooseDialog.setCanceledonScrollOutside(true);
+	mBottomChooseDialog.show();
 });
 
-document.querySelector('#showBottomActionDialog').addEventListener('click',function() {
-	var mBottomActionDialog = new BottomActionDialog();
-	mBottomActionDialog.setTitle('这是标题');
-	mBottomActionDialog.setContent('<div class="ui-form-item"><label class="ui-checkbox"><input type="checkbox"></label><p>这是一个测试</p></div><div class="ui-form-item"><label class="ui-checkbox"><input type="checkbox"></label><p>这是一个测试</p></div><div class="ui-form-item"><label class="ui-checkbox"><input type="checkbox"></label><p>这是一个测试</p></div><div class="ui-form-item"><label class="ui-checkbox"><input type="checkbox"></label><p>这是一个测试</p></div><div class="ui-form-item"><label class="ui-checkbox"><input type="checkbox"></label><p>这是一个测试</p></div><div class="ui-form-item"><label class="ui-checkbox"><input type="checkbox"></label><p>这是一个测试</p></div><div class="ui-form-item"><label class="ui-checkbox"><input type="checkbox"></label><p>这是一个测试</p></div><div class="ui-form-item"><label class="ui-checkbox"><input type="checkbox"></label><p>这是一个测试</p></div><div class="ui-form-item"><label class="ui-checkbox"><input type="checkbox"></label><p>这是一个测试</p></div><div class="ui-form-item"><label class="ui-checkbox"><input type="checkbox"></label><p>这是一个测试</p></div><div class="ui-form-item"><label class="ui-checkbox"><input type="checkbox"></label><p>这是一个测试</p></div><div class="ui-form-item"><label class="ui-checkbox"><input type="checkbox"></label><p>这是一个测试</p></div><div class="ui-form-item"><label class="ui-checkbox"><input type="checkbox"></label><p>这是一个测试</p></div><div class="ui-form-item"><label class="ui-checkbox"><input type="checkbox"></label><p>这是一个测试</p></div><div class="ui-form-item"><label class="ui-checkbox"><input type="checkbox"></label><p>这是一个测试</p></div><div class="ui-form-item"><label class="ui-checkbox"><input type="checkbox"></label><p>这是一个测试</p></div><div class="ui-form-item"><label class="ui-checkbox"><input type="checkbox"></label><p>这是一个测试</p></div><div class="ui-form-item"><label class="ui-checkbox"><input type="checkbox"></label><p>这是一个测试</p></div><div class="ui-form-item"><label class="ui-checkbox"><input type="checkbox"></label><p>这是一个测试</p></div><div class="ui-form-item"><label class="ui-checkbox"><input type="checkbox"></label><p>这是一个测试</p></div><div class="ui-form-item"><label class="ui-checkbox"><input type="checkbox"></label><p>这是一个测试</p></div><div class="ui-form-item"><label class="ui-checkbox"><input type="checkbox"></label><p>这是一个测试</p></div><div class="ui-form-item"><label class="ui-checkbox"><input type="checkbox"></label><p>这是一个测试</p></div><div class="ui-form-item"><label class="ui-checkbox"><input type="checkbox"></label><p>这是一个测试</p></div><div class="ui-form-item"><label class="ui-checkbox"><input type="checkbox"></label><p>这是一个测试</p></div><div class="ui-form-item"><label class="ui-checkbox"><input type="checkbox"></label><p>这是一个测试</p></div><div class="ui-form-item"><label class="ui-checkbox"><input type="checkbox"></label><p>这是一个测试</p></div><div class="ui-form-item"><label class="ui-checkbox"><input type="checkbox"></label><p>这是一个测试</p></div><div class="ui-form-item"><label class="ui-checkbox"><input type="checkbox"></label><p>这是一个测试</p></div><div class="ui-form-item"><label class="ui-checkbox"><input type="checkbox"></label><p>这是一个测试</p></div><div class="ui-form-item"><label class="ui-checkbox"><input type="checkbox"></label><p>这是一个测试</p></div>');
-	//mBottomActionDialog.setCancelable(false);
-	//mBottomActionDialog.setCanceledOnTouchOutside(true);
-	mBottomActionDialog.setCanceledonScrollOutside(true);
-	mBottomActionDialog.show();
+document.querySelector('#showBottomAction').addEventListener('click',function() {
+	var mBottomActionDialog1 = new BottomActionDialog('#BottomActionDialog');
+	mBottomActionDialog1.setConfirmButtonOnClick(function() {
+		new Toast().setMessage('button').show();
+	});
+	mBottomActionDialog1.setCancelButtonOnClick(function() {
+		new Toast().setMessage('button').show();
+	});
+	mBottomActionDialog1.setCanceledonScrollOutside(true);
+	mBottomActionDialog1.show();
 });
 
 document.querySelector('#showTipsPage').addEventListener('click',function() {
@@ -125,12 +155,10 @@ document.querySelector('#showTipsPage').addEventListener('click',function() {
 	//mTipsPage.setType(mTipsPage.PAGE_TYPE_SUCCESS);
 	mTipsPage.setTitle('这里是标题');
 	mTipsPage.setMessage('这里是内容这里是内容这里是内容');
-	mTipsPage.setConfirmButton('确认',
-	function(button) {
+	mTipsPage.setConfirmButton('确认',function(button) {
 		new Toast().setMessage('button').show();
 	});
-	mTipsPage.setCancelButton('取消',
-	function(button) {
+	mTipsPage.setCancelButton('取消',function(button) {
 		new Toast().setMessage('button').show();
 	});
 	mTipsPage.show();

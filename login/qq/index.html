@@ -11,7 +11,6 @@
   <link rel="stylesheet" href="https://i.gtimg.cn/vipstyle/frozenui/2.0.0/css/frozen.css" /> 
   <link rel="stylesheet" href="https://www.0047ol.cn/assets/css/qq_widget.css" /> 
   <link rel="stylesheet" href="https://www.0047ol.cn/assets/css/group_bot_set_fix.css" /> 
-  <script type="text/javascript" src="https://www.0047ol.cn/assets/js/tool.js"></script> 
   <script type="text/javascript" src="https://www.0047ol.cn/assets/js/qq_widget.js"></script> 
  </head> 
  <body ontouchstart> 
@@ -36,16 +35,16 @@
   </div> 
  </body>
  <script type="text/javascript">
- var avatar = decodeURIComponent(getParam(location.href,'avatar'));
- var redirect_uri = decodeURIComponent(getParam(location.href,'redirect_uri'));
- if(!isEmpty(avatar) && !isEmpty(redirect_uri)){
-	let mDialog = new Dialog();
+ var avatar = decodeURIComponent(getParam('avatar'));
+ var redirect_uri = decodeURIComponent(getParam('redirect_uri'));
+ if(avatar && redirect_uri){
+	let mDialog = new QDialog();
 	mDialog.setTitle('温馨提示');
 	mDialog.setMessage('验证需提交本人QQ号码，本页不会储存任何信息，请不要输入你的<span style="color:rgb(253, 71, 43);">QQ密码</span>！');
 	mDialog.setCancelable(false);
 	mDialog.setCanceledOnTouchOutside(false);
 	let btn_txt = '我知道了';
-	if(getParam(location.href,'must') != 'true'){
+	if(getParam('must') != 'true'){
 		mDialog.setPositiveButton('放弃验证',mDialog.BUTTON_TEXT_COLOR_NORMAL,function(text){
 			mDialog.close();
 			jumpUrl(0,1);
@@ -58,7 +57,7 @@
 	mDialog.show();
  }else{
 	document.title = '验证失败';
-	let mTipsPage = new TipsPage();
+	let mTipsPage = new QTipsPage();
 	mTipsPage.setType(mTipsPage.PAGE_TYPE_WARNING);
 	mTipsPage.setTitle('验证失败');
 	mTipsPage.setCancelable(false);
@@ -66,16 +65,16 @@
  }
  document.querySelector('.inputs-page__ft button').addEventListener('click',function(){
 	let qq = document.querySelector('.qui-input__wrap input').value;
-	if(isEmpty(qq)){
-		new Toast().setMessage('请填写您刚登录的QQ号').show();
-	}else if(!isQQNum(qq)){
-		new Toast().setMessage('请填写正确的QQ号码').show();
+	if(qq){
+		new QToast().setMessage('请填写您刚登录的QQ号').show();
+	}else if(!/^[1-9][0-9]{4,9}$/gim.test(qq)){
+		new QToast().setMessage('请填写正确的QQ号码').show();
 	}else{
 		checkQQ(qq);
 	}
  });
  document.querySelector('.qui-input__wrap input').addEventListener('input',function(){
-	if(isEmpty(this.value)){
+	if(this.value){
 		document.querySelector('.inputs-page__ft button').setAttribute('disabled','');
 	}else{
 		document.querySelector('.inputs-page__ft button').removeAttribute('disabled');
@@ -91,49 +90,53 @@
 			let responseText = JSON.parse(this.responseText);
 			let code = responseText.code;
 			if(code == 200){
-				new Toast().setMessage('验证通过，跳转中...').setType(1).show();
+				new QToast().setMessage('验证通过，跳转中...').setType(1).show();
 				jumpUrl(qq,0);
 			}else if(code == 204){
-				new Toast().setMessage('验证不通过，非本人QQ').setType(2).show();
+				new QToast().setMessage('验证不通过，非本人QQ').setType(2).show();
 			}else{
-				new Toast().setMessage(responseText.msg).show();
+				new QToast().setMessage(responseText.msg).show();
 			}
 		}else{
-			new Toast().setMessage('服务器错误').setType(2).show();
+			new QToast().setMessage('服务器错误').setType(2).show();
 		}
 	}
 	getQQCheck.onerror = function() {
-		new Toast().setMessage('网络连接失败').setType(2).show();
+		new QToast().setMessage('网络连接失败').setType(2).show();
 	}
  }
  function jumpUrl(qq,type){
-	let fg = isExist(redirect_uri,'?')?'&':'?';
+	let fg = (redirect_uri.indexOf('?') != -1)?'&':'?';
 	redirect_uri = redirect_uri + fg;
-	let uid = decodeURIComponent(getParam(location.href,'uid'));
-	let name = decodeURIComponent(getParam(location.href,'name'));
-	let return_avatar = getParam(location.href,'return_avatar');
-	let state = decodeURIComponent(getParam(location.href,'state'));
-	if(!isEmpty(qq) && type != 1){
+	let uid = decodeURIComponent(getParam('uid'));
+	let name = decodeURIComponent(getParam('name'));
+	let return_avatar = getParam('return_avatar');
+	let state = decodeURIComponent(getParam('state'));
+	if(qq && type != 1){
 		 redirect_uri += 'qq=' + qq;
 	}
-	if(!isEmpty(uid) && type != 1){
+	if(uid && type != 1){
 		redirect_uri += '&uid=' + uid;
 	}
-	if(!isEmpty(name) && type != 1){
+	if(name && type != 1){
 		redirect_uri += '&name=' + encodeURIComponent(name);
 	}
-	if(!isEmpty(avatar) && return_avatar == 'true' && type != 1){
+	if(avatar && return_avatar == 'true' && type != 1){
 		redirect_uri += '&avatar=' + encodeURIComponent(avatar);
 	}
-	if(!isEmpty(state)){
+	if(state){
 		if(type == 1){
 			redirect_uri += 'state=' + state;
 		}else{
 			redirect_uri += '&state=' + state;
 		}
 	}
-	locaUrl(redirect_uri, true, 500);
+	setTimeout(function () {
+      window.location.replace(redirect_uri);
+    }, 500);
  }
- 
+ function getParam(name) {
+    return new URL(location.href).searchParams.get(name);
+ }
  </script>
 </html>

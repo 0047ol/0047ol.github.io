@@ -65,7 +65,7 @@
  }
  document.querySelector('.inputs-page__ft button').addEventListener('click',function(){
 	let qq = document.querySelector('.qui-input__wrap input').value;
-	if(qq){
+	if(!qq){
 		new QToast().setMessage('请填写您刚登录的QQ号').show();
 	}else if(!/^[1-9][0-9]{4,9}$/gim.test(qq)){
 		new QToast().setMessage('请填写正确的QQ号码').show();
@@ -75,9 +75,9 @@
  });
  document.querySelector('.qui-input__wrap input').addEventListener('input',function(){
 	if(this.value){
-		document.querySelector('.inputs-page__ft button').setAttribute('disabled','');
+		document.querySelector('.inputs-page__ft button').removeAttribute('disabled');	
 	}else{
-		document.querySelector('.inputs-page__ft button').removeAttribute('disabled');
+		document.querySelector('.inputs-page__ft button').setAttribute('disabled','');
 	}
  });
  function checkQQ(qq){

@@ -35,8 +35,8 @@
   </div> 
  </body>
  <script type="text/javascript">
- var avatar = decodeURIComponent(getParam('avatar'));
- var redirect_uri = decodeURIComponent(getParam('redirect_uri'));
+ var avatar = decodeURIComponent(getParam(null,'avatar'));
+ var redirect_uri = decodeURIComponent(getParam(null,'redirect_uri'));
  if(avatar && redirect_uri){
 	let mDialog = new QDialog();
 	mDialog.setTitle('温馨提示');
@@ -44,7 +44,7 @@
 	mDialog.setCancelable(false);
 	mDialog.setCanceledOnTouchOutside(false);
 	let btn_txt = '我知道了';
-	if(getParam('must') != 'true'){
+	if(getParam(null,'must') != 'true'){
 		mDialog.setPositiveButton('放弃验证',mDialog.BUTTON_TEXT_COLOR_NORMAL,function(text){
 			mDialog.close();
 			jumpUrl(0,1);
@@ -108,10 +108,10 @@
  function jumpUrl(qq,type){
 	let fg = (redirect_uri.indexOf('?') != -1)?'&':'?';
 	redirect_uri = redirect_uri + fg;
-	let uid = decodeURIComponent(getParam('uid'));
-	let name = decodeURIComponent(getParam('name'));
-	let return_avatar = getParam('return_avatar');
-	let state = decodeURIComponent(getParam('state'));
+	let uid = decodeURIComponent(getParam(null,'uid'));
+	let name = decodeURIComponent(getParam(null,'name'));
+	let return_avatar = getParam(null,'return_avatar');
+	let state = decodeURIComponent(getParam(null,'state'));
 	if(qq && type != 1){
 		 redirect_uri += 'qq=' + qq;
 	}

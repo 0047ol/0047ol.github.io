@@ -135,8 +135,11 @@
       window.location.replace(redirect_uri);
     }, 500);
  }
- function getParam(name) {
-    return new URL(location.href).searchParams.get(name);
+ function getParam(url,name) {
+    if(!url){
+	    url = location.href;
+    }
+    return new URL(url).searchParams.get(name);
  }
  </script>
 </html>

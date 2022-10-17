@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="zh">
+ <head> 
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1,initial-scale=1,user-scalable=no,viewport-fit=cover" />
+  <meta name="author" content="@0047ol" /> 
+  <meta name="copyright" content="©0047ol" /> 
+  <title>结绳前端UI框架—TiecodeWidget</title> 
+  <link type="image/png" rel="shortcut icon" href="http://tiecode.cn/logo.png" /> 
+  <link rel="stylesheet" href="/assets/css/tiecode_widget.css" />
+  <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/styles/default.min.css" />
+  <style>
+  body {
+	padding: 10px;
+	margin: 0;
+  }
+  @media(min-width:599px) {
+	body {
+		max-width: 50vw;
+    	margin: auto;
+	}
+  }
+  </style>
+  </head>
+  <body ontouchstart> 
+	<!--组件示例-->
+	<h1>开始</h1>
+	<p>head头部引入</p>
+	<pre><code class="">&lt;!--样式库--&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://i0047ol.gitee.io/assets/css/tiecode_widget.css?ver=1.0.4&quot; /&gt;</code></pre>
+	<p>foot页脚引入</p>
+	<pre><code class="">&lt;!--组件库--&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;https://i0047ol.gitee.io/assets/js/tiecode_widget.js?ver=1.0.4&quot;&gt;&lt;/script&gt;</code></pre>
+	<h1>使用</h1>
+    <div style="padding: 0 10px;">
+		<!--TieMessage-->
+		<p>TieMessage信息框</p>
+		<pre><code class="lang-javascript">var mTieMessage = new TieMessage(this);
+&nbspmTieMessage.setMessage('这是一个提示');
+&nbsp//mTieMessage.setType(mTieMessage.MESSAGE_TYPE_SUCCESS);
+&nbsp//mTieMessage.setTime(1500);
+&nbspmTieMessage.onOpened = function(event) {
+&nbsp&nbspconsole.log('TieMessage onOpened');
+&nbsp};
+&nbspmTieMessage.show();
+&nbspmTieMessage.onClosed = function(event) {
+&nbsp&nbspconsole.log('TieMessage onClosed');
+&nbsp};</code></pre>
+		<button class="tie-button tie-button-primary action-button" class="ui-btn-lg" id="showTieMessage" style="margin: 10px 0 10px;">TieMessage</button>
+		<!--TiePopMenu-->
+		<p>TiePopMenu弹出菜单</p>
+		<pre><code class="lang-javascript">var mTiePopMenu = new TiePopMenu(this);
+&nbspmTiePopMenu.setMenuItem('http://tiecode.cn/logo.png', '备份', function(name) {
+&nbsp&nbspnew TieMessage().setMessage('TiePopMenu MenuItem ' + name).show();
+&nbsp&nbspconsole.log('TiePopMenu MenuItem ', name);
+&nbsp});
+&nbspmTiePopMenu.setMenuItem('http://tiecode.cn/logo.png', '分享', function(name) {
+&nbsp&nbspnew TieMessage().setMessage('TiePopMenu MenuItem ' + name).show();
+&nbsp&nbspconsole.log('TiePopMenu MenuItem ', name);
+&nbsp});
+&nbspmTiePopMenu.setMenuItem('http://tiecode.cn/logo.png', '删除', function(name) {
+&nbsp&nbspnew TieMessage().setMessage('TiePopMenu MenuItem ' + name).show();
+&nbsp&nbspconsole.log('TiePopMenu MenuItem ', name);
+&nbsp});
+&nbspmTiePopMenu.onOpened = function(event) {
+&nbsp&nbspconsole.log('TiePopMenu onOpened');
+&nbsp};
+&nbspmTiePopMenu.show();
+&nbspmTiePopMenu.onClosed = function(event) {
+&nbsp&nbspconsole.log('TiePopMenu onClosed');
+&nbsp};</code></pre>
+		<button class="tie-button tie-button-primary action-button" class="ui-btn-lg" id="showTiePopMenu" style="margin: 10px 0 10px;">TiePopMenu</button>
+    	<!--TieBottomDialog-->
+		<p>TieBottomDialog底部对话框</p>
+		<pre><code class="lang-javascript">var mTieBottomDialog = new TieBottomDialog(this);
+&nbspmTieBottomDialog.setTitle('这是标题');
+&nbspmTieBottomDialog.setContent('这是信息');
+&nbspmTieBottomDialog.setNegativeButton('确定', function() {
+&nbsp&nbspnew TieMessage().setMessage('TieBottomDialog NegativeButton').show();
+&nbsp&nbspconsole.log('TieBottomDialog NegativeButton');
+&nbsp});
+&nbspmTieBottomDialog.setExtraButton('其他', function() {
+&nbsp&nbspnew TieMessage().setMessage('TieBottomDialog ExtraButton').show();
+&nbsp&nbspconsole.log('TieBottomDialog ExtraButton');
+&nbsp});
+&nbspmTieBottomDialog.setPositiveButton('取消', function() {
+&nbsp&nbspnew TieMessage().setMessage('TieBottomDialog PositiveButton').show();
+&nbsp&nbspconsole.log('TieBottomDialog PositiveButton');
+&nbsp});
+&nbsp//mTieBottomDialog.setCancelable(false);
+&nbsp//mTieBottomDialog.setCanceledOnTouchOutside(false);
+&nbspmTieBottomDialog.onOpened = function(event) {
+&nbsp&nbspnew TieMessage().setMessage('TieBottomDialog onOpened').show();
+&nbsp&nbspconsole.log('TieBottomDialog onOpened');
+&nbsp};
+&nbspmTieBottomDialog.show();
+&nbspmTieBottomDialog.onClosed = function(event) {
+&nbsp&nbspnew TieMessage().setMessage('TieBottomDialog onClosed').show();
+&nbsp&nbspconsole.log('TieBottomDialog onClosed');
+&nbsp};</code></pre>
+		<button class="tie-button tie-button-primary action-button" class="ui-btn-lg" id="showTieBottomDialog" style="margin: 10px 0 10px;">TieBottomDialog</button>
+    	<!--TieBottomInputDialog-->
+		<p>TieBottomInputDialog底部输入框</p>
+		<pre><code class="lang-javascript">var mTieBottomInputDialog = new TieBottomInputDialog(this);
+&nbspmTieBottomInputDialog.setTitle('这是标题');
+&nbspmTieBottomInputDialog.setSingleLine(true);
+&nbsp//mTieBottomInputDialog.setValue('这是内容');
+&nbspmTieBottomInputDialog.setHintText('这是提示');
+&nbspmTieBottomInputDialog.setMaxLength(50);
+&nbspmTieBottomInputDialog.onInput = function(value) {
+&nbsp&nbspnew TieMessage().setMessage('TieBottomInputDialog onInput ' + value).show();
+&nbsp&nbspconsole.log('TieBottomInputDialog onInput ', value);
+&nbsp};
+&nbspmTieBottomInputDialog.setNegativeButton('确定', function(value) {
+&nbsp&nbspnew TieMessage().setMessage('TieBottomInputDialog NegativeButton ' + value).show();
+&nbsp&nbspconsole.log('TieBottomInputDialog NegativeButton ', value);
+&nbsp});
+&nbspmTieBottomInputDialog.setExtraButton('其他', function() {
+&nbsp&nbspnew TieMessage().setMessage('TieBottomInputDialog ExtraButton').show();
+&nbsp&nbspconsole.log('TieBottomInputDialog ExtraButton');
+&nbsp});
+&nbspmTieBottomInputDialog.setPositiveButton('取消', function(value) {
+&nbsp&nbspnew TieMessage().setMessage('TieBottomInputDialog PositiveButton ' + value).show();
+&nbsp&nbspconsole.log('TieBottomInputDialog PositiveButton ', value);
+&nbsp});
+&nbsp//mTieBottomInputDialog.setCancelable(false);
+&nbsp//mTieBottomInputDialog.setCanceledOnTouchOutside(false);
+&nbspmTieBottomInputDialog.onOpened = function(value) {
+&nbsp&nbspnew TieMessage().setMessage('TieBottomInputDialog onOpened').show();
+&nbsp&nbspconsole.log('TieBottomInputDialog onOpened', value);
+&nbsp};
+&nbspmTieBottomInputDialog.show();
+&nbspmTieBottomInputDialog.onClosed = function(value) {
+&nbsp&nbspnew TieMessage().setMessage('TieBottomInputDialog onClosed').show();
+&nbsp&nbspconsole.log('TieBottomInputDialog onClosed', value);
+&nbsp};</code></pre>
+		<button class="tie-button tie-button-primary action-button" class="ui-btn-lg" id="showTieBottomInputDialog" style="margin: 10px 0 10px;">TieBottomInputDialog</button>
+		<!--TieSheetDialog-->
+		<p>TieSheetDialog底部操作框</p>
+		<pre><code class="lang-javascript">var mTieSheetDialog = new TieSheetDialog(this);
+&nbspmTieSheetDialog.setTitle('云结绳');
+&nbspmTieSheetDialog.setContent('#mTieSheetDialog');
+&nbsp//mTieSheetDialog.setCancelable(false);
+&nbsp//mTieSheetDialog.setCanceledOnTouchOutside(false);
+&nbsp//mTieSheetDialog.setCanceledonScrollOutside(false);
+&nbspmTieSheetDialog.onOpened = function(event) {
+&nbsp&nbspnew TieMessage().setMessage('TieSheetDialog onOpened').show();
+&nbsp&nbspconsole.log('TieSheetDialog onOpened');
+&nbsp};
+&nbspmTieSheetDialog.show();
+&nbspmTieSheetDialog.onClosed = function(event) {
+&nbsp&nbspnew TieMessage().setMessage('TieSheetDialog onClosed').show();
+&nbsp&nbspconsole.log('TieSheetDialog onClosed');
+&nbsp};</code></pre>
+		<button class="tie-button tie-button-primary action-button" class="ui-btn-lg" id="showTieSheetDialog" style="margin: 10px 0 10px;">TieSheetDialog</button>
+		<!--TieBottomListDialog-->
+		<p>TieBottomListDialog底部列表选择框</p>
+		<pre><code class="lang-javascript">var mTieBottomListDialog = new TieBottomListDialog(this);
+&nbspmTieBottomListDialog.setTitle('这是标题');
+&nbspmTieBottomListDialog.setContentItems('选项一', function(name) {
+&nbsp&nbspnew TieMessage().setMessage('TieBottomListDialog ListItem ' + name).show();
+&nbsp&nbspconsole.log('TieBottomListDialog ListItem ',name);
+&nbsp});
+&nbspmTieBottomListDialog.setContentItems('选项二', function(name) {
+&nbsp&nbspnew TieMessage().setMessage('TieBottomListDialog ListItem ' + name).show();
+&nbsp&nbspconsole.log('TieBottomListDialog ListItem ',name);
+&nbsp});
+&nbspmTieBottomListDialog.setContentItems('选项三', function(name) {
+&nbsp&nbspnew TieMessage().setMessage('TieBottomListDialog ListItem ' + name).show();
+&nbsp&nbspconsole.log('TieBottomListDialog ListItem ',name);
+&nbsp});
+&nbspmTieBottomListDialog.setContentItems('选项四', function(name) {
+&nbsp&nbspnew TieMessage().setMessage('TieBottomListDialog ListItem ' + name).show();
+&nbsp&nbspconsole.log('TieBottomListDialog ListItem ',name);
+&nbsp});
+&nbspmTieBottomListDialog.setContentItems('选项五', function(name) {
+&nbsp&nbspnew TieMessage().setMessage('TieBottomListDialog ListItem ' + name).show();
+&nbsp&nbspconsole.log('TieBottomListDialog ListItem ',name);
+&nbsp});
+&nbspmTieBottomListDialog.setPositiveButton('取消', function() {
+&nbsp&nbspnew TieMessage().setMessage('TieBottomListDialog PositiveButton').show();
+&nbsp&nbspconsole.log('TieBottomListDialog PositiveButton');
+&nbsp});
+&nbsp//mTieBottomListDialog.setCancelable(false);
+&nbsp//mTieBottomListDialog.setCanceledOnTouchOutside(false);
+&nbspmTieBottomListDialog.onOpened = function(event) {
+&nbsp&nbspnew TieMessage().setMessage('TieBottomListDialog onOpened').show();
+&nbsp&nbspconsole.log('TieBottomListDialog onOpened');
+&nbsp};
+&nbspmTieBottomListDialog.show();
+&nbspmTieBottomListDialog.onClosed = function(event) {
+&nbsp&nbspnew TieMessage().setMessage('TieBottomListDialog onClosed').show();
+&nbsp&nbspconsole.log('TieBottomListDialog onClosed');
+&nbsp};</code></pre>
+		<button class="tie-button tie-button-primary action-button" class="ui-btn-lg" id="showTieBottomListDialog" style="margin: 10px 0 10px;">TieBottomListDialog</button>
+		<!--TieActivity-->
+		<p>TieActivity页面</p>
+		<pre><code class="lang-javascript">var mTieActivity = new TieActivity(this);
+&nbspmTieActivity.setTitle('新页面');
+&nbspmTieActivity.setLayout('#mTieActivityLayout');
+&nbspmTieActivity.setBackButton('结绳', function() {
+&nbsp&nbspnew TieMessage().setMessage('TieActivity BackButtonOnClick').show();
+&nbsp&nbspconsole.log('TieActivity BackButtonOnClick');
+&nbsp});
+&nbsp//mTieActivity.setCancelable(false);
+&nbspmTieActivity.onOpened = function(event) {
+&nbsp&nbspnew TieMessage().setMessage('TieActivity onOpened').show();
+&nbsp&nbspconsole.log('TieActivity onOpened');
+&nbsp};
+&nbspmTieActivity.show();
+&nbspmTieActivity.onClosed = function(event) {
+&nbsp&nbspnew TieMessage().setMessage('TieActivity onClosed').show();
+&nbsp&nbspconsole.log('TieActivity onClosed');
+&nbsp};</code></pre>
+		<button class="tie-button tie-button-primary action-button" class="ui-btn-lg" id="showTieActivity" style="margin: 10px 0 10px;">TieActivity</button>
+		<!--TieCard-->
+		<p>TieCard卡片布局</p>
+		<pre><code class="language-html">&lt;div class=&quot;tie-card&quot;&gt;
+&nbsp&lt;div class=&quot;tie-card-menu&quot;&gt;
+&nbsp&nbsp&lt;div class=&quot;tie-card-button&quot;&gt;&lt;/div&gt;
+&nbsp&lt;/div&gt;
+&nbsp&lt;div class=&quot;tie-card-cnt&quot;&gt;
+&nbsp&nbsp&lt;div class=&quot;tie-card-header&quot;&gt;
+&nbsp&nbsp&nbsp&lt;div class=&quot;tie-card-header-title&quot;&gt;&lt;strong&gt;结绳Linux/Windows项目管理器&lt;/strong&gt;&lt;/div&gt;
+&nbsp&nbsp&lt;/div&gt;
+&nbsp&nbsp&lt;div class=&quot;tie-card-content&quot;&gt;结绳Linux/Windows项目管理器，用于支持创建结绳中文Linux/Windows项目以及运行打包构建等功能。该插件集成交叉编译工具链，可在arm架构手机上将结绳代码编译为Linux平台arm64、arm32、x86、x86_64架构的可执行文件，若将该插件部署到Windows平台，则可将结绳代码编译为Windows平台应用程序&lt;/div&gt;
+&nbsp&nbsp&lt;div class=&quot;tie-card-action&quot;&gt;
+&nbsp&nbsp&nbsp&lt;p class=&quot;float-left&quot;&gt;版本：V1.0&lt;/p&gt;
+&nbsp&nbsp&nbsp&lt;p class=&quot;float-right&quot;&gt;作者：结绳开发团队&lt;/p&gt;
+&nbsp&nbsp&lt;/div&gt;
+&nbsp&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+		<button class="tie-button tie-button-primary action-button" class="ui-btn-lg" id="showTieCard" style="margin: 10px 0 10px;">TieCardView</button>
+		<!--TieSettingActivity-->
+		<p>TieSettingActivity设置页</p>
+		<pre><code class="lang-javascript">var mTieSettingActivity = new TieSettingActivity(this);
+&nbspmTieSettingActivity.setSettingActionItem('http://tiecode.cn/logo.png', '结绳', 'Tie Code', '当前版本', '4.0.0', function() {
+&nbsp&nbspconsole.log('TieSettingActivity ActionOnClick ');
+&nbsp&nbspnew TieMessage().setMessage('TieSettingActivity ActionOnClick').show();
+&nbsp});
+&nbspmTieSettingActivity.setSettingTitle('设置');
+&nbspmTieSettingActivity.setSettingItemTitle('外观');
+&nbspmTieSettingActivity.setSettingSwitchItem('', '夜间模式', '', function(checked) {
+&nbsp&nbspconsole.log('TieSettingActivity SwitchOnChange ', checked);
+&nbsp&nbspnew TieMessage().setMessage('TieSettingActivity SwitchOnChange ' + checked).show();
+&nbsp});
+&nbspmTieSettingActivity.setSettingItemTitle('编辑器设置');
+&nbspmTieSettingActivity.setSettingArrowItem('', '设置编辑器主题', '...ode.develop/files/themes/默认白色主题', '', function(name) {
+&nbsp&nbspconsole.log('TieSettingActivity ItemOnClick ', name);
+&nbsp&nbspnew TieMessage().setMessage('TieSettingActivity ItemOnClick ' + name).show();
+&nbsp});
+&nbspmTieSettingActivity.setSettingArrowItem('', '导出编辑器主题', '导出当前编辑器主题为.thp文件', '', function(name) {
+&nbsp&nbspconsole.log('TieSettingActivity ItemOnClick ', name);
+&nbsp&nbspnew TieMessage().setMessage('TieSettingActivity ItemOnClick ' + name).show();
+&nbsp});
+&nbspmTieSettingActivity.setSettingArrowItem('', '导入编辑器主题', '导入.thp文件为编辑器主题', '', function(name) {
+&nbsp&nbspconsole.log('TieSettingActivity ItemOnClick ', name);
+&nbsp&nbspnew TieMessage().setMessage('TieSettingActivity ItemOnClick ' + name).show();
+&nbsp});
+&nbspmTieSettingActivity.setSettingItemTitle('其他设置');
+&nbspmTieSettingActivity.setSettingArrowItem('', '开源相关', '查看本软件使用的开源项目', '', function(name) {
+&nbsp&nbspconsole.log('TieSettingActivity ItemOnClick ', name);
+&nbsp&nbspnew TieMessage().setMessage('TieSettingActivity ItemOnClick ' + name).show();
+&nbsp});
+&nbspmTieSettingActivity.setSettingArrowItem('', '用户协议', '查看本软件的用户使用协议', '', function(name) {
+&nbsp&nbspconsole.log('TieSettingActivity ItemOnClick ', name);
+&nbsp&nbspnew TieMessage().setMessage('TieSettingActivity ItemOnClick ' + name).show();
+&nbsp});
+&nbspmTieSettingActivity.setSettingArrowItem('', '隐私协议', '查看本软件的用户隐私协议', '', function(name) {
+&nbsp&nbspconsole.log('TieSettingActivity ItemOnClick ', name);
+&nbsp&nbspnew TieMessage().setMessage('TieSettingActivity ItemOnClick ' + name).show();
+&nbsp});
+&nbspmTieSettingActivity.setSettingItemTitle('其他设置');
+&nbspmTieSettingActivity.setSettingSwitchItem('', '装载默认插件', '装载默认结绳项目管理器插件', function(checked) {
+&nbsp&nbspconsole.log('TieSettingActivity SwitchOnChange ', checked);
+&nbsp&nbspnew TieMessage().setMessage('TieSettingActivity SwitchOnChange ' + checked).show();
+&nbsp});
+&nbspmTieSettingActivity.onOpened = function(event) {
+&nbsp&nbspconsole.log('TieSettingActivity onOpened');
+&nbsp};
+&nbspmTieSettingActivity.show();
+&nbspmTieSettingActivity.onClosed = function(event) {
+&nbsp&nbspconsole.log('TieSettingActivity onClosed');
+&nbsp};</code></pre>
+		<button class="tie-button tie-button-primary action-button" class="ui-btn-lg" id="showTieSettingActivity" style="margin: 10px 0 10px;">TieSettingActivity</button>
+		<!--TieGrid-->
+		<p>TieGrid宫格布局</p>
+		<pre><code class="language-html">&lt;div class=&quot;tie-grid&quot;&gt;
+&nbsp&nbsp&nbsp&nbsp&lt;div class=&quot;tie-grid-item&quot;&gt;
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&lt;div class=&quot;tie-grid-desc&quot;&gt;
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&lt;div class=&quot;tie-grid-name&quot;&gt;我的Linux工程1&lt;/div&gt;
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&lt;div class=&quot;tie-grid-info&quot;&gt;修改:10分钟前&lt;img src=&quot;http://tiecode.cn/logo.png&quot;&gt;&lt;/div&gt;
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&lt;/div&gt;
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&lt;div class=&quot;tie-grid-icon&quot;&gt;&lt;img src=&quot;http://tiecode.cn/logo.png&quot;&gt;&lt;/div&gt;
+&nbsp&nbsp&nbsp&nbsp&lt;/div&gt;
+&nbsp&nbsp&nbsp&nbsp&lt;div class=&quot;tie-grid-item&quot;&gt;
+&nbsp&nbsp&nbsp&nbsp    &lt;div class=&quot;tie-grid-desc&quot;&gt;
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp    &lt;div class=&quot;tie-grid-name&quot;&gt;我的Linux工程2&lt;/div&gt;
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp    &lt;div class=&quot;tie-grid-info&quot;&gt;修改:11分钟前&lt;img src=&quot;http://tiecode.cn/logo.png&quot;&gt;&lt;/div&gt;
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&lt;/div&gt;
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&lt;div class=&quot;tie-grid-icon&quot;&gt;&lt;img src=&quot;http://tiecode.cn/logo.png&quot;&gt;&lt;/div&gt;
+&nbsp&nbsp&nbsp&nbsp&lt;/div&gt;
+&nbsp&nbsp&nbsp&nbsp&lt;div class=&quot;tie-grid-item&quot;&gt;
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&lt;div class=&quot;tie-grid-icon&quot;&gt;&lt;img src=&quot;http://tiecode.cn/logo.png&quot;&gt;&lt;/div&gt;
+&nbsp&nbsp&nbsp&nbsp    &lt;div class=&quot;tie-grid-desc&quot;&gt;
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp    &lt;div class=&quot;tie-grid-name&quot;&gt;我的Linux工程3&lt;/div&gt;
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp    &lt;div class=&quot;tie-grid-info&quot;&gt;修改:12分钟前&lt;img src=&quot;http://tiecode.cn/logo.png&quot;&gt;&lt;/div&gt;
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&lt;/div&gt;
+&nbsp&nbsp&nbsp&nbsp&lt;/div&gt;
+&nbsp&nbsp&nbsp&nbsp&lt;div class=&quot;tie-grid-item&quot;&gt;
+&nbsp&nbsp&nbsp&nbsp    &lt;div class=&quot;tie-grid-desc&quot;&gt;
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&lt;div class=&quot;tie-grid-name&quot;&gt;我的Linux工程4&lt;/div&gt;
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&lt;div class=&quot;tie-grid-info&quot;&gt;修改:13分钟前&lt;img src=&quot;http://tiecode.cn/logo.png&quot;&gt;&lt;/div&gt;
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&lt;/div&gt;
+&nbsp&nbsp&nbsp&nbsp&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+		<button class="tie-button tie-button-primary action-button" class="ui-btn-lg" id="showTieGrid" style="margin: 10px 0 10px;">TieGridView</button>
+    </div>
+	<!--TieSheetDialog-->
+    <div id="mTieSheetDialog" class="tie-dialog-bottom-content">
+		<div style="height: 80vh;-webkit-box-pack: center;display: -webkit-box;-webkit-box-orient: vertical;">
+	        <div style="-webkit-box-pack: center;display: -webkit-box;">
+				<img src="http://tiecode.cn/logo.png" style="width: 70px;">
+			</div>
+		    <p style="text-align: center;font-size: 13px;opacity: .6;">云版本，功能更多，体验更好！</p>
+		    <div style="-webkit-box-pack: center;display: -webkit-box;">
+				<button class="tie-button tie-button-primary action-button" style="width: 250px;margin-top: 20px;">开启云结绳</button>
+			</div>
+		</div>
+   </div>
+   <!--TieActivity-->
+   <div id="mTieActivityLayout" class="tie-activity-content">
+	    <div style="height: 100%;-webkit-box-pack: center;display: -webkit-box;-webkit-box-orient: vertical;text-align: center;">
+	        <p>hello world!</p>
+		</div>
+   </div>
+   <!--TieCard-->
+   <div id="mTieCard" class="tie-activity-content">
+		<div style="padding: 10px 10px 60px;">
+	        <div class="tie-card">
+				<div class="tie-card-menu">
+    				<div class="tie-card-button"></div>
+				</div>
+				<div class="tie-card-cnt">
+        			<div class="tie-card-header">
+        	    		<div class="tie-card-header-title"><strong>结绳Linux/Windows项目管理器</strong></div>
+        			</div>
+        			<div class="tie-card-content">结绳Linux/Windows项目管理器，用于支持创建结绳中文Linux/Windows项目以及运行打包构建等功能。该插件集成交叉编译工具链，可在arm架构手机上将结绳代码编译为Linux平台arm64、arm32、x86、x86_64架构的可执行文件，若将该插件部署到Windows平台，则可将结绳代码编译为Windows平台应用程序</div>
+        			<div class="tie-card-action">
+        	   			<p class="float-left">版本：V1.0</p>
+						<p class="float-right">作者：结绳开发团队</p>
+        			</div>
+				</div>
+   			</div>
+	    </div>
+   </div>
+   <!--TieGrid-->
+   <div id="mTieGrid" class="tie-activity-content">
+	  	<div class="tie-grid" style="padding: 10px 10px 70px">
+	      	<div class="tie-grid-item">
+	          	<div class="tie-grid-body">
+					<div class="tie-grid-desc">
+			      		<div class="tie-grid-name">我的Linux工程1</div>
+			      		<div class="tie-grid-info">修改:10分钟前<img src="http://tiecode.cn/logo.png"></div>
+			  		</div>
+					<div class="tie-grid-icon"><img src="http://tiecode.cn/logo.png"></div>
+				</div>
+		  	</div>
+		  	
+	  	</div>
+   </div>
+ <script type="text/javascript" src="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/highlight.min.js"></script>
+ <script type="text/javascript" src="/assets/js/tiecode_widget.js"></script>
+ <script type="text/javascript">
+ hljs.highlightAll();
+/**
+ * TieMessage
+**/
+document.querySelector('#showTieMessage').addEventListener('click', function() {
+	var mTieMessage = new TieMessage(this);
+	mTieMessage.setMessage('这是一个提示');
+	//mTieMessage.setType(mTieMessage.MESSAGE_TYPE_SUCCESS);
+	//mTieMessage.setTime(1500);
+	mTieMessage.onOpened = function(event) {
+		console.log('TieMessage onOpened');
+	};
+	mTieMessage.show();
+	mTieMessage.onClosed = function(event) {
+		console.log('TieMessage onClosed');
+	};
+});
+/**
+ * TiePopMenu
+**/
+document.querySelector('#showTiePopMenu').addEventListener('click', function() {
+	var mTiePopMenu = new TiePopMenu(this);
+	mTiePopMenu.setMenuItem('http://tiecode.cn/logo.png', '备份', function(name) {
+		new TieMessage().setMessage('TiePopMenu MenuItem ' + name).show();
+		console.log('TiePopMenu MenuItem ', name);
+	});
+	mTiePopMenu.setMenuItem('http://tiecode.cn/logo.png', '分享', function(name) {
+		new TieMessage().setMessage('TiePopMenu MenuItem ' + name).show();
+		console.log('TiePopMenu MenuItem ', name);
+	});
+	mTiePopMenu.setMenuItem('http://tiecode.cn/logo.png', '删除', function(name) {
+		new TieMessage().setMessage('TiePopMenu MenuItem ' + name).show();
+		console.log('TiePopMenu MenuItem ', name);
+	});
+	mTiePopMenu.onOpened = function(event) {
+		console.log('TiePopMenu onOpened');
+	};
+	mTiePopMenu.show();
+	mTiePopMenu.onClosed = function(event) {
+		console.log('TiePopMenu onClosed');
+	};
+});
+/**
+ * TieBottomDialog
+**/
+document.querySelector('#showTieBottomDialog').addEventListener('click', function() {
+	var mTieBottomDialog = new TieBottomDialog(this);
+	mTieBottomDialog.setTitle('这是标题');
+	mTieBottomDialog.setContent('这是信息');
+	mTieBottomDialog.setNegativeButton('确定', function() {
+		new TieMessage().setMessage('TieBottomDialog NegativeButton').show();
+		console.log('TieBottomDialog NegativeButton');
+		mTieBottomDialog.dismiss();
+	});
+	mTieBottomDialog.setExtraButton('其他', function() {
+		new TieMessage().setMessage('TieBottomDialog ExtraButton').show();
+		console.log('TieBottomDialog ExtraButton');
+		mTieBottomDialog.dismiss();
+	});
+	mTieBottomDialog.setPositiveButton('取消', function() {
+		new TieMessage().setMessage('TieBottomDialog PositiveButton').show();
+		console.log('TieBottomDialog PositiveButton');
+		mTieBottomDialog.dismiss();
+	});
+	//mTieBottomDialog.setCancelable(false);
+	//mTieBottomDialog.setCanceledOnTouchOutside(false);
+	mTieBottomDialog.onOpened = function(event) {
+		new TieMessage().setMessage('TieBottomDialog onOpened').show();
+		console.log('TieBottomDialog onOpened');
+	};
+	mTieBottomDialog.show();
+	mTieBottomDialog.onClosed = function(event) {
+		new TieMessage().setMessage('TieBottomDialog onClosed').show();
+		console.log('TieBottomDialog onClosed');
+	};
+});
+/**
+ * TieBottomInputDialog
+**/
+document.querySelector('#showTieBottomInputDialog').addEventListener('click', function() {
+	var mTieBottomInputDialog = new TieBottomInputDialog(this);
+	mTieBottomInputDialog.setTitle('这是标题');
+	mTieBottomInputDialog.setSingleLine(true);
+	//mTieBottomInputDialog.setValue('这是内容');
+	mTieBottomInputDialog.setHintText('这是提示');
+	mTieBottomInputDialog.setMaxLength(50);
+	mTieBottomInputDialog.onInput = function(value) {
+		new TieMessage().setMessage('TieBottomInputDialog onInput ' + value).show();
+		console.log('TieBottomInputDialog onInput ', value);
+	};
+	mTieBottomInputDialog.setNegativeButton('确定', function(value) {
+		new TieMessage().setMessage('TieBottomInputDialog NegativeButton ' + value).show();
+		console.log('TieBottomInputDialog NegativeButton ', value);
+		mTieBottomInputDialog.dismiss();
+	});
+	mTieBottomInputDialog.setExtraButton('其他', function() {
+		new TieMessage().setMessage('TieBottomInputDialog ExtraButton').show();
+		console.log('TieBottomInputDialog ExtraButton');
+		mTieBottomInputDialog.dismiss();
+	});
+	mTieBottomInputDialog.setPositiveButton('取消', function(value) {
+		new TieMessage().setMessage('TieBottomInputDialog PositiveButton ' + value).show();
+		console.log('TieBottomInputDialog PositiveButton ', value);
+		mTieBottomInputDialog.dismiss();
+	});
+	//mTieBottomInputDialog.setCancelable(false);
+	//mTieBottomInputDialog.setCanceledOnTouchOutside(false);
+	mTieBottomInputDialog.onOpened = function(value) {
+		new TieMessage().setMessage('TieBottomInputDialog onOpened').show();
+		console.log('TieBottomInputDialog onOpened', value);
+	};
+	mTieBottomInputDialog.show();
+	mTieBottomInputDialog.onClosed = function(value) {
+		new TieMessage().setMessage('TieBottomInputDialog onClosed').show();
+		console.log('TieBottomInputDialog onClosed', value);
+	};
+});
+/**
+ * TieBottomListDialog
+**/
+document.querySelector('#showTieBottomListDialog').addEventListener('click', function() {
+	var mTieBottomListDialog = new TieBottomListDialog(this);
+	mTieBottomListDialog.setTitle('这是标题');
+	mTieBottomListDialog.setContentItems('选项一', function(name) {
+		new TieMessage().setMessage('TieBottomListDialog ListItem ' + name).show();
+		console.log('TieBottomListDialog ListItem ',name);
+	});
+	mTieBottomListDialog.setContentItems('选项二', function(name) {
+		new TieMessage().setMessage('TieBottomListDialog ListItem ' + name).show();
+		console.log('TieBottomListDialog ListItem ',name);
+	});
+	mTieBottomListDialog.setContentItems('选项三', function(name) {
+		new TieMessage().setMessage('TieBottomListDialog ListItem ' + name).show();
+		console.log('TieBottomListDialog ListItem ',name);
+	});
+	mTieBottomListDialog.setContentItems('选项四', function(name) {
+		new TieMessage().setMessage('TieBottomListDialog ListItem ' + name).show();
+		console.log('TieBottomListDialog ListItem ',name);
+	});
+	mTieBottomListDialog.setContentItems('选项五', function(name) {
+		new TieMessage().setMessage('TieBottomListDialog ListItem ' + name).show();
+		console.log('TieBottomListDialog ListItem ',name);
+	});
+	mTieBottomListDialog.setPositiveButton('取消', function() {
+		new TieMessage().setMessage('TieBottomListDialog PositiveButton').show();
+		console.log('TieBottomListDialog PositiveButton');
+	});
+	//mTieBottomListDialog.setCancelable(false);
+	//mTieBottomListDialog.setCanceledOnTouchOutside(false);
+	mTieBottomListDialog.onOpened = function(event) {
+		new TieMessage().setMessage('TieBottomListDialog onOpened').show();
+		console.log('TieBottomListDialog onOpened');
+	};
+	mTieBottomListDialog.show();
+	mTieBottomListDialog.onClosed = function(event) {
+		new TieMessage().setMessage('TieBottomListDialog onClosed').show();
+		console.log('TieBottomListDialog onClosed');
+	};
+});
+/**
+ * TieSheetDialog
+**/
+document.querySelector('#showTieSheetDialog').addEventListener('click', function() {
+	var mTieSheetDialog = new TieSheetDialog(this);
+	mTieSheetDialog.setTitle('云结绳');
+	mTieSheetDialog.setContent('#mTieSheetDialog');
+	//mTieSheetDialog.setCancelable(false);
+	//mTieSheetDialog.setCanceledOnTouchOutside(false);
+	//mTieSheetDialog.setCanceledonScrollOutside(false);
+	mTieSheetDialog.onOpened = function(event) {
+		new TieMessage().setMessage('TieSheetDialog onOpened').show();
+		console.log('TieSheetDialog onOpened');
+	};
+	mTieSheetDialog.show();
+	mTieSheetDialog.onClosed = function(event) {
+		new TieMessage().setMessage('TieSheetDialog onClosed').show();
+		console.log('TieSheetDialog onClosed');
+	};
+});
+/**
+ * TieActivity
+**/
+document.querySelector('#showTieActivity').addEventListener('click', function() {
+	var mTieActivity = new TieActivity(this);
+	mTieActivity.setTitle('新页面');
+	mTieActivity.setLayout('#mTieActivityLayout');
+	mTieActivity.setBackButton('结绳', function() {
+		new TieMessage().setMessage('TieActivity BackButtonOnClick').show();
+		console.log('TieActivity BackButtonOnClick');
+	});
+	//mTieActivity.setCancelable(false);
+	mTieActivity.onOpened = function(event) {
+		new TieMessage().setMessage('TieActivity onOpened').show();
+		console.log('TieActivity onOpened');
+	};
+	mTieActivity.open();
+	mTieActivity.onClosed = function(event) {
+		new TieMessage().setMessage('TieActivity onClosed').show();
+		console.log('TieActivity onClosed');
+	};
+});
+/**
+ * TieCard
+**/
+document.querySelector('#showTieCard').addEventListener('click', function() {
+	var mTieActivity1 = new TieActivity(this);
+	mTieActivity1.setTitle('卡片');
+	mTieActivity1.setLayout('#mTieCard');
+	mTieActivity1.onOpened = function(event) {
+		console.log('TieActivity onOpened');
+	};
+	mTieActivity1.open();
+	mTieActivity1.onClosed = function(event) {
+		console.log('TieActivity onClosed');
+	};
+});
+/**
+ * TieSettingActivity
+**/
+document.querySelector('#showTieSettingActivity').addEventListener('click', function() {
+	var mTieSettingActivity = new TieSettingActivity(this);
+	mTieSettingActivity.setSettingTitle('设置');
+	mTieSettingActivity.setSettingActionItem('http://tiecode.cn/logo.png', '结绳', 'Tie Code', '当前版本', '4.0.0', function() {
+		console.log('TieSettingActivity ActionOnClick ');
+		new TieMessage().setMessage('TieSettingActivity ActionOnClick').show();
+	});
+	mTieSettingActivity.setSettingItemTitle('外观');
+	mTieSettingActivity.setSettingSwitchItem('', '夜间模式', '', function(checked) {
+		console.log('TieSettingActivity SwitchOnChange ', checked);
+		new TieMessage().setMessage('TieSettingActivity SwitchOnChange ' + checked).show();
+	});
+	mTieSettingActivity.setSettingItemTitle('编辑器设置');
+	mTieSettingActivity.setSettingArrowItem('', '设置编辑器主题', '...ode.develop/files/themes/默认白色主题', '', function(name) {
+		console.log('TieSettingActivity ItemOnClick ', name);
+		new TieMessage().setMessage('TieSettingActivity ItemOnClick ' + name).show();
+	});
+	mTieSettingActivity.setSettingArrowItem('', '导出编辑器主题', '导出当前编辑器主题为.thp文件', '', function(name) {
+		console.log('TieSettingActivity ItemOnClick ', name);
+		new TieMessage().setMessage('TieSettingActivity ItemOnClick ' + name).show();
+	});
+	mTieSettingActivity.setSettingArrowItem('', '导入编辑器主题', '导入.thp文件为编辑器主题', '', function(name) {
+		console.log('TieSettingActivity ItemOnClick ', name);
+		new TieMessage().setMessage('TieSettingActivity ItemOnClick ' + name).show();
+	});
+	mTieSettingActivity.setSettingItemTitle('其他设置');
+	mTieSettingActivity.setSettingArrowItem('', '开源相关', '查看本软件使用的开源项目', '', function(name) {
+		console.log('TieSettingActivity ItemOnClick ', name);
+		new TieMessage().setMessage('TieSettingActivity ItemOnClick ' + name).show();
+	});
+	mTieSettingActivity.setSettingArrowItem('', '用户协议', '查看本软件的用户使用协议', '', function(name) {
+		console.log('TieSettingActivity ItemOnClick ', name);
+		new TieMessage().setMessage('TieSettingActivity ItemOnClick ' + name).show();
+	});
+	mTieSettingActivity.setSettingArrowItem('', '隐私协议', '查看本软件的用户隐私协议', '', function(name) {
+		console.log('TieSettingActivity ItemOnClick ', name);
+		new TieMessage().setMessage('TieSettingActivity ItemOnClick ' + name).show();
+	});
+	mTieSettingActivity.setSettingItemTitle('其他设置');
+	mTieSettingActivity.setSettingSwitchItem('', '装载默认插件', '装载默认结绳项目管理器插件', function(checked) {
+		console.log('TieSettingActivity SwitchOnChange ', checked);
+		new TieMessage().setMessage('TieSettingActivity SwitchOnChange ' + checked).show();
+	});
+	mTieSettingActivity.onOpened = function(event) {
+		console.log('TieSettingActivity onOpened');
+	};
+	mTieSettingActivity.open();
+	mTieSettingActivity.onClosed = function(event) {
+		console.log('TieSettingActivity onClosed');
+	};
+});
+/**
+ * TieGrid
+**/
+document.querySelector('#showTieGrid').addEventListener('click', function() {
+	var mTieActivity3 = new TieActivity(this);
+	mTieActivity3.setTitle('宫格列表');
+	mTieActivity3.setLayout('#mTieGrid');
+	mTieActivity3.onOpened = function(event) {
+		console.log('TieActivity onOpened');
+	};
+	mTieActivity3.open();
+	mTieActivity3.onClosed = function(event) {
+		console.log('TieActivity onClosed');
+	};
+});
+</script>
+ </body>
+</html>

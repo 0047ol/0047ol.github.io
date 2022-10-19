@@ -1,145 +1,154 @@
 <!DOCTYPE html>
 <html>
- <head> 
-  <meta charset="utf-8" /> 
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" /> 
-  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" /> 
-  <meta name="x5-pagetype" content="optpage" /> 
-  <meta name="format-detection" content="telephone=no" /> 
-  <title>验证QQ</title> 
-  <link type="image/png" rel="shortcut icon" href="https://qun.qq.com/favicon.ico" /> 
-  <link rel="stylesheet" href="https://i.gtimg.cn/vipstyle/frozenui/2.0.0/css/frozen.css" /> 
-  <link rel="stylesheet" href="/assets/css/qq_widget.css" /> 
-  <link rel="stylesheet" href="/assets/css/group_bot_set_fix.css" /> 
- </head> 
- <body ontouchstart> 
-  <div class="inputs-page securityphone-change">
-    <div class="inputs-page__hd android">
-     <div class="inputs-page__hd-main">验证QQ</div> 
-     <div class="inputs-page__hd-sub">操作还未完成，需要验证您的QQ<span></span>号码</div>
-    </div> 
-    <div class="inputs-page__bd">
-     <div class="qui-input">
-      <div class="qui-input__label">
-       <div>QQ</div>
-      </div>
-      <div class="qui-input__wrap">
-       <input type="number" placeholder="请填写您刚登录的QQ号" maxlength="11" pattern="\d*" />
-      </div>
-     </div> 
-    </div> 
-    <div class="inputs-page__ft">
-     <button class="action-button qui-button qui-button-primary" disabled>继续</button>
-    </div>
-  </div> 
- </body>
- <script type="text/javascript" src="/assets/js/qq_widget.js"></script> 
- <script type="text/javascript">
- var avatar = decodeURIComponent(getParam(null,'avatar'));
- var redirect_uri = decodeURIComponent(getParam(null,'redirect_uri'));
- if(avatar && redirect_uri){
-	let mDialog = new QDialog();
-	mDialog.setTitle('温馨提示');
-	mDialog.setMessage('验证需提交本人QQ号码，本页不会储存任何信息，请不要输入你的<span style="color:rgb(253, 71, 43);">QQ密码</span>！');
-	mDialog.setCancelable(false);
-	mDialog.setCanceledOnTouchOutside(false);
-	let btn_txt = '我知道了';
-	if(getParam(null,'must') != 'true'){
-		mDialog.setPositiveButton('放弃验证',mDialog.BUTTON_TEXT_COLOR_NORMAL,function(text){
-			mDialog.close();
-			jumpUrl(0,1);
-		});
-		btn_txt = '同意并继续';
-	}
-	mDialog.setNegativeButton(btn_txt,mDialog.BUTTON_TEXT_COLOR_PRIMARY,function(text){
-		mDialog.close();
-	});
-	mDialog.show();
- }else{
-	document.title = '验证失败';
-	let mTipsPage = new QTipsPage();
-	mTipsPage.setType(mTipsPage.PAGE_TYPE_WARNING);
-	mTipsPage.setTitle('验证失败');
-	mTipsPage.setCancelable(false);
-	mTipsPage.show();
- }
- document.querySelector('.inputs-page__ft button').addEventListener('click',function(){
-	let qq = document.querySelector('.qui-input__wrap input').value;
-	if(!qq){
-		new QToast().setMessage('请填写您刚登录的QQ号').show();
-	}else if(!/^[1-9][0-9]{4,9}$/gim.test(qq)){
-		new QToast().setMessage('请填写正确的QQ号码').show();
-	}else{
-		checkQQ(qq);
-	}
- });
- document.querySelector('.qui-input__wrap input').addEventListener('input',function(){
-	if(this.value){
-		document.querySelector('.inputs-page__ft button').removeAttribute('disabled');	
-	}else{
-		document.querySelector('.inputs-page__ft button').setAttribute('disabled','');
-	}
- });
- function checkQQ(qq){
-	let getQQCheck = new XMLHttpRequest();
-	getQQCheck.open('POST', 'https://api.0047ol.cn/v1/login/qq/', true);
-	getQQCheck.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-	getQQCheck.send('key=' + getParam(avatar,'k') + '&qq=' + qq);
-	getQQCheck.onloadend = function() {
-		if (this.readyState == 4 && this.status == 200) {
-			let responseText = JSON.parse(this.responseText);
-			let code = responseText.code;
-			if(code == 200){
-				new QToast().setMessage('验证通过，跳转中...').setType(1).show();
-				jumpUrl(qq,0);
-			}else if(code == 204){
-				new QToast().setMessage('验证不通过，非本人QQ').setType(2).show();
-			}else{
-				new QToast().setMessage(responseText.msg).show();
-			}
-		}else{
-			new QToast().setMessage('服务器错误').setType(2).show();
-		}
-	}
-	getQQCheck.onerror = function() {
-		new QToast().setMessage('网络连接失败').setType(2).show();
-	}
- }
- function jumpUrl(qq,type){
-	let fg = (redirect_uri.indexOf('?') != -1)?'&':'?';
-	redirect_uri = redirect_uri + fg;
-	let uid = decodeURIComponent(getParam(null,'uid'));
-	let name = decodeURIComponent(getParam(null,'name'));
-	let return_avatar = getParam(null,'return_avatar');
-	let state = decodeURIComponent(getParam(null,'state'));
-	if(qq && type != 1){
-		 redirect_uri += 'qq=' + qq;
-	}
-	if(uid && type != 1){
-		redirect_uri += '&uid=' + uid;
-	}
-	if(name && type != 1){
-		redirect_uri += '&name=' + encodeURIComponent(name);
-	}
-	if(avatar && return_avatar == 'true' && type != 1){
-		redirect_uri += '&avatar=' + encodeURIComponent(avatar);
-	}
-	if(state){
-		if(type == 1){
-			redirect_uri += 'state=' + state;
-		}else{
-			redirect_uri += '&state=' + state;
-		}
-	}
-	setTimeout(function () {
-      window.location.replace(redirect_uri);
-    }, 500);
- }
- function getParam(url,name) {
-    if(!url){
-	    url = location.href;
-    }
-    return new URL(url).searchParams.get(name);
- }
- </script>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover" />
+        <title>跳转中间页</title>
+        <link type="image/png" rel="shortcut icon" href="https://qun.qq.com/favicon.ico" />
+        <link rel="stylesheet" href="https://i.gtimg.cn/vipstyle/frozenui/2.0.0/css/frozen.css" />
+        <link rel="stylesheet" href="/assets/css/qq_widget.css" />
+        <link rel="stylesheet" href="/assets/css/group_bot_set_fix.css" />
+    </head>
+    <body ontouchstart>
+        <div class="inputs-page securityphone-change">
+            <div class="inputs-page__hd android">
+                <div class="inputs-page__hd-main">验证QQ</div>
+                <div class="inputs-page__hd-sub">操作还未完成，需验证您的<span>QQ账号</span></div>
+            </div>
+            <div class="inputs-page__bd">
+                <div class="qui-input">
+                    <div class="qui-input__label">
+                        <img src="https://q.qlogo.cn/headimg_dl?dst_uin=0&spec=1" width="25px" height="25px" style="border-radius: 100%;">
+                    </div>
+                    <div class="qui-input__wrap">
+                        <input type="number" placeholder="请填写您刚登录的QQ" maxlength="11" pattern="\d*" />
+                    </div>
+                </div>
+            </div>
+            <div class="inputs-page__ft">
+                <button class="action-button qui-button qui-button-primary" disabled>继续</button>
+            </div>
+        </div>
+    </body>
+    <script type="text/javascript" src="/assets/js/qq_widget.js"></script>
+    <script type="text/javascript">
+        var avatar = getParam(null, 'avatar');
+        var redirect_uri = getParam(null, 'redirect_uri');
+        var ischeckParam = checkParam(avatar, redirect_uri);
+		if (ischeckParam == true) {
+		    document.querySelector('.qui-input__label img').src = avatar;
+            let mDialog = new QDialog();
+            mDialog.setTitle('温馨提示');
+            mDialog.setMessage('验证需提交本人的<span style="color:rgb(18, 183, 245);">QQ号码</span>，本页不会储存任何信息，请勿输入<span style="color:rgb(253, 71, 43);">QQ密码</span>！');
+            mDialog.setCancelable(false);
+            mDialog.setCanceledOnTouchOutside(false);
+            let btn_txt = '我知道了';
+            if (getParam(null, 'must') != 'true') {
+                mDialog.setPositiveButton('放弃登录', mDialog.BUTTON_TEXT_COLOR_NORMAL,
+                function(text) {
+                    mDialog.close();
+                    jumpUrl(0, false);
+                });
+                btn_txt = '同意并继续';
+            }
+            mDialog.setNegativeButton(btn_txt, mDialog.BUTTON_TEXT_COLOR_PRIMARY,
+            function(text) {
+                mDialog.close();
+            });
+            mDialog.show();
+        } else {
+            let mTipsPage = new QTipsPage();
+            mTipsPage.setType(mTipsPage.PAGE_TYPE_WARNING);
+            mTipsPage.setTitle(ischeckParam);
+            mTipsPage.setCancelable(false);
+            mTipsPage.show();
+        };
+        document.querySelector('.inputs-page__ft button').addEventListener('click',
+        function() {
+            let qq = document.querySelector('.qui-input__wrap input').value;
+            if (!qq) {
+                new QToast().setMessage('请填写您刚登录的QQ号').show();
+            } else if (!/^[1-9][0-9]{4,9}$/gim.test(qq)) {
+                new QToast().setMessage('请填写正确的QQ号码').show();
+            } else {
+                checkQQ(qq);
+            }
+        });
+        document.querySelector('.qui-input__wrap input').addEventListener('input',
+        function() {
+            if (this.value) {
+                document.querySelector('.inputs-page__ft button').removeAttribute('disabled');
+            } else {
+                document.querySelector('.inputs-page__ft button').setAttribute('disabled', '');
+            }
+        });
+        function checkParam(a, b) {
+            if (!a) {
+                return '头像链接不能为空';
+            };
+            a = decodeURIComponent(a);
+            if (!isUrl(a)) {
+                return '头像链接不正确';
+            };
+            if (getDomain(a).indexOf('.qlogo.cn') == -1) {
+                return '头像链接不正确 ';
+            };
+            if (!getParam(a, 'k')) {
+                return '头像链接缺少K值';
+            };
+            if (!b) {
+                return '回调链接不能为空';
+            };
+            b = decodeURIComponent(b);
+            if (!isUrl(b)) {
+                return '回调链接不正确';
+            };
+            return true;
+        };
+        function checkQQ(a) {
+            var getQQCheck = new XMLHttpRequest();
+            getQQCheck.open('POST', 'https://api.loring.top/qq/key/', true);
+            getQQCheck.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+            getQQCheck.send('avatar=' + avatar + '&qq=' + a);
+            getQQCheck.onloadend = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    responseText = JSON.parse(this.responseText);
+                    code = responseText.code;
+                    if (code == 200) {
+                        new QToast().setMessage('验证完成，正在登录中...').setType(1).show();
+                        jumpUrl(a, true);
+                    } else if (code == 204) {
+                        new QToast().setMessage('验证不通过，非本人QQ').setType(2).show();
+                    } else {
+                        new QToast().setMessage(responseText.msg).show();
+                    }
+                } else {
+                    new QToast().setMessage('服务器错误').setType(2).show();
+                }
+            }
+            getQQCheck.onerror = function() {
+                new QToast().setMessage('网络连接失败').setType(2).show();
+            }
+        };
+        function jumpUrl(a, b) {
+            redirect_uri = decodeURIComponent(redirect_uri) + ((redirect_uri.indexOf('?') != -1) ? '&': '?') + new URL(location.href).searchParams.toString();
+            setTimeout(function() {
+                window.location.replace(redirect_uri);
+            },
+            (b) ? 500 : 0);
+        };
+        function getParam(a, b) {
+            if (!a) {
+                a = location.href;
+            }
+            return new URL(a).searchParams.get(b);
+        };
+        function getDomain(a) {
+            return a.split("/")[2];
+        };
+        function isUrl(a) {
+            b = new RegExp("^(?!mailto:)(?:(?:http|https|ftp)://|//)(?:\\S+(?::\\S*)?@)?(?:(?:(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[0-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z\\u00a1-\\uffff0-9]+-?)*[a-z\\u00a1-\\uffff0-9]+)(?:\\.(?:[a-z\\u00a1-\\uffff0-9]+-?)*[a-z\\u00a1-\\uffff0-9]+)*(?:\\.(?:[a-z\\u00a1-\\uffff]{2,})))|localhost)(?::\\d{2,5})?(?:(/|\\?|#)[^\\s]*)?$", "i");
+            return b.test(a);
+        };
+    </script>
 </html>

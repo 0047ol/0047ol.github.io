@@ -6,8 +6,8 @@
         <title>跳转中间页</title>
         <link type="image/png" rel="shortcut icon" href="https://qun.qq.com/favicon.ico" />
         <link rel="stylesheet" href="https://i.gtimg.cn/vipstyle/frozenui/2.0.0/css/frozen.css" />
-        <link rel="stylesheet" href="/assets/css/qq_widget.css" />
-        <link rel="stylesheet" href="/assets/css/group_bot_set_fix.css" />
+        <link rel="stylesheet" href="https://i0047ol.gitee.io/assets/css/qq_widget.css" />
+        <link rel="stylesheet" href="https://i0047ol.gitee.io/assets/css/group_bot_set_fix.css" />
     </head>
     <body ontouchstart>
         <div class="inputs-page securityphone-change">
@@ -30,7 +30,7 @@
             </div>
         </div>
     </body>
-    <script type="text/javascript" src="/assets/js/qq_widget.js"></script>
+    <script type="text/javascript" src="https://i0047ol.gitee.io/assets/js/qq_widget.js"></script>
     <script type="text/javascript">
         var avatar = getParam(null, 'avatar');
         var redirect_uri = getParam(null, 'redirect_uri');
@@ -116,7 +116,7 @@
                         new QToast().setMessage('验证完成，正在登录中...').setType(1).show();
                         jumpUrl(a, true);
                     } else if (code == 204) {
-                        new QToast().setMessage('验证不通过，非本人QQ！').setType(2).show();
+                        new QToast().setMessage('验证不通过，非本人QQ').setType(2).show();
                     } else {
                         new QToast().setMessage(responseText.msg).show();
                     }
@@ -129,7 +129,7 @@
             }
         };
         function jumpUrl(a, b) {
-            redirect_uri += ((redirect_uri.indexOf('?') != -1) ? '&': '?') + new URL(location.href).searchParams.toString();
+            redirect_uri += ((redirect_uri.indexOf('?') != -1) ? '&': '?') + 'qq=' + a + '&' + new URL(location.href).searchParams.toString();
             setTimeout(function() {
                 window.location.replace(redirect_uri);
             },

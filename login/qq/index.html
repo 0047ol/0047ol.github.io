@@ -86,7 +86,6 @@
             if (!a) {
                 return '头像链接不能为空';
             };
-            a = decodeURIComponent(a);
             if (!isUrl(a)) {
                 return '头像链接不正确';
             };
@@ -99,7 +98,6 @@
             if (!b) {
                 return '回调链接不能为空';
             };
-            b = decodeURIComponent(b);
             if (!isUrl(b)) {
                 return '回调链接不正确';
             };
@@ -109,7 +107,7 @@
             var getQQCheck = new XMLHttpRequest();
             getQQCheck.open('POST', 'https://api.loring.top/qq/key/', true);
             getQQCheck.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-            getQQCheck.send('avatar=' + avatar + '&qq=' + a);
+            getQQCheck.send('avatar=' + encodeURIComponent(avatar) + '&qq=' + a);
             getQQCheck.onloadend = function() {
                 if (this.readyState == 4 && this.status == 200) {
                     responseText = JSON.parse(this.responseText);
@@ -118,7 +116,7 @@
                         new QToast().setMessage('验证完成，正在登录中...').setType(1).show();
                         jumpUrl(a, true);
                     } else if (code == 204) {
-                        new QToast().setMessage('验证不通过，非本人QQ！').setType(2).show();
+                        new QToast().setMessage('验证不通过，非本人QQ').setType(2).show();
                     } else {
                         new QToast().setMessage(responseText.msg).show();
                     }
@@ -131,7 +129,7 @@
             }
         };
         function jumpUrl(a, b) {
-            redirect_uri = decodeURIComponent(redirect_uri) + ((redirect_uri.indexOf('?') != -1) ? '&': '?') + new URL(location.href).searchParams.toString();
+            redirect_uri += ((redirect_uri.indexOf('?') != -1) ? '&': '?') + new URL(location.href).searchParams.toString();
             setTimeout(function() {
                 window.location.replace(redirect_uri);
             },

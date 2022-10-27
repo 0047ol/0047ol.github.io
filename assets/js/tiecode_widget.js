@@ -55,7 +55,7 @@ function _touchStartHandler(e) {
 	touches = _unifyEvent(e);
 	touchStartX = touches.clientX;
     touchStartY = touches.clientY;
-	e.preventDefault();
+	//e.preventDefault();
 	longPressTimer = setTimeout(function() {
 		_longPressEvent(e);
 	}, ((e.buttons == 2)?0:500));
